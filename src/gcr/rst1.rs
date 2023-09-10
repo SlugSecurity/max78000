@@ -3,43 +3,43 @@ pub type R = crate::R<RST1_SPEC>;
 #[doc = "Register `RST1` writer"]
 pub type W = crate::W<RST1_SPEC>;
 #[doc = "Field `I2C1` reader - I2C1 Reset."]
-pub type I2C1_R = crate::BitReader<RESET_READ_A>;
+pub type I2C1_R = crate::BitReader<RESET_A>;
 #[doc = "I2C1 Reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
+pub enum RESET_A {
     #[doc = "0: Reset complete."]
     RESET_DONE = 0,
     #[doc = "1: Starts reset or indicates reset in progress."]
     BUSY = 1,
 }
-impl From<RESET_READ_A> for bool {
+impl From<RESET_A> for bool {
     #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
+    fn from(variant: RESET_A) -> Self {
         variant as u8 != 0
     }
 }
 impl I2C1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
+    pub fn variant(&self) -> RESET_A {
         match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
+            false => RESET_A::RESET_DONE,
+            true => RESET_A::BUSY,
         }
     }
     #[doc = "Reset complete."]
     #[inline(always)]
     pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
+        *self == RESET_A::RESET_DONE
     }
     #[doc = "Starts reset or indicates reset in progress."]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
+        *self == RESET_A::BUSY
     }
 }
 #[doc = "Field `I2C1` writer - I2C1 Reset."]
-pub type I2C1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
+pub type I2C1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_A>;
 impl<'a, REG, const O: u8> I2C1_W<'a, REG, O>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -47,597 +47,58 @@ where
     #[doc = "Reset complete."]
     #[inline(always)]
     pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
+        self.variant(RESET_A::RESET_DONE)
     }
     #[doc = "Starts reset or indicates reset in progress."]
     #[inline(always)]
     pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
+        self.variant(RESET_A::BUSY)
     }
 }
 #[doc = "Field `PT` reader - PT Reset."]
-pub type PT_R = crate::BitReader<RESET_READ_A>;
-#[doc = "PT Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PT_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `PT` writer - PT Reset."]
-pub type PT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> PT_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as PT_R;
 #[doc = "Field `OWM` reader - OWM Reset."]
-pub type OWM_R = crate::BitReader<RESET_READ_A>;
-#[doc = "OWM Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl OWM_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `OWM` writer - OWM Reset."]
-pub type OWM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> OWM_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as OWM_R;
 #[doc = "Field `CRC` reader - CRC Reset."]
-pub type CRC_R = crate::BitReader<RESET_READ_A>;
-#[doc = "CRC Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CRC_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `CRC` writer - CRC Reset."]
-pub type CRC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> CRC_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as CRC_R;
 #[doc = "Field `AES` reader - AES Reset."]
-pub type AES_R = crate::BitReader<RESET_READ_A>;
-#[doc = "AES Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl AES_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `AES` writer - AES Reset."]
-pub type AES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> AES_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as AES_R;
 #[doc = "Field `SPI0` reader - SPI 0 Reset."]
-pub type SPI0_R = crate::BitReader<RESET_READ_A>;
-#[doc = "SPI 0 Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SPI0_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `SPI0` writer - SPI 0 Reset."]
-pub type SPI0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> SPI0_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as SPI0_R;
 #[doc = "Field `SMPHR` reader - SMPHR Reset."]
-pub type SMPHR_R = crate::BitReader<RESET_READ_A>;
-#[doc = "SMPHR Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SMPHR_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `SMPHR` writer - SMPHR Reset."]
-pub type SMPHR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> SMPHR_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as SMPHR_R;
 #[doc = "Field `I2S` reader - I2S Reset."]
-pub type I2S_R = crate::BitReader<RESET_READ_A>;
-#[doc = "I2S Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl I2S_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `I2S` writer - I2S Reset."]
-pub type I2S_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> I2S_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as I2S_R;
 #[doc = "Field `I2C2` reader - I2C2 Reset."]
-pub type I2C2_R = crate::BitReader<RESET_READ_A>;
-#[doc = "I2C2 Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl I2C2_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `I2C2` writer - I2C2 Reset."]
-pub type I2C2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> I2C2_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as I2C2_R;
 #[doc = "Field `DVS` reader - DVS Reset."]
-pub type DVS_R = crate::BitReader<RESET_READ_A>;
-#[doc = "DVS Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl DVS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `DVS` writer - DVS Reset."]
-pub type DVS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> DVS_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as DVS_R;
 #[doc = "Field `SIMO` reader - SIMO Reset."]
-pub type SIMO_R = crate::BitReader<RESET_READ_A>;
-#[doc = "SIMO Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SIMO_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
-#[doc = "Field `SIMO` writer - SIMO Reset."]
-pub type SIMO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> SIMO_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_R as SIMO_R;
 #[doc = "Field `CPU1` reader - CPU1 Reset."]
-pub type CPU1_R = crate::BitReader<RESET_READ_A>;
-#[doc = "CPU1 Reset.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RESET_READ_A {
-    #[doc = "0: Reset complete."]
-    RESET_DONE = 0,
-    #[doc = "1: Starts reset or indicates reset in progress."]
-    BUSY = 1,
-}
-impl From<RESET_READ_A> for bool {
-    #[inline(always)]
-    fn from(variant: RESET_READ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CPU1_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESET_READ_A {
-        match self.bits {
-            false => RESET_READ_A::RESET_DONE,
-            true => RESET_READ_A::BUSY,
-        }
-    }
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn is_reset_done(&self) -> bool {
-        *self == RESET_READ_A::RESET_DONE
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == RESET_READ_A::BUSY
-    }
-}
+pub use I2C1_R as CPU1_R;
+#[doc = "Field `PT` writer - PT Reset."]
+pub use I2C1_W as PT_W;
+#[doc = "Field `OWM` writer - OWM Reset."]
+pub use I2C1_W as OWM_W;
+#[doc = "Field `CRC` writer - CRC Reset."]
+pub use I2C1_W as CRC_W;
+#[doc = "Field `AES` writer - AES Reset."]
+pub use I2C1_W as AES_W;
+#[doc = "Field `SPI0` writer - SPI 0 Reset."]
+pub use I2C1_W as SPI0_W;
+#[doc = "Field `SMPHR` writer - SMPHR Reset."]
+pub use I2C1_W as SMPHR_W;
+#[doc = "Field `I2S` writer - I2S Reset."]
+pub use I2C1_W as I2S_W;
+#[doc = "Field `I2C2` writer - I2C2 Reset."]
+pub use I2C1_W as I2C2_W;
+#[doc = "Field `DVS` writer - DVS Reset."]
+pub use I2C1_W as DVS_W;
+#[doc = "Field `SIMO` writer - SIMO Reset."]
+pub use I2C1_W as SIMO_W;
 #[doc = "Field `CPU1` writer - CPU1 Reset."]
-pub type CPU1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_READ_A>;
-impl<'a, REG, const O: u8> CPU1_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Reset complete."]
-    #[inline(always)]
-    pub fn reset_done(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::RESET_DONE)
-    }
-    #[doc = "Starts reset or indicates reset in progress."]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut crate::W<REG> {
-        self.variant(RESET_READ_A::BUSY)
-    }
-}
+pub use I2C1_W as CPU1_W;
 impl R {
     #[doc = "Bit 0 - I2C1 Reset."]
     #[inline(always)]

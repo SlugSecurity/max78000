@@ -1,0 +1,355 @@
+--- a/max78000.svd
++++ b/max78000.svd
+@@ -2950,125 +2950,165 @@
+         </enumeratedValue>
+        </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>WDT0</name>
+        <description>Watchdog Timer 0 Reset.</description>
+        <bitOffset>1</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>GPIO0</name>
+        <description>GPIO0 Reset. Setting this bit to 1 resets GPIO0 pins to their default states.</description>
+        <bitOffset>2</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>GPIO1</name>
+        <description>GPIO1 Reset. Setting this bit to 1 resets GPIO1 pins to their default states.</description>
+        <bitOffset>3</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>TMR0</name>
+        <description>Timer 0 Reset. Setting this bit to 1 resets Timer 0 blocks.</description>
+        <bitOffset>5</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>TMR1</name>
+        <description>Timer 1 Reset. Setting this bit to 1 resets Timer 1 blocks.</description>
+        <bitOffset>6</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>TMR2</name>
+        <description>Timer 2 Reset. Setting this bit to 1 resets Timer 2 blocks.</description>
+        <bitOffset>7</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>TMR3</name>
+        <description>Timer 3 Reset. Setting this bit to 1 resets Timer 3 blocks.</description>
+        <bitOffset>8</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>UART0</name>
+        <description>UART 0 Reset. Setting this bit to 1 resets all UART 0 blocks.</description>
+        <bitOffset>11</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>UART1</name>
+        <description>UART 1 Reset. Setting this bit to 1 resets all UART 1 blocks.</description>
+        <bitOffset>12</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>SPI1</name>
+        <description>SPI 1 Reset. Setting this bit to 1 resets all SPI 1 blocks.</description>
+        <bitOffset>13</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>I2C0</name>
+        <description>I2C 0 Reset.</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>RTC</name>
+        <description>Real Time Clock Reset.</description>
+        <bitOffset>17</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>SMPHR</name>
+        <description>Semaphore Reset.</description>
+        <bitOffset>22</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>TRNG</name>
+        <description>TRNG Reset. This reset is only available during the manufacture testing phase.</description>
+        <bitOffset>24</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>CNN</name>
+        <description>CNN Reset.</description>
+        <bitOffset>25</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>ADC</name>
+        <description>ADC Reset.</description>
+        <bitOffset>26</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>UART2</name>
+        <description>UART2 Reset. Setting this bit to 1 resets all UART 2 blocks.</description>
+        <bitOffset>28</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>SOFT</name>
+        <description>Soft Reset. Setting this bit to 1 resets everything except the CPU and the watchdog timer.</description>
+        <bitOffset>29</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>PERIPH</name>
+        <description>Peripheral Reset. Setting this bit to 1 resets all peripherals. The CPU core, the watchdog timer, and all GPIO pins are unaffected by this reset.</description>
+        <bitOffset>30</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="DMA">
++      <field>
+        <name>SYS</name>
+        <description>System Reset. Setting this bit to 1 resets the CPU core and all peripherals, including the watchdog timer.</description>
+        <bitOffset>31</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+      </fields>
+     </register>
+@@ -3681,8 +3721,8 @@
+        <bitOffset>0</bitOffset>
+        <bitWidth>1</bitWidth>
+        <enumeratedValues>
+-        <name>reset_read</name>
+-        <usage>read</usage>
++        <name>reset</name>
++        <usage>read-write</usage>
+         <enumeratedValue>
+          <name>reset_done</name>
+          <description>Reset complete.</description>
+@@ -3695,71 +3735,93 @@
+         </enumeratedValue>
+        </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>PT</name>
+        <description>PT Reset.</description>
+        <bitOffset>1</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>OWM</name>
+        <description>OWM Reset.</description>
+        <bitOffset>7</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>CRC</name>
+        <description>CRC Reset.</description>
+        <bitOffset>9</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>AES</name>
+        <description>AES Reset.</description>
+        <bitOffset>10</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>SPI0</name>
+        <description>SPI 0 Reset.</description>
+        <bitOffset>11</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>SMPHR</name>
+        <description>SMPHR Reset.</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>I2S</name>
+        <description>I2S Reset.</description>
+        <bitOffset>19</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>I2C2</name>
+        <description>I2C2 Reset.</description>
+        <bitOffset>20</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>DVS</name>
+        <description>DVS Reset.</description>
+        <bitOffset>24</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>SIMO</name>
+        <description>SIMO Reset.</description>
+        <bitOffset>25</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="I2C1">
++      <field>
+        <name>CPU1</name>
+        <description>CPU1 Reset.</description>
+        <bitOffset>31</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+      </fields>
+     </register>
+@@ -6848,35 +6910,45 @@
+         </enumeratedValue>
+        </enumeratedValues>
+       </field>
+-      <field derivedFrom="GPIO2">
++      <field>
+        <name>WDT1</name>
+        <description>Low Power Watchdog Timer 1 Reset.</description>
+        <bitOffset>1</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="GPIO2">
++      <field>
+        <name>TMR4</name>
+        <description>Low Power Timer 4 Reset.</description>
+        <bitOffset>2</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="GPIO2">
++      <field>
+        <name>TMR5</name>
+        <description>Low Power Timer 5 Reset.</description>
+        <bitOffset>3</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="GPIO2">
++      <field>
+        <name>UART3</name>
+        <description>Low Power UART 3 Reset.</description>
+        <bitOffset>4</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+-      <field derivedFrom="GPIO2">
++      <field>
+        <name>LPCOMP</name>
+        <description>Low Power Comparator Reset.</description>
+        <bitOffset>6</bitOffset>
+        <bitWidth>1</bitWidth>
++       <enumeratedValues derivedFrom="reset">
++       </enumeratedValues>
+       </field>
+      </fields>
+     </register>
