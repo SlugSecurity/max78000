@@ -1,6 +1,7 @@
 [package]
 name = "max78000"
 version = "0.1.0"
+authors = ["Brian Mak"]
 edition = "2021"
 
 [dependencies]
