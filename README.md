@@ -2,15 +2,15 @@
 
 Auto-generated with `svd2rust`.
 
-# How to patch Analog Devices MSDK's SVD file
+## How to patch Analog Devices MSDK's SVD file
 
 `patch max78000.svd.original max78000.svd.patch -o max78000.svd.patched`
 
-# How to re-generate the peripherals API (requires `svd2rust` and `form`)
+## How to re-generate the peripherals API (requires `svd2rust` and `form`)
 
 `svd2rust -i max78000.svd.patched && rm -rf src && form -i lib.rs -o src && rm lib.rs && cargo fmt`
 
-# `svd2rust` license
+## `svd2rust` license
 
 Copyright (c) 2016 Jorge Aparicio
 
@@ -38,7 +38,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
-# `max78000.svd.original` license
+## `max78000.svd.original` license
 
 Copyright (C) Maxim Integrated Products, Inc., All rights Reserved.
 
