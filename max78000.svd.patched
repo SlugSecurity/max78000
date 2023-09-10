@@ -3820,7 +3820,9 @@
        <description>CPU1 Reset.</description>
        <bitOffset>31</bitOffset>
        <bitWidth>1</bitWidth>
+       <access>read-only</access>
        <enumeratedValues derivedFrom="reset">
+        <usage>read</usage>
        </enumeratedValues>
       </field>
      </fields>
@@ -6895,9 +6897,10 @@
        <description>Low Power GPIO 2 Reset.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>1</bitWidth>
+       <access>write-only</access>
        <enumeratedValues>
-        <name>reset</name>
-        <usage>read-write</usage>
+        <name>reset_write</name>
+        <usage>write</usage>
         <enumeratedValue>
          <name>reset_done</name>
          <description>Reset complete.</description>
@@ -6915,7 +6918,8 @@
        <description>Low Power Watchdog Timer 1 Reset.</description>
        <bitOffset>1</bitOffset>
        <bitWidth>1</bitWidth>
-       <enumeratedValues derivedFrom="reset">
+       <access>write-only</access>
+       <enumeratedValues derivedFrom="reset_write">
        </enumeratedValues>
       </field>
       <field>
@@ -6923,7 +6927,8 @@
        <description>Low Power Timer 4 Reset.</description>
        <bitOffset>2</bitOffset>
        <bitWidth>1</bitWidth>
-       <enumeratedValues derivedFrom="reset">
+       <access>write-only</access>
+       <enumeratedValues derivedFrom="reset_write">
        </enumeratedValues>
       </field>
       <field>
@@ -6931,7 +6936,8 @@
        <description>Low Power Timer 5 Reset.</description>
        <bitOffset>3</bitOffset>
        <bitWidth>1</bitWidth>
-       <enumeratedValues derivedFrom="reset">
+       <access>write-only</access>
+       <enumeratedValues derivedFrom="reset_write">
        </enumeratedValues>
       </field>
       <field>
@@ -6939,7 +6945,8 @@
        <description>Low Power UART 3 Reset.</description>
        <bitOffset>4</bitOffset>
        <bitWidth>1</bitWidth>
-       <enumeratedValues derivedFrom="reset">
+       <access>write-only</access>
+       <enumeratedValues derivedFrom="reset_write">
        </enumeratedValues>
       </field>
       <field>
@@ -6947,7 +6954,8 @@
        <description>Low Power Comparator Reset.</description>
        <bitOffset>6</bitOffset>
        <bitWidth>1</bitWidth>
-       <enumeratedValues derivedFrom="reset">
+       <access>write-only</access>
+       <enumeratedValues derivedFrom="reset_write">
        </enumeratedValues>
       </field>
      </fields>

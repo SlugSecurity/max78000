@@ -1,5 +1,5 @@
---- a/max78000.svd
-+++ b/max78000.svd
+--- max78000.svd.original	2023-09-09 20:23:08.564610220 -0700
++++ max78000.svd.patched	2023-09-09 21:47:25.981473710 -0700
 @@ -2950,125 +2950,165 @@
          </enumeratedValue>
         </enumeratedValues>
@@ -197,7 +197,7 @@
          <enumeratedValue>
           <name>reset_done</name>
           <description>Reset complete.</description>
-@@ -3695,71 +3735,93 @@
+@@ -3695,71 +3735,95 @@
          </enumeratedValue>
         </enumeratedValues>
        </field>
@@ -297,12 +297,27 @@
         <description>CPU1 Reset.</description>
         <bitOffset>31</bitOffset>
         <bitWidth>1</bitWidth>
++       <access>read-only</access>
 +       <enumeratedValues derivedFrom="reset">
++        <usage>read</usage>
 +       </enumeratedValues>
        </field>
       </fields>
      </register>
-@@ -6848,35 +6910,45 @@
+@@ -6833,9 +6897,10 @@
+        <description>Low Power GPIO 2 Reset.</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>1</bitWidth>
++       <access>write-only</access>
+        <enumeratedValues>
+-        <name>reset</name>
+-        <usage>read-write</usage>
++        <name>reset_write</name>
++        <usage>write</usage>
+         <enumeratedValue>
+          <name>reset_done</name>
+          <description>Reset complete.</description>
+@@ -6848,35 +6913,50 @@
          </enumeratedValue>
         </enumeratedValues>
        </field>
@@ -312,7 +327,8 @@
         <description>Low Power Watchdog Timer 1 Reset.</description>
         <bitOffset>1</bitOffset>
         <bitWidth>1</bitWidth>
-+       <enumeratedValues derivedFrom="reset">
++       <access>write-only</access>
++       <enumeratedValues derivedFrom="reset_write">
 +       </enumeratedValues>
        </field>
 -      <field derivedFrom="GPIO2">
@@ -321,7 +337,8 @@
         <description>Low Power Timer 4 Reset.</description>
         <bitOffset>2</bitOffset>
         <bitWidth>1</bitWidth>
-+       <enumeratedValues derivedFrom="reset">
++       <access>write-only</access>
++       <enumeratedValues derivedFrom="reset_write">
 +       </enumeratedValues>
        </field>
 -      <field derivedFrom="GPIO2">
@@ -330,7 +347,8 @@
         <description>Low Power Timer 5 Reset.</description>
         <bitOffset>3</bitOffset>
         <bitWidth>1</bitWidth>
-+       <enumeratedValues derivedFrom="reset">
++       <access>write-only</access>
++       <enumeratedValues derivedFrom="reset_write">
 +       </enumeratedValues>
        </field>
 -      <field derivedFrom="GPIO2">
@@ -339,7 +357,8 @@
         <description>Low Power UART 3 Reset.</description>
         <bitOffset>4</bitOffset>
         <bitWidth>1</bitWidth>
-+       <enumeratedValues derivedFrom="reset">
++       <access>write-only</access>
++       <enumeratedValues derivedFrom="reset_write">
 +       </enumeratedValues>
        </field>
 -      <field derivedFrom="GPIO2">
@@ -348,7 +367,8 @@
         <description>Low Power Comparator Reset.</description>
         <bitOffset>6</bitOffset>
         <bitWidth>1</bitWidth>
-+       <enumeratedValues derivedFrom="reset">
++       <access>write-only</access>
++       <enumeratedValues derivedFrom="reset_write">
 +       </enumeratedValues>
        </field>
       </fields>

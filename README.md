@@ -6,6 +6,10 @@ Auto-generated with `svd2rust`.
 
 `patch max78000.svd.original max78000.svd.patch -o max78000.svd.patched`
 
+## How to generate a new SVD patch file
+
+`diff -u max78000.svd.original max78000.svd.patched > max78000.svd.patch`
+
 ## How to re-generate the peripherals API (requires `svd2rust` and `form`)
 
 `svd2rust -i max78000.svd.patched && rm -rf src && form -i lib.rs -o src && rm lib.rs && cargo fmt`

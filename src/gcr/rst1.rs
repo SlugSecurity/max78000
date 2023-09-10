@@ -97,8 +97,6 @@ pub use I2C1_W as I2C2_W;
 pub use I2C1_W as DVS_W;
 #[doc = "Field `SIMO` writer - SIMO Reset."]
 pub use I2C1_W as SIMO_W;
-#[doc = "Field `CPU1` writer - CPU1 Reset."]
-pub use I2C1_W as CPU1_W;
 impl R {
     #[doc = "Bit 0 - I2C1 Reset."]
     #[inline(always)]
@@ -227,12 +225,6 @@ impl W {
     #[must_use]
     pub fn simo(&mut self) -> SIMO_W<RST1_SPEC, 25> {
         SIMO_W::new(self)
-    }
-    #[doc = "Bit 31 - CPU1 Reset."]
-    #[inline(always)]
-    #[must_use]
-    pub fn cpu1(&mut self) -> CPU1_W<RST1_SPEC, 31> {
-        CPU1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
