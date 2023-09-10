@@ -1,0 +1,56 @@
+#[doc = "Register `SAFE_DIS` writer"]
+pub type W = crate::W<SAFE_DIS_SPEC>;
+#[doc = "Field `PT0` writer - "]
+pub type PT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+#[doc = "Field `PT1` writer - "]
+pub type PT1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+#[doc = "Field `PT2` writer - "]
+pub type PT2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+#[doc = "Field `PT3` writer - "]
+pub type PT3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    #[must_use]
+    pub fn pt0(&mut self) -> PT0_W<SAFE_DIS_SPEC, 0> {
+        PT0_W::new(self)
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    #[must_use]
+    pub fn pt1(&mut self) -> PT1_W<SAFE_DIS_SPEC, 1> {
+        PT1_W::new(self)
+    }
+    #[doc = "Bit 2"]
+    #[inline(always)]
+    #[must_use]
+    pub fn pt2(&mut self) -> PT2_W<SAFE_DIS_SPEC, 2> {
+        PT2_W::new(self)
+    }
+    #[doc = "Bit 3"]
+    #[inline(always)]
+    #[must_use]
+    pub fn pt3(&mut self) -> PT3_W<SAFE_DIS_SPEC, 3> {
+        PT3_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.bits = bits;
+        self
+    }
+}
+#[doc = "Pulse Train Global Safe Disable.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`safe_dis::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SAFE_DIS_SPEC;
+impl crate::RegisterSpec for SAFE_DIS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [`safe_dis::W`](W) writer structure"]
+impl crate::Writable for SAFE_DIS_SPEC {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets SAFE_DIS to value 0"]
+impl crate::Resettable for SAFE_DIS_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
+}
