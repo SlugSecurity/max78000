@@ -1,6 +1,6 @@
 # MAX78000 Peripherals API
 
-Auto-generated with `svd2rust`. The included SVD file has not been checked for errors. Registers and fields should be verified prior to use.
+A peripheral access crate for the Analog Devices MAX78000. Auto-generated with `svd2rust`. The included SVD file has not been checked for errors. Registers and fields should be verified prior to use.
 
 ## How to patch Analog Devices MSDK's SVD file
 
