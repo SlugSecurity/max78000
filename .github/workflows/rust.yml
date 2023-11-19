@@ -6,13 +6,17 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  working-directory: .
 
 jobs:
   rustdoc:
     runs-on: ubuntu-latest
     steps:
       - name: Run rustdoc
-        run: rustdoc src/lib.rs --crate-name max-docs
+        run: |
+         pwd
+         ls -la
+         rustdoc src/lib.rs --crate-name max-docs
       - name: archive
         run: zip -r max-docs ./docs/max-docs
       - name : upload artifacts
