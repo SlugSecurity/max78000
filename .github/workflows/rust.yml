@@ -17,7 +17,7 @@ jobs:
       - name: Run rustdoc
         run: cargo doc --no-deps --document-private-items
       - name: archive
-        run: zip -r max-docs ./docs/target/doc
+        run: zip -r max-docs target/doc
       - name : upload artifacts
         uses: actions/upload-artifact@v3
         with: 
