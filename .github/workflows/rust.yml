@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run rustdoc
-        run: 
+        run: |
+          ls -la
           cargo doc
       - name: archive
         run: zip -r max-docs ./docs/target/doc
