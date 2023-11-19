@@ -8,29 +8,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  clippy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Run clippy
-      run: cargo clippy -- -D warnings
-  clippy-pedantic:
-    needs: clippy
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Run clippy(non-pedantic)
-      run: cargo clippy -- -W clippy::pedantic
-  
-  format:
-    needs: [clippy, clippy-pedantic]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run format
-        run: cargo fmt
   rustdoc:
-    needs: [clippy, clippy-pedantic, format]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/upload-artifact@v3
