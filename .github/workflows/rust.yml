@@ -11,14 +11,17 @@ jobs:
   rustdoc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/upload-artifact@v3
+      - name: Run rustdoc
+        run: 
+          cargo doc
+      - name: archive
+        run: zip -r max-docs ./docs/target/doc
+      - name : upload artifacts
+        uses: actions/upload-artifact@v3
         with: 
             name: rustdoc
             path: max-docs.zip
             retention-days: 2
-      - name: Output rustdoc
-        run: | 
-          cargo doc
-          zip -r max-docs ./docs/target/doc
+
 
     
