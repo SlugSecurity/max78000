@@ -12,11 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run rustdoc
-        run: |
-          ls -la
-          cargo doc
+        run: rustdoc src/lib.rs --crate-name max-docs
       - name: archive
-        run: zip -r max-docs ./docs/target/doc
+        run: zip -r max-docs ./docs/max-docs
       - name : upload artifacts
         uses: actions/upload-artifact@v3
         with: 
