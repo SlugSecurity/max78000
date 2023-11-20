@@ -1,5 +1,0 @@
-[build]
-target = "thumbv7em-none-eabihf"
-
-[net]
-git-fetch-with-cli = true

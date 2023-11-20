@@ -1,0 +1,27 @@
+name: fmt, clippy, rustdocs
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+  working-directory: .
+
+jobs:
+  rustdoc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Run rustdoc
+        run: cargo doc --no-deps --document-private-items
+      - name : upload artifacts
+        uses: actions/upload-artifact@v3
+        with: 
+            name: rustdoc
+            path: target/doc
+            retention-days: 2
+
+
+    
