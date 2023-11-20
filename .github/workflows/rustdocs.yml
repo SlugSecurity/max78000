@@ -18,5 +18,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with: 
             name: rustdoc
-            path: target/doc
+            path: target/thumbv7em-none-eabihf/doc
             retention-days: 2
