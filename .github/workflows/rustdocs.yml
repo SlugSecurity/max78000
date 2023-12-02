@@ -10,13 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run rustdoc
+      - name: Run rustdoc and compress
         run: |
           rustup target add thumbv7em-none-eabihf
           cargo doc --no-deps --document-private-items
-      - name: upload artifacts
+          cd target/thumbv7em-none-eabihf/doc
+          zip -0 -r doc.zip . # No compression needed since artifacts are already compressed.
+      - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with: 
             name: rustdoc
-            path: target/thumbv7em-none-eabihf/doc
+            path: target/thumbv7em-none-eabihf/doc/doc.zip
             retention-days: 2
