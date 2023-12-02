@@ -15,7 +15,7 @@ jobs:
           rustup target add thumbv7em-none-eabihf
           cargo doc --no-deps --document-private-items
           cd target/thumbv7em-none-eabihf/doc
-          zip -0 -r doc.zip . # No compression needed since artifacts are already compressed.
+          zip -r doc.zip .
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with: 
