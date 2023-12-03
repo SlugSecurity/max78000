@@ -4209,18 +4209,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>ALTERNATE</name>
-         <description>Alternate function enabled.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>GPIO</name>
-         <description>GPIO function is enabled.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4260,18 +4248,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>dis</name>
-         <description>GPIO Output Disable</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>en</name>
-         <description>GPIO Output Enable</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4311,18 +4287,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>low</name>
-         <description>Drive Logic 0 (low) on GPIO output.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>high</name>
-         <description>Drive logic 1 (high) on GPIO output.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4337,18 +4301,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>no</name>
-         <description>No Effect.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>set</name>
-         <description>Set GPIO_OUT bit in this position to '1'</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4390,18 +4342,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>level</name>
-         <description>Interrupts for this pin are level triggered.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>edge</name>
-         <description>Interrupts for this pin are edge triggered.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4415,18 +4355,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>falling</name>
-         <description>Interrupts are latched on a falling edge or low level condition for this pin.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>rising</name>
-         <description>Interrupts are latched on a rising edge or high condition for this pin.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4445,18 +4373,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>dis</name>
-         <description>Interrupts are disabled for this GPIO pin.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>en</name>
-         <description>Interrupts are enabled for this GPIO pin.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4470,18 +4386,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>no</name>
-         <description>No effect.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>set</name>
-         <description>Set GPIO_INT_EN bit in this position to '1'</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4495,18 +4399,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>no</name>
-         <description>No Effect.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>clear</name>
-         <description>Clear GPIO_INT_EN bit in this position to '0'</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4521,18 +4413,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>no</name>
-         <description>No Interrupt is pending on this GPIO pin.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>pending</name>
-         <description>An Interrupt is pending on this GPIO pin.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4559,18 +4439,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>dis</name>
-         <description>PMU wakeup for this GPIO is disabled.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>en</name>
-         <description>PMU wakeup for this GPIO is enabled.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4610,18 +4478,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>no</name>
-         <description>No Effect.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>en</name>
-         <description>Dual Edge mode is enabled. If edge-triggered interrupts are enabled on this GPIO pin, then both rising and falling edges will trigger interrupts regardless of the GPIO_INT_POL setting.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4632,26 +4488,9 @@
      <fields>
       <field>
        <name>GPIO_PADCTRL0</name>
-       <description>The two bits in GPIO_PAD_CFG1 and GPIO_PAD_CFG2 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode.</description>
+       <description>The two bits in GPIO_PADCTRL0 and GPIO_PADCTRL1 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>impedance</name>
-         <description>High Impedance.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>pu</name>
-         <description>Weak pull-up mode.</description>
-         <value>1</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>pd</name>
-         <description>weak pull-down mode.</description>
-         <value>2</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4662,26 +4501,9 @@
      <fields>
       <field>
        <name>GPIO_PADCTRL1</name>
-       <description>The two bits in GPIO_PAD_CFG1 and GPIO_PAD_CFG2 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode.</description>
+       <description>The two bits in GPIO_PADCTRL0 and GPIO_PADCTRL1 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>impedance</name>
-         <description>High Impedance.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>pu</name>
-         <description>Weak pull-up mode.</description>
-         <value>1</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>pd</name>
-         <description>weak pull-down mode.</description>
-         <value>2</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4695,18 +4517,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>primary</name>
-         <description>Primary function selected.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>secondary</name>
-         <description>Secondary function selected.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4746,18 +4556,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>primary</name>
-         <description>Primary function selected.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>secondary</name>
-         <description>Secondary function selected.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4810,18 +4608,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>FAST</name>
-         <description>Fast Slew Rate selected.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>SLOW</name>
-         <description>Slow Slew Rate selected.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
@@ -4835,18 +4621,6 @@
        <description>Mask of all of the pins on the port.</description>
        <bitOffset>0</bitOffset>
        <bitWidth>32</bitWidth>
-       <enumeratedValues>
-        <enumeratedValue>
-         <name>ld</name>
-         <description>GPIO port pin is in low-drive mode.</description>
-         <value>0</value>
-        </enumeratedValue>
-        <enumeratedValue>
-         <name>hd</name>
-         <description>GPIO port pin is in high-drive mode.</description>
-         <value>1</value>
-        </enumeratedValue>
-       </enumeratedValues>
       </field>
      </fields>
     </register>
