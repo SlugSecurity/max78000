@@ -5,83 +5,83 @@ pub type W = crate::W<CTL_SPEC>;
 #[doc = "Field `MON_ENA` reader - Enable the DVS monitoring circuit"]
 pub type MON_ENA_R = crate::BitReader;
 #[doc = "Field `MON_ENA` writer - Enable the DVS monitoring circuit"]
-pub type MON_ENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MON_ENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ADJ_ENA` reader - Enable the power supply adjustment based on measurements"]
 pub type ADJ_ENA_R = crate::BitReader;
 #[doc = "Field `ADJ_ENA` writer - Enable the power supply adjustment based on measurements"]
-pub type ADJ_ENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ADJ_ENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PS_FB_DIS` reader - Power Supply Feedback Disable"]
 pub type PS_FB_DIS_R = crate::BitReader;
 #[doc = "Field `PS_FB_DIS` writer - Power Supply Feedback Disable"]
-pub type PS_FB_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PS_FB_DIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTRL_TAP_ENA` reader - Use the TAP Select for automatic adjustment or monitoring"]
 pub type CTRL_TAP_ENA_R = crate::BitReader;
 #[doc = "Field `CTRL_TAP_ENA` writer - Use the TAP Select for automatic adjustment or monitoring"]
-pub type CTRL_TAP_ENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CTRL_TAP_ENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PROP_DLY` reader - Additional delay to monitor lines"]
 pub type PROP_DLY_R = crate::FieldReader;
 #[doc = "Field `PROP_DLY` writer - Additional delay to monitor lines"]
-pub type PROP_DLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type PROP_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `MON_ONESHOT` reader - Measure delay once"]
 pub type MON_ONESHOT_R = crate::BitReader;
 #[doc = "Field `MON_ONESHOT` writer - Measure delay once"]
-pub type MON_ONESHOT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MON_ONESHOT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `GO_DIRECT` reader - Operate in automatic mode or move directly"]
 pub type GO_DIRECT_R = crate::BitReader;
 #[doc = "Field `GO_DIRECT` writer - Operate in automatic mode or move directly"]
-pub type GO_DIRECT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GO_DIRECT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DIRECT_REG` reader - Step incrementally to target voltage"]
 pub type DIRECT_REG_R = crate::BitReader;
 #[doc = "Field `DIRECT_REG` writer - Step incrementally to target voltage"]
-pub type DIRECT_REG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DIRECT_REG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PRIME_ENA` reader - Include a delay line priming signal before monitoring"]
 pub type PRIME_ENA_R = crate::BitReader;
 #[doc = "Field `PRIME_ENA` writer - Include a delay line priming signal before monitoring"]
-pub type PRIME_ENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRIME_ENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LIMIT_IE` reader - Enable Limit Error Interrupt"]
 pub type LIMIT_IE_R = crate::BitReader;
 #[doc = "Field `LIMIT_IE` writer - Enable Limit Error Interrupt"]
-pub type LIMIT_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LIMIT_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RANGE_IE` reader - Enable Range Error Interrupt"]
 pub type RANGE_IE_R = crate::BitReader;
 #[doc = "Field `RANGE_IE` writer - Enable Range Error Interrupt"]
-pub type RANGE_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RANGE_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ADJ_IE` reader - Enable Adjustment Error Interrupt"]
 pub type ADJ_IE_R = crate::BitReader;
 #[doc = "Field `ADJ_IE` writer - Enable Adjustment Error Interrupt"]
-pub type ADJ_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ADJ_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `REF_SEL` reader - Select TAP used for voltage adjustment"]
 pub type REF_SEL_R = crate::FieldReader;
 #[doc = "Field `REF_SEL` writer - Select TAP used for voltage adjustment"]
-pub type REF_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type REF_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `INC_VAL` reader - Step size to increment voltage when in automatic mode"]
 pub type INC_VAL_R = crate::FieldReader;
 #[doc = "Field `INC_VAL` writer - Step size to increment voltage when in automatic mode"]
-pub type INC_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type INC_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DVS_PS_APB_DIS` reader - Prevent the application code from adjusting Vcore"]
 pub type DVS_PS_APB_DIS_R = crate::BitReader;
 #[doc = "Field `DVS_PS_APB_DIS` writer - Prevent the application code from adjusting Vcore"]
-pub type DVS_PS_APB_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DVS_PS_APB_DIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DVS_HI_RANGE_ANY` reader - Any high range signal from a delay line will cause a voltage adjustment"]
 pub type DVS_HI_RANGE_ANY_R = crate::BitReader;
 #[doc = "Field `DVS_HI_RANGE_ANY` writer - Any high range signal from a delay line will cause a voltage adjustment"]
-pub type DVS_HI_RANGE_ANY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DVS_HI_RANGE_ANY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FB_TO_IE` reader - Enable Voltage Adjustment Timeout Interrupt"]
 pub type FB_TO_IE_R = crate::BitReader;
 #[doc = "Field `FB_TO_IE` writer - Enable Voltage Adjustment Timeout Interrupt"]
-pub type FB_TO_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FB_TO_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FC_LV_IE` reader - Enable Low Voltage Interrupt"]
 pub type FC_LV_IE_R = crate::BitReader;
 #[doc = "Field `FC_LV_IE` writer - Enable Low Voltage Interrupt"]
-pub type FC_LV_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FC_LV_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PD_ACK_ENA` reader - Prevent DVS from ack'ing a request to enter a low power mode until in the idle state"]
 pub type PD_ACK_ENA_R = crate::BitReader;
 #[doc = "Field `PD_ACK_ENA` writer - Prevent DVS from ack'ing a request to enter a low power mode until in the idle state"]
-pub type PD_ACK_ENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PD_ACK_ENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ADJ_ABORT` reader - Causes the DVS to enter the idle state immediately on a request to enter a low power mode"]
 pub type ADJ_ABORT_R = crate::BitReader;
 #[doc = "Field `ADJ_ABORT` writer - Causes the DVS to enter the idle state immediately on a request to enter a low power mode"]
-pub type ADJ_ABORT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ADJ_ABORT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Enable the DVS monitoring circuit"]
     #[inline(always)]
@@ -188,124 +188,128 @@ impl W {
     #[doc = "Bit 0 - Enable the DVS monitoring circuit"]
     #[inline(always)]
     #[must_use]
-    pub fn mon_ena(&mut self) -> MON_ENA_W<CTL_SPEC, 0> {
-        MON_ENA_W::new(self)
+    pub fn mon_ena(&mut self) -> MON_ENA_W<CTL_SPEC> {
+        MON_ENA_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable the power supply adjustment based on measurements"]
     #[inline(always)]
     #[must_use]
-    pub fn adj_ena(&mut self) -> ADJ_ENA_W<CTL_SPEC, 1> {
-        ADJ_ENA_W::new(self)
+    pub fn adj_ena(&mut self) -> ADJ_ENA_W<CTL_SPEC> {
+        ADJ_ENA_W::new(self, 1)
     }
     #[doc = "Bit 2 - Power Supply Feedback Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ps_fb_dis(&mut self) -> PS_FB_DIS_W<CTL_SPEC, 2> {
-        PS_FB_DIS_W::new(self)
+    pub fn ps_fb_dis(&mut self) -> PS_FB_DIS_W<CTL_SPEC> {
+        PS_FB_DIS_W::new(self, 2)
     }
     #[doc = "Bit 3 - Use the TAP Select for automatic adjustment or monitoring"]
     #[inline(always)]
     #[must_use]
-    pub fn ctrl_tap_ena(&mut self) -> CTRL_TAP_ENA_W<CTL_SPEC, 3> {
-        CTRL_TAP_ENA_W::new(self)
+    pub fn ctrl_tap_ena(&mut self) -> CTRL_TAP_ENA_W<CTL_SPEC> {
+        CTRL_TAP_ENA_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Additional delay to monitor lines"]
     #[inline(always)]
     #[must_use]
-    pub fn prop_dly(&mut self) -> PROP_DLY_W<CTL_SPEC, 4> {
-        PROP_DLY_W::new(self)
+    pub fn prop_dly(&mut self) -> PROP_DLY_W<CTL_SPEC> {
+        PROP_DLY_W::new(self, 4)
     }
     #[doc = "Bit 6 - Measure delay once"]
     #[inline(always)]
     #[must_use]
-    pub fn mon_oneshot(&mut self) -> MON_ONESHOT_W<CTL_SPEC, 6> {
-        MON_ONESHOT_W::new(self)
+    pub fn mon_oneshot(&mut self) -> MON_ONESHOT_W<CTL_SPEC> {
+        MON_ONESHOT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Operate in automatic mode or move directly"]
     #[inline(always)]
     #[must_use]
-    pub fn go_direct(&mut self) -> GO_DIRECT_W<CTL_SPEC, 7> {
-        GO_DIRECT_W::new(self)
+    pub fn go_direct(&mut self) -> GO_DIRECT_W<CTL_SPEC> {
+        GO_DIRECT_W::new(self, 7)
     }
     #[doc = "Bit 8 - Step incrementally to target voltage"]
     #[inline(always)]
     #[must_use]
-    pub fn direct_reg(&mut self) -> DIRECT_REG_W<CTL_SPEC, 8> {
-        DIRECT_REG_W::new(self)
+    pub fn direct_reg(&mut self) -> DIRECT_REG_W<CTL_SPEC> {
+        DIRECT_REG_W::new(self, 8)
     }
     #[doc = "Bit 9 - Include a delay line priming signal before monitoring"]
     #[inline(always)]
     #[must_use]
-    pub fn prime_ena(&mut self) -> PRIME_ENA_W<CTL_SPEC, 9> {
-        PRIME_ENA_W::new(self)
+    pub fn prime_ena(&mut self) -> PRIME_ENA_W<CTL_SPEC> {
+        PRIME_ENA_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Limit Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn limit_ie(&mut self) -> LIMIT_IE_W<CTL_SPEC, 10> {
-        LIMIT_IE_W::new(self)
+    pub fn limit_ie(&mut self) -> LIMIT_IE_W<CTL_SPEC> {
+        LIMIT_IE_W::new(self, 10)
     }
     #[doc = "Bit 11 - Enable Range Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn range_ie(&mut self) -> RANGE_IE_W<CTL_SPEC, 11> {
-        RANGE_IE_W::new(self)
+    pub fn range_ie(&mut self) -> RANGE_IE_W<CTL_SPEC> {
+        RANGE_IE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Enable Adjustment Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn adj_ie(&mut self) -> ADJ_IE_W<CTL_SPEC, 12> {
-        ADJ_IE_W::new(self)
+    pub fn adj_ie(&mut self) -> ADJ_IE_W<CTL_SPEC> {
+        ADJ_IE_W::new(self, 12)
     }
     #[doc = "Bits 13:16 - Select TAP used for voltage adjustment"]
     #[inline(always)]
     #[must_use]
-    pub fn ref_sel(&mut self) -> REF_SEL_W<CTL_SPEC, 13> {
-        REF_SEL_W::new(self)
+    pub fn ref_sel(&mut self) -> REF_SEL_W<CTL_SPEC> {
+        REF_SEL_W::new(self, 13)
     }
     #[doc = "Bits 17:19 - Step size to increment voltage when in automatic mode"]
     #[inline(always)]
     #[must_use]
-    pub fn inc_val(&mut self) -> INC_VAL_W<CTL_SPEC, 17> {
-        INC_VAL_W::new(self)
+    pub fn inc_val(&mut self) -> INC_VAL_W<CTL_SPEC> {
+        INC_VAL_W::new(self, 17)
     }
     #[doc = "Bit 20 - Prevent the application code from adjusting Vcore"]
     #[inline(always)]
     #[must_use]
-    pub fn dvs_ps_apb_dis(&mut self) -> DVS_PS_APB_DIS_W<CTL_SPEC, 20> {
-        DVS_PS_APB_DIS_W::new(self)
+    pub fn dvs_ps_apb_dis(&mut self) -> DVS_PS_APB_DIS_W<CTL_SPEC> {
+        DVS_PS_APB_DIS_W::new(self, 20)
     }
     #[doc = "Bit 21 - Any high range signal from a delay line will cause a voltage adjustment"]
     #[inline(always)]
     #[must_use]
-    pub fn dvs_hi_range_any(&mut self) -> DVS_HI_RANGE_ANY_W<CTL_SPEC, 21> {
-        DVS_HI_RANGE_ANY_W::new(self)
+    pub fn dvs_hi_range_any(&mut self) -> DVS_HI_RANGE_ANY_W<CTL_SPEC> {
+        DVS_HI_RANGE_ANY_W::new(self, 21)
     }
     #[doc = "Bit 22 - Enable Voltage Adjustment Timeout Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn fb_to_ie(&mut self) -> FB_TO_IE_W<CTL_SPEC, 22> {
-        FB_TO_IE_W::new(self)
+    pub fn fb_to_ie(&mut self) -> FB_TO_IE_W<CTL_SPEC> {
+        FB_TO_IE_W::new(self, 22)
     }
     #[doc = "Bit 23 - Enable Low Voltage Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn fc_lv_ie(&mut self) -> FC_LV_IE_W<CTL_SPEC, 23> {
-        FC_LV_IE_W::new(self)
+    pub fn fc_lv_ie(&mut self) -> FC_LV_IE_W<CTL_SPEC> {
+        FC_LV_IE_W::new(self, 23)
     }
     #[doc = "Bit 24 - Prevent DVS from ack'ing a request to enter a low power mode until in the idle state"]
     #[inline(always)]
     #[must_use]
-    pub fn pd_ack_ena(&mut self) -> PD_ACK_ENA_W<CTL_SPEC, 24> {
-        PD_ACK_ENA_W::new(self)
+    pub fn pd_ack_ena(&mut self) -> PD_ACK_ENA_W<CTL_SPEC> {
+        PD_ACK_ENA_W::new(self, 24)
     }
     #[doc = "Bit 25 - Causes the DVS to enter the idle state immediately on a request to enter a low power mode"]
     #[inline(always)]
     #[must_use]
-    pub fn adj_abort(&mut self) -> ADJ_ABORT_W<CTL_SPEC, 25> {
-        ADJ_ABORT_W::new(self)
+    pub fn adj_abort(&mut self) -> ADJ_ABORT_W<CTL_SPEC> {
+        ADJ_ABORT_W::new(self, 25)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

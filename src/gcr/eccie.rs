@@ -5,7 +5,7 @@ pub type W = crate::W<ECCIE_SPEC>;
 #[doc = "Field `RAM` reader - ECC System RAM0 Error Interrup Enable"]
 pub type RAM_R = crate::BitReader;
 #[doc = "Field `RAM` writer - ECC System RAM0 Error Interrup Enable"]
-pub type RAM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RAM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - ECC System RAM0 Error Interrup Enable"]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bit 0 - ECC System RAM0 Error Interrup Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ram(&mut self) -> RAM_W<ECCIE_SPEC, 0> {
-        RAM_W::new(self)
+    pub fn ram(&mut self) -> RAM_W<ECCIE_SPEC> {
+        RAM_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

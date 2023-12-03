@@ -5,31 +5,31 @@ pub type W = crate::W<INT_EN_SPEC>;
 #[doc = "Field `RX_FERR` reader - Enable Interrupt For RX Frame Error"]
 pub type RX_FERR_R = crate::BitReader;
 #[doc = "Field `RX_FERR` writer - Enable Interrupt For RX Frame Error"]
-pub type RX_FERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_FERR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_PAR` reader - Enable Interrupt For RX Parity Error"]
 pub type RX_PAR_R = crate::BitReader;
 #[doc = "Field `RX_PAR` writer - Enable Interrupt For RX Parity Error"]
-pub type RX_PAR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_PAR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTS_EV` reader - Enable Interrupt For CTS signal change Error"]
 pub type CTS_EV_R = crate::BitReader;
 #[doc = "Field `CTS_EV` writer - Enable Interrupt For CTS signal change Error"]
-pub type CTS_EV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CTS_EV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_OV` reader - Enable Interrupt For RX FIFO Overrun Error"]
 pub type RX_OV_R = crate::BitReader;
 #[doc = "Field `RX_OV` writer - Enable Interrupt For RX FIFO Overrun Error"]
-pub type RX_OV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_OV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_THD` reader - Enable Interrupt For RX FIFO reaches the number of bytes configured by RXTHD"]
 pub type RX_THD_R = crate::BitReader;
 #[doc = "Field `RX_THD` writer - Enable Interrupt For RX FIFO reaches the number of bytes configured by RXTHD"]
-pub type RX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_THD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX_OB` reader - Enable Interrupt For TX FIFO has one byte remaining"]
 pub type TX_OB_R = crate::BitReader;
 #[doc = "Field `TX_OB` writer - Enable Interrupt For TX FIFO has one byte remaining"]
-pub type TX_OB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_OB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX_HE` reader - Enable Interrupt For TX FIFO has half empty"]
 pub type TX_HE_R = crate::BitReader;
 #[doc = "Field `TX_HE` writer - Enable Interrupt For TX FIFO has half empty"]
-pub type TX_HE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_HE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Enable Interrupt For RX Frame Error"]
     #[inline(always)]
@@ -71,46 +71,50 @@ impl W {
     #[doc = "Bit 0 - Enable Interrupt For RX Frame Error"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_ferr(&mut self) -> RX_FERR_W<INT_EN_SPEC, 0> {
-        RX_FERR_W::new(self)
+    pub fn rx_ferr(&mut self) -> RX_FERR_W<INT_EN_SPEC> {
+        RX_FERR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable Interrupt For RX Parity Error"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_par(&mut self) -> RX_PAR_W<INT_EN_SPEC, 1> {
-        RX_PAR_W::new(self)
+    pub fn rx_par(&mut self) -> RX_PAR_W<INT_EN_SPEC> {
+        RX_PAR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable Interrupt For CTS signal change Error"]
     #[inline(always)]
     #[must_use]
-    pub fn cts_ev(&mut self) -> CTS_EV_W<INT_EN_SPEC, 2> {
-        CTS_EV_W::new(self)
+    pub fn cts_ev(&mut self) -> CTS_EV_W<INT_EN_SPEC> {
+        CTS_EV_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Interrupt For RX FIFO Overrun Error"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_ov(&mut self) -> RX_OV_W<INT_EN_SPEC, 3> {
-        RX_OV_W::new(self)
+    pub fn rx_ov(&mut self) -> RX_OV_W<INT_EN_SPEC> {
+        RX_OV_W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable Interrupt For RX FIFO reaches the number of bytes configured by RXTHD"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd(&mut self) -> RX_THD_W<INT_EN_SPEC, 4> {
-        RX_THD_W::new(self)
+    pub fn rx_thd(&mut self) -> RX_THD_W<INT_EN_SPEC> {
+        RX_THD_W::new(self, 4)
     }
     #[doc = "Bit 5 - Enable Interrupt For TX FIFO has one byte remaining"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_ob(&mut self) -> TX_OB_W<INT_EN_SPEC, 5> {
-        TX_OB_W::new(self)
+    pub fn tx_ob(&mut self) -> TX_OB_W<INT_EN_SPEC> {
+        TX_OB_W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable Interrupt For TX FIFO has half empty"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_he(&mut self) -> TX_HE_W<INT_EN_SPEC, 6> {
-        TX_HE_W::new(self)
+    pub fn tx_he(&mut self) -> TX_HE_W<INT_EN_SPEC> {
+        TX_HE_W::new(self, 6)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

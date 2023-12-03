@@ -19,7 +19,7 @@ impl From<FPU_A> for bool {
 impl FPU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FPU_A {
+    pub const fn variant(&self) -> FPU_A {
         match self.bits {
             false => FPU_A::NO,
             true => FPU_A::YES,
@@ -55,7 +55,7 @@ impl From<ADC_A> for bool {
 impl ADC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADC_A {
+    pub const fn variant(&self) -> ADC_A {
         match self.bits {
             false => ADC_A::NO,
             true => ADC_A::YES,
@@ -91,7 +91,7 @@ impl From<SMPHR_A> for bool {
 impl SMPHR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMPHR_A {
+    pub const fn variant(&self) -> SMPHR_A {
         match self.bits {
             false => SMPHR_A::NO,
             true => SMPHR_A::YES,

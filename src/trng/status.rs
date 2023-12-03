@@ -21,7 +21,7 @@ impl From<RDY_A> for bool {
 impl RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RDY_A {
+    pub const fn variant(&self) -> RDY_A {
         match self.bits {
             false => RDY_A::BUSY,
             true => RDY_A::READY,
@@ -39,8 +39,8 @@ impl RDY_R {
     }
 }
 #[doc = "Field `RDY` writer - 32-bit random data is ready to read from TRNG_DATA register. Reading TRNG_DATA when RND_RDY=0 will return all 0's. IRQ is generated when RND_RDY=1 if TRNG_CN.RND_IRQ_EN=1."]
-pub type RDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RDY_A>;
-impl<'a, REG, const O: u8> RDY_W<'a, REG, O>
+pub type RDY_W<'a, REG> = crate::BitWriter<'a, REG, RDY_A>;
+impl<'a, REG> RDY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,10 +66,14 @@ impl W {
     #[doc = "Bit 0 - 32-bit random data is ready to read from TRNG_DATA register. Reading TRNG_DATA when RND_RDY=0 will return all 0's. IRQ is generated when RND_RDY=1 if TRNG_CN.RND_IRQ_EN=1."]
     #[inline(always)]
     #[must_use]
-    pub fn rdy(&mut self) -> RDY_W<STATUS_SPEC, 0> {
-        RDY_W::new(self)
+    pub fn rdy(&mut self) -> RDY_W<STATUS_SPEC> {
+        RDY_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

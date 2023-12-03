@@ -19,7 +19,7 @@ impl From<BUCKOUTRDYA_A> for bool {
 impl BUCKOUTRDYA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUCKOUTRDYA_A {
+    pub const fn variant(&self) -> BUCKOUTRDYA_A {
         match self.bits {
             false => BUCKOUTRDYA_A::NOTRDY,
             true => BUCKOUTRDYA_A::RDY,
@@ -37,113 +37,11 @@ impl BUCKOUTRDYA_R {
     }
 }
 #[doc = "Field `BUCKOUTRDYB` reader - When set, indicates that the output voltage has reached its regulated value"]
-pub type BUCKOUTRDYB_R = crate::BitReader<BUCKOUTRDYB_A>;
-#[doc = "When set, indicates that the output voltage has reached its regulated value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum BUCKOUTRDYB_A {
-    #[doc = "0: Output voltage not in range"]
-    NOTRDY = 0,
-    #[doc = "1: Output voltage in range"]
-    RDY = 1,
-}
-impl From<BUCKOUTRDYB_A> for bool {
-    #[inline(always)]
-    fn from(variant: BUCKOUTRDYB_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl BUCKOUTRDYB_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BUCKOUTRDYB_A {
-        match self.bits {
-            false => BUCKOUTRDYB_A::NOTRDY,
-            true => BUCKOUTRDYB_A::RDY,
-        }
-    }
-    #[doc = "Output voltage not in range"]
-    #[inline(always)]
-    pub fn is_notrdy(&self) -> bool {
-        *self == BUCKOUTRDYB_A::NOTRDY
-    }
-    #[doc = "Output voltage in range"]
-    #[inline(always)]
-    pub fn is_rdy(&self) -> bool {
-        *self == BUCKOUTRDYB_A::RDY
-    }
-}
+pub use BUCKOUTRDYA_R as BUCKOUTRDYB_R;
 #[doc = "Field `BUCKOUTRDYC` reader - When set, indicates that the output voltage has reached its regulated value"]
-pub type BUCKOUTRDYC_R = crate::BitReader<BUCKOUTRDYC_A>;
-#[doc = "When set, indicates that the output voltage has reached its regulated value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum BUCKOUTRDYC_A {
-    #[doc = "0: Output voltage not in range"]
-    NOTRDY = 0,
-    #[doc = "1: Output voltage in range"]
-    RDY = 1,
-}
-impl From<BUCKOUTRDYC_A> for bool {
-    #[inline(always)]
-    fn from(variant: BUCKOUTRDYC_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl BUCKOUTRDYC_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BUCKOUTRDYC_A {
-        match self.bits {
-            false => BUCKOUTRDYC_A::NOTRDY,
-            true => BUCKOUTRDYC_A::RDY,
-        }
-    }
-    #[doc = "Output voltage not in range"]
-    #[inline(always)]
-    pub fn is_notrdy(&self) -> bool {
-        *self == BUCKOUTRDYC_A::NOTRDY
-    }
-    #[doc = "Output voltage in range"]
-    #[inline(always)]
-    pub fn is_rdy(&self) -> bool {
-        *self == BUCKOUTRDYC_A::RDY
-    }
-}
+pub use BUCKOUTRDYA_R as BUCKOUTRDYC_R;
 #[doc = "Field `BUCKOUTRDYD` reader - When set, indicates that the output voltage has reached its regulated value"]
-pub type BUCKOUTRDYD_R = crate::BitReader<BUCKOUTRDYD_A>;
-#[doc = "When set, indicates that the output voltage has reached its regulated value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum BUCKOUTRDYD_A {
-    #[doc = "0: Output voltage not in range"]
-    NOTRDY = 0,
-    #[doc = "1: Output voltage in range"]
-    RDY = 1,
-}
-impl From<BUCKOUTRDYD_A> for bool {
-    #[inline(always)]
-    fn from(variant: BUCKOUTRDYD_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl BUCKOUTRDYD_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BUCKOUTRDYD_A {
-        match self.bits {
-            false => BUCKOUTRDYD_A::NOTRDY,
-            true => BUCKOUTRDYD_A::RDY,
-        }
-    }
-    #[doc = "Output voltage not in range"]
-    #[inline(always)]
-    pub fn is_notrdy(&self) -> bool {
-        *self == BUCKOUTRDYD_A::NOTRDY
-    }
-    #[doc = "Output voltage in range"]
-    #[inline(always)]
-    pub fn is_rdy(&self) -> bool {
-        *self == BUCKOUTRDYD_A::RDY
-    }
-}
+pub use BUCKOUTRDYA_R as BUCKOUTRDYD_R;
 impl R {
     #[doc = "Bit 0 - When set, indicates that the output voltage has reached its regulated value"]
     #[inline(always)]

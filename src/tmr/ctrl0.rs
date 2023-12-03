@@ -41,7 +41,7 @@ impl crate::FieldSpec for MODE_A_A {
 impl MODE_A_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MODE_A_A> {
+    pub const fn variant(&self) -> Option<MODE_A_A> {
         match self.bits {
             0 => Some(MODE_A_A::ONE_SHOT),
             1 => Some(MODE_A_A::CONTINUOUS),
@@ -108,8 +108,8 @@ impl MODE_A_R {
     }
 }
 #[doc = "Field `MODE_A` writer - Mode Select for Timer A"]
-pub type MODE_A_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MODE_A_A>;
-impl<'a, REG, const O: u8> MODE_A_W<'a, REG, O>
+pub type MODE_A_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE_A_A>;
+impl<'a, REG> MODE_A_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -210,7 +210,7 @@ impl crate::FieldSpec for CLKDIV_A_A {
 impl CLKDIV_A_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLKDIV_A_A> {
+    pub const fn variant(&self) -> Option<CLKDIV_A_A> {
         match self.bits {
             0 => Some(CLKDIV_A_A::DIV_BY_1),
             1 => Some(CLKDIV_A_A::DIV_BY_2),
@@ -295,8 +295,8 @@ impl CLKDIV_A_R {
     }
 }
 #[doc = "Field `CLKDIV_A` writer - Clock Divider Select for Timer A"]
-pub type CLKDIV_A_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CLKDIV_A_A>;
-impl<'a, REG, const O: u8> CLKDIV_A_W<'a, REG, O>
+pub type CLKDIV_A_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKDIV_A_A>;
+impl<'a, REG> CLKDIV_A_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -370,35 +370,35 @@ where
 #[doc = "Field `POL_A` reader - Timer Polarity for Timer A"]
 pub type POL_A_R = crate::BitReader;
 #[doc = "Field `POL_A` writer - Timer Polarity for Timer A"]
-pub type POL_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type POL_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PWMSYNC_A` reader - PWM Synchronization Mode for Timer A"]
 pub type PWMSYNC_A_R = crate::BitReader;
 #[doc = "Field `PWMSYNC_A` writer - PWM Synchronization Mode for Timer A"]
-pub type PWMSYNC_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PWMSYNC_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NOLHPOL_A` reader - PWM Phase A (Non-Overlapping High) Polarity for Timer A"]
 pub type NOLHPOL_A_R = crate::BitReader;
 #[doc = "Field `NOLHPOL_A` writer - PWM Phase A (Non-Overlapping High) Polarity for Timer A"]
-pub type NOLHPOL_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NOLHPOL_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NOLLPOL_A` reader - PWM Phase A-Prime (Non-Overlapping Low) Polarity for Timer A"]
 pub type NOLLPOL_A_R = crate::BitReader;
 #[doc = "Field `NOLLPOL_A` writer - PWM Phase A-Prime (Non-Overlapping Low) Polarity for Timer A"]
-pub type NOLLPOL_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NOLLPOL_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PWMCKBD_A` reader - PWM Phase A-Prime Output Disable for Timer A"]
 pub type PWMCKBD_A_R = crate::BitReader;
 #[doc = "Field `PWMCKBD_A` writer - PWM Phase A-Prime Output Disable for Timer A"]
-pub type PWMCKBD_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PWMCKBD_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RST_A` reader - Resets all flip flops in the CLK_TMR domain for Timer A. Self-clears."]
 pub type RST_A_R = crate::BitReader;
 #[doc = "Field `RST_A` writer - Resets all flip flops in the CLK_TMR domain for Timer A. Self-clears."]
-pub type RST_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RST_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLKEN_A` reader - Write 1 to Enable CLK_TMR for Timer A"]
 pub type CLKEN_A_R = crate::BitReader;
 #[doc = "Field `CLKEN_A` writer - Write 1 to Enable CLK_TMR for Timer A"]
-pub type CLKEN_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKEN_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EN_A` reader - Enable for Timer A"]
 pub type EN_A_R = crate::BitReader;
 #[doc = "Field `EN_A` writer - Enable for Timer A"]
-pub type EN_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MODE_B` reader - Mode Select for Timer B"]
 pub type MODE_B_R = crate::FieldReader<MODE_B_A>;
 #[doc = "Mode Select for Timer B\n\nValue on reset: 0"]
@@ -438,7 +438,7 @@ impl crate::FieldSpec for MODE_B_A {
 impl MODE_B_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MODE_B_A> {
+    pub const fn variant(&self) -> Option<MODE_B_A> {
         match self.bits {
             0 => Some(MODE_B_A::ONE_SHOT),
             1 => Some(MODE_B_A::CONTINUOUS),
@@ -505,8 +505,8 @@ impl MODE_B_R {
     }
 }
 #[doc = "Field `MODE_B` writer - Mode Select for Timer B"]
-pub type MODE_B_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MODE_B_A>;
-impl<'a, REG, const O: u8> MODE_B_W<'a, REG, O>
+pub type MODE_B_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE_B_A>;
+impl<'a, REG> MODE_B_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -607,7 +607,7 @@ impl crate::FieldSpec for CLKDIV_B_A {
 impl CLKDIV_B_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLKDIV_B_A> {
+    pub const fn variant(&self) -> Option<CLKDIV_B_A> {
         match self.bits {
             0 => Some(CLKDIV_B_A::DIV_BY_1),
             1 => Some(CLKDIV_B_A::DIV_BY_2),
@@ -692,8 +692,8 @@ impl CLKDIV_B_R {
     }
 }
 #[doc = "Field `CLKDIV_B` writer - Clock Divider Select for Timer B"]
-pub type CLKDIV_B_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CLKDIV_B_A>;
-impl<'a, REG, const O: u8> CLKDIV_B_W<'a, REG, O>
+pub type CLKDIV_B_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKDIV_B_A>;
+impl<'a, REG> CLKDIV_B_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -767,35 +767,35 @@ where
 #[doc = "Field `POL_B` reader - Timer Polarity for Timer B"]
 pub type POL_B_R = crate::BitReader;
 #[doc = "Field `POL_B` writer - Timer Polarity for Timer B"]
-pub type POL_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type POL_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PWMSYNC_B` reader - PWM Synchronization Mode for Timer B"]
 pub type PWMSYNC_B_R = crate::BitReader;
 #[doc = "Field `PWMSYNC_B` writer - PWM Synchronization Mode for Timer B"]
-pub type PWMSYNC_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PWMSYNC_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NOLHPOL_B` reader - PWM Phase A (Non-Overlapping High) Polarity for Timer B"]
 pub type NOLHPOL_B_R = crate::BitReader;
 #[doc = "Field `NOLHPOL_B` writer - PWM Phase A (Non-Overlapping High) Polarity for Timer B"]
-pub type NOLHPOL_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NOLHPOL_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NOLLPOL_B` reader - PWM Phase A-Prime (Non-Overlapping Low) Polarity for Timer B"]
 pub type NOLLPOL_B_R = crate::BitReader;
 #[doc = "Field `NOLLPOL_B` writer - PWM Phase A-Prime (Non-Overlapping Low) Polarity for Timer B"]
-pub type NOLLPOL_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NOLLPOL_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PWMCKBD_B` reader - PWM Phase A-Prime Output Disable for Timer B"]
 pub type PWMCKBD_B_R = crate::BitReader;
 #[doc = "Field `PWMCKBD_B` writer - PWM Phase A-Prime Output Disable for Timer B"]
-pub type PWMCKBD_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PWMCKBD_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RST_B` reader - Resets all flip flops in the CLK_TMR domain for Timer B. Self-clears."]
 pub type RST_B_R = crate::BitReader;
 #[doc = "Field `RST_B` writer - Resets all flip flops in the CLK_TMR domain for Timer B. Self-clears."]
-pub type RST_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RST_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLKEN_B` reader - Write 1 to Enable CLK_TMR for Timer B"]
 pub type CLKEN_B_R = crate::BitReader;
 #[doc = "Field `CLKEN_B` writer - Write 1 to Enable CLK_TMR for Timer B"]
-pub type CLKEN_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKEN_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EN_B` reader - Enable for Timer B"]
 pub type EN_B_R = crate::BitReader;
 #[doc = "Field `EN_B` writer - Enable for Timer B"]
-pub type EN_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Mode Select for Timer A"]
     #[inline(always)]
@@ -902,124 +902,128 @@ impl W {
     #[doc = "Bits 0:3 - Mode Select for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn mode_a(&mut self) -> MODE_A_W<CTRL0_SPEC, 0> {
-        MODE_A_W::new(self)
+    pub fn mode_a(&mut self) -> MODE_A_W<CTRL0_SPEC> {
+        MODE_A_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Clock Divider Select for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn clkdiv_a(&mut self) -> CLKDIV_A_W<CTRL0_SPEC, 4> {
-        CLKDIV_A_W::new(self)
+    pub fn clkdiv_a(&mut self) -> CLKDIV_A_W<CTRL0_SPEC> {
+        CLKDIV_A_W::new(self, 4)
     }
     #[doc = "Bit 8 - Timer Polarity for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn pol_a(&mut self) -> POL_A_W<CTRL0_SPEC, 8> {
-        POL_A_W::new(self)
+    pub fn pol_a(&mut self) -> POL_A_W<CTRL0_SPEC> {
+        POL_A_W::new(self, 8)
     }
     #[doc = "Bit 9 - PWM Synchronization Mode for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn pwmsync_a(&mut self) -> PWMSYNC_A_W<CTRL0_SPEC, 9> {
-        PWMSYNC_A_W::new(self)
+    pub fn pwmsync_a(&mut self) -> PWMSYNC_A_W<CTRL0_SPEC> {
+        PWMSYNC_A_W::new(self, 9)
     }
     #[doc = "Bit 10 - PWM Phase A (Non-Overlapping High) Polarity for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn nolhpol_a(&mut self) -> NOLHPOL_A_W<CTRL0_SPEC, 10> {
-        NOLHPOL_A_W::new(self)
+    pub fn nolhpol_a(&mut self) -> NOLHPOL_A_W<CTRL0_SPEC> {
+        NOLHPOL_A_W::new(self, 10)
     }
     #[doc = "Bit 11 - PWM Phase A-Prime (Non-Overlapping Low) Polarity for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn nollpol_a(&mut self) -> NOLLPOL_A_W<CTRL0_SPEC, 11> {
-        NOLLPOL_A_W::new(self)
+    pub fn nollpol_a(&mut self) -> NOLLPOL_A_W<CTRL0_SPEC> {
+        NOLLPOL_A_W::new(self, 11)
     }
     #[doc = "Bit 12 - PWM Phase A-Prime Output Disable for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn pwmckbd_a(&mut self) -> PWMCKBD_A_W<CTRL0_SPEC, 12> {
-        PWMCKBD_A_W::new(self)
+    pub fn pwmckbd_a(&mut self) -> PWMCKBD_A_W<CTRL0_SPEC> {
+        PWMCKBD_A_W::new(self, 12)
     }
     #[doc = "Bit 13 - Resets all flip flops in the CLK_TMR domain for Timer A. Self-clears."]
     #[inline(always)]
     #[must_use]
-    pub fn rst_a(&mut self) -> RST_A_W<CTRL0_SPEC, 13> {
-        RST_A_W::new(self)
+    pub fn rst_a(&mut self) -> RST_A_W<CTRL0_SPEC> {
+        RST_A_W::new(self, 13)
     }
     #[doc = "Bit 14 - Write 1 to Enable CLK_TMR for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn clken_a(&mut self) -> CLKEN_A_W<CTRL0_SPEC, 14> {
-        CLKEN_A_W::new(self)
+    pub fn clken_a(&mut self) -> CLKEN_A_W<CTRL0_SPEC> {
+        CLKEN_A_W::new(self, 14)
     }
     #[doc = "Bit 15 - Enable for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn en_a(&mut self) -> EN_A_W<CTRL0_SPEC, 15> {
-        EN_A_W::new(self)
+    pub fn en_a(&mut self) -> EN_A_W<CTRL0_SPEC> {
+        EN_A_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Mode Select for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn mode_b(&mut self) -> MODE_B_W<CTRL0_SPEC, 16> {
-        MODE_B_W::new(self)
+    pub fn mode_b(&mut self) -> MODE_B_W<CTRL0_SPEC> {
+        MODE_B_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Clock Divider Select for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn clkdiv_b(&mut self) -> CLKDIV_B_W<CTRL0_SPEC, 20> {
-        CLKDIV_B_W::new(self)
+    pub fn clkdiv_b(&mut self) -> CLKDIV_B_W<CTRL0_SPEC> {
+        CLKDIV_B_W::new(self, 20)
     }
     #[doc = "Bit 24 - Timer Polarity for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn pol_b(&mut self) -> POL_B_W<CTRL0_SPEC, 24> {
-        POL_B_W::new(self)
+    pub fn pol_b(&mut self) -> POL_B_W<CTRL0_SPEC> {
+        POL_B_W::new(self, 24)
     }
     #[doc = "Bit 25 - PWM Synchronization Mode for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn pwmsync_b(&mut self) -> PWMSYNC_B_W<CTRL0_SPEC, 25> {
-        PWMSYNC_B_W::new(self)
+    pub fn pwmsync_b(&mut self) -> PWMSYNC_B_W<CTRL0_SPEC> {
+        PWMSYNC_B_W::new(self, 25)
     }
     #[doc = "Bit 26 - PWM Phase A (Non-Overlapping High) Polarity for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn nolhpol_b(&mut self) -> NOLHPOL_B_W<CTRL0_SPEC, 26> {
-        NOLHPOL_B_W::new(self)
+    pub fn nolhpol_b(&mut self) -> NOLHPOL_B_W<CTRL0_SPEC> {
+        NOLHPOL_B_W::new(self, 26)
     }
     #[doc = "Bit 27 - PWM Phase A-Prime (Non-Overlapping Low) Polarity for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn nollpol_b(&mut self) -> NOLLPOL_B_W<CTRL0_SPEC, 27> {
-        NOLLPOL_B_W::new(self)
+    pub fn nollpol_b(&mut self) -> NOLLPOL_B_W<CTRL0_SPEC> {
+        NOLLPOL_B_W::new(self, 27)
     }
     #[doc = "Bit 28 - PWM Phase A-Prime Output Disable for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn pwmckbd_b(&mut self) -> PWMCKBD_B_W<CTRL0_SPEC, 28> {
-        PWMCKBD_B_W::new(self)
+    pub fn pwmckbd_b(&mut self) -> PWMCKBD_B_W<CTRL0_SPEC> {
+        PWMCKBD_B_W::new(self, 28)
     }
     #[doc = "Bit 29 - Resets all flip flops in the CLK_TMR domain for Timer B. Self-clears."]
     #[inline(always)]
     #[must_use]
-    pub fn rst_b(&mut self) -> RST_B_W<CTRL0_SPEC, 29> {
-        RST_B_W::new(self)
+    pub fn rst_b(&mut self) -> RST_B_W<CTRL0_SPEC> {
+        RST_B_W::new(self, 29)
     }
     #[doc = "Bit 30 - Write 1 to Enable CLK_TMR for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn clken_b(&mut self) -> CLKEN_B_W<CTRL0_SPEC, 30> {
-        CLKEN_B_W::new(self)
+    pub fn clken_b(&mut self) -> CLKEN_B_W<CTRL0_SPEC> {
+        CLKEN_B_W::new(self, 30)
     }
     #[doc = "Bit 31 - Enable for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn en_b(&mut self) -> EN_B_W<CTRL0_SPEC, 31> {
-        EN_B_W::new(self)
+    pub fn en_b(&mut self) -> EN_B_W<CTRL0_SPEC> {
+        EN_B_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

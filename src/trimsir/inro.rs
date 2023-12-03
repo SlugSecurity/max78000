@@ -5,11 +5,11 @@ pub type W = crate::W<INRO_SPEC>;
 #[doc = "Field `TRIM16K` reader - INRO 16KHz Trim."]
 pub type TRIM16K_R = crate::FieldReader;
 #[doc = "Field `TRIM16K` writer - INRO 16KHz Trim."]
-pub type TRIM16K_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TRIM16K_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `TRIM30K` reader - INRO 30KHz Trim."]
 pub type TRIM30K_R = crate::FieldReader;
 #[doc = "Field `TRIM30K` writer - INRO 30KHz Trim."]
-pub type TRIM30K_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TRIM30K_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `LPCLKSEL` reader - INRO Low Power Mode Clock Select."]
 pub type LPCLKSEL_R = crate::FieldReader<LPCLKSEL_A>;
 #[doc = "INRO Low Power Mode Clock Select.\n\nValue on reset: 0"]
@@ -35,7 +35,7 @@ impl crate::FieldSpec for LPCLKSEL_A {
 impl LPCLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LPCLKSEL_A> {
+    pub const fn variant(&self) -> Option<LPCLKSEL_A> {
         match self.bits {
             0 => Some(LPCLKSEL_A::_8KHZ),
             1 => Some(LPCLKSEL_A::_16KHZ),
@@ -60,8 +60,8 @@ impl LPCLKSEL_R {
     }
 }
 #[doc = "Field `LPCLKSEL` writer - INRO Low Power Mode Clock Select."]
-pub type LPCLKSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, LPCLKSEL_A>;
-impl<'a, REG, const O: u8> LPCLKSEL_W<'a, REG, O>
+pub type LPCLKSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LPCLKSEL_A>;
+impl<'a, REG> LPCLKSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -103,22 +103,26 @@ impl W {
     #[doc = "Bits 0:2 - INRO 16KHz Trim."]
     #[inline(always)]
     #[must_use]
-    pub fn trim16k(&mut self) -> TRIM16K_W<INRO_SPEC, 0> {
-        TRIM16K_W::new(self)
+    pub fn trim16k(&mut self) -> TRIM16K_W<INRO_SPEC> {
+        TRIM16K_W::new(self, 0)
     }
     #[doc = "Bits 3:5 - INRO 30KHz Trim."]
     #[inline(always)]
     #[must_use]
-    pub fn trim30k(&mut self) -> TRIM30K_W<INRO_SPEC, 3> {
-        TRIM30K_W::new(self)
+    pub fn trim30k(&mut self) -> TRIM30K_W<INRO_SPEC> {
+        TRIM30K_W::new(self, 3)
     }
     #[doc = "Bits 6:7 - INRO Low Power Mode Clock Select."]
     #[inline(always)]
     #[must_use]
-    pub fn lpclksel(&mut self) -> LPCLKSEL_W<INRO_SPEC, 6> {
-        LPCLKSEL_W::new(self)
+    pub fn lpclksel(&mut self) -> LPCLKSEL_W<INRO_SPEC> {
+        LPCLKSEL_W::new(self, 6)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

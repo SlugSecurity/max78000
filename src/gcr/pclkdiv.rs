@@ -5,7 +5,7 @@ pub type W = crate::W<PCLKDIV_SPEC>;
 #[doc = "Field `ADCFRQ` reader - ADC clock Frequency. These bits define the ADC clock frequency. fADC = fPCLK / (ADCFRQ)"]
 pub type ADCFRQ_R = crate::FieldReader;
 #[doc = "Field `ADCFRQ` writer - ADC clock Frequency. These bits define the ADC clock frequency. fADC = fPCLK / (ADCFRQ)"]
-pub type ADCFRQ_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type ADCFRQ_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CNNCLKDIV` reader - CNN Clock Divider."]
 pub type CNNCLKDIV_R = crate::FieldReader<CNNCLKDIV_A>;
 #[doc = "CNN Clock Divider.\n\nValue on reset: 0"]
@@ -35,7 +35,7 @@ impl crate::FieldSpec for CNNCLKDIV_A {
 impl CNNCLKDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CNNCLKDIV_A> {
+    pub const fn variant(&self) -> Option<CNNCLKDIV_A> {
         match self.bits {
             0 => Some(CNNCLKDIV_A::DIV2),
             1 => Some(CNNCLKDIV_A::DIV4),
@@ -72,8 +72,8 @@ impl CNNCLKDIV_R {
     }
 }
 #[doc = "Field `CNNCLKDIV` writer - CNN Clock Divider."]
-pub type CNNCLKDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CNNCLKDIV_A>;
-impl<'a, REG, const O: u8> CNNCLKDIV_W<'a, REG, O>
+pub type CNNCLKDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CNNCLKDIV_A>;
+impl<'a, REG> CNNCLKDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -123,7 +123,7 @@ impl From<CNNCLKSEL_A> for bool {
 impl CNNCLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CNNCLKSEL_A {
+    pub const fn variant(&self) -> CNNCLKSEL_A {
         match self.bits {
             false => CNNCLKSEL_A::PCLK,
             true => CNNCLKSEL_A::ISO,
@@ -141,8 +141,8 @@ impl CNNCLKSEL_R {
     }
 }
 #[doc = "Field `CNNCLKSEL` writer - CNN Clock Select."]
-pub type CNNCLKSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CNNCLKSEL_A>;
-impl<'a, REG, const O: u8> CNNCLKSEL_W<'a, REG, O>
+pub type CNNCLKSEL_W<'a, REG> = crate::BitWriter<'a, REG, CNNCLKSEL_A>;
+impl<'a, REG> CNNCLKSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -178,22 +178,26 @@ impl W {
     #[doc = "Bits 10:13 - ADC clock Frequency. These bits define the ADC clock frequency. fADC = fPCLK / (ADCFRQ)"]
     #[inline(always)]
     #[must_use]
-    pub fn adcfrq(&mut self) -> ADCFRQ_W<PCLKDIV_SPEC, 10> {
-        ADCFRQ_W::new(self)
+    pub fn adcfrq(&mut self) -> ADCFRQ_W<PCLKDIV_SPEC> {
+        ADCFRQ_W::new(self, 10)
     }
     #[doc = "Bits 14:16 - CNN Clock Divider."]
     #[inline(always)]
     #[must_use]
-    pub fn cnnclkdiv(&mut self) -> CNNCLKDIV_W<PCLKDIV_SPEC, 14> {
-        CNNCLKDIV_W::new(self)
+    pub fn cnnclkdiv(&mut self) -> CNNCLKDIV_W<PCLKDIV_SPEC> {
+        CNNCLKDIV_W::new(self, 14)
     }
     #[doc = "Bit 17 - CNN Clock Select."]
     #[inline(always)]
     #[must_use]
-    pub fn cnnclksel(&mut self) -> CNNCLKSEL_W<PCLKDIV_SPEC, 17> {
-        CNNCLKSEL_W::new(self)
+    pub fn cnnclksel(&mut self) -> CNNCLKSEL_W<PCLKDIV_SPEC> {
+        CNNCLKSEL_W::new(self, 17)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

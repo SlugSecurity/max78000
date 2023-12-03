@@ -5,7 +5,7 @@ pub type W = crate::W<SNAPSHOT_SPEC>;
 #[doc = "Field `SNAPSHOT` reader - Snapshot Value."]
 pub type SNAPSHOT_R = crate::FieldReader<u32>;
 #[doc = "Field `SNAPSHOT` writer - Snapshot Value."]
-pub type SNAPSHOT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type SNAPSHOT_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Snapshot Value."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Snapshot Value."]
     #[inline(always)]
     #[must_use]
-    pub fn snapshot(&mut self) -> SNAPSHOT_W<SNAPSHOT_SPEC, 0> {
-        SNAPSHOT_W::new(self)
+    pub fn snapshot(&mut self) -> SNAPSHOT_W<SNAPSHOT_SPEC> {
+        SNAPSHOT_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

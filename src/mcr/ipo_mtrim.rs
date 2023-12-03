@@ -5,11 +5,11 @@ pub type W = crate::W<IPO_MTRIM_SPEC>;
 #[doc = "Field `MTRIM` reader - Manual Trim Value."]
 pub type MTRIM_R = crate::FieldReader;
 #[doc = "Field `MTRIM` writer - Manual Trim Value."]
-pub type MTRIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type MTRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `TRIM_RANGE` reader - Trim Range Select."]
 pub type TRIM_RANGE_R = crate::BitReader;
 #[doc = "Field `TRIM_RANGE` writer - Trim Range Select."]
-pub type TRIM_RANGE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TRIM_RANGE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:7 - Manual Trim Value."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:7 - Manual Trim Value."]
     #[inline(always)]
     #[must_use]
-    pub fn mtrim(&mut self) -> MTRIM_W<IPO_MTRIM_SPEC, 0> {
-        MTRIM_W::new(self)
+    pub fn mtrim(&mut self) -> MTRIM_W<IPO_MTRIM_SPEC> {
+        MTRIM_W::new(self, 0)
     }
     #[doc = "Bit 8 - Trim Range Select."]
     #[inline(always)]
     #[must_use]
-    pub fn trim_range(&mut self) -> TRIM_RANGE_W<IPO_MTRIM_SPEC, 8> {
-        TRIM_RANGE_W::new(self)
+    pub fn trim_range(&mut self) -> TRIM_RANGE_W<IPO_MTRIM_SPEC> {
+        TRIM_RANGE_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

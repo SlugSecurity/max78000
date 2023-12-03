@@ -5,11 +5,11 @@ pub type W = crate::W<THRES_CMP_SPEC>;
 #[doc = "Field `VCNTR_THRES_CNT` reader - Value used to determine 'low voltage' range"]
 pub type VCNTR_THRES_CNT_R = crate::FieldReader;
 #[doc = "Field `VCNTR_THRES_CNT` writer - Value used to determine 'low voltage' range"]
-pub type VCNTR_THRES_CNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type VCNTR_THRES_CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `VCNTR_THRES_MASK` reader - Mask applied to threshold and vcount to determine if the device is in a low voltage range"]
 pub type VCNTR_THRES_MASK_R = crate::FieldReader;
 #[doc = "Field `VCNTR_THRES_MASK` writer - Mask applied to threshold and vcount to determine if the device is in a low voltage range"]
-pub type VCNTR_THRES_MASK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type VCNTR_THRES_MASK_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     #[doc = "Bits 0:6 - Value used to determine 'low voltage' range"]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:6 - Value used to determine 'low voltage' range"]
     #[inline(always)]
     #[must_use]
-    pub fn vcntr_thres_cnt(&mut self) -> VCNTR_THRES_CNT_W<THRES_CMP_SPEC, 0> {
-        VCNTR_THRES_CNT_W::new(self)
+    pub fn vcntr_thres_cnt(&mut self) -> VCNTR_THRES_CNT_W<THRES_CMP_SPEC> {
+        VCNTR_THRES_CNT_W::new(self, 0)
     }
     #[doc = "Bits 8:14 - Mask applied to threshold and vcount to determine if the device is in a low voltage range"]
     #[inline(always)]
     #[must_use]
-    pub fn vcntr_thres_mask(&mut self) -> VCNTR_THRES_MASK_W<THRES_CMP_SPEC, 8> {
-        VCNTR_THRES_MASK_W::new(self)
+    pub fn vcntr_thres_mask(&mut self) -> VCNTR_THRES_MASK_W<THRES_CMP_SPEC> {
+        VCNTR_THRES_MASK_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

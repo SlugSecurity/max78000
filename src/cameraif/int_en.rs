@@ -5,19 +5,19 @@ pub type W = crate::W<INT_EN_SPEC>;
 #[doc = "Field `IMG_DONE` reader - Image Done."]
 pub type IMG_DONE_R = crate::BitReader;
 #[doc = "Field `IMG_DONE` writer - Image Done."]
-pub type IMG_DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IMG_DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FIFO_FULL` reader - FIFO Full."]
 pub type FIFO_FULL_R = crate::BitReader;
 #[doc = "Field `FIFO_FULL` writer - FIFO Full."]
-pub type FIFO_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FIFO_FULL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FIFO_THRESH` reader - FIFO Threshold Level Met."]
 pub type FIFO_THRESH_R = crate::BitReader;
 #[doc = "Field `FIFO_THRESH` writer - FIFO Threshold Level Met."]
-pub type FIFO_THRESH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FIFO_THRESH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FIFO_NOT_EMPTY` reader - FIFO Not Empty."]
 pub type FIFO_NOT_EMPTY_R = crate::BitReader;
 #[doc = "Field `FIFO_NOT_EMPTY` writer - FIFO Not Empty."]
-pub type FIFO_NOT_EMPTY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FIFO_NOT_EMPTY_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Image Done."]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bit 0 - Image Done."]
     #[inline(always)]
     #[must_use]
-    pub fn img_done(&mut self) -> IMG_DONE_W<INT_EN_SPEC, 0> {
-        IMG_DONE_W::new(self)
+    pub fn img_done(&mut self) -> IMG_DONE_W<INT_EN_SPEC> {
+        IMG_DONE_W::new(self, 0)
     }
     #[doc = "Bit 1 - FIFO Full."]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_full(&mut self) -> FIFO_FULL_W<INT_EN_SPEC, 1> {
-        FIFO_FULL_W::new(self)
+    pub fn fifo_full(&mut self) -> FIFO_FULL_W<INT_EN_SPEC> {
+        FIFO_FULL_W::new(self, 1)
     }
     #[doc = "Bit 2 - FIFO Threshold Level Met."]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_thresh(&mut self) -> FIFO_THRESH_W<INT_EN_SPEC, 2> {
-        FIFO_THRESH_W::new(self)
+    pub fn fifo_thresh(&mut self) -> FIFO_THRESH_W<INT_EN_SPEC> {
+        FIFO_THRESH_W::new(self, 2)
     }
     #[doc = "Bit 3 - FIFO Not Empty."]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_not_empty(&mut self) -> FIFO_NOT_EMPTY_W<INT_EN_SPEC, 3> {
-        FIFO_NOT_EMPTY_W::new(self)
+    pub fn fifo_not_empty(&mut self) -> FIFO_NOT_EMPTY_W<INT_EN_SPEC> {
+        FIFO_NOT_EMPTY_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

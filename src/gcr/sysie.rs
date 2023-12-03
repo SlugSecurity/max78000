@@ -21,7 +21,7 @@ impl From<ICEUNLOCK_A> for bool {
 impl ICEUNLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ICEUNLOCK_A {
+    pub const fn variant(&self) -> ICEUNLOCK_A {
         match self.bits {
             false => ICEUNLOCK_A::DIS,
             true => ICEUNLOCK_A::EN,
@@ -39,8 +39,8 @@ impl ICEUNLOCK_R {
     }
 }
 #[doc = "Field `ICEUNLOCK` writer - ARM ICE Unlock Interrupt Enable."]
-pub type ICEUNLOCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ICEUNLOCK_A>;
-impl<'a, REG, const O: u8> ICEUNLOCK_W<'a, REG, O>
+pub type ICEUNLOCK_W<'a, REG> = crate::BitWriter<'a, REG, ICEUNLOCK_A>;
+impl<'a, REG> ICEUNLOCK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,10 +66,14 @@ impl W {
     #[doc = "Bit 0 - ARM ICE Unlock Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn iceunlock(&mut self) -> ICEUNLOCK_W<SYSIE_SPEC, 0> {
-        ICEUNLOCK_W::new(self)
+    pub fn iceunlock(&mut self) -> ICEUNLOCK_W<SYSIE_SPEC> {
+        ICEUNLOCK_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,7 +5,7 @@ pub type W = crate::W<FIFO_SPEC>;
 #[doc = "Field `DATA` reader - AES FIFO"]
 pub type DATA_R = crate::BitReader;
 #[doc = "Field `DATA` writer - AES FIFO"]
-pub type DATA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DATA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - AES FIFO"]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bit 0 - AES FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn data(&mut self) -> DATA_W<FIFO_SPEC, 0> {
-        DATA_W::new(self)
+    pub fn data(&mut self) -> DATA_W<FIFO_SPEC> {
+        DATA_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<ACEN_A> for bool {
 impl ACEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACEN_A {
+    pub const fn variant(&self) -> ACEN_A {
         match self.bits {
             false => ACEN_A::DIS,
             true => ACEN_A::EN,
@@ -39,8 +39,8 @@ impl ACEN_R {
     }
 }
 #[doc = "Field `ACEN` writer - Auto-calibration Enable."]
-pub type ACEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACEN_A>;
-impl<'a, REG, const O: u8> ACEN_W<'a, REG, O>
+pub type ACEN_W<'a, REG> = crate::BitWriter<'a, REG, ACEN_A>;
+impl<'a, REG> ACEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<ACRUN_A> for bool {
 impl ACRUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACRUN_A {
+    pub const fn variant(&self) -> ACRUN_A {
         match self.bits {
             false => ACRUN_A::NOT,
             true => ACRUN_A::RUN,
@@ -92,8 +92,8 @@ impl ACRUN_R {
     }
 }
 #[doc = "Field `ACRUN` writer - Autocalibration Run."]
-pub type ACRUN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACRUN_A>;
-impl<'a, REG, const O: u8> ACRUN_W<'a, REG, O>
+pub type ACRUN_W<'a, REG> = crate::BitWriter<'a, REG, ACRUN_A>;
+impl<'a, REG> ACRUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,7 +111,7 @@ where
 #[doc = "Field `LDTRM` reader - Load Trim."]
 pub type LDTRM_R = crate::BitReader;
 #[doc = "Field `LDTRM` writer - Load Trim."]
-pub type LDTRM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LDTRM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `GAININV` reader - Invert Gain."]
 pub type GAININV_R = crate::BitReader<GAININV_A>;
 #[doc = "Invert Gain.\n\nValue on reset: 0"]
@@ -131,7 +131,7 @@ impl From<GAININV_A> for bool {
 impl GAININV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GAININV_A {
+    pub const fn variant(&self) -> GAININV_A {
         match self.bits {
             false => GAININV_A::NOT,
             true => GAININV_A::RUN,
@@ -149,8 +149,8 @@ impl GAININV_R {
     }
 }
 #[doc = "Field `GAININV` writer - Invert Gain."]
-pub type GAININV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GAININV_A>;
-impl<'a, REG, const O: u8> GAININV_W<'a, REG, O>
+pub type GAININV_W<'a, REG> = crate::BitWriter<'a, REG, GAININV_A>;
+impl<'a, REG> GAININV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -184,7 +184,7 @@ impl From<ATOMIC_A> for bool {
 impl ATOMIC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ATOMIC_A {
+    pub const fn variant(&self) -> ATOMIC_A {
         match self.bits {
             false => ATOMIC_A::NOT,
             true => ATOMIC_A::RUN,
@@ -202,8 +202,8 @@ impl ATOMIC_R {
     }
 }
 #[doc = "Field `ATOMIC` writer - Atomic mode."]
-pub type ATOMIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ATOMIC_A>;
-impl<'a, REG, const O: u8> ATOMIC_W<'a, REG, O>
+pub type ATOMIC_W<'a, REG> = crate::BitWriter<'a, REG, ATOMIC_A>;
+impl<'a, REG> ATOMIC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -221,11 +221,11 @@ where
 #[doc = "Field `MU` reader - MU value."]
 pub type MU_R = crate::FieldReader<u16>;
 #[doc = "Field `MU` writer - MU value."]
-pub type MU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type MU_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `HIRC96MACTMROUT` reader - HIRC96M Trim Value."]
 pub type HIRC96MACTMROUT_R = crate::FieldReader<u16>;
 #[doc = "Field `HIRC96MACTMROUT` writer - HIRC96M Trim Value."]
-pub type HIRC96MACTMROUT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type HIRC96MACTMROUT_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     #[doc = "Bit 0 - Auto-calibration Enable."]
     #[inline(always)]
@@ -267,46 +267,50 @@ impl W {
     #[doc = "Bit 0 - Auto-calibration Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn acen(&mut self) -> ACEN_W<AUTOCAL0_SPEC, 0> {
-        ACEN_W::new(self)
+    pub fn acen(&mut self) -> ACEN_W<AUTOCAL0_SPEC> {
+        ACEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Autocalibration Run."]
     #[inline(always)]
     #[must_use]
-    pub fn acrun(&mut self) -> ACRUN_W<AUTOCAL0_SPEC, 1> {
-        ACRUN_W::new(self)
+    pub fn acrun(&mut self) -> ACRUN_W<AUTOCAL0_SPEC> {
+        ACRUN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Load Trim."]
     #[inline(always)]
     #[must_use]
-    pub fn ldtrm(&mut self) -> LDTRM_W<AUTOCAL0_SPEC, 2> {
-        LDTRM_W::new(self)
+    pub fn ldtrm(&mut self) -> LDTRM_W<AUTOCAL0_SPEC> {
+        LDTRM_W::new(self, 2)
     }
     #[doc = "Bit 3 - Invert Gain."]
     #[inline(always)]
     #[must_use]
-    pub fn gaininv(&mut self) -> GAININV_W<AUTOCAL0_SPEC, 3> {
-        GAININV_W::new(self)
+    pub fn gaininv(&mut self) -> GAININV_W<AUTOCAL0_SPEC> {
+        GAININV_W::new(self, 3)
     }
     #[doc = "Bit 4 - Atomic mode."]
     #[inline(always)]
     #[must_use]
-    pub fn atomic(&mut self) -> ATOMIC_W<AUTOCAL0_SPEC, 4> {
-        ATOMIC_W::new(self)
+    pub fn atomic(&mut self) -> ATOMIC_W<AUTOCAL0_SPEC> {
+        ATOMIC_W::new(self, 4)
     }
     #[doc = "Bits 8:19 - MU value."]
     #[inline(always)]
     #[must_use]
-    pub fn mu(&mut self) -> MU_W<AUTOCAL0_SPEC, 8> {
-        MU_W::new(self)
+    pub fn mu(&mut self) -> MU_W<AUTOCAL0_SPEC> {
+        MU_W::new(self, 8)
     }
     #[doc = "Bits 23:31 - HIRC96M Trim Value."]
     #[inline(always)]
     #[must_use]
-    pub fn hirc96mactmrout(&mut self) -> HIRC96MACTMROUT_W<AUTOCAL0_SPEC, 23> {
-        HIRC96MACTMROUT_W::new(self)
+    pub fn hirc96mactmrout(&mut self) -> HIRC96MACTMROUT_W<AUTOCAL0_SPEC> {
+        HIRC96MACTMROUT_W::new(self, 23)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

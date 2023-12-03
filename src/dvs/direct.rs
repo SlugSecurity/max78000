@@ -5,7 +5,7 @@ pub type W = crate::W<DIRECT_SPEC>;
 #[doc = "Field `VOLTAGE` reader - Sets the target power supply value"]
 pub type VOLTAGE_R = crate::FieldReader;
 #[doc = "Field `VOLTAGE` writer - Sets the target power supply value"]
-pub type VOLTAGE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type VOLTAGE_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 impl R {
     #[doc = "Bits 0:6 - Sets the target power supply value"]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:6 - Sets the target power supply value"]
     #[inline(always)]
     #[must_use]
-    pub fn voltage(&mut self) -> VOLTAGE_W<DIRECT_SPEC, 0> {
-        VOLTAGE_W::new(self)
+    pub fn voltage(&mut self) -> VOLTAGE_W<DIRECT_SPEC> {
+        VOLTAGE_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

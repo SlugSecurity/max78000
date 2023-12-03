@@ -21,7 +21,7 @@ impl From<RESET_A> for bool {
 impl DMA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESET_A {
+    pub const fn variant(&self) -> RESET_A {
         match self.bits {
             false => RESET_A::RESET_DONE,
             true => RESET_A::BUSY,
@@ -39,8 +39,8 @@ impl DMA_R {
     }
 }
 #[doc = "Field `DMA` writer - DMA Reset."]
-pub type DMA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_A>;
-impl<'a, REG, const O: u8> DMA_W<'a, REG, O>
+pub type DMA_W<'a, REG> = crate::BitWriter<'a, REG, RESET_A>;
+impl<'a, REG> DMA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -246,130 +246,134 @@ impl W {
     #[doc = "Bit 0 - DMA Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn dma(&mut self) -> DMA_W<RST0_SPEC, 0> {
-        DMA_W::new(self)
+    pub fn dma(&mut self) -> DMA_W<RST0_SPEC> {
+        DMA_W::new(self, 0)
     }
     #[doc = "Bit 1 - Watchdog Timer 0 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn wdt0(&mut self) -> WDT0_W<RST0_SPEC, 1> {
-        WDT0_W::new(self)
+    pub fn wdt0(&mut self) -> WDT0_W<RST0_SPEC> {
+        WDT0_W::new(self, 1)
     }
     #[doc = "Bit 2 - GPIO0 Reset. Setting this bit to 1 resets GPIO0 pins to their default states."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio0(&mut self) -> GPIO0_W<RST0_SPEC, 2> {
-        GPIO0_W::new(self)
+    pub fn gpio0(&mut self) -> GPIO0_W<RST0_SPEC> {
+        GPIO0_W::new(self, 2)
     }
     #[doc = "Bit 3 - GPIO1 Reset. Setting this bit to 1 resets GPIO1 pins to their default states."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio1(&mut self) -> GPIO1_W<RST0_SPEC, 3> {
-        GPIO1_W::new(self)
+    pub fn gpio1(&mut self) -> GPIO1_W<RST0_SPEC> {
+        GPIO1_W::new(self, 3)
     }
     #[doc = "Bit 5 - Timer 0 Reset. Setting this bit to 1 resets Timer 0 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn tmr0(&mut self) -> TMR0_W<RST0_SPEC, 5> {
-        TMR0_W::new(self)
+    pub fn tmr0(&mut self) -> TMR0_W<RST0_SPEC> {
+        TMR0_W::new(self, 5)
     }
     #[doc = "Bit 6 - Timer 1 Reset. Setting this bit to 1 resets Timer 1 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn tmr1(&mut self) -> TMR1_W<RST0_SPEC, 6> {
-        TMR1_W::new(self)
+    pub fn tmr1(&mut self) -> TMR1_W<RST0_SPEC> {
+        TMR1_W::new(self, 6)
     }
     #[doc = "Bit 7 - Timer 2 Reset. Setting this bit to 1 resets Timer 2 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn tmr2(&mut self) -> TMR2_W<RST0_SPEC, 7> {
-        TMR2_W::new(self)
+    pub fn tmr2(&mut self) -> TMR2_W<RST0_SPEC> {
+        TMR2_W::new(self, 7)
     }
     #[doc = "Bit 8 - Timer 3 Reset. Setting this bit to 1 resets Timer 3 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn tmr3(&mut self) -> TMR3_W<RST0_SPEC, 8> {
-        TMR3_W::new(self)
+    pub fn tmr3(&mut self) -> TMR3_W<RST0_SPEC> {
+        TMR3_W::new(self, 8)
     }
     #[doc = "Bit 11 - UART 0 Reset. Setting this bit to 1 resets all UART 0 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn uart0(&mut self) -> UART0_W<RST0_SPEC, 11> {
-        UART0_W::new(self)
+    pub fn uart0(&mut self) -> UART0_W<RST0_SPEC> {
+        UART0_W::new(self, 11)
     }
     #[doc = "Bit 12 - UART 1 Reset. Setting this bit to 1 resets all UART 1 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn uart1(&mut self) -> UART1_W<RST0_SPEC, 12> {
-        UART1_W::new(self)
+    pub fn uart1(&mut self) -> UART1_W<RST0_SPEC> {
+        UART1_W::new(self, 12)
     }
     #[doc = "Bit 13 - SPI 1 Reset. Setting this bit to 1 resets all SPI 1 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn spi1(&mut self) -> SPI1_W<RST0_SPEC, 13> {
-        SPI1_W::new(self)
+    pub fn spi1(&mut self) -> SPI1_W<RST0_SPEC> {
+        SPI1_W::new(self, 13)
     }
     #[doc = "Bit 16 - I2C 0 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c0(&mut self) -> I2C0_W<RST0_SPEC, 16> {
-        I2C0_W::new(self)
+    pub fn i2c0(&mut self) -> I2C0_W<RST0_SPEC> {
+        I2C0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Real Time Clock Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn rtc(&mut self) -> RTC_W<RST0_SPEC, 17> {
-        RTC_W::new(self)
+    pub fn rtc(&mut self) -> RTC_W<RST0_SPEC> {
+        RTC_W::new(self, 17)
     }
     #[doc = "Bit 22 - Semaphore Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn smphr(&mut self) -> SMPHR_W<RST0_SPEC, 22> {
-        SMPHR_W::new(self)
+    pub fn smphr(&mut self) -> SMPHR_W<RST0_SPEC> {
+        SMPHR_W::new(self, 22)
     }
     #[doc = "Bit 24 - TRNG Reset. This reset is only available during the manufacture testing phase."]
     #[inline(always)]
     #[must_use]
-    pub fn trng(&mut self) -> TRNG_W<RST0_SPEC, 24> {
-        TRNG_W::new(self)
+    pub fn trng(&mut self) -> TRNG_W<RST0_SPEC> {
+        TRNG_W::new(self, 24)
     }
     #[doc = "Bit 25 - CNN Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn cnn(&mut self) -> CNN_W<RST0_SPEC, 25> {
-        CNN_W::new(self)
+    pub fn cnn(&mut self) -> CNN_W<RST0_SPEC> {
+        CNN_W::new(self, 25)
     }
     #[doc = "Bit 26 - ADC Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn adc(&mut self) -> ADC_W<RST0_SPEC, 26> {
-        ADC_W::new(self)
+    pub fn adc(&mut self) -> ADC_W<RST0_SPEC> {
+        ADC_W::new(self, 26)
     }
     #[doc = "Bit 28 - UART2 Reset. Setting this bit to 1 resets all UART 2 blocks."]
     #[inline(always)]
     #[must_use]
-    pub fn uart2(&mut self) -> UART2_W<RST0_SPEC, 28> {
-        UART2_W::new(self)
+    pub fn uart2(&mut self) -> UART2_W<RST0_SPEC> {
+        UART2_W::new(self, 28)
     }
     #[doc = "Bit 29 - Soft Reset. Setting this bit to 1 resets everything except the CPU and the watchdog timer."]
     #[inline(always)]
     #[must_use]
-    pub fn soft(&mut self) -> SOFT_W<RST0_SPEC, 29> {
-        SOFT_W::new(self)
+    pub fn soft(&mut self) -> SOFT_W<RST0_SPEC> {
+        SOFT_W::new(self, 29)
     }
     #[doc = "Bit 30 - Peripheral Reset. Setting this bit to 1 resets all peripherals. The CPU core, the watchdog timer, and all GPIO pins are unaffected by this reset."]
     #[inline(always)]
     #[must_use]
-    pub fn periph(&mut self) -> PERIPH_W<RST0_SPEC, 30> {
-        PERIPH_W::new(self)
+    pub fn periph(&mut self) -> PERIPH_W<RST0_SPEC> {
+        PERIPH_W::new(self, 30)
     }
     #[doc = "Bit 31 - System Reset. Setting this bit to 1 resets the CPU core and all peripherals, including the watchdog timer."]
     #[inline(always)]
     #[must_use]
-    pub fn sys(&mut self) -> SYS_W<RST0_SPEC, 31> {
-        SYS_W::new(self)
+    pub fn sys(&mut self) -> SYS_W<RST0_SPEC> {
+        SYS_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

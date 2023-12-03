@@ -5,7 +5,7 @@ pub type W = crate::W<SSEC_SPEC>;
 #[doc = "Field `SSEC` reader - Sub-Seconds Counter (12-bit)."]
 pub type SSEC_R = crate::FieldReader<u16>;
 #[doc = "Field `SSEC` writer - Sub-Seconds Counter (12-bit)."]
-pub type SSEC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type SSEC_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - Sub-Seconds Counter (12-bit)."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:11 - Sub-Seconds Counter (12-bit)."]
     #[inline(always)]
     #[must_use]
-    pub fn ssec(&mut self) -> SSEC_W<SSEC_SPEC, 0> {
-        SSEC_W::new(self)
+    pub fn ssec(&mut self) -> SSEC_W<SSEC_SPEC> {
+        SSEC_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

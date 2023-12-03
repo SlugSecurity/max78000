@@ -19,7 +19,7 @@ impl From<MAGIC_A> for bool {
 impl MAGIC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MAGIC_A {
+    pub const fn variant(&self) -> MAGIC_A {
         match self.bits {
             false => MAGIC_A::MAGIC_NOT_SET,
             true => MAGIC_A::MAGIC_SET,
@@ -55,7 +55,7 @@ impl From<CRCERR_A> for bool {
 impl CRCERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CRCERR_A {
+    pub const fn variant(&self) -> CRCERR_A {
         match self.bits {
             false => CRCERR_A::NO_ERROR,
             true => CRCERR_A::ERROR,

@@ -21,7 +21,7 @@ impl From<RESET_A> for bool {
 impl I2C1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESET_A {
+    pub const fn variant(&self) -> RESET_A {
         match self.bits {
             false => RESET_A::RESET_DONE,
             true => RESET_A::BUSY,
@@ -39,8 +39,8 @@ impl I2C1_R {
     }
 }
 #[doc = "Field `I2C1` writer - I2C1 Reset."]
-pub type I2C1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_A>;
-impl<'a, REG, const O: u8> I2C1_W<'a, REG, O>
+pub type I2C1_W<'a, REG> = crate::BitWriter<'a, REG, RESET_A>;
+impl<'a, REG> I2C1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -163,70 +163,74 @@ impl W {
     #[doc = "Bit 0 - I2C1 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c1(&mut self) -> I2C1_W<RST1_SPEC, 0> {
-        I2C1_W::new(self)
+    pub fn i2c1(&mut self) -> I2C1_W<RST1_SPEC> {
+        I2C1_W::new(self, 0)
     }
     #[doc = "Bit 1 - PT Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn pt(&mut self) -> PT_W<RST1_SPEC, 1> {
-        PT_W::new(self)
+    pub fn pt(&mut self) -> PT_W<RST1_SPEC> {
+        PT_W::new(self, 1)
     }
     #[doc = "Bit 7 - OWM Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn owm(&mut self) -> OWM_W<RST1_SPEC, 7> {
-        OWM_W::new(self)
+    pub fn owm(&mut self) -> OWM_W<RST1_SPEC> {
+        OWM_W::new(self, 7)
     }
     #[doc = "Bit 9 - CRC Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn crc(&mut self) -> CRC_W<RST1_SPEC, 9> {
-        CRC_W::new(self)
+    pub fn crc(&mut self) -> CRC_W<RST1_SPEC> {
+        CRC_W::new(self, 9)
     }
     #[doc = "Bit 10 - AES Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn aes(&mut self) -> AES_W<RST1_SPEC, 10> {
-        AES_W::new(self)
+    pub fn aes(&mut self) -> AES_W<RST1_SPEC> {
+        AES_W::new(self, 10)
     }
     #[doc = "Bit 11 - SPI 0 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn spi0(&mut self) -> SPI0_W<RST1_SPEC, 11> {
-        SPI0_W::new(self)
+    pub fn spi0(&mut self) -> SPI0_W<RST1_SPEC> {
+        SPI0_W::new(self, 11)
     }
     #[doc = "Bit 16 - SMPHR Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn smphr(&mut self) -> SMPHR_W<RST1_SPEC, 16> {
-        SMPHR_W::new(self)
+    pub fn smphr(&mut self) -> SMPHR_W<RST1_SPEC> {
+        SMPHR_W::new(self, 16)
     }
     #[doc = "Bit 19 - I2S Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn i2s(&mut self) -> I2S_W<RST1_SPEC, 19> {
-        I2S_W::new(self)
+    pub fn i2s(&mut self) -> I2S_W<RST1_SPEC> {
+        I2S_W::new(self, 19)
     }
     #[doc = "Bit 20 - I2C2 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c2(&mut self) -> I2C2_W<RST1_SPEC, 20> {
-        I2C2_W::new(self)
+    pub fn i2c2(&mut self) -> I2C2_W<RST1_SPEC> {
+        I2C2_W::new(self, 20)
     }
     #[doc = "Bit 24 - DVS Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn dvs(&mut self) -> DVS_W<RST1_SPEC, 24> {
-        DVS_W::new(self)
+    pub fn dvs(&mut self) -> DVS_W<RST1_SPEC> {
+        DVS_W::new(self, 24)
     }
     #[doc = "Bit 25 - SIMO Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn simo(&mut self) -> SIMO_W<RST1_SPEC, 25> {
-        SIMO_W::new(self)
+    pub fn simo(&mut self) -> SIMO_W<RST1_SPEC> {
+        SIMO_W::new(self, 25)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,15 +5,15 @@ pub type W = crate::W<EVENTEN_SPEC>;
 #[doc = "Field `DMA` reader - Enable DMA event. When this bit is set, a DMA event will cause an RXEV event to wake the CPU from WFE sleep mode."]
 pub type DMA_R = crate::BitReader;
 #[doc = "Field `DMA` writer - Enable DMA event. When this bit is set, a DMA event will cause an RXEV event to wake the CPU from WFE sleep mode."]
-pub type DMA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX` reader - Enable RXEV pin event. When this bit is set, a logic high of GPIO1.8 will cause an RXEV event to wake the CPU from WFE sleep mode."]
 pub type RX_R = crate::BitReader;
 #[doc = "Field `RX` writer - Enable RXEV pin event. When this bit is set, a logic high of GPIO1.8 will cause an RXEV event to wake the CPU from WFE sleep mode."]
-pub type RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX` reader - Enable TXEV pin event. When this bit is set, TXEV event from the CPU is output to GPIO1.9."]
 pub type TX_R = crate::BitReader;
 #[doc = "Field `TX` writer - Enable TXEV pin event. When this bit is set, TXEV event from the CPU is output to GPIO1.9."]
-pub type TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Enable DMA event. When this bit is set, a DMA event will cause an RXEV event to wake the CPU from WFE sleep mode."]
     #[inline(always)]
@@ -35,22 +35,26 @@ impl W {
     #[doc = "Bit 0 - Enable DMA event. When this bit is set, a DMA event will cause an RXEV event to wake the CPU from WFE sleep mode."]
     #[inline(always)]
     #[must_use]
-    pub fn dma(&mut self) -> DMA_W<EVENTEN_SPEC, 0> {
-        DMA_W::new(self)
+    pub fn dma(&mut self) -> DMA_W<EVENTEN_SPEC> {
+        DMA_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable RXEV pin event. When this bit is set, a logic high of GPIO1.8 will cause an RXEV event to wake the CPU from WFE sleep mode."]
     #[inline(always)]
     #[must_use]
-    pub fn rx(&mut self) -> RX_W<EVENTEN_SPEC, 1> {
-        RX_W::new(self)
+    pub fn rx(&mut self) -> RX_W<EVENTEN_SPEC> {
+        RX_W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable TXEV pin event. When this bit is set, TXEV event from the CPU is output to GPIO1.9."]
     #[inline(always)]
     #[must_use]
-    pub fn tx(&mut self) -> TX_W<EVENTEN_SPEC, 2> {
-        TX_W::new(self)
+    pub fn tx(&mut self) -> TX_W<EVENTEN_SPEC> {
+        TX_W::new(self, 2)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

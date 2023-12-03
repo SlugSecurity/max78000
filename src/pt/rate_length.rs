@@ -5,7 +5,7 @@ pub type W = crate::W<RATE_LENGTH_SPEC>;
 #[doc = "Field `rate_control` reader - Pulse Train Enable and Rate Control. Set to 0 to disable the Pulse Train."]
 pub type RATE_CONTROL_R = crate::FieldReader<u32>;
 #[doc = "Field `rate_control` writer - Pulse Train Enable and Rate Control. Set to 0 to disable the Pulse Train."]
-pub type RATE_CONTROL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 27, O, u32>;
+pub type RATE_CONTROL_W<'a, REG> = crate::FieldWriter<'a, REG, 27, u32>;
 #[doc = "Field `mode` reader - Pulse Train Output Mode/Train Length"]
 pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Pulse Train Output Mode/Train Length\n\nValue on reset: 0"]
@@ -89,7 +89,7 @@ impl crate::FieldSpec for MODE_A {
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub const fn variant(&self) -> MODE_A {
         match self.bits {
             0 => MODE_A::_32_BIT,
             1 => MODE_A::SQUARE_WAVE,
@@ -288,8 +288,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `mode` writer - Pulse Train Output Mode/Train Length"]
-pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 5, O, MODE_A>;
-impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+pub type MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 5, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -471,16 +471,20 @@ impl W {
     #[doc = "Bits 0:26 - Pulse Train Enable and Rate Control. Set to 0 to disable the Pulse Train."]
     #[inline(always)]
     #[must_use]
-    pub fn rate_control(&mut self) -> RATE_CONTROL_W<RATE_LENGTH_SPEC, 0> {
-        RATE_CONTROL_W::new(self)
+    pub fn rate_control(&mut self) -> RATE_CONTROL_W<RATE_LENGTH_SPEC> {
+        RATE_CONTROL_W::new(self, 0)
     }
     #[doc = "Bits 27:31 - Pulse Train Output Mode/Train Length"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<RATE_LENGTH_SPEC, 27> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<RATE_LENGTH_SPEC> {
+        MODE_W::new(self, 27)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

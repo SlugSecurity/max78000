@@ -5,7 +5,7 @@ pub type W = crate::W<INTR_SPEC>;
 #[doc = "Field `IRQ_CLR` reader - Clear Interrupt."]
 pub type IRQ_CLR_R = crate::BitReader;
 #[doc = "Field `IRQ_CLR` writer - Clear Interrupt."]
-pub type IRQ_CLR_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type IRQ_CLR_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Clear Interrupt."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bit 0 - Clear Interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn irq_clr(&mut self) -> IRQ_CLR_W<INTR_SPEC, 0> {
-        IRQ_CLR_W::new(self)
+    pub fn irq_clr(&mut self) -> IRQ_CLR_W<INTR_SPEC> {
+        IRQ_CLR_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

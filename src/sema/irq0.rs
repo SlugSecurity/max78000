@@ -5,11 +5,11 @@ pub type W = crate::W<IRQ0_SPEC>;
 #[doc = "Field `en` reader - "]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `en` writer - "]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `cm4_irq` reader - "]
 pub type CM4_IRQ_R = crate::BitReader;
 #[doc = "Field `cm4_irq` writer - "]
-pub type CM4_IRQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CM4_IRQ_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<IRQ0_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<IRQ0_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     #[must_use]
-    pub fn cm4_irq(&mut self) -> CM4_IRQ_W<IRQ0_SPEC, 16> {
-        CM4_IRQ_W::new(self)
+    pub fn cm4_irq(&mut self) -> CM4_IRQ_W<IRQ0_SPEC> {
+        CM4_IRQ_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<EN_A> for bool {
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> EN_A {
         match self.bits {
             false => EN_A::DIS,
             true => EN_A::EN,
@@ -39,8 +39,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `EN` writer - Channel Enable. This bit is automatically cleared when DMA_ST.CH_ST changes from 1 to 0."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_A>;
-impl<'a, REG, const O: u8> EN_W<'a, REG, O>
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG, EN_A>;
+impl<'a, REG> EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<RLDEN_A> for bool {
 impl RLDEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RLDEN_A {
+    pub const fn variant(&self) -> RLDEN_A {
         match self.bits {
             false => RLDEN_A::DIS,
             true => RLDEN_A::EN,
@@ -92,8 +92,8 @@ impl RLDEN_R {
     }
 }
 #[doc = "Field `RLDEN` writer - Reload Enable. Setting this bit to 1 enables DMA_SRC, DMA_DST and DMA_CNT to be reloaded with their corresponding reload registers upon count-to-zero. This bit is also writeable in the Count Reload Register. Refer to the description on Buffer Chaining for use of this bit. If buffer chaining is not used this bit must be written with a 0. This bit should be set after the reload registers have been programmed."]
-pub type RLDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RLDEN_A>;
-impl<'a, REG, const O: u8> RLDEN_W<'a, REG, O>
+pub type RLDEN_W<'a, REG> = crate::BitWriter<'a, REG, RLDEN_A>;
+impl<'a, REG> RLDEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -135,7 +135,7 @@ impl crate::FieldSpec for PRI_A {
 impl PRI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRI_A {
+    pub const fn variant(&self) -> PRI_A {
         match self.bits {
             0 => PRI_A::HIGH,
             1 => PRI_A::MED_HIGH,
@@ -166,8 +166,8 @@ impl PRI_R {
     }
 }
 #[doc = "Field `PRI` writer - DMA Priority."]
-pub type PRI_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PRI_A>;
-impl<'a, REG, const O: u8> PRI_W<'a, REG, O>
+pub type PRI_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PRI_A>;
+impl<'a, REG> PRI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -264,7 +264,7 @@ impl crate::FieldSpec for REQUEST_A {
 impl REQUEST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<REQUEST_A> {
+    pub const fn variant(&self) -> Option<REQUEST_A> {
         match self.bits {
             0 => Some(REQUEST_A::MEMTOMEM),
             1 => Some(REQUEST_A::SPI1RX),
@@ -427,8 +427,8 @@ impl REQUEST_R {
     }
 }
 #[doc = "Field `REQUEST` writer - Request Select. Select DMA request line for this channel. If memory-to-memory is selected, the channel operates as if the request is always active."]
-pub type REQUEST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, REQUEST_A>;
-impl<'a, REG, const O: u8> REQUEST_W<'a, REG, O>
+pub type REQUEST_W<'a, REG> = crate::FieldWriter<'a, REG, 6, REQUEST_A>;
+impl<'a, REG> REQUEST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -583,7 +583,7 @@ impl From<TO_WAIT_A> for bool {
 impl TO_WAIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TO_WAIT_A {
+    pub const fn variant(&self) -> TO_WAIT_A {
         match self.bits {
             false => TO_WAIT_A::DIS,
             true => TO_WAIT_A::EN,
@@ -601,8 +601,8 @@ impl TO_WAIT_R {
     }
 }
 #[doc = "Field `TO_WAIT` writer - Request Wait Enable. When enabled, delay timer start until DMA request transitions from active to inactive."]
-pub type TO_WAIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TO_WAIT_A>;
-impl<'a, REG, const O: u8> TO_WAIT_W<'a, REG, O>
+pub type TO_WAIT_W<'a, REG> = crate::BitWriter<'a, REG, TO_WAIT_A>;
+impl<'a, REG> TO_WAIT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -652,7 +652,7 @@ impl crate::FieldSpec for TO_PER_A {
 impl TO_PER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TO_PER_A {
+    pub const fn variant(&self) -> TO_PER_A {
         match self.bits {
             0 => TO_PER_A::TO4,
             1 => TO_PER_A::TO8,
@@ -707,8 +707,8 @@ impl TO_PER_R {
     }
 }
 #[doc = "Field `TO_PER` writer - Timeout Period Select."]
-pub type TO_PER_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, TO_PER_A>;
-impl<'a, REG, const O: u8> TO_PER_W<'a, REG, O>
+pub type TO_PER_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, TO_PER_A>;
+impl<'a, REG> TO_PER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -781,7 +781,7 @@ impl crate::FieldSpec for TO_CLKDIV_A {
 impl TO_CLKDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TO_CLKDIV_A {
+    pub const fn variant(&self) -> TO_CLKDIV_A {
         match self.bits {
             0 => TO_CLKDIV_A::DIS,
             1 => TO_CLKDIV_A::DIV256,
@@ -812,8 +812,8 @@ impl TO_CLKDIV_R {
     }
 }
 #[doc = "Field `TO_CLKDIV` writer - Pre-Scale Select. Selects the Pre-Scale divider for timer clock input."]
-pub type TO_CLKDIV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TO_CLKDIV_A>;
-impl<'a, REG, const O: u8> TO_CLKDIV_W<'a, REG, O>
+pub type TO_CLKDIV_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TO_CLKDIV_A>;
+impl<'a, REG> TO_CLKDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -864,7 +864,7 @@ impl crate::FieldSpec for SRCWD_A {
 impl SRCWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRCWD_A> {
+    pub const fn variant(&self) -> Option<SRCWD_A> {
         match self.bits {
             0 => Some(SRCWD_A::BYTE),
             1 => Some(SRCWD_A::HALF_WORD),
@@ -889,8 +889,8 @@ impl SRCWD_R {
     }
 }
 #[doc = "Field `SRCWD` writer - Source Width. In most cases, this will be the data width of each AHB transactions. However, the width will be reduced in the cases where DMA_CNT indicates a smaller value."]
-pub type SRCWD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SRCWD_A>;
-impl<'a, REG, const O: u8> SRCWD_W<'a, REG, O>
+pub type SRCWD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SRCWD_A>;
+impl<'a, REG> SRCWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -930,7 +930,7 @@ impl From<SRCINC_A> for bool {
 impl SRCINC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRCINC_A {
+    pub const fn variant(&self) -> SRCINC_A {
         match self.bits {
             false => SRCINC_A::DIS,
             true => SRCINC_A::EN,
@@ -948,8 +948,8 @@ impl SRCINC_R {
     }
 }
 #[doc = "Field `SRCINC` writer - Source Increment Enable. This bit enables DMA_SRC increment upon every AHB transaction. This bit is forced to 0 for DMA receive from peripherals."]
-pub type SRCINC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRCINC_A>;
-impl<'a, REG, const O: u8> SRCINC_W<'a, REG, O>
+pub type SRCINC_W<'a, REG> = crate::BitWriter<'a, REG, SRCINC_A>;
+impl<'a, REG> SRCINC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -989,7 +989,7 @@ impl crate::FieldSpec for DSTWD_A {
 impl DSTWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DSTWD_A> {
+    pub const fn variant(&self) -> Option<DSTWD_A> {
         match self.bits {
             0 => Some(DSTWD_A::BYTE),
             1 => Some(DSTWD_A::HALF_WORD),
@@ -1014,8 +1014,8 @@ impl DSTWD_R {
     }
 }
 #[doc = "Field `DSTWD` writer - Destination Width. Indicates the width of the each AHB transactions to the destination peripheral or memory. (The actual width may be less than this if there are insufficient bytes in the DMA FIFO for the full width)."]
-pub type DSTWD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DSTWD_A>;
-impl<'a, REG, const O: u8> DSTWD_W<'a, REG, O>
+pub type DSTWD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DSTWD_A>;
+impl<'a, REG> DSTWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1055,7 +1055,7 @@ impl From<DSTINC_A> for bool {
 impl DSTINC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DSTINC_A {
+    pub const fn variant(&self) -> DSTINC_A {
         match self.bits {
             false => DSTINC_A::DIS,
             true => DSTINC_A::EN,
@@ -1073,8 +1073,8 @@ impl DSTINC_R {
     }
 }
 #[doc = "Field `DSTINC` writer - Destination Increment Enable. This bit enables DMA_DST increment upon every AHB transaction. This bit is forced to 0 for DMA transmit to peripherals."]
-pub type DSTINC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DSTINC_A>;
-impl<'a, REG, const O: u8> DSTINC_W<'a, REG, O>
+pub type DSTINC_W<'a, REG> = crate::BitWriter<'a, REG, DSTINC_A>;
+impl<'a, REG> DSTINC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1092,7 +1092,7 @@ where
 #[doc = "Field `BURST_SIZE` reader - Burst Size. The number of bytes to be transferred into and out of the DMA FIFO in a single burst. Burst size equals 1 + value stored in this field."]
 pub type BURST_SIZE_R = crate::FieldReader;
 #[doc = "Field `BURST_SIZE` writer - Burst Size. The number of bytes to be transferred into and out of the DMA FIFO in a single burst. Burst size equals 1 + value stored in this field."]
-pub type BURST_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type BURST_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `DIS_IE` reader - Channel Disable Interrupt Enable. When enabled, the IPEND will be set to 1 whenever CH_ST changes from 1 to 0."]
 pub type DIS_IE_R = crate::BitReader<DIS_IE_A>;
 #[doc = "Channel Disable Interrupt Enable. When enabled, the IPEND will be set to 1 whenever CH_ST changes from 1 to 0.\n\nValue on reset: 0"]
@@ -1112,7 +1112,7 @@ impl From<DIS_IE_A> for bool {
 impl DIS_IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIS_IE_A {
+    pub const fn variant(&self) -> DIS_IE_A {
         match self.bits {
             false => DIS_IE_A::DIS,
             true => DIS_IE_A::EN,
@@ -1130,8 +1130,8 @@ impl DIS_IE_R {
     }
 }
 #[doc = "Field `DIS_IE` writer - Channel Disable Interrupt Enable. When enabled, the IPEND will be set to 1 whenever CH_ST changes from 1 to 0."]
-pub type DIS_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIS_IE_A>;
-impl<'a, REG, const O: u8> DIS_IE_W<'a, REG, O>
+pub type DIS_IE_W<'a, REG> = crate::BitWriter<'a, REG, DIS_IE_A>;
+impl<'a, REG> DIS_IE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1165,7 +1165,7 @@ impl From<CTZ_IE_A> for bool {
 impl CTZ_IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CTZ_IE_A {
+    pub const fn variant(&self) -> CTZ_IE_A {
         match self.bits {
             false => CTZ_IE_A::DIS,
             true => CTZ_IE_A::EN,
@@ -1183,8 +1183,8 @@ impl CTZ_IE_R {
     }
 }
 #[doc = "Field `CTZ_IE` writer - Count-to-zero Interrupts Enable. When enabled, the IPEND will be set to 1 whenever a count-to-zero event occurs."]
-pub type CTZ_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CTZ_IE_A>;
-impl<'a, REG, const O: u8> CTZ_IE_W<'a, REG, O>
+pub type CTZ_IE_W<'a, REG> = crate::BitWriter<'a, REG, CTZ_IE_A>;
+impl<'a, REG> CTZ_IE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1275,88 +1275,92 @@ impl W {
     #[doc = "Bit 0 - Channel Enable. This bit is automatically cleared when DMA_ST.CH_ST changes from 1 to 0."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Reload Enable. Setting this bit to 1 enables DMA_SRC, DMA_DST and DMA_CNT to be reloaded with their corresponding reload registers upon count-to-zero. This bit is also writeable in the Count Reload Register. Refer to the description on Buffer Chaining for use of this bit. If buffer chaining is not used this bit must be written with a 0. This bit should be set after the reload registers have been programmed."]
     #[inline(always)]
     #[must_use]
-    pub fn rlden(&mut self) -> RLDEN_W<CTRL_SPEC, 1> {
-        RLDEN_W::new(self)
+    pub fn rlden(&mut self) -> RLDEN_W<CTRL_SPEC> {
+        RLDEN_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - DMA Priority."]
     #[inline(always)]
     #[must_use]
-    pub fn pri(&mut self) -> PRI_W<CTRL_SPEC, 2> {
-        PRI_W::new(self)
+    pub fn pri(&mut self) -> PRI_W<CTRL_SPEC> {
+        PRI_W::new(self, 2)
     }
     #[doc = "Bits 4:9 - Request Select. Select DMA request line for this channel. If memory-to-memory is selected, the channel operates as if the request is always active."]
     #[inline(always)]
     #[must_use]
-    pub fn request(&mut self) -> REQUEST_W<CTRL_SPEC, 4> {
-        REQUEST_W::new(self)
+    pub fn request(&mut self) -> REQUEST_W<CTRL_SPEC> {
+        REQUEST_W::new(self, 4)
     }
     #[doc = "Bit 10 - Request Wait Enable. When enabled, delay timer start until DMA request transitions from active to inactive."]
     #[inline(always)]
     #[must_use]
-    pub fn to_wait(&mut self) -> TO_WAIT_W<CTRL_SPEC, 10> {
-        TO_WAIT_W::new(self)
+    pub fn to_wait(&mut self) -> TO_WAIT_W<CTRL_SPEC> {
+        TO_WAIT_W::new(self, 10)
     }
     #[doc = "Bits 11:13 - Timeout Period Select."]
     #[inline(always)]
     #[must_use]
-    pub fn to_per(&mut self) -> TO_PER_W<CTRL_SPEC, 11> {
-        TO_PER_W::new(self)
+    pub fn to_per(&mut self) -> TO_PER_W<CTRL_SPEC> {
+        TO_PER_W::new(self, 11)
     }
     #[doc = "Bits 14:15 - Pre-Scale Select. Selects the Pre-Scale divider for timer clock input."]
     #[inline(always)]
     #[must_use]
-    pub fn to_clkdiv(&mut self) -> TO_CLKDIV_W<CTRL_SPEC, 14> {
-        TO_CLKDIV_W::new(self)
+    pub fn to_clkdiv(&mut self) -> TO_CLKDIV_W<CTRL_SPEC> {
+        TO_CLKDIV_W::new(self, 14)
     }
     #[doc = "Bits 16:17 - Source Width. In most cases, this will be the data width of each AHB transactions. However, the width will be reduced in the cases where DMA_CNT indicates a smaller value."]
     #[inline(always)]
     #[must_use]
-    pub fn srcwd(&mut self) -> SRCWD_W<CTRL_SPEC, 16> {
-        SRCWD_W::new(self)
+    pub fn srcwd(&mut self) -> SRCWD_W<CTRL_SPEC> {
+        SRCWD_W::new(self, 16)
     }
     #[doc = "Bit 18 - Source Increment Enable. This bit enables DMA_SRC increment upon every AHB transaction. This bit is forced to 0 for DMA receive from peripherals."]
     #[inline(always)]
     #[must_use]
-    pub fn srcinc(&mut self) -> SRCINC_W<CTRL_SPEC, 18> {
-        SRCINC_W::new(self)
+    pub fn srcinc(&mut self) -> SRCINC_W<CTRL_SPEC> {
+        SRCINC_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Destination Width. Indicates the width of the each AHB transactions to the destination peripheral or memory. (The actual width may be less than this if there are insufficient bytes in the DMA FIFO for the full width)."]
     #[inline(always)]
     #[must_use]
-    pub fn dstwd(&mut self) -> DSTWD_W<CTRL_SPEC, 20> {
-        DSTWD_W::new(self)
+    pub fn dstwd(&mut self) -> DSTWD_W<CTRL_SPEC> {
+        DSTWD_W::new(self, 20)
     }
     #[doc = "Bit 22 - Destination Increment Enable. This bit enables DMA_DST increment upon every AHB transaction. This bit is forced to 0 for DMA transmit to peripherals."]
     #[inline(always)]
     #[must_use]
-    pub fn dstinc(&mut self) -> DSTINC_W<CTRL_SPEC, 22> {
-        DSTINC_W::new(self)
+    pub fn dstinc(&mut self) -> DSTINC_W<CTRL_SPEC> {
+        DSTINC_W::new(self, 22)
     }
     #[doc = "Bits 24:28 - Burst Size. The number of bytes to be transferred into and out of the DMA FIFO in a single burst. Burst size equals 1 + value stored in this field."]
     #[inline(always)]
     #[must_use]
-    pub fn burst_size(&mut self) -> BURST_SIZE_W<CTRL_SPEC, 24> {
-        BURST_SIZE_W::new(self)
+    pub fn burst_size(&mut self) -> BURST_SIZE_W<CTRL_SPEC> {
+        BURST_SIZE_W::new(self, 24)
     }
     #[doc = "Bit 30 - Channel Disable Interrupt Enable. When enabled, the IPEND will be set to 1 whenever CH_ST changes from 1 to 0."]
     #[inline(always)]
     #[must_use]
-    pub fn dis_ie(&mut self) -> DIS_IE_W<CTRL_SPEC, 30> {
-        DIS_IE_W::new(self)
+    pub fn dis_ie(&mut self) -> DIS_IE_W<CTRL_SPEC> {
+        DIS_IE_W::new(self, 30)
     }
     #[doc = "Bit 31 - Count-to-zero Interrupts Enable. When enabled, the IPEND will be set to 1 whenever a count-to-zero event occurs."]
     #[inline(always)]
     #[must_use]
-    pub fn ctz_ie(&mut self) -> CTZ_IE_W<CTRL_SPEC, 31> {
-        CTZ_IE_W::new(self)
+    pub fn ctz_ie(&mut self) -> CTZ_IE_W<CTRL_SPEC> {
+        CTZ_IE_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

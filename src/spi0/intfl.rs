@@ -19,7 +19,7 @@ impl From<TX_THD_A> for bool {
 impl TX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_THD_A> {
+    pub const fn variant(&self) -> Option<TX_THD_A> {
         match self.bits {
             true => Some(TX_THD_A::CLEAR),
             _ => None,
@@ -32,8 +32,8 @@ impl TX_THD_R {
     }
 }
 #[doc = "Field `TX_THD` writer - TX FIFO Threshold Crossed."]
-pub type TX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_THD_A>;
-impl<'a, REG, const O: u8> TX_THD_W<'a, REG, O>
+pub type TX_THD_W<'a, REG> = crate::BitWriter<'a, REG, TX_THD_A>;
+impl<'a, REG> TX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -60,7 +60,7 @@ impl From<TX_EM_A> for bool {
 impl TX_EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_EM_A> {
+    pub const fn variant(&self) -> Option<TX_EM_A> {
         match self.bits {
             true => Some(TX_EM_A::CLEAR),
             _ => None,
@@ -73,8 +73,8 @@ impl TX_EM_R {
     }
 }
 #[doc = "Field `TX_EM` writer - TX FIFO Empty."]
-pub type TX_EM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_EM_A>;
-impl<'a, REG, const O: u8> TX_EM_W<'a, REG, O>
+pub type TX_EM_W<'a, REG> = crate::BitWriter<'a, REG, TX_EM_A>;
+impl<'a, REG> TX_EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -101,7 +101,7 @@ impl From<RX_THD_A> for bool {
 impl RX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RX_THD_A> {
+    pub const fn variant(&self) -> Option<RX_THD_A> {
         match self.bits {
             true => Some(RX_THD_A::CLEAR),
             _ => None,
@@ -114,8 +114,8 @@ impl RX_THD_R {
     }
 }
 #[doc = "Field `RX_THD` writer - RX FIFO Threshold Crossed."]
-pub type RX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_THD_A>;
-impl<'a, REG, const O: u8> RX_THD_W<'a, REG, O>
+pub type RX_THD_W<'a, REG> = crate::BitWriter<'a, REG, RX_THD_A>;
+impl<'a, REG> RX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -142,7 +142,7 @@ impl From<RX_FULL_A> for bool {
 impl RX_FULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RX_FULL_A> {
+    pub const fn variant(&self) -> Option<RX_FULL_A> {
         match self.bits {
             true => Some(RX_FULL_A::CLEAR),
             _ => None,
@@ -155,8 +155,8 @@ impl RX_FULL_R {
     }
 }
 #[doc = "Field `RX_FULL` writer - RX FIFO FULL."]
-pub type RX_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_FULL_A>;
-impl<'a, REG, const O: u8> RX_FULL_W<'a, REG, O>
+pub type RX_FULL_W<'a, REG> = crate::BitWriter<'a, REG, RX_FULL_A>;
+impl<'a, REG> RX_FULL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -183,7 +183,7 @@ impl From<SSA_A> for bool {
 impl SSA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SSA_A> {
+    pub const fn variant(&self) -> Option<SSA_A> {
         match self.bits {
             true => Some(SSA_A::CLEAR),
             _ => None,
@@ -196,8 +196,8 @@ impl SSA_R {
     }
 }
 #[doc = "Field `SSA` writer - Slave Select Asserted."]
-pub type SSA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SSA_A>;
-impl<'a, REG, const O: u8> SSA_W<'a, REG, O>
+pub type SSA_W<'a, REG> = crate::BitWriter<'a, REG, SSA_A>;
+impl<'a, REG> SSA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -224,7 +224,7 @@ impl From<SSD_A> for bool {
 impl SSD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SSD_A> {
+    pub const fn variant(&self) -> Option<SSD_A> {
         match self.bits {
             true => Some(SSD_A::CLEAR),
             _ => None,
@@ -237,8 +237,8 @@ impl SSD_R {
     }
 }
 #[doc = "Field `SSD` writer - Slave Select Deasserted."]
-pub type SSD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SSD_A>;
-impl<'a, REG, const O: u8> SSD_W<'a, REG, O>
+pub type SSD_W<'a, REG> = crate::BitWriter<'a, REG, SSD_A>;
+impl<'a, REG> SSD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -265,7 +265,7 @@ impl From<FAULT_A> for bool {
 impl FAULT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FAULT_A> {
+    pub const fn variant(&self) -> Option<FAULT_A> {
         match self.bits {
             true => Some(FAULT_A::CLEAR),
             _ => None,
@@ -278,8 +278,8 @@ impl FAULT_R {
     }
 }
 #[doc = "Field `FAULT` writer - Multi-Master Mode Fault."]
-pub type FAULT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FAULT_A>;
-impl<'a, REG, const O: u8> FAULT_W<'a, REG, O>
+pub type FAULT_W<'a, REG> = crate::BitWriter<'a, REG, FAULT_A>;
+impl<'a, REG> FAULT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -306,7 +306,7 @@ impl From<ABORT_A> for bool {
 impl ABORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ABORT_A> {
+    pub const fn variant(&self) -> Option<ABORT_A> {
         match self.bits {
             true => Some(ABORT_A::CLEAR),
             _ => None,
@@ -319,8 +319,8 @@ impl ABORT_R {
     }
 }
 #[doc = "Field `ABORT` writer - Slave Abort Detected."]
-pub type ABORT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ABORT_A>;
-impl<'a, REG, const O: u8> ABORT_W<'a, REG, O>
+pub type ABORT_W<'a, REG> = crate::BitWriter<'a, REG, ABORT_A>;
+impl<'a, REG> ABORT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -347,7 +347,7 @@ impl From<MST_DONE_A> for bool {
 impl MST_DONE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MST_DONE_A> {
+    pub const fn variant(&self) -> Option<MST_DONE_A> {
         match self.bits {
             true => Some(MST_DONE_A::CLEAR),
             _ => None,
@@ -360,8 +360,8 @@ impl MST_DONE_R {
     }
 }
 #[doc = "Field `MST_DONE` writer - Master Done, set when SPI Master has completed any transactions."]
-pub type MST_DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MST_DONE_A>;
-impl<'a, REG, const O: u8> MST_DONE_W<'a, REG, O>
+pub type MST_DONE_W<'a, REG> = crate::BitWriter<'a, REG, MST_DONE_A>;
+impl<'a, REG> MST_DONE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -388,7 +388,7 @@ impl From<TX_OV_A> for bool {
 impl TX_OV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_OV_A> {
+    pub const fn variant(&self) -> Option<TX_OV_A> {
         match self.bits {
             true => Some(TX_OV_A::CLEAR),
             _ => None,
@@ -401,8 +401,8 @@ impl TX_OV_R {
     }
 }
 #[doc = "Field `TX_OV` writer - Transmit FIFO Overrun, set when the AMBA side attempts to write data to a full transmit FIFO."]
-pub type TX_OV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_OV_A>;
-impl<'a, REG, const O: u8> TX_OV_W<'a, REG, O>
+pub type TX_OV_W<'a, REG> = crate::BitWriter<'a, REG, TX_OV_A>;
+impl<'a, REG> TX_OV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -429,7 +429,7 @@ impl From<TX_UN_A> for bool {
 impl TX_UN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_UN_A> {
+    pub const fn variant(&self) -> Option<TX_UN_A> {
         match self.bits {
             true => Some(TX_UN_A::CLEAR),
             _ => None,
@@ -442,8 +442,8 @@ impl TX_UN_R {
     }
 }
 #[doc = "Field `TX_UN` writer - Transmit FIFO Underrun, set when the SPI side attempts to read data from an empty transmit FIFO."]
-pub type TX_UN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_UN_A>;
-impl<'a, REG, const O: u8> TX_UN_W<'a, REG, O>
+pub type TX_UN_W<'a, REG> = crate::BitWriter<'a, REG, TX_UN_A>;
+impl<'a, REG> TX_UN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -470,7 +470,7 @@ impl From<RX_OV_A> for bool {
 impl RX_OV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RX_OV_A> {
+    pub const fn variant(&self) -> Option<RX_OV_A> {
         match self.bits {
             true => Some(RX_OV_A::CLEAR),
             _ => None,
@@ -483,8 +483,8 @@ impl RX_OV_R {
     }
 }
 #[doc = "Field `RX_OV` writer - Receive FIFO Overrun, set when the SPI side attempts to write to a full receive FIFO."]
-pub type RX_OV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_OV_A>;
-impl<'a, REG, const O: u8> RX_OV_W<'a, REG, O>
+pub type RX_OV_W<'a, REG> = crate::BitWriter<'a, REG, RX_OV_A>;
+impl<'a, REG> RX_OV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -511,7 +511,7 @@ impl From<RX_UN_A> for bool {
 impl RX_UN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RX_UN_A> {
+    pub const fn variant(&self) -> Option<RX_UN_A> {
         match self.bits {
             true => Some(RX_UN_A::CLEAR),
             _ => None,
@@ -524,8 +524,8 @@ impl RX_UN_R {
     }
 }
 #[doc = "Field `RX_UN` writer - Receive FIFO Underrun, set when the AMBA side attempts to read data from an empty receive FIFO."]
-pub type RX_UN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_UN_A>;
-impl<'a, REG, const O: u8> RX_UN_W<'a, REG, O>
+pub type RX_UN_W<'a, REG> = crate::BitWriter<'a, REG, RX_UN_A>;
+impl<'a, REG> RX_UN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -606,82 +606,86 @@ impl W {
     #[doc = "Bit 0 - TX FIFO Threshold Crossed."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_thd(&mut self) -> TX_THD_W<INTFL_SPEC, 0> {
-        TX_THD_W::new(self)
+    pub fn tx_thd(&mut self) -> TX_THD_W<INTFL_SPEC> {
+        TX_THD_W::new(self, 0)
     }
     #[doc = "Bit 1 - TX FIFO Empty."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_em(&mut self) -> TX_EM_W<INTFL_SPEC, 1> {
-        TX_EM_W::new(self)
+    pub fn tx_em(&mut self) -> TX_EM_W<INTFL_SPEC> {
+        TX_EM_W::new(self, 1)
     }
     #[doc = "Bit 2 - RX FIFO Threshold Crossed."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd(&mut self) -> RX_THD_W<INTFL_SPEC, 2> {
-        RX_THD_W::new(self)
+    pub fn rx_thd(&mut self) -> RX_THD_W<INTFL_SPEC> {
+        RX_THD_W::new(self, 2)
     }
     #[doc = "Bit 3 - RX FIFO FULL."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_full(&mut self) -> RX_FULL_W<INTFL_SPEC, 3> {
-        RX_FULL_W::new(self)
+    pub fn rx_full(&mut self) -> RX_FULL_W<INTFL_SPEC> {
+        RX_FULL_W::new(self, 3)
     }
     #[doc = "Bit 4 - Slave Select Asserted."]
     #[inline(always)]
     #[must_use]
-    pub fn ssa(&mut self) -> SSA_W<INTFL_SPEC, 4> {
-        SSA_W::new(self)
+    pub fn ssa(&mut self) -> SSA_W<INTFL_SPEC> {
+        SSA_W::new(self, 4)
     }
     #[doc = "Bit 5 - Slave Select Deasserted."]
     #[inline(always)]
     #[must_use]
-    pub fn ssd(&mut self) -> SSD_W<INTFL_SPEC, 5> {
-        SSD_W::new(self)
+    pub fn ssd(&mut self) -> SSD_W<INTFL_SPEC> {
+        SSD_W::new(self, 5)
     }
     #[doc = "Bit 8 - Multi-Master Mode Fault."]
     #[inline(always)]
     #[must_use]
-    pub fn fault(&mut self) -> FAULT_W<INTFL_SPEC, 8> {
-        FAULT_W::new(self)
+    pub fn fault(&mut self) -> FAULT_W<INTFL_SPEC> {
+        FAULT_W::new(self, 8)
     }
     #[doc = "Bit 9 - Slave Abort Detected."]
     #[inline(always)]
     #[must_use]
-    pub fn abort(&mut self) -> ABORT_W<INTFL_SPEC, 9> {
-        ABORT_W::new(self)
+    pub fn abort(&mut self) -> ABORT_W<INTFL_SPEC> {
+        ABORT_W::new(self, 9)
     }
     #[doc = "Bit 11 - Master Done, set when SPI Master has completed any transactions."]
     #[inline(always)]
     #[must_use]
-    pub fn mst_done(&mut self) -> MST_DONE_W<INTFL_SPEC, 11> {
-        MST_DONE_W::new(self)
+    pub fn mst_done(&mut self) -> MST_DONE_W<INTFL_SPEC> {
+        MST_DONE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit FIFO Overrun, set when the AMBA side attempts to write data to a full transmit FIFO."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_ov(&mut self) -> TX_OV_W<INTFL_SPEC, 12> {
-        TX_OV_W::new(self)
+    pub fn tx_ov(&mut self) -> TX_OV_W<INTFL_SPEC> {
+        TX_OV_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit FIFO Underrun, set when the SPI side attempts to read data from an empty transmit FIFO."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_un(&mut self) -> TX_UN_W<INTFL_SPEC, 13> {
-        TX_UN_W::new(self)
+    pub fn tx_un(&mut self) -> TX_UN_W<INTFL_SPEC> {
+        TX_UN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive FIFO Overrun, set when the SPI side attempts to write to a full receive FIFO."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_ov(&mut self) -> RX_OV_W<INTFL_SPEC, 14> {
-        RX_OV_W::new(self)
+    pub fn rx_ov(&mut self) -> RX_OV_W<INTFL_SPEC> {
+        RX_OV_W::new(self, 14)
     }
     #[doc = "Bit 15 - Receive FIFO Underrun, set when the AMBA side attempts to read data from an empty receive FIFO."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_un(&mut self) -> RX_UN_W<INTFL_SPEC, 15> {
-        RX_UN_W::new(self)
+    pub fn rx_un(&mut self) -> RX_UN_W<INTFL_SPEC> {
+        RX_UN_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

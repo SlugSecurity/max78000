@@ -3,64 +3,9 @@ pub type R = crate::R<SRSEL_SPEC>;
 #[doc = "Register `SRSEL` writer"]
 pub type W = crate::W<SRSEL_SPEC>;
 #[doc = "Field `GPIO_SRSEL` reader - Mask of all of the pins on the port."]
-pub type GPIO_SRSEL_R = crate::FieldReader<GPIO_SRSEL_A>;
-#[doc = "Mask of all of the pins on the port.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum GPIO_SRSEL_A {
-    #[doc = "0: Fast Slew Rate selected."]
-    FAST = 0,
-    #[doc = "1: Slow Slew Rate selected."]
-    SLOW = 1,
-}
-impl From<GPIO_SRSEL_A> for u32 {
-    #[inline(always)]
-    fn from(variant: GPIO_SRSEL_A) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for GPIO_SRSEL_A {
-    type Ux = u32;
-}
-impl GPIO_SRSEL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<GPIO_SRSEL_A> {
-        match self.bits {
-            0 => Some(GPIO_SRSEL_A::FAST),
-            1 => Some(GPIO_SRSEL_A::SLOW),
-            _ => None,
-        }
-    }
-    #[doc = "Fast Slew Rate selected."]
-    #[inline(always)]
-    pub fn is_fast(&self) -> bool {
-        *self == GPIO_SRSEL_A::FAST
-    }
-    #[doc = "Slow Slew Rate selected."]
-    #[inline(always)]
-    pub fn is_slow(&self) -> bool {
-        *self == GPIO_SRSEL_A::SLOW
-    }
-}
+pub type GPIO_SRSEL_R = crate::FieldReader<u32>;
 #[doc = "Field `GPIO_SRSEL` writer - Mask of all of the pins on the port."]
-pub type GPIO_SRSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, GPIO_SRSEL_A>;
-impl<'a, REG, const O: u8> GPIO_SRSEL_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
-    #[doc = "Fast Slew Rate selected."]
-    #[inline(always)]
-    pub fn fast(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_SRSEL_A::FAST)
-    }
-    #[doc = "Slow Slew Rate selected."]
-    #[inline(always)]
-    pub fn slow(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_SRSEL_A::SLOW)
-    }
-}
+pub type GPIO_SRSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
@@ -72,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_srsel(&mut self) -> GPIO_SRSEL_W<SRSEL_SPEC, 0> {
-        GPIO_SRSEL_W::new(self)
+    pub fn gpio_srsel(&mut self) -> GPIO_SRSEL_W<SRSEL_SPEC> {
+        GPIO_SRSEL_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

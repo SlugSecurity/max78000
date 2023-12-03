@@ -19,7 +19,7 @@ impl From<CH0_A> for bool {
 impl CH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH0_A {
+    pub const fn variant(&self) -> CH0_A {
         match self.bits {
             false => CH0_A::INACTIVE,
             true => CH0_A::PENDING,
@@ -37,113 +37,11 @@ impl CH0_R {
     }
 }
 #[doc = "Field `CH1` reader - Channel Interrupt. To clear an interrupt, all active interrupt bits of the DMA_ST must be cleared. The interrupt bits are set only if their corresponding interrupt enable bits are set in DMA_CN."]
-pub type CH1_R = crate::BitReader<CH1_A>;
-#[doc = "Channel Interrupt. To clear an interrupt, all active interrupt bits of the DMA_ST must be cleared. The interrupt bits are set only if their corresponding interrupt enable bits are set in DMA_CN.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH1_A {
-    #[doc = "0: No interrupt is pending."]
-    INACTIVE = 0,
-    #[doc = "1: An interrupt is pending."]
-    PENDING = 1,
-}
-impl From<CH1_A> for bool {
-    #[inline(always)]
-    fn from(variant: CH1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CH1_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CH1_A {
-        match self.bits {
-            false => CH1_A::INACTIVE,
-            true => CH1_A::PENDING,
-        }
-    }
-    #[doc = "No interrupt is pending."]
-    #[inline(always)]
-    pub fn is_inactive(&self) -> bool {
-        *self == CH1_A::INACTIVE
-    }
-    #[doc = "An interrupt is pending."]
-    #[inline(always)]
-    pub fn is_pending(&self) -> bool {
-        *self == CH1_A::PENDING
-    }
-}
+pub use CH0_R as CH1_R;
 #[doc = "Field `CH2` reader - Channel Interrupt. To clear an interrupt, all active interrupt bits of the DMA_ST must be cleared. The interrupt bits are set only if their corresponding interrupt enable bits are set in DMA_CN."]
-pub type CH2_R = crate::BitReader<CH2_A>;
-#[doc = "Channel Interrupt. To clear an interrupt, all active interrupt bits of the DMA_ST must be cleared. The interrupt bits are set only if their corresponding interrupt enable bits are set in DMA_CN.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH2_A {
-    #[doc = "0: No interrupt is pending."]
-    INACTIVE = 0,
-    #[doc = "1: An interrupt is pending."]
-    PENDING = 1,
-}
-impl From<CH2_A> for bool {
-    #[inline(always)]
-    fn from(variant: CH2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CH2_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CH2_A {
-        match self.bits {
-            false => CH2_A::INACTIVE,
-            true => CH2_A::PENDING,
-        }
-    }
-    #[doc = "No interrupt is pending."]
-    #[inline(always)]
-    pub fn is_inactive(&self) -> bool {
-        *self == CH2_A::INACTIVE
-    }
-    #[doc = "An interrupt is pending."]
-    #[inline(always)]
-    pub fn is_pending(&self) -> bool {
-        *self == CH2_A::PENDING
-    }
-}
+pub use CH0_R as CH2_R;
 #[doc = "Field `CH3` reader - Channel Interrupt. To clear an interrupt, all active interrupt bits of the DMA_ST must be cleared. The interrupt bits are set only if their corresponding interrupt enable bits are set in DMA_CN."]
-pub type CH3_R = crate::BitReader<CH3_A>;
-#[doc = "Channel Interrupt. To clear an interrupt, all active interrupt bits of the DMA_ST must be cleared. The interrupt bits are set only if their corresponding interrupt enable bits are set in DMA_CN.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH3_A {
-    #[doc = "0: No interrupt is pending."]
-    INACTIVE = 0,
-    #[doc = "1: An interrupt is pending."]
-    PENDING = 1,
-}
-impl From<CH3_A> for bool {
-    #[inline(always)]
-    fn from(variant: CH3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CH3_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CH3_A {
-        match self.bits {
-            false => CH3_A::INACTIVE,
-            true => CH3_A::PENDING,
-        }
-    }
-    #[doc = "No interrupt is pending."]
-    #[inline(always)]
-    pub fn is_inactive(&self) -> bool {
-        *self == CH3_A::INACTIVE
-    }
-    #[doc = "An interrupt is pending."]
-    #[inline(always)]
-    pub fn is_pending(&self) -> bool {
-        *self == CH3_A::PENDING
-    }
-}
+pub use CH0_R as CH3_R;
 impl R {
     #[doc = "Bit 0 - Channel Interrupt. To clear an interrupt, all active interrupt bits of the DMA_ST must be cleared. The interrupt bits are set only if their corresponding interrupt enable bits are set in DMA_CN."]
     #[inline(always)]

@@ -19,7 +19,7 @@ impl From<TRNG_A> for bool {
 impl TRNG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRNG_A {
+    pub const fn variant(&self) -> TRNG_A {
         match self.bits {
             false => TRNG_A::NO,
             true => TRNG_A::YES,
@@ -55,7 +55,7 @@ impl From<AES_A> for bool {
 impl AES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AES_A {
+    pub const fn variant(&self) -> AES_A {
         match self.bits {
             false => AES_A::NO,
             true => AES_A::YES,

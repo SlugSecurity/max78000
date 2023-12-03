@@ -5,15 +5,15 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `VDDA_LIMITLO` reader - VDDA Low Trim Limit."]
 pub type VDDA_LIMITLO_R = crate::FieldReader;
 #[doc = "Field `VDDA_LIMITLO` writer - VDDA Low Trim Limit."]
-pub type VDDA_LIMITLO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type VDDA_LIMITLO_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `VDDA_LIMITHI` reader - VDDA High Trim Limit."]
 pub type VDDA_LIMITHI_R = crate::FieldReader;
 #[doc = "Field `VDDA_LIMITHI` writer - VDDA High Trim Limit."]
-pub type VDDA_LIMITHI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type VDDA_LIMITHI_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `IPO_LIMITHI` reader - IPO High Trim Limit."]
 pub type IPO_LIMITHI_R = crate::FieldReader<u16>;
 #[doc = "Field `IPO_LIMITHI` writer - IPO High Trim Limit."]
-pub type IPO_LIMITHI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type IPO_LIMITHI_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 #[doc = "Field `INRO_SEL` reader - INRO Clock Select."]
 pub type INRO_SEL_R = crate::FieldReader<INRO_SEL_A>;
 #[doc = "INRO Clock Select.\n\nValue on reset: 0"]
@@ -39,7 +39,7 @@ impl crate::FieldSpec for INRO_SEL_A {
 impl INRO_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<INRO_SEL_A> {
+    pub const fn variant(&self) -> Option<INRO_SEL_A> {
         match self.bits {
             0 => Some(INRO_SEL_A::_8KHZ),
             1 => Some(INRO_SEL_A::_16KHZ),
@@ -64,8 +64,8 @@ impl INRO_SEL_R {
     }
 }
 #[doc = "Field `INRO_SEL` writer - INRO Clock Select."]
-pub type INRO_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, INRO_SEL_A>;
-impl<'a, REG, const O: u8> INRO_SEL_W<'a, REG, O>
+pub type INRO_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, INRO_SEL_A>;
+impl<'a, REG> INRO_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -89,7 +89,7 @@ where
 #[doc = "Field `INRO_TRIM` reader - INRO Clock Trim."]
 pub type INRO_TRIM_R = crate::FieldReader;
 #[doc = "Field `INRO_TRIM` writer - INRO Clock Trim."]
-pub type INRO_TRIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type INRO_TRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:6 - VDDA Low Trim Limit."]
     #[inline(always)]
@@ -121,34 +121,38 @@ impl W {
     #[doc = "Bits 0:6 - VDDA Low Trim Limit."]
     #[inline(always)]
     #[must_use]
-    pub fn vdda_limitlo(&mut self) -> VDDA_LIMITLO_W<CTRL_SPEC, 0> {
-        VDDA_LIMITLO_W::new(self)
+    pub fn vdda_limitlo(&mut self) -> VDDA_LIMITLO_W<CTRL_SPEC> {
+        VDDA_LIMITLO_W::new(self, 0)
     }
     #[doc = "Bits 8:14 - VDDA High Trim Limit."]
     #[inline(always)]
     #[must_use]
-    pub fn vdda_limithi(&mut self) -> VDDA_LIMITHI_W<CTRL_SPEC, 8> {
-        VDDA_LIMITHI_W::new(self)
+    pub fn vdda_limithi(&mut self) -> VDDA_LIMITHI_W<CTRL_SPEC> {
+        VDDA_LIMITHI_W::new(self, 8)
     }
     #[doc = "Bits 15:23 - IPO High Trim Limit."]
     #[inline(always)]
     #[must_use]
-    pub fn ipo_limithi(&mut self) -> IPO_LIMITHI_W<CTRL_SPEC, 15> {
-        IPO_LIMITHI_W::new(self)
+    pub fn ipo_limithi(&mut self) -> IPO_LIMITHI_W<CTRL_SPEC> {
+        IPO_LIMITHI_W::new(self, 15)
     }
     #[doc = "Bits 24:25 - INRO Clock Select."]
     #[inline(always)]
     #[must_use]
-    pub fn inro_sel(&mut self) -> INRO_SEL_W<CTRL_SPEC, 24> {
-        INRO_SEL_W::new(self)
+    pub fn inro_sel(&mut self) -> INRO_SEL_W<CTRL_SPEC> {
+        INRO_SEL_W::new(self, 24)
     }
     #[doc = "Bits 29:31 - INRO Clock Trim."]
     #[inline(always)]
     #[must_use]
-    pub fn inro_trim(&mut self) -> INRO_TRIM_W<CTRL_SPEC, 29> {
-        INRO_TRIM_W::new(self)
+    pub fn inro_trim(&mut self) -> INRO_TRIM_W<CTRL_SPEC> {
+        INRO_TRIM_W::new(self, 29)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

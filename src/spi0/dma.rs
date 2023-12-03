@@ -5,7 +5,7 @@ pub type W = crate::W<DMA_SPEC>;
 #[doc = "Field `TX_THD_VAL` reader - Transmit FIFO level that will trigger a DMA request, also level for threshold status. When TX FIFO has fewer than this many bytes, the associated events and conditions are triggered."]
 pub type TX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `TX_THD_VAL` writer - Transmit FIFO level that will trigger a DMA request, also level for threshold status. When TX FIFO has fewer than this many bytes, the associated events and conditions are triggered."]
-pub type TX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type TX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `TX_FIFO_EN` reader - Transmit FIFO enabled for SPI transactions."]
 pub type TX_FIFO_EN_R = crate::BitReader<TX_FIFO_EN_A>;
 #[doc = "Transmit FIFO enabled for SPI transactions.\n\nValue on reset: 0"]
@@ -25,7 +25,7 @@ impl From<TX_FIFO_EN_A> for bool {
 impl TX_FIFO_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_FIFO_EN_A {
+    pub const fn variant(&self) -> TX_FIFO_EN_A {
         match self.bits {
             false => TX_FIFO_EN_A::DIS,
             true => TX_FIFO_EN_A::EN,
@@ -43,8 +43,8 @@ impl TX_FIFO_EN_R {
     }
 }
 #[doc = "Field `TX_FIFO_EN` writer - Transmit FIFO enabled for SPI transactions."]
-pub type TX_FIFO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_FIFO_EN_A>;
-impl<'a, REG, const O: u8> TX_FIFO_EN_W<'a, REG, O>
+pub type TX_FIFO_EN_W<'a, REG> = crate::BitWriter<'a, REG, TX_FIFO_EN_A>;
+impl<'a, REG> TX_FIFO_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -76,7 +76,7 @@ impl From<TX_FLUSH_A> for bool {
 impl TX_FLUSH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_FLUSH_A> {
+    pub const fn variant(&self) -> Option<TX_FLUSH_A> {
         match self.bits {
             true => Some(TX_FLUSH_A::CLEAR),
             _ => None,
@@ -89,8 +89,8 @@ impl TX_FLUSH_R {
     }
 }
 #[doc = "Field `TX_FLUSH` writer - Clear TX FIFO, clear is accomplished by resetting the read and write pointers. This should be done when FIFO is not being accessed on the SPI side."]
-pub type TX_FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_FLUSH_A>;
-impl<'a, REG, const O: u8> TX_FLUSH_W<'a, REG, O>
+pub type TX_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG, TX_FLUSH_A>;
+impl<'a, REG> TX_FLUSH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -121,7 +121,7 @@ impl From<DMA_TX_EN_A> for bool {
 impl DMA_TX_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA_TX_EN_A {
+    pub const fn variant(&self) -> DMA_TX_EN_A {
         match self.bits {
             false => DMA_TX_EN_A::DIS,
             true => DMA_TX_EN_A::EN,
@@ -139,8 +139,8 @@ impl DMA_TX_EN_R {
     }
 }
 #[doc = "Field `DMA_TX_EN` writer - TX DMA Enable."]
-pub type DMA_TX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DMA_TX_EN_A>;
-impl<'a, REG, const O: u8> DMA_TX_EN_W<'a, REG, O>
+pub type DMA_TX_EN_W<'a, REG> = crate::BitWriter<'a, REG, DMA_TX_EN_A>;
+impl<'a, REG> DMA_TX_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -158,7 +158,7 @@ where
 #[doc = "Field `RX_THD_VAL` reader - Receive FIFO level that will trigger a DMA request, also level for threshold status. When RX FIFO has more than this many bytes, the associated events and conditions are triggered."]
 pub type RX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `RX_THD_VAL` writer - Receive FIFO level that will trigger a DMA request, also level for threshold status. When RX FIFO has more than this many bytes, the associated events and conditions are triggered."]
-pub type RX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type RX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `RX_FIFO_EN` reader - Receive FIFO enabled for SPI transactions."]
 pub type RX_FIFO_EN_R = crate::BitReader<RX_FIFO_EN_A>;
 #[doc = "Receive FIFO enabled for SPI transactions.\n\nValue on reset: 0"]
@@ -178,7 +178,7 @@ impl From<RX_FIFO_EN_A> for bool {
 impl RX_FIFO_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_FIFO_EN_A {
+    pub const fn variant(&self) -> RX_FIFO_EN_A {
         match self.bits {
             false => RX_FIFO_EN_A::DIS,
             true => RX_FIFO_EN_A::EN,
@@ -196,8 +196,8 @@ impl RX_FIFO_EN_R {
     }
 }
 #[doc = "Field `RX_FIFO_EN` writer - Receive FIFO enabled for SPI transactions."]
-pub type RX_FIFO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_FIFO_EN_A>;
-impl<'a, REG, const O: u8> RX_FIFO_EN_W<'a, REG, O>
+pub type RX_FIFO_EN_W<'a, REG> = crate::BitWriter<'a, REG, RX_FIFO_EN_A>;
+impl<'a, REG> RX_FIFO_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -229,7 +229,7 @@ impl From<RX_FLUSH_A> for bool {
 impl RX_FLUSH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RX_FLUSH_A> {
+    pub const fn variant(&self) -> Option<RX_FLUSH_A> {
         match self.bits {
             true => Some(RX_FLUSH_A::CLEAR),
             _ => None,
@@ -242,8 +242,8 @@ impl RX_FLUSH_R {
     }
 }
 #[doc = "Field `RX_FLUSH` writer - Clear RX FIFO, clear is accomplished by resetting the read and write pointers. This should be done when FIFO is not being accessed on the SPI side."]
-pub type RX_FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_FLUSH_A>;
-impl<'a, REG, const O: u8> RX_FLUSH_W<'a, REG, O>
+pub type RX_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG, RX_FLUSH_A>;
+impl<'a, REG> RX_FLUSH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -274,7 +274,7 @@ impl From<DMA_RX_EN_A> for bool {
 impl DMA_RX_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA_RX_EN_A {
+    pub const fn variant(&self) -> DMA_RX_EN_A {
         match self.bits {
             false => DMA_RX_EN_A::DIS,
             true => DMA_RX_EN_A::EN,
@@ -292,8 +292,8 @@ impl DMA_RX_EN_R {
     }
 }
 #[doc = "Field `DMA_RX_EN` writer - RX DMA Enable."]
-pub type DMA_RX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DMA_RX_EN_A>;
-impl<'a, REG, const O: u8> DMA_RX_EN_W<'a, REG, O>
+pub type DMA_RX_EN_W<'a, REG> = crate::BitWriter<'a, REG, DMA_RX_EN_A>;
+impl<'a, REG> DMA_RX_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -364,52 +364,56 @@ impl W {
     #[doc = "Bits 0:4 - Transmit FIFO level that will trigger a DMA request, also level for threshold status. When TX FIFO has fewer than this many bytes, the associated events and conditions are triggered."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_thd_val(&mut self) -> TX_THD_VAL_W<DMA_SPEC, 0> {
-        TX_THD_VAL_W::new(self)
+    pub fn tx_thd_val(&mut self) -> TX_THD_VAL_W<DMA_SPEC> {
+        TX_THD_VAL_W::new(self, 0)
     }
     #[doc = "Bit 6 - Transmit FIFO enabled for SPI transactions."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_fifo_en(&mut self) -> TX_FIFO_EN_W<DMA_SPEC, 6> {
-        TX_FIFO_EN_W::new(self)
+    pub fn tx_fifo_en(&mut self) -> TX_FIFO_EN_W<DMA_SPEC> {
+        TX_FIFO_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear TX FIFO, clear is accomplished by resetting the read and write pointers. This should be done when FIFO is not being accessed on the SPI side."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_flush(&mut self) -> TX_FLUSH_W<DMA_SPEC, 7> {
-        TX_FLUSH_W::new(self)
+    pub fn tx_flush(&mut self) -> TX_FLUSH_W<DMA_SPEC> {
+        TX_FLUSH_W::new(self, 7)
     }
     #[doc = "Bit 15 - TX DMA Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<DMA_SPEC, 15> {
-        DMA_TX_EN_W::new(self)
+    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<DMA_SPEC> {
+        DMA_TX_EN_W::new(self, 15)
     }
     #[doc = "Bits 16:20 - Receive FIFO level that will trigger a DMA request, also level for threshold status. When RX FIFO has more than this many bytes, the associated events and conditions are triggered."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<DMA_SPEC, 16> {
-        RX_THD_VAL_W::new(self)
+    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<DMA_SPEC> {
+        RX_THD_VAL_W::new(self, 16)
     }
     #[doc = "Bit 22 - Receive FIFO enabled for SPI transactions."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_fifo_en(&mut self) -> RX_FIFO_EN_W<DMA_SPEC, 22> {
-        RX_FIFO_EN_W::new(self)
+    pub fn rx_fifo_en(&mut self) -> RX_FIFO_EN_W<DMA_SPEC> {
+        RX_FIFO_EN_W::new(self, 22)
     }
     #[doc = "Bit 23 - Clear RX FIFO, clear is accomplished by resetting the read and write pointers. This should be done when FIFO is not being accessed on the SPI side."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_flush(&mut self) -> RX_FLUSH_W<DMA_SPEC, 23> {
-        RX_FLUSH_W::new(self)
+    pub fn rx_flush(&mut self) -> RX_FLUSH_W<DMA_SPEC> {
+        RX_FLUSH_W::new(self, 23)
     }
     #[doc = "Bit 31 - RX DMA Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<DMA_SPEC, 31> {
-        DMA_RX_EN_W::new(self)
+    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<DMA_SPEC> {
+        DMA_RX_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

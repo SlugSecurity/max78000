@@ -21,7 +21,7 @@ impl From<EN_A> for bool {
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> EN_A {
         match self.bits {
             false => EN_A::DIS,
             true => EN_A::EN,
@@ -39,8 +39,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `EN` writer - I2C Enable."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_A>;
-impl<'a, REG, const O: u8> EN_W<'a, REG, O>
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG, EN_A>;
+impl<'a, REG> EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<MST_MODE_A> for bool {
 impl MST_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MST_MODE_A {
+    pub const fn variant(&self) -> MST_MODE_A {
         match self.bits {
             false => MST_MODE_A::SLAVE_MODE,
             true => MST_MODE_A::MASTER_MODE,
@@ -92,8 +92,8 @@ impl MST_MODE_R {
     }
 }
 #[doc = "Field `MST_MODE` writer - Master Mode Enable."]
-pub type MST_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MST_MODE_A>;
-impl<'a, REG, const O: u8> MST_MODE_W<'a, REG, O>
+pub type MST_MODE_W<'a, REG> = crate::BitWriter<'a, REG, MST_MODE_A>;
+impl<'a, REG> MST_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<GC_ADDR_EN_A> for bool {
 impl GC_ADDR_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GC_ADDR_EN_A {
+    pub const fn variant(&self) -> GC_ADDR_EN_A {
         match self.bits {
             false => GC_ADDR_EN_A::DIS,
             true => GC_ADDR_EN_A::EN,
@@ -145,8 +145,8 @@ impl GC_ADDR_EN_R {
     }
 }
 #[doc = "Field `GC_ADDR_EN` writer - General Call Address Enable."]
-pub type GC_ADDR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GC_ADDR_EN_A>;
-impl<'a, REG, const O: u8> GC_ADDR_EN_W<'a, REG, O>
+pub type GC_ADDR_EN_W<'a, REG> = crate::BitWriter<'a, REG, GC_ADDR_EN_A>;
+impl<'a, REG> GC_ADDR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -180,7 +180,7 @@ impl From<IRXM_EN_A> for bool {
 impl IRXM_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IRXM_EN_A {
+    pub const fn variant(&self) -> IRXM_EN_A {
         match self.bits {
             false => IRXM_EN_A::DIS,
             true => IRXM_EN_A::EN,
@@ -198,8 +198,8 @@ impl IRXM_EN_R {
     }
 }
 #[doc = "Field `IRXM_EN` writer - Interactive Receive Mode."]
-pub type IRXM_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IRXM_EN_A>;
-impl<'a, REG, const O: u8> IRXM_EN_W<'a, REG, O>
+pub type IRXM_EN_W<'a, REG> = crate::BitWriter<'a, REG, IRXM_EN_A>;
+impl<'a, REG> IRXM_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -233,7 +233,7 @@ impl From<IRXM_ACK_A> for bool {
 impl IRXM_ACK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IRXM_ACK_A {
+    pub const fn variant(&self) -> IRXM_ACK_A {
         match self.bits {
             false => IRXM_ACK_A::ACK,
             true => IRXM_ACK_A::NACK,
@@ -251,8 +251,8 @@ impl IRXM_ACK_R {
     }
 }
 #[doc = "Field `IRXM_ACK` writer - Data Acknowledge. This bit defines the acknowledge bit returned by the I2C receiver while IRXM = 1 HW forces ACK to 0 when IRXM = 0."]
-pub type IRXM_ACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IRXM_ACK_A>;
-impl<'a, REG, const O: u8> IRXM_ACK_W<'a, REG, O>
+pub type IRXM_ACK_W<'a, REG> = crate::BitWriter<'a, REG, IRXM_ACK_A>;
+impl<'a, REG> IRXM_ACK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -286,7 +286,7 @@ impl From<SCL_OUT_A> for bool {
 impl SCL_OUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCL_OUT_A {
+    pub const fn variant(&self) -> SCL_OUT_A {
         match self.bits {
             false => SCL_OUT_A::DRIVE_SCL_LOW,
             true => SCL_OUT_A::RELEASE_SCL,
@@ -304,8 +304,8 @@ impl SCL_OUT_R {
     }
 }
 #[doc = "Field `SCL_OUT` writer - SCL Output. This bits control SCL output when SWOE =1."]
-pub type SCL_OUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SCL_OUT_A>;
-impl<'a, REG, const O: u8> SCL_OUT_W<'a, REG, O>
+pub type SCL_OUT_W<'a, REG> = crate::BitWriter<'a, REG, SCL_OUT_A>;
+impl<'a, REG> SCL_OUT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -339,7 +339,7 @@ impl From<SDA_OUT_A> for bool {
 impl SDA_OUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDA_OUT_A {
+    pub const fn variant(&self) -> SDA_OUT_A {
         match self.bits {
             false => SDA_OUT_A::DRIVE_SDA_LOW,
             true => SDA_OUT_A::RELEASE_SDA,
@@ -357,8 +357,8 @@ impl SDA_OUT_R {
     }
 }
 #[doc = "Field `SDA_OUT` writer - SDA Output. This bits control SDA output when SWOE = 1."]
-pub type SDA_OUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDA_OUT_A>;
-impl<'a, REG, const O: u8> SDA_OUT_W<'a, REG, O>
+pub type SDA_OUT_W<'a, REG> = crate::BitWriter<'a, REG, SDA_OUT_A>;
+impl<'a, REG> SDA_OUT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -396,7 +396,7 @@ impl From<BB_MODE_A> for bool {
 impl BB_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BB_MODE_A {
+    pub const fn variant(&self) -> BB_MODE_A {
         match self.bits {
             false => BB_MODE_A::OUTPUTS_DISABLE,
             true => BB_MODE_A::OUTPUTS_ENABLE,
@@ -414,8 +414,8 @@ impl BB_MODE_R {
     }
 }
 #[doc = "Field `BB_MODE` writer - Software Output Enable."]
-pub type BB_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BB_MODE_A>;
-impl<'a, REG, const O: u8> BB_MODE_W<'a, REG, O>
+pub type BB_MODE_W<'a, REG> = crate::BitWriter<'a, REG, BB_MODE_A>;
+impl<'a, REG> BB_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -449,7 +449,7 @@ impl From<READ_A> for bool {
 impl READ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> READ_A {
+    pub const fn variant(&self) -> READ_A {
         match self.bits {
             false => READ_A::WRITE,
             true => READ_A::READ,
@@ -485,7 +485,7 @@ impl From<CLKSTR_DIS_A> for bool {
 impl CLKSTR_DIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKSTR_DIS_A {
+    pub const fn variant(&self) -> CLKSTR_DIS_A {
         match self.bits {
             false => CLKSTR_DIS_A::EN,
             true => CLKSTR_DIS_A::DIS,
@@ -503,8 +503,8 @@ impl CLKSTR_DIS_R {
     }
 }
 #[doc = "Field `CLKSTR_DIS` writer - This bit will disable slave clock stretching when set."]
-pub type CLKSTR_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLKSTR_DIS_A>;
-impl<'a, REG, const O: u8> CLKSTR_DIS_W<'a, REG, O>
+pub type CLKSTR_DIS_W<'a, REG> = crate::BitWriter<'a, REG, CLKSTR_DIS_A>;
+impl<'a, REG> CLKSTR_DIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -538,7 +538,7 @@ impl From<ONE_MST_MODE_A> for bool {
 impl ONE_MST_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ONE_MST_MODE_A {
+    pub const fn variant(&self) -> ONE_MST_MODE_A {
         match self.bits {
             false => ONE_MST_MODE_A::DIS,
             true => ONE_MST_MODE_A::EN,
@@ -556,8 +556,8 @@ impl ONE_MST_MODE_R {
     }
 }
 #[doc = "Field `ONE_MST_MODE` writer - SCL Push-Pull Mode. This bit controls whether SCL is operated in a the I2C standard open-drain mode, or in a non-standard push-pull mode where the Hi-Z output isreplaced with Drive-1. The non-standard mode should only be used when operating as a master and communicating with slaves that are guaranteed to never drive SCL low."]
-pub type ONE_MST_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ONE_MST_MODE_A>;
-impl<'a, REG, const O: u8> ONE_MST_MODE_W<'a, REG, O>
+pub type ONE_MST_MODE_W<'a, REG> = crate::BitWriter<'a, REG, ONE_MST_MODE_A>;
+impl<'a, REG> ONE_MST_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -575,7 +575,7 @@ where
 #[doc = "Field `HS_EN` reader - High speed mode enable"]
 pub type HS_EN_R = crate::BitReader;
 #[doc = "Field `HS_EN` writer - High speed mode enable"]
-pub type HS_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HS_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - I2C Enable."]
     #[inline(always)]
@@ -652,70 +652,74 @@ impl W {
     #[doc = "Bit 0 - I2C Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Master Mode Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn mst_mode(&mut self) -> MST_MODE_W<CTRL_SPEC, 1> {
-        MST_MODE_W::new(self)
+    pub fn mst_mode(&mut self) -> MST_MODE_W<CTRL_SPEC> {
+        MST_MODE_W::new(self, 1)
     }
     #[doc = "Bit 2 - General Call Address Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn gc_addr_en(&mut self) -> GC_ADDR_EN_W<CTRL_SPEC, 2> {
-        GC_ADDR_EN_W::new(self)
+    pub fn gc_addr_en(&mut self) -> GC_ADDR_EN_W<CTRL_SPEC> {
+        GC_ADDR_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Interactive Receive Mode."]
     #[inline(always)]
     #[must_use]
-    pub fn irxm_en(&mut self) -> IRXM_EN_W<CTRL_SPEC, 3> {
-        IRXM_EN_W::new(self)
+    pub fn irxm_en(&mut self) -> IRXM_EN_W<CTRL_SPEC> {
+        IRXM_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Data Acknowledge. This bit defines the acknowledge bit returned by the I2C receiver while IRXM = 1 HW forces ACK to 0 when IRXM = 0."]
     #[inline(always)]
     #[must_use]
-    pub fn irxm_ack(&mut self) -> IRXM_ACK_W<CTRL_SPEC, 4> {
-        IRXM_ACK_W::new(self)
+    pub fn irxm_ack(&mut self) -> IRXM_ACK_W<CTRL_SPEC> {
+        IRXM_ACK_W::new(self, 4)
     }
     #[doc = "Bit 6 - SCL Output. This bits control SCL output when SWOE =1."]
     #[inline(always)]
     #[must_use]
-    pub fn scl_out(&mut self) -> SCL_OUT_W<CTRL_SPEC, 6> {
-        SCL_OUT_W::new(self)
+    pub fn scl_out(&mut self) -> SCL_OUT_W<CTRL_SPEC> {
+        SCL_OUT_W::new(self, 6)
     }
     #[doc = "Bit 7 - SDA Output. This bits control SDA output when SWOE = 1."]
     #[inline(always)]
     #[must_use]
-    pub fn sda_out(&mut self) -> SDA_OUT_W<CTRL_SPEC, 7> {
-        SDA_OUT_W::new(self)
+    pub fn sda_out(&mut self) -> SDA_OUT_W<CTRL_SPEC> {
+        SDA_OUT_W::new(self, 7)
     }
     #[doc = "Bit 10 - Software Output Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn bb_mode(&mut self) -> BB_MODE_W<CTRL_SPEC, 10> {
-        BB_MODE_W::new(self)
+    pub fn bb_mode(&mut self) -> BB_MODE_W<CTRL_SPEC> {
+        BB_MODE_W::new(self, 10)
     }
     #[doc = "Bit 12 - This bit will disable slave clock stretching when set."]
     #[inline(always)]
     #[must_use]
-    pub fn clkstr_dis(&mut self) -> CLKSTR_DIS_W<CTRL_SPEC, 12> {
-        CLKSTR_DIS_W::new(self)
+    pub fn clkstr_dis(&mut self) -> CLKSTR_DIS_W<CTRL_SPEC> {
+        CLKSTR_DIS_W::new(self, 12)
     }
     #[doc = "Bit 13 - SCL Push-Pull Mode. This bit controls whether SCL is operated in a the I2C standard open-drain mode, or in a non-standard push-pull mode where the Hi-Z output isreplaced with Drive-1. The non-standard mode should only be used when operating as a master and communicating with slaves that are guaranteed to never drive SCL low."]
     #[inline(always)]
     #[must_use]
-    pub fn one_mst_mode(&mut self) -> ONE_MST_MODE_W<CTRL_SPEC, 13> {
-        ONE_MST_MODE_W::new(self)
+    pub fn one_mst_mode(&mut self) -> ONE_MST_MODE_W<CTRL_SPEC> {
+        ONE_MST_MODE_W::new(self, 13)
     }
     #[doc = "Bit 15 - High speed mode enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_en(&mut self) -> HS_EN_W<CTRL_SPEC, 15> {
-        HS_EN_W::new(self)
+    pub fn hs_en(&mut self) -> HS_EN_W<CTRL_SPEC> {
+        HS_EN_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

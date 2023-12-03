@@ -5,7 +5,7 @@ pub type W = crate::W<AUTOCAL1_SPEC>;
 #[doc = "Field `INITTRM` reader - Initial Trim Setting."]
 pub type INITTRM_R = crate::FieldReader<u16>;
 #[doc = "Field `INITTRM` writer - Initial Trim Setting."]
-pub type INITTRM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type INITTRM_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     #[doc = "Bits 0:8 - Initial Trim Setting."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:8 - Initial Trim Setting."]
     #[inline(always)]
     #[must_use]
-    pub fn inittrm(&mut self) -> INITTRM_W<AUTOCAL1_SPEC, 0> {
-        INITTRM_W::new(self)
+    pub fn inittrm(&mut self) -> INITTRM_W<AUTOCAL1_SPEC> {
+        INITTRM_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

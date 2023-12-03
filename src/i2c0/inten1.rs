@@ -21,7 +21,7 @@ impl From<RX_OV_A> for bool {
 impl RX_OV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_OV_A {
+    pub const fn variant(&self) -> RX_OV_A {
         match self.bits {
             false => RX_OV_A::DIS,
             true => RX_OV_A::EN,
@@ -39,8 +39,8 @@ impl RX_OV_R {
     }
 }
 #[doc = "Field `RX_OV` writer - Receiver Overflow Interrupt Enable."]
-pub type RX_OV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_OV_A>;
-impl<'a, REG, const O: u8> RX_OV_W<'a, REG, O>
+pub type RX_OV_W<'a, REG> = crate::BitWriter<'a, REG, RX_OV_A>;
+impl<'a, REG> RX_OV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<TX_UN_A> for bool {
 impl TX_UN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_UN_A {
+    pub const fn variant(&self) -> TX_UN_A {
         match self.bits {
             false => TX_UN_A::DIS,
             true => TX_UN_A::EN,
@@ -92,8 +92,8 @@ impl TX_UN_R {
     }
 }
 #[doc = "Field `TX_UN` writer - Transmit Underflow Interrupt Enable."]
-pub type TX_UN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_UN_A>;
-impl<'a, REG, const O: u8> TX_UN_W<'a, REG, O>
+pub type TX_UN_W<'a, REG> = crate::BitWriter<'a, REG, TX_UN_A>;
+impl<'a, REG> TX_UN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,7 +111,7 @@ where
 #[doc = "Field `START` reader - START Condition Interrupt Enable."]
 pub type START_R = crate::BitReader;
 #[doc = "Field `START` writer - START Condition Interrupt Enable."]
-pub type START_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Receiver Overflow Interrupt Enable."]
     #[inline(always)]
@@ -133,22 +133,26 @@ impl W {
     #[doc = "Bit 0 - Receiver Overflow Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_ov(&mut self) -> RX_OV_W<INTEN1_SPEC, 0> {
-        RX_OV_W::new(self)
+    pub fn rx_ov(&mut self) -> RX_OV_W<INTEN1_SPEC> {
+        RX_OV_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit Underflow Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_un(&mut self) -> TX_UN_W<INTEN1_SPEC, 1> {
-        TX_UN_W::new(self)
+    pub fn tx_un(&mut self) -> TX_UN_W<INTEN1_SPEC> {
+        TX_UN_W::new(self, 1)
     }
     #[doc = "Bit 2 - START Condition Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<INTEN1_SPEC, 2> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<INTEN1_SPEC> {
+        START_W::new(self, 2)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

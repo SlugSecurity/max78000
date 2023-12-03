@@ -5,7 +5,7 @@ pub type W = crate::W<BUCK_ALERT_THR_C_SPEC>;
 #[doc = "Field `BUCKTHRC` reader - Threshold for ILOADC to generate the BUCK_ALERT"]
 pub type BUCKTHRC_R = crate::FieldReader;
 #[doc = "Field `BUCKTHRC` writer - Threshold for ILOADC to generate the BUCK_ALERT"]
-pub type BUCKTHRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type BUCKTHRC_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Threshold for ILOADC to generate the BUCK_ALERT"]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:7 - Threshold for ILOADC to generate the BUCK_ALERT"]
     #[inline(always)]
     #[must_use]
-    pub fn buckthrc(&mut self) -> BUCKTHRC_W<BUCK_ALERT_THR_C_SPEC, 0> {
-        BUCKTHRC_W::new(self)
+    pub fn buckthrc(&mut self) -> BUCKTHRC_W<BUCK_ALERT_THR_C_SPEC> {
+        BUCKTHRC_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<DONE_A> for bool {
 impl DONE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DONE_A {
+    pub const fn variant(&self) -> DONE_A {
         match self.bits {
             false => DONE_A::INACTIVE,
             true => DONE_A::PENDING,
@@ -39,8 +39,8 @@ impl DONE_R {
     }
 }
 #[doc = "Field `DONE` writer - Flash Done Interrupt. This bit is set to 1 upon Flash write or erase completion."]
-pub type DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DONE_A>;
-impl<'a, REG, const O: u8> DONE_W<'a, REG, O>
+pub type DONE_W<'a, REG> = crate::BitWriter<'a, REG, DONE_A>;
+impl<'a, REG> DONE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<AF_A> for bool {
 impl AF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AF_A {
+    pub const fn variant(&self) -> AF_A {
         match self.bits {
             false => AF_A::NO_ERROR,
             true => AF_A::ERROR,
@@ -92,8 +92,8 @@ impl AF_R {
     }
 }
 #[doc = "Field `AF` writer - Flash Access Fail. This bit is set when an attempt is made to write the flash while the flash is busy or the flash is locked. This bit can only be set to 1 by hardware."]
-pub type AF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AF_A>;
-impl<'a, REG, const O: u8> AF_W<'a, REG, O>
+pub type AF_W<'a, REG> = crate::BitWriter<'a, REG, AF_A>;
+impl<'a, REG> AF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<DONEIE_A> for bool {
 impl DONEIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DONEIE_A {
+    pub const fn variant(&self) -> DONEIE_A {
         match self.bits {
             false => DONEIE_A::DISABLE,
             true => DONEIE_A::ENABLE,
@@ -145,8 +145,8 @@ impl DONEIE_R {
     }
 }
 #[doc = "Field `DONEIE` writer - Flash Done Interrupt Enable."]
-pub type DONEIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DONEIE_A>;
-impl<'a, REG, const O: u8> DONEIE_W<'a, REG, O>
+pub type DONEIE_W<'a, REG> = crate::BitWriter<'a, REG, DONEIE_A>;
+impl<'a, REG> DONEIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -162,58 +162,9 @@ where
     }
 }
 #[doc = "Field `AFIE` reader - Flash Done Interrupt Enable."]
-pub type AFIE_R = crate::BitReader<AFIE_A>;
-#[doc = "Flash Done Interrupt Enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AFIE_A {
-    #[doc = "0: Disable."]
-    DISABLE = 0,
-    #[doc = "1: Enable."]
-    ENABLE = 1,
-}
-impl From<AFIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: AFIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl AFIE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> AFIE_A {
-        match self.bits {
-            false => AFIE_A::DISABLE,
-            true => AFIE_A::ENABLE,
-        }
-    }
-    #[doc = "Disable."]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == AFIE_A::DISABLE
-    }
-    #[doc = "Enable."]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == AFIE_A::ENABLE
-    }
-}
+pub use DONEIE_R as AFIE_R;
 #[doc = "Field `AFIE` writer - Flash Done Interrupt Enable."]
-pub type AFIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AFIE_A>;
-impl<'a, REG, const O: u8> AFIE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Disable."]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(AFIE_A::DISABLE)
-    }
-    #[doc = "Enable."]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut crate::W<REG> {
-        self.variant(AFIE_A::ENABLE)
-    }
-}
+pub use DONEIE_W as AFIE_W;
 impl R {
     #[doc = "Bit 0 - Flash Done Interrupt. This bit is set to 1 upon Flash write or erase completion."]
     #[inline(always)]
@@ -240,28 +191,32 @@ impl W {
     #[doc = "Bit 0 - Flash Done Interrupt. This bit is set to 1 upon Flash write or erase completion."]
     #[inline(always)]
     #[must_use]
-    pub fn done(&mut self) -> DONE_W<INTR_SPEC, 0> {
-        DONE_W::new(self)
+    pub fn done(&mut self) -> DONE_W<INTR_SPEC> {
+        DONE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Flash Access Fail. This bit is set when an attempt is made to write the flash while the flash is busy or the flash is locked. This bit can only be set to 1 by hardware."]
     #[inline(always)]
     #[must_use]
-    pub fn af(&mut self) -> AF_W<INTR_SPEC, 1> {
-        AF_W::new(self)
+    pub fn af(&mut self) -> AF_W<INTR_SPEC> {
+        AF_W::new(self, 1)
     }
     #[doc = "Bit 8 - Flash Done Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn doneie(&mut self) -> DONEIE_W<INTR_SPEC, 8> {
-        DONEIE_W::new(self)
+    pub fn doneie(&mut self) -> DONEIE_W<INTR_SPEC> {
+        DONEIE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Flash Done Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn afie(&mut self) -> AFIE_W<INTR_SPEC, 9> {
-        AFIE_W::new(self)
+    pub fn afie(&mut self) -> AFIE_W<INTR_SPEC> {
+        AFIE_W::new(self, 9)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

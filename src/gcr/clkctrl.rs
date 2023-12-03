@@ -37,7 +37,7 @@ impl crate::FieldSpec for SYSCLK_DIV_A {
 impl SYSCLK_DIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYSCLK_DIV_A {
+    pub const fn variant(&self) -> SYSCLK_DIV_A {
         match self.bits {
             0 => SYSCLK_DIV_A::DIV1,
             1 => SYSCLK_DIV_A::DIV2,
@@ -92,8 +92,8 @@ impl SYSCLK_DIV_R {
     }
 }
 #[doc = "Field `SYSCLK_DIV` writer - Prescaler Select. This 3 bit field sets the system operating frequency by controlling the prescaler that divides the output of the PLL0."]
-pub type SYSCLK_DIV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, SYSCLK_DIV_A>;
-impl<'a, REG, const O: u8> SYSCLK_DIV_W<'a, REG, O>
+pub type SYSCLK_DIV_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, SYSCLK_DIV_A>;
+impl<'a, REG> SYSCLK_DIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -170,7 +170,7 @@ impl crate::FieldSpec for SYSCLK_SEL_A {
 impl SYSCLK_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SYSCLK_SEL_A> {
+    pub const fn variant(&self) -> Option<SYSCLK_SEL_A> {
         match self.bits {
             0 => Some(SYSCLK_SEL_A::ISO),
             3 => Some(SYSCLK_SEL_A::INRO),
@@ -213,8 +213,8 @@ impl SYSCLK_SEL_R {
     }
 }
 #[doc = "Field `SYSCLK_SEL` writer - Clock Source Select. This 3 bit field selects the source for the system clock."]
-pub type SYSCLK_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SYSCLK_SEL_A>;
-impl<'a, REG, const O: u8> SYSCLK_SEL_W<'a, REG, O>
+pub type SYSCLK_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SYSCLK_SEL_A>;
+impl<'a, REG> SYSCLK_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -269,7 +269,7 @@ impl From<SYSCLK_RDY_A> for bool {
 impl SYSCLK_RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYSCLK_RDY_A {
+    pub const fn variant(&self) -> SYSCLK_RDY_A {
         match self.bits {
             false => SYSCLK_RDY_A::BUSY,
             true => SYSCLK_RDY_A::READY,
@@ -305,7 +305,7 @@ impl From<ERTCO_EN_A> for bool {
 impl ERTCO_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERTCO_EN_A {
+    pub const fn variant(&self) -> ERTCO_EN_A {
         match self.bits {
             false => ERTCO_EN_A::DIS,
             true => ERTCO_EN_A::EN,
@@ -323,8 +323,8 @@ impl ERTCO_EN_R {
     }
 }
 #[doc = "Field `ERTCO_EN` writer - 32 kHz Crystal Oscillator Enable."]
-pub type ERTCO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERTCO_EN_A>;
-impl<'a, REG, const O: u8> ERTCO_EN_W<'a, REG, O>
+pub type ERTCO_EN_W<'a, REG> = crate::BitWriter<'a, REG, ERTCO_EN_A>;
+impl<'a, REG> ERTCO_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -340,164 +340,17 @@ where
     }
 }
 #[doc = "Field `ISO_EN` reader - 60 MHz High Frequency Internal Reference Clock Enable."]
-pub type ISO_EN_R = crate::BitReader<ISO_EN_A>;
-#[doc = "60 MHz High Frequency Internal Reference Clock Enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ISO_EN_A {
-    #[doc = "0: Is Disabled."]
-    DIS = 0,
-    #[doc = "1: Is Enabled."]
-    EN = 1,
-}
-impl From<ISO_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: ISO_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ISO_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ISO_EN_A {
-        match self.bits {
-            false => ISO_EN_A::DIS,
-            true => ISO_EN_A::EN,
-        }
-    }
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn is_dis(&self) -> bool {
-        *self == ISO_EN_A::DIS
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn is_en(&self) -> bool {
-        *self == ISO_EN_A::EN
-    }
-}
-#[doc = "Field `ISO_EN` writer - 60 MHz High Frequency Internal Reference Clock Enable."]
-pub type ISO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ISO_EN_A>;
-impl<'a, REG, const O: u8> ISO_EN_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn dis(self) -> &'a mut crate::W<REG> {
-        self.variant(ISO_EN_A::DIS)
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn en(self) -> &'a mut crate::W<REG> {
-        self.variant(ISO_EN_A::EN)
-    }
-}
+pub use ERTCO_EN_R as ISO_EN_R;
 #[doc = "Field `IPO_EN` reader - 100 MHz High Frequency Internal Reference Clock Enable."]
-pub type IPO_EN_R = crate::BitReader<IPO_EN_A>;
-#[doc = "100 MHz High Frequency Internal Reference Clock Enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IPO_EN_A {
-    #[doc = "0: Is Disabled."]
-    DIS = 0,
-    #[doc = "1: Is Enabled."]
-    EN = 1,
-}
-impl From<IPO_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: IPO_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IPO_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IPO_EN_A {
-        match self.bits {
-            false => IPO_EN_A::DIS,
-            true => IPO_EN_A::EN,
-        }
-    }
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn is_dis(&self) -> bool {
-        *self == IPO_EN_A::DIS
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn is_en(&self) -> bool {
-        *self == IPO_EN_A::EN
-    }
-}
-#[doc = "Field `IPO_EN` writer - 100 MHz High Frequency Internal Reference Clock Enable."]
-pub type IPO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IPO_EN_A>;
-impl<'a, REG, const O: u8> IPO_EN_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn dis(self) -> &'a mut crate::W<REG> {
-        self.variant(IPO_EN_A::DIS)
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn en(self) -> &'a mut crate::W<REG> {
-        self.variant(IPO_EN_A::EN)
-    }
-}
+pub use ERTCO_EN_R as IPO_EN_R;
 #[doc = "Field `IBRO_EN` reader - 7.3725 MHz High Frequency Internal Reference Clock Enable."]
-pub type IBRO_EN_R = crate::BitReader<IBRO_EN_A>;
-#[doc = "7.3725 MHz High Frequency Internal Reference Clock Enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IBRO_EN_A {
-    #[doc = "0: Is Disabled."]
-    DIS = 0,
-    #[doc = "1: Is Enabled."]
-    EN = 1,
-}
-impl From<IBRO_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: IBRO_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IBRO_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IBRO_EN_A {
-        match self.bits {
-            false => IBRO_EN_A::DIS,
-            true => IBRO_EN_A::EN,
-        }
-    }
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn is_dis(&self) -> bool {
-        *self == IBRO_EN_A::DIS
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn is_en(&self) -> bool {
-        *self == IBRO_EN_A::EN
-    }
-}
+pub use ERTCO_EN_R as IBRO_EN_R;
+#[doc = "Field `ISO_EN` writer - 60 MHz High Frequency Internal Reference Clock Enable."]
+pub use ERTCO_EN_W as ISO_EN_W;
+#[doc = "Field `IPO_EN` writer - 100 MHz High Frequency Internal Reference Clock Enable."]
+pub use ERTCO_EN_W as IPO_EN_W;
 #[doc = "Field `IBRO_EN` writer - 7.3725 MHz High Frequency Internal Reference Clock Enable."]
-pub type IBRO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IBRO_EN_A>;
-impl<'a, REG, const O: u8> IBRO_EN_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Is Disabled."]
-    #[inline(always)]
-    pub fn dis(self) -> &'a mut crate::W<REG> {
-        self.variant(IBRO_EN_A::DIS)
-    }
-    #[doc = "Is Enabled."]
-    #[inline(always)]
-    pub fn en(self) -> &'a mut crate::W<REG> {
-        self.variant(IBRO_EN_A::EN)
-    }
-}
+pub use ERTCO_EN_W as IBRO_EN_W;
 #[doc = "Field `IBRO_VS` reader - 7.3725 MHz High Frequency Internal Reference Clock Voltage Select. This register bit is used to select the power supply to the IBRO."]
 pub type IBRO_VS_R = crate::BitReader<IBRO_VS_A>;
 #[doc = "7.3725 MHz High Frequency Internal Reference Clock Voltage Select. This register bit is used to select the power supply to the IBRO.\n\nValue on reset: 0"]
@@ -517,7 +370,7 @@ impl From<IBRO_VS_A> for bool {
 impl IBRO_VS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IBRO_VS_A {
+    pub const fn variant(&self) -> IBRO_VS_A {
         match self.bits {
             false => IBRO_VS_A::VCOR,
             true => IBRO_VS_A::_1V,
@@ -535,8 +388,8 @@ impl IBRO_VS_R {
     }
 }
 #[doc = "Field `IBRO_VS` writer - 7.3725 MHz High Frequency Internal Reference Clock Voltage Select. This register bit is used to select the power supply to the IBRO."]
-pub type IBRO_VS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IBRO_VS_A>;
-impl<'a, REG, const O: u8> IBRO_VS_W<'a, REG, O>
+pub type IBRO_VS_W<'a, REG> = crate::BitWriter<'a, REG, IBRO_VS_A>;
+impl<'a, REG> IBRO_VS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -570,7 +423,7 @@ impl From<ERTCO_RDY_A> for bool {
 impl ERTCO_RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERTCO_RDY_A {
+    pub const fn variant(&self) -> ERTCO_RDY_A {
         match self.bits {
             false => ERTCO_RDY_A::NOT,
             true => ERTCO_RDY_A::READY,
@@ -588,149 +441,13 @@ impl ERTCO_RDY_R {
     }
 }
 #[doc = "Field `ISO_RDY` reader - 60 MHz HIRC Ready."]
-pub type ISO_RDY_R = crate::BitReader<ISO_RDY_A>;
-#[doc = "60 MHz HIRC Ready.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ISO_RDY_A {
-    #[doc = "0: Is not Ready."]
-    NOT = 0,
-    #[doc = "1: Is Ready."]
-    READY = 1,
-}
-impl From<ISO_RDY_A> for bool {
-    #[inline(always)]
-    fn from(variant: ISO_RDY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ISO_RDY_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ISO_RDY_A {
-        match self.bits {
-            false => ISO_RDY_A::NOT,
-            true => ISO_RDY_A::READY,
-        }
-    }
-    #[doc = "Is not Ready."]
-    #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        *self == ISO_RDY_A::NOT
-    }
-    #[doc = "Is Ready."]
-    #[inline(always)]
-    pub fn is_ready(&self) -> bool {
-        *self == ISO_RDY_A::READY
-    }
-}
+pub use ERTCO_RDY_R as ISO_RDY_R;
 #[doc = "Field `IPO_RDY` reader - 100 MHz HIRC Ready."]
-pub type IPO_RDY_R = crate::BitReader<IPO_RDY_A>;
-#[doc = "100 MHz HIRC Ready.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IPO_RDY_A {
-    #[doc = "0: Is not Ready."]
-    NOT = 0,
-    #[doc = "1: Is Ready."]
-    READY = 1,
-}
-impl From<IPO_RDY_A> for bool {
-    #[inline(always)]
-    fn from(variant: IPO_RDY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IPO_RDY_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IPO_RDY_A {
-        match self.bits {
-            false => IPO_RDY_A::NOT,
-            true => IPO_RDY_A::READY,
-        }
-    }
-    #[doc = "Is not Ready."]
-    #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        *self == IPO_RDY_A::NOT
-    }
-    #[doc = "Is Ready."]
-    #[inline(always)]
-    pub fn is_ready(&self) -> bool {
-        *self == IPO_RDY_A::READY
-    }
-}
+pub use ERTCO_RDY_R as IPO_RDY_R;
 #[doc = "Field `IBRO_RDY` reader - 7.3725 MHz HIRC Ready."]
-pub type IBRO_RDY_R = crate::BitReader<IBRO_RDY_A>;
-#[doc = "7.3725 MHz HIRC Ready.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IBRO_RDY_A {
-    #[doc = "0: Is not Ready."]
-    NOT = 0,
-    #[doc = "1: Is Ready."]
-    READY = 1,
-}
-impl From<IBRO_RDY_A> for bool {
-    #[inline(always)]
-    fn from(variant: IBRO_RDY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IBRO_RDY_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IBRO_RDY_A {
-        match self.bits {
-            false => IBRO_RDY_A::NOT,
-            true => IBRO_RDY_A::READY,
-        }
-    }
-    #[doc = "Is not Ready."]
-    #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        *self == IBRO_RDY_A::NOT
-    }
-    #[doc = "Is Ready."]
-    #[inline(always)]
-    pub fn is_ready(&self) -> bool {
-        *self == IBRO_RDY_A::READY
-    }
-}
+pub use ERTCO_RDY_R as IBRO_RDY_R;
 #[doc = "Field `INRO_RDY` reader - 8 kHz Low Frequency Reference Clock Ready."]
-pub type INRO_RDY_R = crate::BitReader<INRO_RDY_A>;
-#[doc = "8 kHz Low Frequency Reference Clock Ready.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum INRO_RDY_A {
-    #[doc = "0: Is not Ready."]
-    NOT = 0,
-    #[doc = "1: Is Ready."]
-    READY = 1,
-}
-impl From<INRO_RDY_A> for bool {
-    #[inline(always)]
-    fn from(variant: INRO_RDY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl INRO_RDY_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> INRO_RDY_A {
-        match self.bits {
-            false => INRO_RDY_A::NOT,
-            true => INRO_RDY_A::READY,
-        }
-    }
-    #[doc = "Is not Ready."]
-    #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        *self == INRO_RDY_A::NOT
-    }
-    #[doc = "Is Ready."]
-    #[inline(always)]
-    pub fn is_ready(&self) -> bool {
-        *self == INRO_RDY_A::READY
-    }
-}
+pub use ERTCO_RDY_R as INRO_RDY_R;
 impl R {
     #[doc = "Bits 6:8 - Prescaler Select. This 3 bit field sets the system operating frequency by controlling the prescaler that divides the output of the PLL0."]
     #[inline(always)]
@@ -802,46 +519,50 @@ impl W {
     #[doc = "Bits 6:8 - Prescaler Select. This 3 bit field sets the system operating frequency by controlling the prescaler that divides the output of the PLL0."]
     #[inline(always)]
     #[must_use]
-    pub fn sysclk_div(&mut self) -> SYSCLK_DIV_W<CLKCTRL_SPEC, 6> {
-        SYSCLK_DIV_W::new(self)
+    pub fn sysclk_div(&mut self) -> SYSCLK_DIV_W<CLKCTRL_SPEC> {
+        SYSCLK_DIV_W::new(self, 6)
     }
     #[doc = "Bits 9:11 - Clock Source Select. This 3 bit field selects the source for the system clock."]
     #[inline(always)]
     #[must_use]
-    pub fn sysclk_sel(&mut self) -> SYSCLK_SEL_W<CLKCTRL_SPEC, 9> {
-        SYSCLK_SEL_W::new(self)
+    pub fn sysclk_sel(&mut self) -> SYSCLK_SEL_W<CLKCTRL_SPEC> {
+        SYSCLK_SEL_W::new(self, 9)
     }
     #[doc = "Bit 17 - 32 kHz Crystal Oscillator Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ertco_en(&mut self) -> ERTCO_EN_W<CLKCTRL_SPEC, 17> {
-        ERTCO_EN_W::new(self)
+    pub fn ertco_en(&mut self) -> ERTCO_EN_W<CLKCTRL_SPEC> {
+        ERTCO_EN_W::new(self, 17)
     }
     #[doc = "Bit 18 - 60 MHz High Frequency Internal Reference Clock Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn iso_en(&mut self) -> ISO_EN_W<CLKCTRL_SPEC, 18> {
-        ISO_EN_W::new(self)
+    pub fn iso_en(&mut self) -> ISO_EN_W<CLKCTRL_SPEC> {
+        ISO_EN_W::new(self, 18)
     }
     #[doc = "Bit 19 - 100 MHz High Frequency Internal Reference Clock Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ipo_en(&mut self) -> IPO_EN_W<CLKCTRL_SPEC, 19> {
-        IPO_EN_W::new(self)
+    pub fn ipo_en(&mut self) -> IPO_EN_W<CLKCTRL_SPEC> {
+        IPO_EN_W::new(self, 19)
     }
     #[doc = "Bit 20 - 7.3725 MHz High Frequency Internal Reference Clock Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ibro_en(&mut self) -> IBRO_EN_W<CLKCTRL_SPEC, 20> {
-        IBRO_EN_W::new(self)
+    pub fn ibro_en(&mut self) -> IBRO_EN_W<CLKCTRL_SPEC> {
+        IBRO_EN_W::new(self, 20)
     }
     #[doc = "Bit 21 - 7.3725 MHz High Frequency Internal Reference Clock Voltage Select. This register bit is used to select the power supply to the IBRO."]
     #[inline(always)]
     #[must_use]
-    pub fn ibro_vs(&mut self) -> IBRO_VS_W<CLKCTRL_SPEC, 21> {
-        IBRO_VS_W::new(self)
+    pub fn ibro_vs(&mut self) -> IBRO_VS_W<CLKCTRL_SPEC> {
+        IBRO_VS_W::new(self, 21)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<ICELOCK_A> for bool {
 impl ICELOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ICELOCK_A {
+    pub const fn variant(&self) -> ICELOCK_A {
         match self.bits {
             false => ICELOCK_A::UNLOCKED,
             true => ICELOCK_A::LOCKED,
@@ -39,8 +39,8 @@ impl ICELOCK_R {
     }
 }
 #[doc = "Field `ICELOCK` writer - ARM ICE Lock Status."]
-pub type ICELOCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ICELOCK_A>;
-impl<'a, REG, const O: u8> ICELOCK_W<'a, REG, O>
+pub type ICELOCK_W<'a, REG> = crate::BitWriter<'a, REG, ICELOCK_A>;
+impl<'a, REG> ICELOCK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,10 +66,14 @@ impl W {
     #[doc = "Bit 0 - ARM ICE Lock Status."]
     #[inline(always)]
     #[must_use]
-    pub fn icelock(&mut self) -> ICELOCK_W<SYSST_SPEC, 0> {
-        ICELOCK_W::new(self)
+    pub fn icelock(&mut self) -> ICELOCK_W<SYSST_SPEC> {
+        ICELOCK_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

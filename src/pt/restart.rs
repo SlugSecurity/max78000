@@ -5,19 +5,19 @@ pub type W = crate::W<RESTART_SPEC>;
 #[doc = "Field `pt_x_select` reader - Auto-Restart PT X Select"]
 pub type PT_X_SELECT_R = crate::FieldReader;
 #[doc = "Field `pt_x_select` writer - Auto-Restart PT X Select"]
-pub type PT_X_SELECT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PT_X_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `on_pt_x_loop_exit` reader - Enable Auto-Restart on PT X Loop Exit"]
 pub type ON_PT_X_LOOP_EXIT_R = crate::BitReader;
 #[doc = "Field `on_pt_x_loop_exit` writer - Enable Auto-Restart on PT X Loop Exit"]
-pub type ON_PT_X_LOOP_EXIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ON_PT_X_LOOP_EXIT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pt_y_select` reader - Auto-Restart PT Y Select"]
 pub type PT_Y_SELECT_R = crate::FieldReader;
 #[doc = "Field `pt_y_select` writer - Auto-Restart PT Y Select"]
-pub type PT_Y_SELECT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PT_Y_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `on_pt_y_loop_exit` reader - Enable Auto-Restart on PT Y Loop Exit"]
 pub type ON_PT_Y_LOOP_EXIT_R = crate::BitReader;
 #[doc = "Field `on_pt_y_loop_exit` writer - Enable Auto-Restart on PT Y Loop Exit"]
-pub type ON_PT_Y_LOOP_EXIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ON_PT_Y_LOOP_EXIT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:4 - Auto-Restart PT X Select"]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bits 0:4 - Auto-Restart PT X Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pt_x_select(&mut self) -> PT_X_SELECT_W<RESTART_SPEC, 0> {
-        PT_X_SELECT_W::new(self)
+    pub fn pt_x_select(&mut self) -> PT_X_SELECT_W<RESTART_SPEC> {
+        PT_X_SELECT_W::new(self, 0)
     }
     #[doc = "Bit 7 - Enable Auto-Restart on PT X Loop Exit"]
     #[inline(always)]
     #[must_use]
-    pub fn on_pt_x_loop_exit(&mut self) -> ON_PT_X_LOOP_EXIT_W<RESTART_SPEC, 7> {
-        ON_PT_X_LOOP_EXIT_W::new(self)
+    pub fn on_pt_x_loop_exit(&mut self) -> ON_PT_X_LOOP_EXIT_W<RESTART_SPEC> {
+        ON_PT_X_LOOP_EXIT_W::new(self, 7)
     }
     #[doc = "Bits 8:12 - Auto-Restart PT Y Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pt_y_select(&mut self) -> PT_Y_SELECT_W<RESTART_SPEC, 8> {
-        PT_Y_SELECT_W::new(self)
+    pub fn pt_y_select(&mut self) -> PT_Y_SELECT_W<RESTART_SPEC> {
+        PT_Y_SELECT_W::new(self, 8)
     }
     #[doc = "Bit 15 - Enable Auto-Restart on PT Y Loop Exit"]
     #[inline(always)]
     #[must_use]
-    pub fn on_pt_y_loop_exit(&mut self) -> ON_PT_Y_LOOP_EXIT_W<RESTART_SPEC, 15> {
-        ON_PT_Y_LOOP_EXIT_W::new(self)
+    pub fn on_pt_y_loop_exit(&mut self) -> ON_PT_Y_LOOP_EXIT_W<RESTART_SPEC> {
+        ON_PT_Y_LOOP_EXIT_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

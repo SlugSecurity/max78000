@@ -5,43 +5,43 @@ pub type W = crate::W<INTR_SPEC>;
 #[doc = "Field `done_ie` reader - ADC Done Interrupt Enable"]
 pub type DONE_IE_R = crate::BitReader;
 #[doc = "Field `done_ie` writer - ADC Done Interrupt Enable"]
-pub type DONE_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DONE_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ref_ready_ie` reader - ADC Reference Ready Interrupt Enable"]
 pub type REF_READY_IE_R = crate::BitReader;
 #[doc = "Field `ref_ready_ie` writer - ADC Reference Ready Interrupt Enable"]
-pub type REF_READY_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type REF_READY_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `hi_limit_ie` reader - ADC Hi Limit Monitor Interrupt Enable"]
 pub type HI_LIMIT_IE_R = crate::BitReader;
 #[doc = "Field `hi_limit_ie` writer - ADC Hi Limit Monitor Interrupt Enable"]
-pub type HI_LIMIT_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HI_LIMIT_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `lo_limit_ie` reader - ADC Lo Limit Monitor Interrupt Enable"]
 pub type LO_LIMIT_IE_R = crate::BitReader;
 #[doc = "Field `lo_limit_ie` writer - ADC Lo Limit Monitor Interrupt Enable"]
-pub type LO_LIMIT_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LO_LIMIT_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `overflow_ie` reader - ADC Overflow Interrupt Enable"]
 pub type OVERFLOW_IE_R = crate::BitReader;
 #[doc = "Field `overflow_ie` writer - ADC Overflow Interrupt Enable"]
-pub type OVERFLOW_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVERFLOW_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `done_if` reader - ADC Done Interrupt Flag"]
 pub type DONE_IF_R = crate::BitReader;
 #[doc = "Field `done_if` writer - ADC Done Interrupt Flag"]
-pub type DONE_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type DONE_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `ref_ready_if` reader - ADC Reference Ready Interrupt Flag"]
 pub type REF_READY_IF_R = crate::BitReader;
 #[doc = "Field `ref_ready_if` writer - ADC Reference Ready Interrupt Flag"]
-pub type REF_READY_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type REF_READY_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `hi_limit_if` reader - ADC Hi Limit Monitor Interrupt Flag"]
 pub type HI_LIMIT_IF_R = crate::BitReader;
 #[doc = "Field `hi_limit_if` writer - ADC Hi Limit Monitor Interrupt Flag"]
-pub type HI_LIMIT_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type HI_LIMIT_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `lo_limit_if` reader - ADC Lo Limit Monitor Interrupt Flag"]
 pub type LO_LIMIT_IF_R = crate::BitReader;
 #[doc = "Field `lo_limit_if` writer - ADC Lo Limit Monitor Interrupt Flag"]
-pub type LO_LIMIT_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type LO_LIMIT_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `overflow_if` reader - ADC Overflow Interrupt Flag"]
 pub type OVERFLOW_IF_R = crate::BitReader;
 #[doc = "Field `overflow_if` writer - ADC Overflow Interrupt Flag"]
-pub type OVERFLOW_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type OVERFLOW_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `pending` reader - ADC Interrupt Pending Status"]
 pub type PENDING_R = crate::BitReader;
 impl R {
@@ -105,64 +105,68 @@ impl W {
     #[doc = "Bit 0 - ADC Done Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn done_ie(&mut self) -> DONE_IE_W<INTR_SPEC, 0> {
-        DONE_IE_W::new(self)
+    pub fn done_ie(&mut self) -> DONE_IE_W<INTR_SPEC> {
+        DONE_IE_W::new(self, 0)
     }
     #[doc = "Bit 1 - ADC Reference Ready Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ref_ready_ie(&mut self) -> REF_READY_IE_W<INTR_SPEC, 1> {
-        REF_READY_IE_W::new(self)
+    pub fn ref_ready_ie(&mut self) -> REF_READY_IE_W<INTR_SPEC> {
+        REF_READY_IE_W::new(self, 1)
     }
     #[doc = "Bit 2 - ADC Hi Limit Monitor Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hi_limit_ie(&mut self) -> HI_LIMIT_IE_W<INTR_SPEC, 2> {
-        HI_LIMIT_IE_W::new(self)
+    pub fn hi_limit_ie(&mut self) -> HI_LIMIT_IE_W<INTR_SPEC> {
+        HI_LIMIT_IE_W::new(self, 2)
     }
     #[doc = "Bit 3 - ADC Lo Limit Monitor Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn lo_limit_ie(&mut self) -> LO_LIMIT_IE_W<INTR_SPEC, 3> {
-        LO_LIMIT_IE_W::new(self)
+    pub fn lo_limit_ie(&mut self) -> LO_LIMIT_IE_W<INTR_SPEC> {
+        LO_LIMIT_IE_W::new(self, 3)
     }
     #[doc = "Bit 4 - ADC Overflow Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn overflow_ie(&mut self) -> OVERFLOW_IE_W<INTR_SPEC, 4> {
-        OVERFLOW_IE_W::new(self)
+    pub fn overflow_ie(&mut self) -> OVERFLOW_IE_W<INTR_SPEC> {
+        OVERFLOW_IE_W::new(self, 4)
     }
     #[doc = "Bit 16 - ADC Done Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn done_if(&mut self) -> DONE_IF_W<INTR_SPEC, 16> {
-        DONE_IF_W::new(self)
+    pub fn done_if(&mut self) -> DONE_IF_W<INTR_SPEC> {
+        DONE_IF_W::new(self, 16)
     }
     #[doc = "Bit 17 - ADC Reference Ready Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ref_ready_if(&mut self) -> REF_READY_IF_W<INTR_SPEC, 17> {
-        REF_READY_IF_W::new(self)
+    pub fn ref_ready_if(&mut self) -> REF_READY_IF_W<INTR_SPEC> {
+        REF_READY_IF_W::new(self, 17)
     }
     #[doc = "Bit 18 - ADC Hi Limit Monitor Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn hi_limit_if(&mut self) -> HI_LIMIT_IF_W<INTR_SPEC, 18> {
-        HI_LIMIT_IF_W::new(self)
+    pub fn hi_limit_if(&mut self) -> HI_LIMIT_IF_W<INTR_SPEC> {
+        HI_LIMIT_IF_W::new(self, 18)
     }
     #[doc = "Bit 19 - ADC Lo Limit Monitor Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn lo_limit_if(&mut self) -> LO_LIMIT_IF_W<INTR_SPEC, 19> {
-        LO_LIMIT_IF_W::new(self)
+    pub fn lo_limit_if(&mut self) -> LO_LIMIT_IF_W<INTR_SPEC> {
+        LO_LIMIT_IF_W::new(self, 19)
     }
     #[doc = "Bit 20 - ADC Overflow Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn overflow_if(&mut self) -> OVERFLOW_IF_W<INTR_SPEC, 20> {
-        OVERFLOW_IF_W::new(self)
+    pub fn overflow_if(&mut self) -> OVERFLOW_IF_W<INTR_SPEC> {
+        OVERFLOW_IF_W::new(self, 20)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

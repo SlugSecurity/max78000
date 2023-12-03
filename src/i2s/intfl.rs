@@ -5,19 +5,19 @@ pub type W = crate::W<INTFL_SPEC>;
 #[doc = "Field `RX_OV_CH0` reader - Status for RX FIFO Overrun interrupt."]
 pub type RX_OV_CH0_R = crate::BitReader;
 #[doc = "Field `RX_OV_CH0` writer - Status for RX FIFO Overrun interrupt."]
-pub type RX_OV_CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_OV_CH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_THD_CH0` reader - Status for interrupt when RX FIFO reaches the number of bytes configured by the RXTHD field."]
 pub type RX_THD_CH0_R = crate::BitReader;
 #[doc = "Field `RX_THD_CH0` writer - Status for interrupt when RX FIFO reaches the number of bytes configured by the RXTHD field."]
-pub type RX_THD_CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_THD_CH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX_OB_CH0` reader - Status for interrupt when TX FIFO has only one byte remaining."]
 pub type TX_OB_CH0_R = crate::BitReader;
 #[doc = "Field `TX_OB_CH0` writer - Status for interrupt when TX FIFO has only one byte remaining."]
-pub type TX_OB_CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_OB_CH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX_HE_CH0` reader - Status for interrupt when TX FIFO is half empty."]
 pub type TX_HE_CH0_R = crate::BitReader;
 #[doc = "Field `TX_HE_CH0` writer - Status for interrupt when TX FIFO is half empty."]
-pub type TX_HE_CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_HE_CH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Status for RX FIFO Overrun interrupt."]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bit 0 - Status for RX FIFO Overrun interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_ov_ch0(&mut self) -> RX_OV_CH0_W<INTFL_SPEC, 0> {
-        RX_OV_CH0_W::new(self)
+    pub fn rx_ov_ch0(&mut self) -> RX_OV_CH0_W<INTFL_SPEC> {
+        RX_OV_CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Status for interrupt when RX FIFO reaches the number of bytes configured by the RXTHD field."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd_ch0(&mut self) -> RX_THD_CH0_W<INTFL_SPEC, 1> {
-        RX_THD_CH0_W::new(self)
+    pub fn rx_thd_ch0(&mut self) -> RX_THD_CH0_W<INTFL_SPEC> {
+        RX_THD_CH0_W::new(self, 1)
     }
     #[doc = "Bit 2 - Status for interrupt when TX FIFO has only one byte remaining."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_ob_ch0(&mut self) -> TX_OB_CH0_W<INTFL_SPEC, 2> {
-        TX_OB_CH0_W::new(self)
+    pub fn tx_ob_ch0(&mut self) -> TX_OB_CH0_W<INTFL_SPEC> {
+        TX_OB_CH0_W::new(self, 2)
     }
     #[doc = "Bit 3 - Status for interrupt when TX FIFO is half empty."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_he_ch0(&mut self) -> TX_HE_CH0_W<INTFL_SPEC, 3> {
-        TX_HE_CH0_W::new(self)
+    pub fn tx_he_ch0(&mut self) -> TX_HE_CH0_W<INTFL_SPEC> {
+        TX_HE_CH0_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

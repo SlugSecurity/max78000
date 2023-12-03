@@ -5,11 +5,11 @@ pub type W = crate::W<SLAVE_MULTI_SPEC>;
 #[doc = "Field `ADDR` reader - Slave Address."]
 pub type ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `ADDR` writer - Slave Address."]
-pub type ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `DIS` reader - Slave Disable."]
 pub type DIS_R = crate::BitReader;
 #[doc = "Field `DIS` writer - Slave Disable."]
-pub type DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EXT_ADDR_EN` reader - Extended Address Select."]
 pub type EXT_ADDR_EN_R = crate::BitReader<EXT_ADDR_EN_A>;
 #[doc = "Extended Address Select.\n\nValue on reset: 0"]
@@ -29,7 +29,7 @@ impl From<EXT_ADDR_EN_A> for bool {
 impl EXT_ADDR_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXT_ADDR_EN_A {
+    pub const fn variant(&self) -> EXT_ADDR_EN_A {
         match self.bits {
             false => EXT_ADDR_EN_A::_7_BITS_ADDRESS,
             true => EXT_ADDR_EN_A::_10_BITS_ADDRESS,
@@ -47,8 +47,8 @@ impl EXT_ADDR_EN_R {
     }
 }
 #[doc = "Field `EXT_ADDR_EN` writer - Extended Address Select."]
-pub type EXT_ADDR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EXT_ADDR_EN_A>;
-impl<'a, REG, const O: u8> EXT_ADDR_EN_W<'a, REG, O>
+pub type EXT_ADDR_EN_W<'a, REG> = crate::BitWriter<'a, REG, EXT_ADDR_EN_A>;
+impl<'a, REG> EXT_ADDR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -84,22 +84,26 @@ impl W {
     #[doc = "Bits 0:9 - Slave Address."]
     #[inline(always)]
     #[must_use]
-    pub fn addr(&mut self) -> ADDR_W<SLAVE_MULTI_SPEC, 0> {
-        ADDR_W::new(self)
+    pub fn addr(&mut self) -> ADDR_W<SLAVE_MULTI_SPEC> {
+        ADDR_W::new(self, 0)
     }
     #[doc = "Bit 10 - Slave Disable."]
     #[inline(always)]
     #[must_use]
-    pub fn dis(&mut self) -> DIS_W<SLAVE_MULTI_SPEC, 10> {
-        DIS_W::new(self)
+    pub fn dis(&mut self) -> DIS_W<SLAVE_MULTI_SPEC> {
+        DIS_W::new(self, 10)
     }
     #[doc = "Bit 15 - Extended Address Select."]
     #[inline(always)]
     #[must_use]
-    pub fn ext_addr_en(&mut self) -> EXT_ADDR_EN_W<SLAVE_MULTI_SPEC, 15> {
-        EXT_ADDR_EN_W::new(self)
+    pub fn ext_addr_en(&mut self) -> EXT_ADDR_EN_W<SLAVE_MULTI_SPEC> {
+        EXT_ADDR_EN_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

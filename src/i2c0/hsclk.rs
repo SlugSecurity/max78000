@@ -5,11 +5,11 @@ pub type W = crate::W<HSCLK_SPEC>;
 #[doc = "Field `LO` reader - Clock Low. This field sets the Hs-Mode clock low count. In Slave mode, this is the time SCL is held low after data is output on SDA."]
 pub type LO_R = crate::FieldReader;
 #[doc = "Field `LO` writer - Clock Low. This field sets the Hs-Mode clock low count. In Slave mode, this is the time SCL is held low after data is output on SDA."]
-pub type LO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LO_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `HI` reader - Clock High. This field sets the Hs-Mode clock high count. In Slave mode, this is the time SCL is held high after data is output on SDA"]
 pub type HI_R = crate::FieldReader;
 #[doc = "Field `HI` writer - Clock High. This field sets the Hs-Mode clock high count. In Slave mode, this is the time SCL is held high after data is output on SDA"]
-pub type HI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type HI_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Clock Low. This field sets the Hs-Mode clock low count. In Slave mode, this is the time SCL is held low after data is output on SDA."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:7 - Clock Low. This field sets the Hs-Mode clock low count. In Slave mode, this is the time SCL is held low after data is output on SDA."]
     #[inline(always)]
     #[must_use]
-    pub fn lo(&mut self) -> LO_W<HSCLK_SPEC, 0> {
-        LO_W::new(self)
+    pub fn lo(&mut self) -> LO_W<HSCLK_SPEC> {
+        LO_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Clock High. This field sets the Hs-Mode clock high count. In Slave mode, this is the time SCL is held high after data is output on SDA"]
     #[inline(always)]
     #[must_use]
-    pub fn hi(&mut self) -> HI_W<HSCLK_SPEC, 8> {
-        HI_W::new(self)
+    pub fn hi(&mut self) -> HI_W<HSCLK_SPEC> {
+        HI_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

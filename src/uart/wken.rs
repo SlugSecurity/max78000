@@ -5,15 +5,15 @@ pub type W = crate::W<WKEN_SPEC>;
 #[doc = "Field `RX_NE` reader - Wake-Up Enable for RX FIFO Not Empty"]
 pub type RX_NE_R = crate::BitReader;
 #[doc = "Field `RX_NE` writer - Wake-Up Enable for RX FIFO Not Empty"]
-pub type RX_NE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_NE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_FULL` reader - Wake-Up Enable for RX FIFO Full"]
 pub type RX_FULL_R = crate::BitReader;
 #[doc = "Field `RX_FULL` writer - Wake-Up Enable for RX FIFO Full"]
-pub type RX_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_FULL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_THD` reader - Wake-Up Enable for RX FIFO Threshold Met"]
 pub type RX_THD_R = crate::BitReader;
 #[doc = "Field `RX_THD` writer - Wake-Up Enable for RX FIFO Threshold Met"]
-pub type RX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_THD_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Wake-Up Enable for RX FIFO Not Empty"]
     #[inline(always)]
@@ -35,22 +35,26 @@ impl W {
     #[doc = "Bit 0 - Wake-Up Enable for RX FIFO Not Empty"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_ne(&mut self) -> RX_NE_W<WKEN_SPEC, 0> {
-        RX_NE_W::new(self)
+    pub fn rx_ne(&mut self) -> RX_NE_W<WKEN_SPEC> {
+        RX_NE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake-Up Enable for RX FIFO Full"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_full(&mut self) -> RX_FULL_W<WKEN_SPEC, 1> {
-        RX_FULL_W::new(self)
+    pub fn rx_full(&mut self) -> RX_FULL_W<WKEN_SPEC> {
+        RX_FULL_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake-Up Enable for RX FIFO Threshold Met"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd(&mut self) -> RX_THD_W<WKEN_SPEC, 2> {
-        RX_THD_W::new(self)
+    pub fn rx_thd(&mut self) -> RX_THD_W<WKEN_SPEC> {
+        RX_THD_W::new(self, 2)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

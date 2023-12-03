@@ -5,11 +5,11 @@ pub type W = crate::W<LOOP_SPEC>;
 #[doc = "Field `count` reader - Number of loops for this pulse train to repeat."]
 pub type COUNT_R = crate::FieldReader<u16>;
 #[doc = "Field `count` writer - Number of loops for this pulse train to repeat."]
-pub type COUNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type COUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `delay` reader - Delay between loops of the Pulse Train in PT Peripheral Clock cycles"]
 pub type DELAY_R = crate::FieldReader<u16>;
 #[doc = "Field `delay` writer - Delay between loops of the Pulse Train in PT Peripheral Clock cycles"]
-pub type DELAY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type DELAY_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:15 - Number of loops for this pulse train to repeat."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:15 - Number of loops for this pulse train to repeat."]
     #[inline(always)]
     #[must_use]
-    pub fn count(&mut self) -> COUNT_W<LOOP_SPEC, 0> {
-        COUNT_W::new(self)
+    pub fn count(&mut self) -> COUNT_W<LOOP_SPEC> {
+        COUNT_W::new(self, 0)
     }
     #[doc = "Bits 16:27 - Delay between loops of the Pulse Train in PT Peripheral Clock cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn delay(&mut self) -> DELAY_W<LOOP_SPEC, 16> {
-        DELAY_W::new(self)
+    pub fn delay(&mut self) -> DELAY_W<LOOP_SPEC> {
+        DELAY_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

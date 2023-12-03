@@ -7,7 +7,7 @@ pub type CTS_R = crate::BitReader;
 #[doc = "Field `RTS` reader - This bit controls the value to apply on the RTS IO. If set to 1, the RTS IO is set to high level. If set to 0, the RTS IO is set to low level."]
 pub type RTS_R = crate::BitReader;
 #[doc = "Field `RTS` writer - This bit controls the value to apply on the RTS IO. If set to 1, the RTS IO is set to high level. If set to 0, the RTS IO is set to low level."]
-pub type RTS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RTS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Current sampled value of CTS IO"]
     #[inline(always)]
@@ -24,10 +24,14 @@ impl W {
     #[doc = "Bit 1 - This bit controls the value to apply on the RTS IO. If set to 1, the RTS IO is set to high level. If set to 0, the RTS IO is set to low level."]
     #[inline(always)]
     #[must_use]
-    pub fn rts(&mut self) -> RTS_W<PNR_SPEC, 1> {
-        RTS_W::new(self)
+    pub fn rts(&mut self) -> RTS_W<PNR_SPEC> {
+        RTS_W::new(self, 1)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

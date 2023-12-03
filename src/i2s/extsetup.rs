@@ -5,7 +5,7 @@ pub type W = crate::W<EXTSETUP_SPEC>;
 #[doc = "Field `EXT_BITS_WORD` reader - Word Length for ch_mode."]
 pub type EXT_BITS_WORD_R = crate::FieldReader;
 #[doc = "Field `EXT_BITS_WORD` writer - Word Length for ch_mode."]
-pub type EXT_BITS_WORD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type EXT_BITS_WORD_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:4 - Word Length for ch_mode."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:4 - Word Length for ch_mode."]
     #[inline(always)]
     #[must_use]
-    pub fn ext_bits_word(&mut self) -> EXT_BITS_WORD_W<EXTSETUP_SPEC, 0> {
-        EXT_BITS_WORD_W::new(self)
+    pub fn ext_bits_word(&mut self) -> EXT_BITS_WORD_W<EXTSETUP_SPEC> {
+        EXT_BITS_WORD_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

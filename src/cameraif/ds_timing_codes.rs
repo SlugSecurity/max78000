@@ -5,11 +5,11 @@ pub type W = crate::W<DS_TIMING_CODES_SPEC>;
 #[doc = "Field `SAV` reader - Start Active Video Code."]
 pub type SAV_R = crate::FieldReader;
 #[doc = "Field `SAV` writer - Start Active Video Code."]
-pub type SAV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SAV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `EAV` reader - End Active Video Code."]
 pub type EAV_R = crate::FieldReader;
 #[doc = "Field `EAV` writer - End Active Video Code."]
-pub type EAV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type EAV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Start Active Video Code."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:7 - Start Active Video Code."]
     #[inline(always)]
     #[must_use]
-    pub fn sav(&mut self) -> SAV_W<DS_TIMING_CODES_SPEC, 0> {
-        SAV_W::new(self)
+    pub fn sav(&mut self) -> SAV_W<DS_TIMING_CODES_SPEC> {
+        SAV_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - End Active Video Code."]
     #[inline(always)]
     #[must_use]
-    pub fn eav(&mut self) -> EAV_W<DS_TIMING_CODES_SPEC, 8> {
-        EAV_W::new(self)
+    pub fn eav(&mut self) -> EAV_W<DS_TIMING_CODES_SPEC> {
+        EAV_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

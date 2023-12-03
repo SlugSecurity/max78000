@@ -21,7 +21,7 @@ impl From<TX_EN_A> for bool {
 impl TX_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_EN_A {
+    pub const fn variant(&self) -> TX_EN_A {
         match self.bits {
             false => TX_EN_A::DIS,
             true => TX_EN_A::EN,
@@ -39,8 +39,8 @@ impl TX_EN_R {
     }
 }
 #[doc = "Field `TX_EN` writer - TX channel enable."]
-pub type TX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_EN_A>;
-impl<'a, REG, const O: u8> TX_EN_W<'a, REG, O>
+pub type TX_EN_W<'a, REG> = crate::BitWriter<'a, REG, TX_EN_A>;
+impl<'a, REG> TX_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<RX_EN_A> for bool {
 impl RX_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_EN_A {
+    pub const fn variant(&self) -> RX_EN_A {
         match self.bits {
             false => RX_EN_A::DIS,
             true => RX_EN_A::EN,
@@ -92,8 +92,8 @@ impl RX_EN_R {
     }
 }
 #[doc = "Field `RX_EN` writer - RX channel enable."]
-pub type RX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_EN_A>;
-impl<'a, REG, const O: u8> RX_EN_W<'a, REG, O>
+pub type RX_EN_W<'a, REG> = crate::BitWriter<'a, REG, RX_EN_A>;
+impl<'a, REG> RX_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -124,16 +124,20 @@ impl W {
     #[doc = "Bit 0 - TX channel enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_en(&mut self) -> TX_EN_W<DMA_SPEC, 0> {
-        TX_EN_W::new(self)
+    pub fn tx_en(&mut self) -> TX_EN_W<DMA_SPEC> {
+        TX_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - RX channel enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_en(&mut self) -> RX_EN_W<DMA_SPEC, 1> {
-        RX_EN_W::new(self)
+    pub fn rx_en(&mut self) -> RX_EN_W<DMA_SPEC> {
+        RX_EN_W::new(self, 1)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

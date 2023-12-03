@@ -21,7 +21,7 @@ impl From<DONE_A> for bool {
 impl DONE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DONE_A {
+    pub const fn variant(&self) -> DONE_A {
         match self.bits {
             false => DONE_A::DIS,
             true => DONE_A::EN,
@@ -39,8 +39,8 @@ impl DONE_R {
     }
 }
 #[doc = "Field `DONE` writer - Transfer Done Interrupt Enable."]
-pub type DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DONE_A>;
-impl<'a, REG, const O: u8> DONE_W<'a, REG, O>
+pub type DONE_W<'a, REG> = crate::BitWriter<'a, REG, DONE_A>;
+impl<'a, REG> DONE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<IRXM_A> for bool {
 impl IRXM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IRXM_A {
+    pub const fn variant(&self) -> IRXM_A {
         match self.bits {
             false => IRXM_A::DIS,
             true => IRXM_A::EN,
@@ -92,8 +92,8 @@ impl IRXM_R {
     }
 }
 #[doc = "Field `IRXM` writer - Description not available."]
-pub type IRXM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IRXM_A>;
-impl<'a, REG, const O: u8> IRXM_W<'a, REG, O>
+pub type IRXM_W<'a, REG> = crate::BitWriter<'a, REG, IRXM_A>;
+impl<'a, REG> IRXM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<GC_ADDR_MATCH_A> for bool {
 impl GC_ADDR_MATCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GC_ADDR_MATCH_A {
+    pub const fn variant(&self) -> GC_ADDR_MATCH_A {
         match self.bits {
             false => GC_ADDR_MATCH_A::DIS,
             true => GC_ADDR_MATCH_A::EN,
@@ -145,8 +145,8 @@ impl GC_ADDR_MATCH_R {
     }
 }
 #[doc = "Field `GC_ADDR_MATCH` writer - Slave mode general call address match received input enable."]
-pub type GC_ADDR_MATCH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GC_ADDR_MATCH_A>;
-impl<'a, REG, const O: u8> GC_ADDR_MATCH_W<'a, REG, O>
+pub type GC_ADDR_MATCH_W<'a, REG> = crate::BitWriter<'a, REG, GC_ADDR_MATCH_A>;
+impl<'a, REG> GC_ADDR_MATCH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -180,7 +180,7 @@ impl From<ADDR_MATCH_A> for bool {
 impl ADDR_MATCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR_MATCH_A {
+    pub const fn variant(&self) -> ADDR_MATCH_A {
         match self.bits {
             false => ADDR_MATCH_A::DIS,
             true => ADDR_MATCH_A::EN,
@@ -198,8 +198,8 @@ impl ADDR_MATCH_R {
     }
 }
 #[doc = "Field `ADDR_MATCH` writer - Slave mode incoming address match interrupt."]
-pub type ADDR_MATCH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ADDR_MATCH_A>;
-impl<'a, REG, const O: u8> ADDR_MATCH_W<'a, REG, O>
+pub type ADDR_MATCH_W<'a, REG> = crate::BitWriter<'a, REG, ADDR_MATCH_A>;
+impl<'a, REG> ADDR_MATCH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -233,7 +233,7 @@ impl From<RX_THD_A> for bool {
 impl RX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_THD_A {
+    pub const fn variant(&self) -> RX_THD_A {
         match self.bits {
             false => RX_THD_A::DIS,
             true => RX_THD_A::EN,
@@ -251,8 +251,8 @@ impl RX_THD_R {
     }
 }
 #[doc = "Field `RX_THD` writer - RX FIFO Above Treshold Level Interrupt Enable."]
-pub type RX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_THD_A>;
-impl<'a, REG, const O: u8> RX_THD_W<'a, REG, O>
+pub type RX_THD_W<'a, REG> = crate::BitWriter<'a, REG, RX_THD_A>;
+impl<'a, REG> RX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -286,7 +286,7 @@ impl From<TX_THD_A> for bool {
 impl TX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_THD_A {
+    pub const fn variant(&self) -> TX_THD_A {
         match self.bits {
             false => TX_THD_A::DIS,
             true => TX_THD_A::EN,
@@ -304,8 +304,8 @@ impl TX_THD_R {
     }
 }
 #[doc = "Field `TX_THD` writer - TX FIFO Below Treshold Level Interrupt Enable."]
-pub type TX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_THD_A>;
-impl<'a, REG, const O: u8> TX_THD_W<'a, REG, O>
+pub type TX_THD_W<'a, REG> = crate::BitWriter<'a, REG, TX_THD_A>;
+impl<'a, REG> TX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -339,7 +339,7 @@ impl From<STOP_A> for bool {
 impl STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOP_A {
+    pub const fn variant(&self) -> STOP_A {
         match self.bits {
             false => STOP_A::DIS,
             true => STOP_A::EN,
@@ -357,8 +357,8 @@ impl STOP_R {
     }
 }
 #[doc = "Field `STOP` writer - Stop Interrupt Enable"]
-pub type STOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STOP_A>;
-impl<'a, REG, const O: u8> STOP_W<'a, REG, O>
+pub type STOP_W<'a, REG> = crate::BitWriter<'a, REG, STOP_A>;
+impl<'a, REG> STOP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -392,7 +392,7 @@ impl From<ADDR_ACK_A> for bool {
 impl ADDR_ACK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR_ACK_A {
+    pub const fn variant(&self) -> ADDR_ACK_A {
         match self.bits {
             false => ADDR_ACK_A::DIS,
             true => ADDR_ACK_A::EN,
@@ -410,8 +410,8 @@ impl ADDR_ACK_R {
     }
 }
 #[doc = "Field `ADDR_ACK` writer - Received Address ACK from Slave Interrupt."]
-pub type ADDR_ACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ADDR_ACK_A>;
-impl<'a, REG, const O: u8> ADDR_ACK_W<'a, REG, O>
+pub type ADDR_ACK_W<'a, REG> = crate::BitWriter<'a, REG, ADDR_ACK_A>;
+impl<'a, REG> ADDR_ACK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -445,7 +445,7 @@ impl From<ARB_ERR_A> for bool {
 impl ARB_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARB_ERR_A {
+    pub const fn variant(&self) -> ARB_ERR_A {
         match self.bits {
             false => ARB_ERR_A::DIS,
             true => ARB_ERR_A::EN,
@@ -463,8 +463,8 @@ impl ARB_ERR_R {
     }
 }
 #[doc = "Field `ARB_ERR` writer - Master Mode Arbitration Lost Interrupt."]
-pub type ARB_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARB_ERR_A>;
-impl<'a, REG, const O: u8> ARB_ERR_W<'a, REG, O>
+pub type ARB_ERR_W<'a, REG> = crate::BitWriter<'a, REG, ARB_ERR_A>;
+impl<'a, REG> ARB_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -498,7 +498,7 @@ impl From<TO_ERR_A> for bool {
 impl TO_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TO_ERR_A {
+    pub const fn variant(&self) -> TO_ERR_A {
         match self.bits {
             false => TO_ERR_A::DIS,
             true => TO_ERR_A::EN,
@@ -516,8 +516,8 @@ impl TO_ERR_R {
     }
 }
 #[doc = "Field `TO_ERR` writer - Timeout Error Interrupt Enable."]
-pub type TO_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TO_ERR_A>;
-impl<'a, REG, const O: u8> TO_ERR_W<'a, REG, O>
+pub type TO_ERR_W<'a, REG> = crate::BitWriter<'a, REG, TO_ERR_A>;
+impl<'a, REG> TO_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -551,7 +551,7 @@ impl From<ADDR_NACK_ERR_A> for bool {
 impl ADDR_NACK_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDR_NACK_ERR_A {
+    pub const fn variant(&self) -> ADDR_NACK_ERR_A {
         match self.bits {
             false => ADDR_NACK_ERR_A::DIS,
             true => ADDR_NACK_ERR_A::EN,
@@ -569,8 +569,8 @@ impl ADDR_NACK_ERR_R {
     }
 }
 #[doc = "Field `ADDR_NACK_ERR` writer - Master Mode Address NACK Received Interrupt."]
-pub type ADDR_NACK_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ADDR_NACK_ERR_A>;
-impl<'a, REG, const O: u8> ADDR_NACK_ERR_W<'a, REG, O>
+pub type ADDR_NACK_ERR_W<'a, REG> = crate::BitWriter<'a, REG, ADDR_NACK_ERR_A>;
+impl<'a, REG> ADDR_NACK_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -604,7 +604,7 @@ impl From<DATA_ERR_A> for bool {
 impl DATA_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_ERR_A {
+    pub const fn variant(&self) -> DATA_ERR_A {
         match self.bits {
             false => DATA_ERR_A::DIS,
             true => DATA_ERR_A::EN,
@@ -622,8 +622,8 @@ impl DATA_ERR_R {
     }
 }
 #[doc = "Field `DATA_ERR` writer - Master Mode Data NACK Received Interrupt."]
-pub type DATA_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_ERR_A>;
-impl<'a, REG, const O: u8> DATA_ERR_W<'a, REG, O>
+pub type DATA_ERR_W<'a, REG> = crate::BitWriter<'a, REG, DATA_ERR_A>;
+impl<'a, REG> DATA_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -657,7 +657,7 @@ impl From<DNR_ERR_A> for bool {
 impl DNR_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DNR_ERR_A {
+    pub const fn variant(&self) -> DNR_ERR_A {
         match self.bits {
             false => DNR_ERR_A::DIS,
             true => DNR_ERR_A::EN,
@@ -675,8 +675,8 @@ impl DNR_ERR_R {
     }
 }
 #[doc = "Field `DNR_ERR` writer - Slave Mode Do Not Respond Interrupt."]
-pub type DNR_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DNR_ERR_A>;
-impl<'a, REG, const O: u8> DNR_ERR_W<'a, REG, O>
+pub type DNR_ERR_W<'a, REG> = crate::BitWriter<'a, REG, DNR_ERR_A>;
+impl<'a, REG> DNR_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -710,7 +710,7 @@ impl From<START_ERR_A> for bool {
 impl START_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> START_ERR_A {
+    pub const fn variant(&self) -> START_ERR_A {
         match self.bits {
             false => START_ERR_A::DIS,
             true => START_ERR_A::EN,
@@ -728,8 +728,8 @@ impl START_ERR_R {
     }
 }
 #[doc = "Field `START_ERR` writer - Out of Sequence START condition detected interrupt."]
-pub type START_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, START_ERR_A>;
-impl<'a, REG, const O: u8> START_ERR_W<'a, REG, O>
+pub type START_ERR_W<'a, REG> = crate::BitWriter<'a, REG, START_ERR_A>;
+impl<'a, REG> START_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -763,7 +763,7 @@ impl From<STOP_ERR_A> for bool {
 impl STOP_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOP_ERR_A {
+    pub const fn variant(&self) -> STOP_ERR_A {
         match self.bits {
             false => STOP_ERR_A::DIS,
             true => STOP_ERR_A::EN,
@@ -781,8 +781,8 @@ impl STOP_ERR_R {
     }
 }
 #[doc = "Field `STOP_ERR` writer - Out of Sequence STOP condition detected interrupt."]
-pub type STOP_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STOP_ERR_A>;
-impl<'a, REG, const O: u8> STOP_ERR_W<'a, REG, O>
+pub type STOP_ERR_W<'a, REG> = crate::BitWriter<'a, REG, STOP_ERR_A>;
+impl<'a, REG> STOP_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -800,19 +800,19 @@ where
 #[doc = "Field `TX_LOCKOUT` reader - TX FIFO Locked Out Interrupt."]
 pub type TX_LOCKOUT_R = crate::BitReader;
 #[doc = "Field `TX_LOCKOUT` writer - TX FIFO Locked Out Interrupt."]
-pub type TX_LOCKOUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_LOCKOUT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MAMI` reader - Multiple Address Match Interrupt"]
 pub type MAMI_R = crate::FieldReader;
 #[doc = "Field `MAMI` writer - Multiple Address Match Interrupt"]
-pub type MAMI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type MAMI_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `RD_ADDR_MATCH` reader - Slave Read Address Match Interrupt"]
 pub type RD_ADDR_MATCH_R = crate::BitReader;
 #[doc = "Field `RD_ADDR_MATCH` writer - Slave Read Address Match Interrupt"]
-pub type RD_ADDR_MATCH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RD_ADDR_MATCH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WR_ADDR_MATCH` reader - Slave Write Address Match Interrupt"]
 pub type WR_ADDR_MATCH_R = crate::BitReader;
 #[doc = "Field `WR_ADDR_MATCH` writer - Slave Write Address Match Interrupt"]
-pub type WR_ADDR_MATCH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WR_ADDR_MATCH_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Transfer Done Interrupt Enable."]
     #[inline(always)]
@@ -914,118 +914,122 @@ impl W {
     #[doc = "Bit 0 - Transfer Done Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn done(&mut self) -> DONE_W<INTEN0_SPEC, 0> {
-        DONE_W::new(self)
+    pub fn done(&mut self) -> DONE_W<INTEN0_SPEC> {
+        DONE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Description not available."]
     #[inline(always)]
     #[must_use]
-    pub fn irxm(&mut self) -> IRXM_W<INTEN0_SPEC, 1> {
-        IRXM_W::new(self)
+    pub fn irxm(&mut self) -> IRXM_W<INTEN0_SPEC> {
+        IRXM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Slave mode general call address match received input enable."]
     #[inline(always)]
     #[must_use]
-    pub fn gc_addr_match(&mut self) -> GC_ADDR_MATCH_W<INTEN0_SPEC, 2> {
-        GC_ADDR_MATCH_W::new(self)
+    pub fn gc_addr_match(&mut self) -> GC_ADDR_MATCH_W<INTEN0_SPEC> {
+        GC_ADDR_MATCH_W::new(self, 2)
     }
     #[doc = "Bit 3 - Slave mode incoming address match interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn addr_match(&mut self) -> ADDR_MATCH_W<INTEN0_SPEC, 3> {
-        ADDR_MATCH_W::new(self)
+    pub fn addr_match(&mut self) -> ADDR_MATCH_W<INTEN0_SPEC> {
+        ADDR_MATCH_W::new(self, 3)
     }
     #[doc = "Bit 4 - RX FIFO Above Treshold Level Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd(&mut self) -> RX_THD_W<INTEN0_SPEC, 4> {
-        RX_THD_W::new(self)
+    pub fn rx_thd(&mut self) -> RX_THD_W<INTEN0_SPEC> {
+        RX_THD_W::new(self, 4)
     }
     #[doc = "Bit 5 - TX FIFO Below Treshold Level Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_thd(&mut self) -> TX_THD_W<INTEN0_SPEC, 5> {
-        TX_THD_W::new(self)
+    pub fn tx_thd(&mut self) -> TX_THD_W<INTEN0_SPEC> {
+        TX_THD_W::new(self, 5)
     }
     #[doc = "Bit 6 - Stop Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stop(&mut self) -> STOP_W<INTEN0_SPEC, 6> {
-        STOP_W::new(self)
+    pub fn stop(&mut self) -> STOP_W<INTEN0_SPEC> {
+        STOP_W::new(self, 6)
     }
     #[doc = "Bit 7 - Received Address ACK from Slave Interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn addr_ack(&mut self) -> ADDR_ACK_W<INTEN0_SPEC, 7> {
-        ADDR_ACK_W::new(self)
+    pub fn addr_ack(&mut self) -> ADDR_ACK_W<INTEN0_SPEC> {
+        ADDR_ACK_W::new(self, 7)
     }
     #[doc = "Bit 8 - Master Mode Arbitration Lost Interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn arb_err(&mut self) -> ARB_ERR_W<INTEN0_SPEC, 8> {
-        ARB_ERR_W::new(self)
+    pub fn arb_err(&mut self) -> ARB_ERR_W<INTEN0_SPEC> {
+        ARB_ERR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Timeout Error Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn to_err(&mut self) -> TO_ERR_W<INTEN0_SPEC, 9> {
-        TO_ERR_W::new(self)
+    pub fn to_err(&mut self) -> TO_ERR_W<INTEN0_SPEC> {
+        TO_ERR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Master Mode Address NACK Received Interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn addr_nack_err(&mut self) -> ADDR_NACK_ERR_W<INTEN0_SPEC, 10> {
-        ADDR_NACK_ERR_W::new(self)
+    pub fn addr_nack_err(&mut self) -> ADDR_NACK_ERR_W<INTEN0_SPEC> {
+        ADDR_NACK_ERR_W::new(self, 10)
     }
     #[doc = "Bit 11 - Master Mode Data NACK Received Interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn data_err(&mut self) -> DATA_ERR_W<INTEN0_SPEC, 11> {
-        DATA_ERR_W::new(self)
+    pub fn data_err(&mut self) -> DATA_ERR_W<INTEN0_SPEC> {
+        DATA_ERR_W::new(self, 11)
     }
     #[doc = "Bit 12 - Slave Mode Do Not Respond Interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn dnr_err(&mut self) -> DNR_ERR_W<INTEN0_SPEC, 12> {
-        DNR_ERR_W::new(self)
+    pub fn dnr_err(&mut self) -> DNR_ERR_W<INTEN0_SPEC> {
+        DNR_ERR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Out of Sequence START condition detected interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn start_err(&mut self) -> START_ERR_W<INTEN0_SPEC, 13> {
-        START_ERR_W::new(self)
+    pub fn start_err(&mut self) -> START_ERR_W<INTEN0_SPEC> {
+        START_ERR_W::new(self, 13)
     }
     #[doc = "Bit 14 - Out of Sequence STOP condition detected interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn stop_err(&mut self) -> STOP_ERR_W<INTEN0_SPEC, 14> {
-        STOP_ERR_W::new(self)
+    pub fn stop_err(&mut self) -> STOP_ERR_W<INTEN0_SPEC> {
+        STOP_ERR_W::new(self, 14)
     }
     #[doc = "Bit 15 - TX FIFO Locked Out Interrupt."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_lockout(&mut self) -> TX_LOCKOUT_W<INTEN0_SPEC, 15> {
-        TX_LOCKOUT_W::new(self)
+    pub fn tx_lockout(&mut self) -> TX_LOCKOUT_W<INTEN0_SPEC> {
+        TX_LOCKOUT_W::new(self, 15)
     }
     #[doc = "Bits 16:21 - Multiple Address Match Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn mami(&mut self) -> MAMI_W<INTEN0_SPEC, 16> {
-        MAMI_W::new(self)
+    pub fn mami(&mut self) -> MAMI_W<INTEN0_SPEC> {
+        MAMI_W::new(self, 16)
     }
     #[doc = "Bit 22 - Slave Read Address Match Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn rd_addr_match(&mut self) -> RD_ADDR_MATCH_W<INTEN0_SPEC, 22> {
-        RD_ADDR_MATCH_W::new(self)
+    pub fn rd_addr_match(&mut self) -> RD_ADDR_MATCH_W<INTEN0_SPEC> {
+        RD_ADDR_MATCH_W::new(self, 22)
     }
     #[doc = "Bit 23 - Slave Write Address Match Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn wr_addr_match(&mut self) -> WR_ADDR_MATCH_W<INTEN0_SPEC, 23> {
-        WR_ADDR_MATCH_W::new(self)
+    pub fn wr_addr_match(&mut self) -> WR_ADDR_MATCH_W<INTEN0_SPEC> {
+        WR_ADDR_MATCH_W::new(self, 23)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

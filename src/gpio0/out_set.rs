@@ -1,49 +1,19 @@
 #[doc = "Register `OUT_SET` writer"]
 pub type W = crate::W<OUT_SET_SPEC>;
-#[doc = "Mask of all of the pins on the port.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum GPIO_OUT_SET_AW {
-    #[doc = "0: No Effect."]
-    NO = 0,
-    #[doc = "1: Set GPIO_OUT bit in this position to '1'"]
-    SET = 1,
-}
-impl From<GPIO_OUT_SET_AW> for u32 {
-    #[inline(always)]
-    fn from(variant: GPIO_OUT_SET_AW) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for GPIO_OUT_SET_AW {
-    type Ux = u32;
-}
 #[doc = "Field `GPIO_OUT_SET` writer - Mask of all of the pins on the port."]
-pub type GPIO_OUT_SET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, GPIO_OUT_SET_AW>;
-impl<'a, REG, const O: u8> GPIO_OUT_SET_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
-    #[doc = "No Effect."]
-    #[inline(always)]
-    pub fn no(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_OUT_SET_AW::NO)
-    }
-    #[doc = "Set GPIO_OUT bit in this position to '1'"]
-    #[inline(always)]
-    pub fn set(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_OUT_SET_AW::SET)
-    }
-}
+pub type GPIO_OUT_SET_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_out_set(&mut self) -> GPIO_OUT_SET_W<OUT_SET_SPEC, 0> {
-        GPIO_OUT_SET_W::new(self)
+    pub fn gpio_out_set(&mut self) -> GPIO_OUT_SET_W<OUT_SET_SPEC> {
+        GPIO_OUT_SET_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -3,64 +3,9 @@ pub type R = crate::R<DS0_SPEC>;
 #[doc = "Register `DS0` writer"]
 pub type W = crate::W<DS0_SPEC>;
 #[doc = "Field `GPIO_DS0` reader - Mask of all of the pins on the port."]
-pub type GPIO_DS0_R = crate::FieldReader<GPIO_DS0_A>;
-#[doc = "Mask of all of the pins on the port.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum GPIO_DS0_A {
-    #[doc = "0: GPIO port pin is in low-drive mode."]
-    LD = 0,
-    #[doc = "1: GPIO port pin is in high-drive mode."]
-    HD = 1,
-}
-impl From<GPIO_DS0_A> for u32 {
-    #[inline(always)]
-    fn from(variant: GPIO_DS0_A) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for GPIO_DS0_A {
-    type Ux = u32;
-}
-impl GPIO_DS0_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<GPIO_DS0_A> {
-        match self.bits {
-            0 => Some(GPIO_DS0_A::LD),
-            1 => Some(GPIO_DS0_A::HD),
-            _ => None,
-        }
-    }
-    #[doc = "GPIO port pin is in low-drive mode."]
-    #[inline(always)]
-    pub fn is_ld(&self) -> bool {
-        *self == GPIO_DS0_A::LD
-    }
-    #[doc = "GPIO port pin is in high-drive mode."]
-    #[inline(always)]
-    pub fn is_hd(&self) -> bool {
-        *self == GPIO_DS0_A::HD
-    }
-}
+pub type GPIO_DS0_R = crate::FieldReader<u32>;
 #[doc = "Field `GPIO_DS0` writer - Mask of all of the pins on the port."]
-pub type GPIO_DS0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, GPIO_DS0_A>;
-impl<'a, REG, const O: u8> GPIO_DS0_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
-    #[doc = "GPIO port pin is in low-drive mode."]
-    #[inline(always)]
-    pub fn ld(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_DS0_A::LD)
-    }
-    #[doc = "GPIO port pin is in high-drive mode."]
-    #[inline(always)]
-    pub fn hd(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_DS0_A::HD)
-    }
-}
+pub type GPIO_DS0_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
@@ -72,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_ds0(&mut self) -> GPIO_DS0_W<DS0_SPEC, 0> {
-        GPIO_DS0_W::new(self)
+    pub fn gpio_ds0(&mut self) -> GPIO_DS0_W<DS0_SPEC> {
+        GPIO_DS0_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

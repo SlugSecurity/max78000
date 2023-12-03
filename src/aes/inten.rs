@@ -5,23 +5,23 @@ pub type W = crate::W<INTEN_SPEC>;
 #[doc = "Field `DONE` reader - AES Done Interrupt Enable"]
 pub type DONE_R = crate::BitReader;
 #[doc = "Field `DONE` writer - AES Done Interrupt Enable"]
-pub type DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `KEY_CHANGE` reader - External AES Key Changed Interrupt Enable"]
 pub type KEY_CHANGE_R = crate::BitReader;
 #[doc = "Field `KEY_CHANGE` writer - External AES Key Changed Interrupt Enable"]
-pub type KEY_CHANGE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type KEY_CHANGE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `KEY_ZERO` reader - External AES Key Zero Interrupt Enable"]
 pub type KEY_ZERO_R = crate::BitReader;
 #[doc = "Field `KEY_ZERO` writer - External AES Key Zero Interrupt Enable"]
-pub type KEY_ZERO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type KEY_ZERO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OV` reader - Data Output FIFO Overrun Interrupt Enable"]
 pub type OV_R = crate::BitReader;
 #[doc = "Field `OV` writer - Data Output FIFO Overrun Interrupt Enable"]
-pub type OV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `KEY_ONE` reader - KEY_ONE"]
 pub type KEY_ONE_R = crate::BitReader;
 #[doc = "Field `KEY_ONE` writer - KEY_ONE"]
-pub type KEY_ONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type KEY_ONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - AES Done Interrupt Enable"]
     #[inline(always)]
@@ -53,34 +53,38 @@ impl W {
     #[doc = "Bit 0 - AES Done Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn done(&mut self) -> DONE_W<INTEN_SPEC, 0> {
-        DONE_W::new(self)
+    pub fn done(&mut self) -> DONE_W<INTEN_SPEC> {
+        DONE_W::new(self, 0)
     }
     #[doc = "Bit 1 - External AES Key Changed Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn key_change(&mut self) -> KEY_CHANGE_W<INTEN_SPEC, 1> {
-        KEY_CHANGE_W::new(self)
+    pub fn key_change(&mut self) -> KEY_CHANGE_W<INTEN_SPEC> {
+        KEY_CHANGE_W::new(self, 1)
     }
     #[doc = "Bit 2 - External AES Key Zero Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn key_zero(&mut self) -> KEY_ZERO_W<INTEN_SPEC, 2> {
-        KEY_ZERO_W::new(self)
+    pub fn key_zero(&mut self) -> KEY_ZERO_W<INTEN_SPEC> {
+        KEY_ZERO_W::new(self, 2)
     }
     #[doc = "Bit 3 - Data Output FIFO Overrun Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ov(&mut self) -> OV_W<INTEN_SPEC, 3> {
-        OV_W::new(self)
+    pub fn ov(&mut self) -> OV_W<INTEN_SPEC> {
+        OV_W::new(self, 3)
     }
     #[doc = "Bit 4 - KEY_ONE"]
     #[inline(always)]
     #[must_use]
-    pub fn key_one(&mut self) -> KEY_ONE_W<INTEN_SPEC, 4> {
-        KEY_ONE_W::new(self)
+    pub fn key_one(&mut self) -> KEY_ONE_W<INTEN_SPEC> {
+        KEY_ONE_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,27 +5,27 @@ pub type W = crate::W<DMACH0_SPEC>;
 #[doc = "Field `DMA_TX_THD_VAL` reader - TX FIFO Level DMA Trigger."]
 pub type DMA_TX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `DMA_TX_THD_VAL` writer - TX FIFO Level DMA Trigger."]
-pub type DMA_TX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type DMA_TX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `DMA_TX_EN` reader - TX DMA channel enable."]
 pub type DMA_TX_EN_R = crate::BitReader;
 #[doc = "Field `DMA_TX_EN` writer - TX DMA channel enable."]
-pub type DMA_TX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMA_TX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DMA_RX_THD_VAL` reader - RX FIFO Level DMA Trigger."]
 pub type DMA_RX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `DMA_RX_THD_VAL` writer - RX FIFO Level DMA Trigger."]
-pub type DMA_RX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type DMA_RX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `DMA_RX_EN` reader - RX DMA channel enable."]
 pub type DMA_RX_EN_R = crate::BitReader;
 #[doc = "Field `DMA_RX_EN` writer - RX DMA channel enable."]
-pub type DMA_RX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMA_RX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX_LVL` reader - Number of data word in the TX FIFO."]
 pub type TX_LVL_R = crate::FieldReader;
 #[doc = "Field `TX_LVL` writer - Number of data word in the TX FIFO."]
-pub type TX_LVL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TX_LVL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `RX_LVL` reader - Number of data word in the RX FIFO."]
 pub type RX_LVL_R = crate::FieldReader;
 #[doc = "Field `RX_LVL` writer - Number of data word in the RX FIFO."]
-pub type RX_LVL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type RX_LVL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:6 - TX FIFO Level DMA Trigger."]
     #[inline(always)]
@@ -62,40 +62,44 @@ impl W {
     #[doc = "Bits 0:6 - TX FIFO Level DMA Trigger."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_tx_thd_val(&mut self) -> DMA_TX_THD_VAL_W<DMACH0_SPEC, 0> {
-        DMA_TX_THD_VAL_W::new(self)
+    pub fn dma_tx_thd_val(&mut self) -> DMA_TX_THD_VAL_W<DMACH0_SPEC> {
+        DMA_TX_THD_VAL_W::new(self, 0)
     }
     #[doc = "Bit 7 - TX DMA channel enable."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<DMACH0_SPEC, 7> {
-        DMA_TX_EN_W::new(self)
+    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<DMACH0_SPEC> {
+        DMA_TX_EN_W::new(self, 7)
     }
     #[doc = "Bits 8:14 - RX FIFO Level DMA Trigger."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_rx_thd_val(&mut self) -> DMA_RX_THD_VAL_W<DMACH0_SPEC, 8> {
-        DMA_RX_THD_VAL_W::new(self)
+    pub fn dma_rx_thd_val(&mut self) -> DMA_RX_THD_VAL_W<DMACH0_SPEC> {
+        DMA_RX_THD_VAL_W::new(self, 8)
     }
     #[doc = "Bit 15 - RX DMA channel enable."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<DMACH0_SPEC, 15> {
-        DMA_RX_EN_W::new(self)
+    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<DMACH0_SPEC> {
+        DMA_RX_EN_W::new(self, 15)
     }
     #[doc = "Bits 16:23 - Number of data word in the TX FIFO."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_lvl(&mut self) -> TX_LVL_W<DMACH0_SPEC, 16> {
-        TX_LVL_W::new(self)
+    pub fn tx_lvl(&mut self) -> TX_LVL_W<DMACH0_SPEC> {
+        TX_LVL_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Number of data word in the RX FIFO."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_lvl(&mut self) -> RX_LVL_W<DMACH0_SPEC, 24> {
-        RX_LVL_W::new(self)
+    pub fn rx_lvl(&mut self) -> RX_LVL_W<DMACH0_SPEC> {
+        RX_LVL_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

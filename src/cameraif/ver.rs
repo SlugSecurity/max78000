@@ -5,11 +5,11 @@ pub type W = crate::W<VER_SPEC>;
 #[doc = "Field `minor` reader - Minor Version Number."]
 pub type MINOR_R = crate::FieldReader;
 #[doc = "Field `minor` writer - Minor Version Number."]
-pub type MINOR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type MINOR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `major` reader - Major Version Number."]
 pub type MAJOR_R = crate::FieldReader;
 #[doc = "Field `major` writer - Major Version Number."]
-pub type MAJOR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type MAJOR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Minor Version Number."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:7 - Minor Version Number."]
     #[inline(always)]
     #[must_use]
-    pub fn minor(&mut self) -> MINOR_W<VER_SPEC, 0> {
-        MINOR_W::new(self)
+    pub fn minor(&mut self) -> MINOR_W<VER_SPEC> {
+        MINOR_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Major Version Number."]
     #[inline(always)]
     #[must_use]
-    pub fn major(&mut self) -> MAJOR_W<VER_SPEC, 8> {
-        MAJOR_W::new(self)
+    pub fn major(&mut self) -> MAJOR_W<VER_SPEC> {
+        MAJOR_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::IDLE,
             true => BUSY_A::BUSY,
@@ -57,7 +57,7 @@ impl From<RX_EM_A> for bool {
 impl RX_EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_EM_A {
+    pub const fn variant(&self) -> RX_EM_A {
         match self.bits {
             false => RX_EM_A::NOT_EMPTY,
             true => RX_EM_A::EMPTY,
@@ -93,7 +93,7 @@ impl From<RX_FULL_A> for bool {
 impl RX_FULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_FULL_A {
+    pub const fn variant(&self) -> RX_FULL_A {
         match self.bits {
             false => RX_FULL_A::NOT_FULL,
             true => RX_FULL_A::FULL,
@@ -129,7 +129,7 @@ impl From<TX_EM_A> for bool {
 impl TX_EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_EM_A {
+    pub const fn variant(&self) -> TX_EM_A {
         match self.bits {
             false => TX_EM_A::NOT_EMPTY,
             true => TX_EM_A::EMPTY,
@@ -147,8 +147,8 @@ impl TX_EM_R {
     }
 }
 #[doc = "Field `TX_EM` writer - TX Empty."]
-pub type TX_EM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_EM_A>;
-impl<'a, REG, const O: u8> TX_EM_W<'a, REG, O>
+pub type TX_EM_W<'a, REG> = crate::BitWriter<'a, REG, TX_EM_A>;
+impl<'a, REG> TX_EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -182,7 +182,7 @@ impl From<TX_FULL_A> for bool {
 impl TX_FULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_FULL_A {
+    pub const fn variant(&self) -> TX_FULL_A {
         match self.bits {
             false => TX_FULL_A::NOT_EMPTY,
             true => TX_FULL_A::EMPTY,
@@ -200,8 +200,8 @@ impl TX_FULL_R {
     }
 }
 #[doc = "Field `TX_FULL` writer - TX Full."]
-pub type TX_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_FULL_A>;
-impl<'a, REG, const O: u8> TX_FULL_W<'a, REG, O>
+pub type TX_FULL_W<'a, REG> = crate::BitWriter<'a, REG, TX_FULL_A>;
+impl<'a, REG> TX_FULL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -235,7 +235,7 @@ impl From<MST_BUSY_A> for bool {
 impl MST_BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MST_BUSY_A {
+    pub const fn variant(&self) -> MST_BUSY_A {
         match self.bits {
             false => MST_BUSY_A::NOT_ACTIVELY_DRIVING_SCL_CLOCK,
             true => MST_BUSY_A::ACTIVELY_DRIVING_SCL_CLOCK,
@@ -288,16 +288,20 @@ impl W {
     #[doc = "Bit 3 - TX Empty."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_em(&mut self) -> TX_EM_W<STATUS_SPEC, 3> {
-        TX_EM_W::new(self)
+    pub fn tx_em(&mut self) -> TX_EM_W<STATUS_SPEC> {
+        TX_EM_W::new(self, 3)
     }
     #[doc = "Bit 4 - TX Full."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_full(&mut self) -> TX_FULL_W<STATUS_SPEC, 4> {
-        TX_FULL_W::new(self)
+    pub fn tx_full(&mut self) -> TX_FULL_W<STATUS_SPEC> {
+        TX_FULL_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

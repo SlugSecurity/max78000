@@ -5,35 +5,35 @@ pub type W = crate::W<CFG_SPEC>;
 #[doc = "Field `long_line_mode` reader - Long Line Mode."]
 pub type LONG_LINE_MODE_R = crate::BitReader;
 #[doc = "Field `long_line_mode` writer - Long Line Mode."]
-pub type LONG_LINE_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LONG_LINE_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `force_pres_det` reader - Force Line During Presence Detect."]
 pub type FORCE_PRES_DET_R = crate::BitReader;
 #[doc = "Field `force_pres_det` writer - Force Line During Presence Detect."]
-pub type FORCE_PRES_DET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FORCE_PRES_DET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `bit_bang_en` reader - Bit Bang Enable."]
 pub type BIT_BANG_EN_R = crate::BitReader;
 #[doc = "Field `bit_bang_en` writer - Bit Bang Enable."]
-pub type BIT_BANG_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BIT_BANG_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ext_pullup_mode` reader - Provide an extra output control to control an external pullup."]
 pub type EXT_PULLUP_MODE_R = crate::BitReader;
 #[doc = "Field `ext_pullup_mode` writer - Provide an extra output control to control an external pullup."]
-pub type EXT_PULLUP_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EXT_PULLUP_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ext_pullup_enable` reader - Enable External Pullup."]
 pub type EXT_PULLUP_ENABLE_R = crate::BitReader;
 #[doc = "Field `ext_pullup_enable` writer - Enable External Pullup."]
-pub type EXT_PULLUP_ENABLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EXT_PULLUP_ENABLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `single_bit_mode` reader - Enable Single Bit TX/RX Mode."]
 pub type SINGLE_BIT_MODE_R = crate::BitReader;
 #[doc = "Field `single_bit_mode` writer - Enable Single Bit TX/RX Mode."]
-pub type SINGLE_BIT_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SINGLE_BIT_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `overdrive` reader - Enables overdrive speed for 1-Wire operations."]
 pub type OVERDRIVE_R = crate::BitReader;
 #[doc = "Field `overdrive` writer - Enables overdrive speed for 1-Wire operations."]
-pub type OVERDRIVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OVERDRIVE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `int_pullup_enable` reader - Enable intenral pullup."]
 pub type INT_PULLUP_ENABLE_R = crate::BitReader;
 #[doc = "Field `int_pullup_enable` writer - Enable intenral pullup."]
-pub type INT_PULLUP_ENABLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INT_PULLUP_ENABLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Long Line Mode."]
     #[inline(always)]
@@ -80,52 +80,56 @@ impl W {
     #[doc = "Bit 0 - Long Line Mode."]
     #[inline(always)]
     #[must_use]
-    pub fn long_line_mode(&mut self) -> LONG_LINE_MODE_W<CFG_SPEC, 0> {
-        LONG_LINE_MODE_W::new(self)
+    pub fn long_line_mode(&mut self) -> LONG_LINE_MODE_W<CFG_SPEC> {
+        LONG_LINE_MODE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force Line During Presence Detect."]
     #[inline(always)]
     #[must_use]
-    pub fn force_pres_det(&mut self) -> FORCE_PRES_DET_W<CFG_SPEC, 1> {
-        FORCE_PRES_DET_W::new(self)
+    pub fn force_pres_det(&mut self) -> FORCE_PRES_DET_W<CFG_SPEC> {
+        FORCE_PRES_DET_W::new(self, 1)
     }
     #[doc = "Bit 2 - Bit Bang Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn bit_bang_en(&mut self) -> BIT_BANG_EN_W<CFG_SPEC, 2> {
-        BIT_BANG_EN_W::new(self)
+    pub fn bit_bang_en(&mut self) -> BIT_BANG_EN_W<CFG_SPEC> {
+        BIT_BANG_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Provide an extra output control to control an external pullup."]
     #[inline(always)]
     #[must_use]
-    pub fn ext_pullup_mode(&mut self) -> EXT_PULLUP_MODE_W<CFG_SPEC, 3> {
-        EXT_PULLUP_MODE_W::new(self)
+    pub fn ext_pullup_mode(&mut self) -> EXT_PULLUP_MODE_W<CFG_SPEC> {
+        EXT_PULLUP_MODE_W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable External Pullup."]
     #[inline(always)]
     #[must_use]
-    pub fn ext_pullup_enable(&mut self) -> EXT_PULLUP_ENABLE_W<CFG_SPEC, 4> {
-        EXT_PULLUP_ENABLE_W::new(self)
+    pub fn ext_pullup_enable(&mut self) -> EXT_PULLUP_ENABLE_W<CFG_SPEC> {
+        EXT_PULLUP_ENABLE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Enable Single Bit TX/RX Mode."]
     #[inline(always)]
     #[must_use]
-    pub fn single_bit_mode(&mut self) -> SINGLE_BIT_MODE_W<CFG_SPEC, 5> {
-        SINGLE_BIT_MODE_W::new(self)
+    pub fn single_bit_mode(&mut self) -> SINGLE_BIT_MODE_W<CFG_SPEC> {
+        SINGLE_BIT_MODE_W::new(self, 5)
     }
     #[doc = "Bit 6 - Enables overdrive speed for 1-Wire operations."]
     #[inline(always)]
     #[must_use]
-    pub fn overdrive(&mut self) -> OVERDRIVE_W<CFG_SPEC, 6> {
-        OVERDRIVE_W::new(self)
+    pub fn overdrive(&mut self) -> OVERDRIVE_W<CFG_SPEC> {
+        OVERDRIVE_W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable intenral pullup."]
     #[inline(always)]
     #[must_use]
-    pub fn int_pullup_enable(&mut self) -> INT_PULLUP_ENABLE_W<CFG_SPEC, 7> {
-        INT_PULLUP_ENABLE_W::new(self)
+    pub fn int_pullup_enable(&mut self) -> INT_PULLUP_ENABLE_W<CFG_SPEC> {
+        INT_PULLUP_ENABLE_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

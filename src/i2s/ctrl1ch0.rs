@@ -5,23 +5,23 @@ pub type W = crate::W<CTRL1CH0_SPEC>;
 #[doc = "Field `BITS_WORD` reader - I2S word length."]
 pub type BITS_WORD_R = crate::FieldReader;
 #[doc = "Field `BITS_WORD` writer - I2S word length."]
-pub type BITS_WORD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type BITS_WORD_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `EN` reader - I2S clock enable."]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - I2S clock enable."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SMP_SIZE` reader - I2S sample size length."]
 pub type SMP_SIZE_R = crate::FieldReader;
 #[doc = "Field `SMP_SIZE` writer - I2S sample size length."]
-pub type SMP_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type SMP_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `ADJUST` reader - LSB/MSB Justify."]
 pub type ADJUST_R = crate::BitReader;
 #[doc = "Field `ADJUST` writer - LSB/MSB Justify."]
-pub type ADJUST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ADJUST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLKDIV` reader - I2S clock frequency divisor."]
 pub type CLKDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `CLKDIV` writer - I2S clock frequency divisor."]
-pub type CLKDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type CLKDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:4 - I2S word length."]
     #[inline(always)]
@@ -53,34 +53,38 @@ impl W {
     #[doc = "Bits 0:4 - I2S word length."]
     #[inline(always)]
     #[must_use]
-    pub fn bits_word(&mut self) -> BITS_WORD_W<CTRL1CH0_SPEC, 0> {
-        BITS_WORD_W::new(self)
+    pub fn bits_word(&mut self) -> BITS_WORD_W<CTRL1CH0_SPEC> {
+        BITS_WORD_W::new(self, 0)
     }
     #[doc = "Bit 8 - I2S clock enable."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL1CH0_SPEC, 8> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL1CH0_SPEC> {
+        EN_W::new(self, 8)
     }
     #[doc = "Bits 9:13 - I2S sample size length."]
     #[inline(always)]
     #[must_use]
-    pub fn smp_size(&mut self) -> SMP_SIZE_W<CTRL1CH0_SPEC, 9> {
-        SMP_SIZE_W::new(self)
+    pub fn smp_size(&mut self) -> SMP_SIZE_W<CTRL1CH0_SPEC> {
+        SMP_SIZE_W::new(self, 9)
     }
     #[doc = "Bit 15 - LSB/MSB Justify."]
     #[inline(always)]
     #[must_use]
-    pub fn adjust(&mut self) -> ADJUST_W<CTRL1CH0_SPEC, 15> {
-        ADJUST_W::new(self)
+    pub fn adjust(&mut self) -> ADJUST_W<CTRL1CH0_SPEC> {
+        ADJUST_W::new(self, 15)
     }
     #[doc = "Bits 16:31 - I2S clock frequency divisor."]
     #[inline(always)]
     #[must_use]
-    pub fn clkdiv(&mut self) -> CLKDIV_W<CTRL1CH0_SPEC, 16> {
-        CLKDIV_W::new(self)
+    pub fn clkdiv(&mut self) -> CLKDIV_W<CTRL1CH0_SPEC> {
+        CLKDIV_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

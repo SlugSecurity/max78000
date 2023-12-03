@@ -1,39 +1,43 @@
 #[doc = "Register `SAFE_EN` writer"]
 pub type W = crate::W<SAFE_EN_SPEC>;
 #[doc = "Field `PT0` writer - "]
-pub type PT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PT1` writer - "]
-pub type PT1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PT2` writer - "]
-pub type PT2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PT3` writer - "]
-pub type PT3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn pt0(&mut self) -> PT0_W<SAFE_EN_SPEC, 0> {
-        PT0_W::new(self)
+    pub fn pt0(&mut self) -> PT0_W<SAFE_EN_SPEC> {
+        PT0_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn pt1(&mut self) -> PT1_W<SAFE_EN_SPEC, 1> {
-        PT1_W::new(self)
+    pub fn pt1(&mut self) -> PT1_W<SAFE_EN_SPEC> {
+        PT1_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn pt2(&mut self) -> PT2_W<SAFE_EN_SPEC, 2> {
-        PT2_W::new(self)
+    pub fn pt2(&mut self) -> PT2_W<SAFE_EN_SPEC> {
+        PT2_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn pt3(&mut self) -> PT3_W<SAFE_EN_SPEC, 3> {
-        PT3_W::new(self)
+    pub fn pt3(&mut self) -> PT3_W<SAFE_EN_SPEC> {
+        PT3_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

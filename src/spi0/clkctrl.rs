@@ -23,7 +23,7 @@ impl crate::FieldSpec for LO_A {
 impl LO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LO_A> {
+    pub const fn variant(&self) -> Option<LO_A> {
         match self.bits {
             0 => Some(LO_A::DIS),
             _ => None,
@@ -36,8 +36,8 @@ impl LO_R {
     }
 }
 #[doc = "Field `LO` writer - Low duty cycle control. In timer mode, reload\\[7:0\\]."]
-pub type LO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, LO_A>;
-impl<'a, REG, const O: u8> LO_W<'a, REG, O>
+pub type LO_W<'a, REG> = crate::FieldWriter<'a, REG, 8, LO_A>;
+impl<'a, REG> LO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -69,7 +69,7 @@ impl crate::FieldSpec for HI_A {
 impl HI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HI_A> {
+    pub const fn variant(&self) -> Option<HI_A> {
         match self.bits {
             0 => Some(HI_A::DIS),
             _ => None,
@@ -82,8 +82,8 @@ impl HI_R {
     }
 }
 #[doc = "Field `HI` writer - High duty cycle control. In timer mode, reload\\[15:8\\]."]
-pub type HI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, HI_A>;
-impl<'a, REG, const O: u8> HI_W<'a, REG, O>
+pub type HI_W<'a, REG> = crate::FieldWriter<'a, REG, 8, HI_A>;
+impl<'a, REG> HI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -97,7 +97,7 @@ where
 #[doc = "Field `CLKDIV` reader - System Clock scale factor. Scales the AMBA clock by 2^SCALE before generating serial clock."]
 pub type CLKDIV_R = crate::FieldReader;
 #[doc = "Field `CLKDIV` writer - System Clock scale factor. Scales the AMBA clock by 2^SCALE before generating serial clock."]
-pub type CLKDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CLKDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:7 - Low duty cycle control. In timer mode, reload\\[7:0\\]."]
     #[inline(always)]
@@ -119,22 +119,26 @@ impl W {
     #[doc = "Bits 0:7 - Low duty cycle control. In timer mode, reload\\[7:0\\]."]
     #[inline(always)]
     #[must_use]
-    pub fn lo(&mut self) -> LO_W<CLKCTRL_SPEC, 0> {
-        LO_W::new(self)
+    pub fn lo(&mut self) -> LO_W<CLKCTRL_SPEC> {
+        LO_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - High duty cycle control. In timer mode, reload\\[15:8\\]."]
     #[inline(always)]
     #[must_use]
-    pub fn hi(&mut self) -> HI_W<CLKCTRL_SPEC, 8> {
-        HI_W::new(self)
+    pub fn hi(&mut self) -> HI_W<CLKCTRL_SPEC> {
+        HI_W::new(self, 8)
     }
     #[doc = "Bits 16:19 - System Clock scale factor. Scales the AMBA clock by 2^SCALE before generating serial clock."]
     #[inline(always)]
     #[must_use]
-    pub fn clkdiv(&mut self) -> CLKDIV_W<CLKCTRL_SPEC, 16> {
-        CLKDIV_W::new(self)
+    pub fn clkdiv(&mut self) -> CLKDIV_W<CLKCTRL_SPEC> {
+        CLKDIV_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

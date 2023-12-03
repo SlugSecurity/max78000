@@ -5,7 +5,7 @@ pub type W = crate::W<ECCADDR_SPEC>;
 #[doc = "Field `ECCERRAD` reader - ECC Error Address."]
 pub type ECCERRAD_R = crate::FieldReader<u32>;
 #[doc = "Field `ECCERRAD` writer - ECC Error Address."]
-pub type ECCERRAD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type ECCERRAD_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - ECC Error Address."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - ECC Error Address."]
     #[inline(always)]
     #[must_use]
-    pub fn eccerrad(&mut self) -> ECCERRAD_W<ECCADDR_SPEC, 0> {
-        ECCERRAD_W::new(self)
+    pub fn eccerrad(&mut self) -> ECCERRAD_W<ECCADDR_SPEC> {
+        ECCERRAD_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

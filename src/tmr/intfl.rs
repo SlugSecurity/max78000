@@ -5,27 +5,27 @@ pub type W = crate::W<INTFL_SPEC>;
 #[doc = "Field `IRQ_A` reader - Interrupt Flag for Timer A."]
 pub type IRQ_A_R = crate::BitReader;
 #[doc = "Field `IRQ_A` writer - Interrupt Flag for Timer A."]
-pub type IRQ_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IRQ_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WRDONE_A` reader - Write Done Flag for Timer A indicating the write is complete from APB to CLK_TMR domain."]
 pub type WRDONE_A_R = crate::BitReader;
 #[doc = "Field `WRDONE_A` writer - Write Done Flag for Timer A indicating the write is complete from APB to CLK_TMR domain."]
-pub type WRDONE_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WRDONE_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WR_DIS_A` reader - Write Disable to CNT/PWM for Timer A in the non-cascaded dual timer configuration."]
 pub type WR_DIS_A_R = crate::BitReader;
 #[doc = "Field `WR_DIS_A` writer - Write Disable to CNT/PWM for Timer A in the non-cascaded dual timer configuration."]
-pub type WR_DIS_A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WR_DIS_A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IRQ_B` reader - Interrupt Flag for Timer B."]
 pub type IRQ_B_R = crate::BitReader;
 #[doc = "Field `IRQ_B` writer - Interrupt Flag for Timer B."]
-pub type IRQ_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IRQ_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WRDONE_B` reader - Write Done Flag for Timer B indicating the write is complete from APB to CLK_TMR domain."]
 pub type WRDONE_B_R = crate::BitReader;
 #[doc = "Field `WRDONE_B` writer - Write Done Flag for Timer B indicating the write is complete from APB to CLK_TMR domain."]
-pub type WRDONE_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WRDONE_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WR_DIS_B` reader - Write Disable to CNT/PWM for Timer B in the non-cascaded dual timer configuration."]
 pub type WR_DIS_B_R = crate::BitReader;
 #[doc = "Field `WR_DIS_B` writer - Write Disable to CNT/PWM for Timer B in the non-cascaded dual timer configuration."]
-pub type WR_DIS_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WR_DIS_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Interrupt Flag for Timer A."]
     #[inline(always)]
@@ -62,40 +62,44 @@ impl W {
     #[doc = "Bit 0 - Interrupt Flag for Timer A."]
     #[inline(always)]
     #[must_use]
-    pub fn irq_a(&mut self) -> IRQ_A_W<INTFL_SPEC, 0> {
-        IRQ_A_W::new(self)
+    pub fn irq_a(&mut self) -> IRQ_A_W<INTFL_SPEC> {
+        IRQ_A_W::new(self, 0)
     }
     #[doc = "Bit 8 - Write Done Flag for Timer A indicating the write is complete from APB to CLK_TMR domain."]
     #[inline(always)]
     #[must_use]
-    pub fn wrdone_a(&mut self) -> WRDONE_A_W<INTFL_SPEC, 8> {
-        WRDONE_A_W::new(self)
+    pub fn wrdone_a(&mut self) -> WRDONE_A_W<INTFL_SPEC> {
+        WRDONE_A_W::new(self, 8)
     }
     #[doc = "Bit 9 - Write Disable to CNT/PWM for Timer A in the non-cascaded dual timer configuration."]
     #[inline(always)]
     #[must_use]
-    pub fn wr_dis_a(&mut self) -> WR_DIS_A_W<INTFL_SPEC, 9> {
-        WR_DIS_A_W::new(self)
+    pub fn wr_dis_a(&mut self) -> WR_DIS_A_W<INTFL_SPEC> {
+        WR_DIS_A_W::new(self, 9)
     }
     #[doc = "Bit 16 - Interrupt Flag for Timer B."]
     #[inline(always)]
     #[must_use]
-    pub fn irq_b(&mut self) -> IRQ_B_W<INTFL_SPEC, 16> {
-        IRQ_B_W::new(self)
+    pub fn irq_b(&mut self) -> IRQ_B_W<INTFL_SPEC> {
+        IRQ_B_W::new(self, 16)
     }
     #[doc = "Bit 24 - Write Done Flag for Timer B indicating the write is complete from APB to CLK_TMR domain."]
     #[inline(always)]
     #[must_use]
-    pub fn wrdone_b(&mut self) -> WRDONE_B_W<INTFL_SPEC, 24> {
-        WRDONE_B_W::new(self)
+    pub fn wrdone_b(&mut self) -> WRDONE_B_W<INTFL_SPEC> {
+        WRDONE_B_W::new(self, 24)
     }
     #[doc = "Bit 25 - Write Disable to CNT/PWM for Timer B in the non-cascaded dual timer configuration."]
     #[inline(always)]
     #[must_use]
-    pub fn wr_dis_b(&mut self) -> WR_DIS_B_W<INTFL_SPEC, 25> {
-        WR_DIS_B_W::new(self)
+    pub fn wr_dis_b(&mut self) -> WR_DIS_B_W<INTFL_SPEC> {
+        WR_DIS_B_W::new(self, 25)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

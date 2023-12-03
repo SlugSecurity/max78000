@@ -35,7 +35,7 @@ impl crate::FieldSpec for TMODE_A {
 impl TMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TMODE_A> {
+    pub const fn variant(&self) -> Option<TMODE_A> {
         match self.bits {
             0 => Some(TMODE_A::ONE_SHOT),
             1 => Some(TMODE_A::CONTINUOUS),
@@ -84,8 +84,8 @@ impl TMODE_R {
     }
 }
 #[doc = "Field `TMODE` writer - Timer Mode."]
-pub type TMODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, TMODE_A>;
-impl<'a, REG, const O: u8> TMODE_W<'a, REG, O>
+pub type TMODE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, TMODE_A>;
+impl<'a, REG> TMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -161,7 +161,7 @@ impl crate::FieldSpec for PRES_A {
 impl PRES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRES_A {
+    pub const fn variant(&self) -> PRES_A {
         match self.bits {
             0 => PRES_A::DIV1,
             1 => PRES_A::DIV2,
@@ -216,8 +216,8 @@ impl PRES_R {
     }
 }
 #[doc = "Field `PRES` writer - Prescaler. Set the Timer's prescaler value. The prescaler divides the PCLK input to the timer and sets the Timer's Count Clock, F_CNT_CLK = PCLK(HZ)/prescaler. The Timer's prescaler setting is a 4-bit value with pres3:pres\\[2:0\\]."]
-pub type PRES_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PRES_A>;
-impl<'a, REG, const O: u8> PRES_W<'a, REG, O>
+pub type PRES_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PRES_A>;
+impl<'a, REG> PRES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -282,7 +282,7 @@ impl From<TPOL_A> for bool {
 impl TPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TPOL_A {
+    pub const fn variant(&self) -> TPOL_A {
         match self.bits {
             false => TPOL_A::ACTIVE_HI,
             true => TPOL_A::ACTIVE_LO,
@@ -300,8 +300,8 @@ impl TPOL_R {
     }
 }
 #[doc = "Field `TPOL` writer - Timer input/output polarity bit."]
-pub type TPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TPOL_A>;
-impl<'a, REG, const O: u8> TPOL_W<'a, REG, O>
+pub type TPOL_W<'a, REG> = crate::BitWriter<'a, REG, TPOL_A>;
+impl<'a, REG> TPOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -335,7 +335,7 @@ impl From<TEN_A> for bool {
 impl TEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TEN_A {
+    pub const fn variant(&self) -> TEN_A {
         match self.bits {
             false => TEN_A::DIS,
             true => TEN_A::EN,
@@ -353,8 +353,8 @@ impl TEN_R {
     }
 }
 #[doc = "Field `TEN` writer - Timer Enable."]
-pub type TEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TEN_A>;
-impl<'a, REG, const O: u8> TEN_W<'a, REG, O>
+pub type TEN_W<'a, REG> = crate::BitWriter<'a, REG, TEN_A>;
+impl<'a, REG> TEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -372,7 +372,7 @@ where
 #[doc = "Field `PRES3` reader - MSB of prescaler value."]
 pub type PRES3_R = crate::BitReader;
 #[doc = "Field `PRES3` writer - MSB of prescaler value."]
-pub type PRES3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRES3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - Timer Mode."]
     #[inline(always)]
@@ -404,34 +404,38 @@ impl W {
     #[doc = "Bits 0:2 - Timer Mode."]
     #[inline(always)]
     #[must_use]
-    pub fn tmode(&mut self) -> TMODE_W<CTRL_SPEC, 0> {
-        TMODE_W::new(self)
+    pub fn tmode(&mut self) -> TMODE_W<CTRL_SPEC> {
+        TMODE_W::new(self, 0)
     }
     #[doc = "Bits 3:5 - Prescaler. Set the Timer's prescaler value. The prescaler divides the PCLK input to the timer and sets the Timer's Count Clock, F_CNT_CLK = PCLK(HZ)/prescaler. The Timer's prescaler setting is a 4-bit value with pres3:pres\\[2:0\\]."]
     #[inline(always)]
     #[must_use]
-    pub fn pres(&mut self) -> PRES_W<CTRL_SPEC, 3> {
-        PRES_W::new(self)
+    pub fn pres(&mut self) -> PRES_W<CTRL_SPEC> {
+        PRES_W::new(self, 3)
     }
     #[doc = "Bit 6 - Timer input/output polarity bit."]
     #[inline(always)]
     #[must_use]
-    pub fn tpol(&mut self) -> TPOL_W<CTRL_SPEC, 6> {
-        TPOL_W::new(self)
+    pub fn tpol(&mut self) -> TPOL_W<CTRL_SPEC> {
+        TPOL_W::new(self, 6)
     }
     #[doc = "Bit 7 - Timer Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ten(&mut self) -> TEN_W<CTRL_SPEC, 7> {
-        TEN_W::new(self)
+    pub fn ten(&mut self) -> TEN_W<CTRL_SPEC> {
+        TEN_W::new(self, 7)
     }
     #[doc = "Bit 8 - MSB of prescaler value."]
     #[inline(always)]
     #[must_use]
-    pub fn pres3(&mut self) -> PRES3_W<CTRL_SPEC, 8> {
-        PRES3_W::new(self)
+    pub fn pres3(&mut self) -> PRES3_W<CTRL_SPEC> {
+        PRES3_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

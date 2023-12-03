@@ -5,7 +5,7 @@ pub type W = crate::W<VREGO_A_SPEC>;
 #[doc = "Field `VSETA` reader - Regulator Output Voltage Setting"]
 pub type VSETA_R = crate::FieldReader;
 #[doc = "Field `VSETA` writer - Regulator Output Voltage Setting"]
-pub type VSETA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type VSETA_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `RANGEA` reader - Regulator Output Range Set"]
 pub type RANGEA_R = crate::BitReader<RANGEA_A>;
 #[doc = "Regulator Output Range Set\n\nValue on reset: 0"]
@@ -25,7 +25,7 @@ impl From<RANGEA_A> for bool {
 impl RANGEA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RANGEA_A {
+    pub const fn variant(&self) -> RANGEA_A {
         match self.bits {
             false => RANGEA_A::LOW,
             true => RANGEA_A::HIGH,
@@ -43,8 +43,8 @@ impl RANGEA_R {
     }
 }
 #[doc = "Field `RANGEA` writer - Regulator Output Range Set"]
-pub type RANGEA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RANGEA_A>;
-impl<'a, REG, const O: u8> RANGEA_W<'a, REG, O>
+pub type RANGEA_W<'a, REG> = crate::BitWriter<'a, REG, RANGEA_A>;
+impl<'a, REG> RANGEA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -75,16 +75,20 @@ impl W {
     #[doc = "Bits 0:6 - Regulator Output Voltage Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn vseta(&mut self) -> VSETA_W<VREGO_A_SPEC, 0> {
-        VSETA_W::new(self)
+    pub fn vseta(&mut self) -> VSETA_W<VREGO_A_SPEC> {
+        VSETA_W::new(self, 0)
     }
     #[doc = "Bit 7 - Regulator Output Range Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rangea(&mut self) -> RANGEA_W<VREGO_A_SPEC, 7> {
-        RANGEA_W::new(self)
+    pub fn rangea(&mut self) -> RANGEA_W<VREGO_A_SPEC> {
+        RANGEA_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

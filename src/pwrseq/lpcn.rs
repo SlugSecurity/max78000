@@ -21,7 +21,7 @@ impl From<RAMRET0_A> for bool {
 impl RAMRET0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMRET0_A {
+    pub const fn variant(&self) -> RAMRET0_A {
         match self.bits {
             false => RAMRET0_A::DIS,
             true => RAMRET0_A::EN,
@@ -39,8 +39,8 @@ impl RAMRET0_R {
     }
 }
 #[doc = "Field `RAMRET0` writer - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
-pub type RAMRET0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RAMRET0_A>;
-impl<'a, REG, const O: u8> RAMRET0_W<'a, REG, O>
+pub type RAMRET0_W<'a, REG> = crate::BitWriter<'a, REG, RAMRET0_A>;
+impl<'a, REG> RAMRET0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<RAMRET1_A> for bool {
 impl RAMRET1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMRET1_A {
+    pub const fn variant(&self) -> RAMRET1_A {
         match self.bits {
             false => RAMRET1_A::DIS,
             true => RAMRET1_A::EN,
@@ -92,8 +92,8 @@ impl RAMRET1_R {
     }
 }
 #[doc = "Field `RAMRET1` writer - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
-pub type RAMRET1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RAMRET1_A>;
-impl<'a, REG, const O: u8> RAMRET1_W<'a, REG, O>
+pub type RAMRET1_W<'a, REG> = crate::BitWriter<'a, REG, RAMRET1_A>;
+impl<'a, REG> RAMRET1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<RAMRET2_A> for bool {
 impl RAMRET2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMRET2_A {
+    pub const fn variant(&self) -> RAMRET2_A {
         match self.bits {
             false => RAMRET2_A::DIS,
             true => RAMRET2_A::EN,
@@ -145,8 +145,8 @@ impl RAMRET2_R {
     }
 }
 #[doc = "Field `RAMRET2` writer - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
-pub type RAMRET2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RAMRET2_A>;
-impl<'a, REG, const O: u8> RAMRET2_W<'a, REG, O>
+pub type RAMRET2_W<'a, REG> = crate::BitWriter<'a, REG, RAMRET2_A>;
+impl<'a, REG> RAMRET2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -180,7 +180,7 @@ impl From<RAMRET3_A> for bool {
 impl RAMRET3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMRET3_A {
+    pub const fn variant(&self) -> RAMRET3_A {
         match self.bits {
             false => RAMRET3_A::DIS,
             true => RAMRET3_A::EN,
@@ -198,8 +198,8 @@ impl RAMRET3_R {
     }
 }
 #[doc = "Field `RAMRET3` writer - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
-pub type RAMRET3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RAMRET3_A>;
-impl<'a, REG, const O: u8> RAMRET3_W<'a, REG, O>
+pub type RAMRET3_W<'a, REG> = crate::BitWriter<'a, REG, RAMRET3_A>;
+impl<'a, REG> RAMRET3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -217,11 +217,11 @@ where
 #[doc = "Field `LPMCLKSEL` reader - Low Power Mode APB Clock Select."]
 pub type LPMCLKSEL_R = crate::BitReader;
 #[doc = "Field `LPMCLKSEL` writer - Low Power Mode APB Clock Select."]
-pub type LPMCLKSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LPMCLKSEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LPMFAST` reader - Low Power Mode Clock Select."]
 pub type LPMFAST_R = crate::BitReader;
 #[doc = "Field `LPMFAST` writer - Low Power Mode Clock Select."]
-pub type LPMFAST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LPMFAST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BG_DIS` reader - Bandgap OFF. This controls the System Bandgap in DeepSleep mode."]
 pub type BG_DIS_R = crate::BitReader<BG_DIS_A>;
 #[doc = "Bandgap OFF. This controls the System Bandgap in DeepSleep mode.\n\nValue on reset: 0"]
@@ -241,7 +241,7 @@ impl From<BG_DIS_A> for bool {
 impl BG_DIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BG_DIS_A {
+    pub const fn variant(&self) -> BG_DIS_A {
         match self.bits {
             false => BG_DIS_A::ON,
             true => BG_DIS_A::OFF,
@@ -259,8 +259,8 @@ impl BG_DIS_R {
     }
 }
 #[doc = "Field `BG_DIS` writer - Bandgap OFF. This controls the System Bandgap in DeepSleep mode."]
-pub type BG_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BG_DIS_A>;
-impl<'a, REG, const O: u8> BG_DIS_W<'a, REG, O>
+pub type BG_DIS_W<'a, REG> = crate::BitWriter<'a, REG, BG_DIS_A>;
+impl<'a, REG> BG_DIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -278,7 +278,7 @@ where
 #[doc = "Field `LPWKST_CLR` reader - Low Power Wakeup Status Register Clear"]
 pub type LPWKST_CLR_R = crate::BitReader;
 #[doc = "Field `LPWKST_CLR` writer - Low Power Wakeup Status Register Clear"]
-pub type LPWKST_CLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LPWKST_CLR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
     #[inline(always)]
@@ -325,52 +325,56 @@ impl W {
     #[doc = "Bit 0 - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
     #[inline(always)]
     #[must_use]
-    pub fn ramret0(&mut self) -> RAMRET0_W<LPCN_SPEC, 0> {
-        RAMRET0_W::new(self)
+    pub fn ramret0(&mut self) -> RAMRET0_W<LPCN_SPEC> {
+        RAMRET0_W::new(self, 0)
     }
     #[doc = "Bit 1 - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
     #[inline(always)]
     #[must_use]
-    pub fn ramret1(&mut self) -> RAMRET1_W<LPCN_SPEC, 1> {
-        RAMRET1_W::new(self)
+    pub fn ramret1(&mut self) -> RAMRET1_W<LPCN_SPEC> {
+        RAMRET1_W::new(self, 1)
     }
     #[doc = "Bit 2 - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
     #[inline(always)]
     #[must_use]
-    pub fn ramret2(&mut self) -> RAMRET2_W<LPCN_SPEC, 2> {
-        RAMRET2_W::new(self)
+    pub fn ramret2(&mut self) -> RAMRET2_W<LPCN_SPEC> {
+        RAMRET2_W::new(self, 2)
     }
     #[doc = "Bit 3 - System RAM retention in BACKUP mode. These two bits are used in conjuction with RREGEN bit."]
     #[inline(always)]
     #[must_use]
-    pub fn ramret3(&mut self) -> RAMRET3_W<LPCN_SPEC, 3> {
-        RAMRET3_W::new(self)
+    pub fn ramret3(&mut self) -> RAMRET3_W<LPCN_SPEC> {
+        RAMRET3_W::new(self, 3)
     }
     #[doc = "Bit 8 - Low Power Mode APB Clock Select."]
     #[inline(always)]
     #[must_use]
-    pub fn lpmclksel(&mut self) -> LPMCLKSEL_W<LPCN_SPEC, 8> {
-        LPMCLKSEL_W::new(self)
+    pub fn lpmclksel(&mut self) -> LPMCLKSEL_W<LPCN_SPEC> {
+        LPMCLKSEL_W::new(self, 8)
     }
     #[doc = "Bit 9 - Low Power Mode Clock Select."]
     #[inline(always)]
     #[must_use]
-    pub fn lpmfast(&mut self) -> LPMFAST_W<LPCN_SPEC, 9> {
-        LPMFAST_W::new(self)
+    pub fn lpmfast(&mut self) -> LPMFAST_W<LPCN_SPEC> {
+        LPMFAST_W::new(self, 9)
     }
     #[doc = "Bit 11 - Bandgap OFF. This controls the System Bandgap in DeepSleep mode."]
     #[inline(always)]
     #[must_use]
-    pub fn bg_dis(&mut self) -> BG_DIS_W<LPCN_SPEC, 11> {
-        BG_DIS_W::new(self)
+    pub fn bg_dis(&mut self) -> BG_DIS_W<LPCN_SPEC> {
+        BG_DIS_W::new(self, 11)
     }
     #[doc = "Bit 31 - Low Power Wakeup Status Register Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn lpwkst_clr(&mut self) -> LPWKST_CLR_W<LPCN_SPEC, 31> {
-        LPWKST_CLR_W::new(self)
+    pub fn lpwkst_clr(&mut self) -> LPWKST_CLR_W<LPCN_SPEC> {
+        LPWKST_CLR_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

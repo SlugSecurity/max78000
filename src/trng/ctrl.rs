@@ -21,7 +21,7 @@ impl From<RND_IE_A> for bool {
 impl RND_IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RND_IE_A {
+    pub const fn variant(&self) -> RND_IE_A {
         match self.bits {
             false => RND_IE_A::DISABLE,
             true => RND_IE_A::ENABLE,
@@ -39,8 +39,8 @@ impl RND_IE_R {
     }
 }
 #[doc = "Field `RND_IE` writer - To enable IRQ generation when a new 32-bit Random number is ready."]
-pub type RND_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RND_IE_A>;
-impl<'a, REG, const O: u8> RND_IE_W<'a, REG, O>
+pub type RND_IE_W<'a, REG> = crate::BitWriter<'a, REG, RND_IE_A>;
+impl<'a, REG> RND_IE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -58,11 +58,11 @@ where
 #[doc = "Field `KEYGEN` reader - AES Key Generate. When enabled, the key for securing NVSRAM is generated and transferred to the secure key register automatically without user visibility or intervention. This bit is cleared by hardware once the key has been transferred to the secure key register."]
 pub type KEYGEN_R = crate::BitReader;
 #[doc = "Field `KEYGEN` writer - AES Key Generate. When enabled, the key for securing NVSRAM is generated and transferred to the secure key register automatically without user visibility or intervention. This bit is cleared by hardware once the key has been transferred to the secure key register."]
-pub type KEYGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type KEYGEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `KEYWIPE` reader - To wipe the Battery Backed key."]
 pub type KEYWIPE_R = crate::BitReader;
 #[doc = "Field `KEYWIPE` writer - To wipe the Battery Backed key."]
-pub type KEYWIPE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type KEYWIPE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 1 - To enable IRQ generation when a new 32-bit Random number is ready."]
     #[inline(always)]
@@ -84,22 +84,26 @@ impl W {
     #[doc = "Bit 1 - To enable IRQ generation when a new 32-bit Random number is ready."]
     #[inline(always)]
     #[must_use]
-    pub fn rnd_ie(&mut self) -> RND_IE_W<CTRL_SPEC, 1> {
-        RND_IE_W::new(self)
+    pub fn rnd_ie(&mut self) -> RND_IE_W<CTRL_SPEC> {
+        RND_IE_W::new(self, 1)
     }
     #[doc = "Bit 3 - AES Key Generate. When enabled, the key for securing NVSRAM is generated and transferred to the secure key register automatically without user visibility or intervention. This bit is cleared by hardware once the key has been transferred to the secure key register."]
     #[inline(always)]
     #[must_use]
-    pub fn keygen(&mut self) -> KEYGEN_W<CTRL_SPEC, 3> {
-        KEYGEN_W::new(self)
+    pub fn keygen(&mut self) -> KEYGEN_W<CTRL_SPEC> {
+        KEYGEN_W::new(self, 3)
     }
     #[doc = "Bit 15 - To wipe the Battery Backed key."]
     #[inline(always)]
     #[must_use]
-    pub fn keywipe(&mut self) -> KEYWIPE_W<CTRL_SPEC, 15> {
-        KEYWIPE_W::new(self)
+    pub fn keywipe(&mut self) -> KEYWIPE_W<CTRL_SPEC> {
+        KEYWIPE_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,11 +5,11 @@ pub type W = crate::W<TRIM_SPEC>;
 #[doc = "Field `TRIM` reader - RTC Trim. This register contains the 2's complement value that specifies the trim resolution. Each increment or decrement of the bit adds or subtracts 1ppm at each 4KHz clock value, with a maximum correction of +/- 127ppm."]
 pub type TRIM_R = crate::FieldReader;
 #[doc = "Field `TRIM` writer - RTC Trim. This register contains the 2's complement value that specifies the trim resolution. Each increment or decrement of the bit adds or subtracts 1ppm at each 4KHz clock value, with a maximum correction of +/- 127ppm."]
-pub type TRIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `VRTC_TMR` reader - VBAT Timer Value. When RTC is running off of VBAT, this field is incremented every 32 seconds."]
 pub type VRTC_TMR_R = crate::FieldReader<u32>;
 #[doc = "Field `VRTC_TMR` writer - VBAT Timer Value. When RTC is running off of VBAT, this field is incremented every 32 seconds."]
-pub type VRTC_TMR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type VRTC_TMR_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:7 - RTC Trim. This register contains the 2's complement value that specifies the trim resolution. Each increment or decrement of the bit adds or subtracts 1ppm at each 4KHz clock value, with a maximum correction of +/- 127ppm."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:7 - RTC Trim. This register contains the 2's complement value that specifies the trim resolution. Each increment or decrement of the bit adds or subtracts 1ppm at each 4KHz clock value, with a maximum correction of +/- 127ppm."]
     #[inline(always)]
     #[must_use]
-    pub fn trim(&mut self) -> TRIM_W<TRIM_SPEC, 0> {
-        TRIM_W::new(self)
+    pub fn trim(&mut self) -> TRIM_W<TRIM_SPEC> {
+        TRIM_W::new(self, 0)
     }
     #[doc = "Bits 8:31 - VBAT Timer Value. When RTC is running off of VBAT, this field is incremented every 32 seconds."]
     #[inline(always)]
     #[must_use]
-    pub fn vrtc_tmr(&mut self) -> VRTC_TMR_W<TRIM_SPEC, 8> {
-        VRTC_TMR_W::new(self)
+    pub fn vrtc_tmr(&mut self) -> VRTC_TMR_W<TRIM_SPEC> {
+        VRTC_TMR_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

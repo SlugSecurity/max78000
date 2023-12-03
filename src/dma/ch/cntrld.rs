@@ -5,11 +5,11 @@ pub type W = crate::W<CNTRLD_SPEC>;
 #[doc = "Field `CNT` reader - Count Reload Value. The value of this register is loaded into DMA0_CNT upon a count-to-zero condition."]
 pub type CNT_R = crate::FieldReader<u32>;
 #[doc = "Field `CNT` writer - Count Reload Value. The value of this register is loaded into DMA0_CNT upon a count-to-zero condition."]
-pub type CNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "Field `EN` reader - Count Reload Enable."]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Count Reload Enable."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:23 - Count Reload Value. The value of this register is loaded into DMA0_CNT upon a count-to-zero condition."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:23 - Count Reload Value. The value of this register is loaded into DMA0_CNT upon a count-to-zero condition."]
     #[inline(always)]
     #[must_use]
-    pub fn cnt(&mut self) -> CNT_W<CNTRLD_SPEC, 0> {
-        CNT_W::new(self)
+    pub fn cnt(&mut self) -> CNT_W<CNTRLD_SPEC> {
+        CNT_W::new(self, 0)
     }
     #[doc = "Bit 31 - Count Reload Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CNTRLD_SPEC, 31> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CNTRLD_SPEC> {
+        EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

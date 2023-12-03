@@ -53,7 +53,7 @@ impl crate::FieldSpec for INT_LATE_VAL_A {
 impl INT_LATE_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_LATE_VAL_A {
+    pub const fn variant(&self) -> INT_LATE_VAL_A {
         match self.bits {
             0 => INT_LATE_VAL_A::WDT2POW31,
             1 => INT_LATE_VAL_A::WDT2POW30,
@@ -156,9 +156,8 @@ impl INT_LATE_VAL_R {
     }
 }
 #[doc = "Field `INT_LATE_VAL` writer - Windowed Watchdog Interrupt Upper Limit. Sets the number of WDTCLK cycles until a windowed watchdog timer interrupt is generated (if enabled) if the CPU does not write the windowed watchdog reset sequence to the WWDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
-pub type INT_LATE_VAL_W<'a, REG, const O: u8> =
-    crate::FieldWriterSafe<'a, REG, 4, O, INT_LATE_VAL_A>;
-impl<'a, REG, const O: u8> INT_LATE_VAL_W<'a, REG, O>
+pub type INT_LATE_VAL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, INT_LATE_VAL_A>;
+impl<'a, REG> INT_LATE_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -295,7 +294,7 @@ impl crate::FieldSpec for RST_LATE_VAL_A {
 impl RST_LATE_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RST_LATE_VAL_A {
+    pub const fn variant(&self) -> RST_LATE_VAL_A {
         match self.bits {
             0 => RST_LATE_VAL_A::WDT2POW31,
             1 => RST_LATE_VAL_A::WDT2POW30,
@@ -398,9 +397,8 @@ impl RST_LATE_VAL_R {
     }
 }
 #[doc = "Field `RST_LATE_VAL` writer - Windowed Watchdog Reset Upper Limit. Sets the number of WDTCLK cycles until a system reset occurs (if enabled) if the CPU does not write the watchdog reset sequence to the WDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
-pub type RST_LATE_VAL_W<'a, REG, const O: u8> =
-    crate::FieldWriterSafe<'a, REG, 4, O, RST_LATE_VAL_A>;
-impl<'a, REG, const O: u8> RST_LATE_VAL_W<'a, REG, O>
+pub type RST_LATE_VAL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, RST_LATE_VAL_A>;
+impl<'a, REG> RST_LATE_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -505,7 +503,7 @@ impl From<EN_A> for bool {
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> EN_A {
         match self.bits {
             false => EN_A::DIS,
             true => EN_A::EN,
@@ -523,8 +521,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `EN` writer - Windowed Watchdog Timer Enable."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_A>;
-impl<'a, REG, const O: u8> EN_W<'a, REG, O>
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG, EN_A>;
+impl<'a, REG> EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -558,7 +556,7 @@ impl From<INT_LATE_A> for bool {
 impl INT_LATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_LATE_A {
+    pub const fn variant(&self) -> INT_LATE_A {
         match self.bits {
             false => INT_LATE_A::INACTIVE,
             true => INT_LATE_A::PENDING,
@@ -576,8 +574,8 @@ impl INT_LATE_R {
     }
 }
 #[doc = "Field `INT_LATE` writer - Windowed Watchdog Timer Interrupt Flag Too Late."]
-pub type INT_LATE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INT_LATE_A>;
-impl<'a, REG, const O: u8> INT_LATE_W<'a, REG, O>
+pub type INT_LATE_W<'a, REG> = crate::BitWriter<'a, REG, INT_LATE_A>;
+impl<'a, REG> INT_LATE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -611,7 +609,7 @@ impl From<WDT_INT_EN_A> for bool {
 impl WDT_INT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDT_INT_EN_A {
+    pub const fn variant(&self) -> WDT_INT_EN_A {
         match self.bits {
             false => WDT_INT_EN_A::DIS,
             true => WDT_INT_EN_A::EN,
@@ -629,8 +627,8 @@ impl WDT_INT_EN_R {
     }
 }
 #[doc = "Field `WDT_INT_EN` writer - Windowed Watchdog Timer Interrupt Enable."]
-pub type WDT_INT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDT_INT_EN_A>;
-impl<'a, REG, const O: u8> WDT_INT_EN_W<'a, REG, O>
+pub type WDT_INT_EN_W<'a, REG> = crate::BitWriter<'a, REG, WDT_INT_EN_A>;
+impl<'a, REG> WDT_INT_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -664,7 +662,7 @@ impl From<WDT_RST_EN_A> for bool {
 impl WDT_RST_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDT_RST_EN_A {
+    pub const fn variant(&self) -> WDT_RST_EN_A {
         match self.bits {
             false => WDT_RST_EN_A::DIS,
             true => WDT_RST_EN_A::EN,
@@ -682,8 +680,8 @@ impl WDT_RST_EN_R {
     }
 }
 #[doc = "Field `WDT_RST_EN` writer - Windowed Watchdog Timer Reset Enable."]
-pub type WDT_RST_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDT_RST_EN_A>;
-impl<'a, REG, const O: u8> WDT_RST_EN_W<'a, REG, O>
+pub type WDT_RST_EN_W<'a, REG> = crate::BitWriter<'a, REG, WDT_RST_EN_A>;
+impl<'a, REG> WDT_RST_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -717,7 +715,7 @@ impl From<INT_EARLY_A> for bool {
 impl INT_EARLY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_EARLY_A {
+    pub const fn variant(&self) -> INT_EARLY_A {
         match self.bits {
             false => INT_EARLY_A::INACTIVE,
             true => INT_EARLY_A::PENDING,
@@ -735,8 +733,8 @@ impl INT_EARLY_R {
     }
 }
 #[doc = "Field `INT_EARLY` writer - Windowed Watchdog Timer Interrupt Flag Too Soon."]
-pub type INT_EARLY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INT_EARLY_A>;
-impl<'a, REG, const O: u8> INT_EARLY_W<'a, REG, O>
+pub type INT_EARLY_W<'a, REG> = crate::BitWriter<'a, REG, INT_EARLY_A>;
+impl<'a, REG> INT_EARLY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -802,7 +800,7 @@ impl crate::FieldSpec for INT_EARLY_VAL_A {
 impl INT_EARLY_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_EARLY_VAL_A {
+    pub const fn variant(&self) -> INT_EARLY_VAL_A {
         match self.bits {
             0 => INT_EARLY_VAL_A::WDT2POW31,
             1 => INT_EARLY_VAL_A::WDT2POW30,
@@ -905,9 +903,8 @@ impl INT_EARLY_VAL_R {
     }
 }
 #[doc = "Field `INT_EARLY_VAL` writer - Windowed Watchdog Interrupt Lower Limit. Sets the number of WDTCLK cycles that establishes the lower boundary of the watchdog window. A windowed watchdog timer interrupt is generated (if enabled) if the CPU writes the windowed watchdog reset sequence to the WWDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
-pub type INT_EARLY_VAL_W<'a, REG, const O: u8> =
-    crate::FieldWriterSafe<'a, REG, 4, O, INT_EARLY_VAL_A>;
-impl<'a, REG, const O: u8> INT_EARLY_VAL_W<'a, REG, O>
+pub type INT_EARLY_VAL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, INT_EARLY_VAL_A>;
+impl<'a, REG> INT_EARLY_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1044,7 +1041,7 @@ impl crate::FieldSpec for RST_EARLY_VAL_A {
 impl RST_EARLY_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RST_EARLY_VAL_A {
+    pub const fn variant(&self) -> RST_EARLY_VAL_A {
         match self.bits {
             0 => RST_EARLY_VAL_A::WDT2POW31,
             1 => RST_EARLY_VAL_A::WDT2POW30,
@@ -1147,9 +1144,8 @@ impl RST_EARLY_VAL_R {
     }
 }
 #[doc = "Field `RST_EARLY_VAL` writer - Windowed Watchdog Reset Lower Limit. Sets the number of WDTCLK cycles that establishes the lower boundary of the watchdog window. A system reset occurs (if enabled) if the CPU writes the windowed watchdog reset sequence to the WWDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
-pub type RST_EARLY_VAL_W<'a, REG, const O: u8> =
-    crate::FieldWriterSafe<'a, REG, 4, O, RST_EARLY_VAL_A>;
-impl<'a, REG, const O: u8> RST_EARLY_VAL_W<'a, REG, O>
+pub type RST_EARLY_VAL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, RST_EARLY_VAL_A>;
+impl<'a, REG> RST_EARLY_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1238,11 +1234,11 @@ where
 #[doc = "Field `CLKRDY_IE` reader - Switch Ready Interrupt Enable. Fires an interrupt when it is safe to swithc the clock."]
 pub type CLKRDY_IE_R = crate::BitReader;
 #[doc = "Field `CLKRDY_IE` writer - Switch Ready Interrupt Enable. Fires an interrupt when it is safe to swithc the clock."]
-pub type CLKRDY_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKRDY_IE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLKRDY` reader - Clock Status."]
 pub type CLKRDY_R = crate::BitReader;
 #[doc = "Field `CLKRDY` writer - Clock Status."]
-pub type CLKRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLKRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WIN_EN` reader - Enables the Windowed Watchdog Function."]
 pub type WIN_EN_R = crate::BitReader<WIN_EN_A>;
 #[doc = "Enables the Windowed Watchdog Function.\n\nValue on reset: 0"]
@@ -1262,7 +1258,7 @@ impl From<WIN_EN_A> for bool {
 impl WIN_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WIN_EN_A {
+    pub const fn variant(&self) -> WIN_EN_A {
         match self.bits {
             false => WIN_EN_A::DIS,
             true => WIN_EN_A::EN,
@@ -1280,8 +1276,8 @@ impl WIN_EN_R {
     }
 }
 #[doc = "Field `WIN_EN` writer - Enables the Windowed Watchdog Function."]
-pub type WIN_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WIN_EN_A>;
-impl<'a, REG, const O: u8> WIN_EN_W<'a, REG, O>
+pub type WIN_EN_W<'a, REG> = crate::BitWriter<'a, REG, WIN_EN_A>;
+impl<'a, REG> WIN_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1315,7 +1311,7 @@ impl From<RST_EARLY_A> for bool {
 impl RST_EARLY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RST_EARLY_A {
+    pub const fn variant(&self) -> RST_EARLY_A {
         match self.bits {
             false => RST_EARLY_A::NO_EVENT,
             true => RST_EARLY_A::OCCURRED,
@@ -1333,8 +1329,8 @@ impl RST_EARLY_R {
     }
 }
 #[doc = "Field `RST_EARLY` writer - Windowed Watchdog Timer Reset Flag Too Soon."]
-pub type RST_EARLY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RST_EARLY_A>;
-impl<'a, REG, const O: u8> RST_EARLY_W<'a, REG, O>
+pub type RST_EARLY_W<'a, REG> = crate::BitWriter<'a, REG, RST_EARLY_A>;
+impl<'a, REG> RST_EARLY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1368,7 +1364,7 @@ impl From<RST_LATE_A> for bool {
 impl RST_LATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RST_LATE_A {
+    pub const fn variant(&self) -> RST_LATE_A {
         match self.bits {
             false => RST_LATE_A::NO_EVENT,
             true => RST_LATE_A::OCCURRED,
@@ -1386,8 +1382,8 @@ impl RST_LATE_R {
     }
 }
 #[doc = "Field `RST_LATE` writer - Windowed Watchdog Timer Reset Flag Too Late."]
-pub type RST_LATE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RST_LATE_A>;
-impl<'a, REG, const O: u8> RST_LATE_W<'a, REG, O>
+pub type RST_LATE_W<'a, REG> = crate::BitWriter<'a, REG, RST_LATE_A>;
+impl<'a, REG> RST_LATE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1478,88 +1474,92 @@ impl W {
     #[doc = "Bits 0:3 - Windowed Watchdog Interrupt Upper Limit. Sets the number of WDTCLK cycles until a windowed watchdog timer interrupt is generated (if enabled) if the CPU does not write the windowed watchdog reset sequence to the WWDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
     #[inline(always)]
     #[must_use]
-    pub fn int_late_val(&mut self) -> INT_LATE_VAL_W<CTRL_SPEC, 0> {
-        INT_LATE_VAL_W::new(self)
+    pub fn int_late_val(&mut self) -> INT_LATE_VAL_W<CTRL_SPEC> {
+        INT_LATE_VAL_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Windowed Watchdog Reset Upper Limit. Sets the number of WDTCLK cycles until a system reset occurs (if enabled) if the CPU does not write the watchdog reset sequence to the WDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
     #[inline(always)]
     #[must_use]
-    pub fn rst_late_val(&mut self) -> RST_LATE_VAL_W<CTRL_SPEC, 4> {
-        RST_LATE_VAL_W::new(self)
+    pub fn rst_late_val(&mut self) -> RST_LATE_VAL_W<CTRL_SPEC> {
+        RST_LATE_VAL_W::new(self, 4)
     }
     #[doc = "Bit 8 - Windowed Watchdog Timer Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 8> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 8)
     }
     #[doc = "Bit 9 - Windowed Watchdog Timer Interrupt Flag Too Late."]
     #[inline(always)]
     #[must_use]
-    pub fn int_late(&mut self) -> INT_LATE_W<CTRL_SPEC, 9> {
-        INT_LATE_W::new(self)
+    pub fn int_late(&mut self) -> INT_LATE_W<CTRL_SPEC> {
+        INT_LATE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Windowed Watchdog Timer Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn wdt_int_en(&mut self) -> WDT_INT_EN_W<CTRL_SPEC, 10> {
-        WDT_INT_EN_W::new(self)
+    pub fn wdt_int_en(&mut self) -> WDT_INT_EN_W<CTRL_SPEC> {
+        WDT_INT_EN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Windowed Watchdog Timer Reset Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn wdt_rst_en(&mut self) -> WDT_RST_EN_W<CTRL_SPEC, 11> {
-        WDT_RST_EN_W::new(self)
+    pub fn wdt_rst_en(&mut self) -> WDT_RST_EN_W<CTRL_SPEC> {
+        WDT_RST_EN_W::new(self, 11)
     }
     #[doc = "Bit 12 - Windowed Watchdog Timer Interrupt Flag Too Soon."]
     #[inline(always)]
     #[must_use]
-    pub fn int_early(&mut self) -> INT_EARLY_W<CTRL_SPEC, 12> {
-        INT_EARLY_W::new(self)
+    pub fn int_early(&mut self) -> INT_EARLY_W<CTRL_SPEC> {
+        INT_EARLY_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Windowed Watchdog Interrupt Lower Limit. Sets the number of WDTCLK cycles that establishes the lower boundary of the watchdog window. A windowed watchdog timer interrupt is generated (if enabled) if the CPU writes the windowed watchdog reset sequence to the WWDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
     #[inline(always)]
     #[must_use]
-    pub fn int_early_val(&mut self) -> INT_EARLY_VAL_W<CTRL_SPEC, 16> {
-        INT_EARLY_VAL_W::new(self)
+    pub fn int_early_val(&mut self) -> INT_EARLY_VAL_W<CTRL_SPEC> {
+        INT_EARLY_VAL_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Windowed Watchdog Reset Lower Limit. Sets the number of WDTCLK cycles that establishes the lower boundary of the watchdog window. A system reset occurs (if enabled) if the CPU writes the windowed watchdog reset sequence to the WWDT_RST register before the watchdog timer has counted this time period since the last timer reset."]
     #[inline(always)]
     #[must_use]
-    pub fn rst_early_val(&mut self) -> RST_EARLY_VAL_W<CTRL_SPEC, 20> {
-        RST_EARLY_VAL_W::new(self)
+    pub fn rst_early_val(&mut self) -> RST_EARLY_VAL_W<CTRL_SPEC> {
+        RST_EARLY_VAL_W::new(self, 20)
     }
     #[doc = "Bit 27 - Switch Ready Interrupt Enable. Fires an interrupt when it is safe to swithc the clock."]
     #[inline(always)]
     #[must_use]
-    pub fn clkrdy_ie(&mut self) -> CLKRDY_IE_W<CTRL_SPEC, 27> {
-        CLKRDY_IE_W::new(self)
+    pub fn clkrdy_ie(&mut self) -> CLKRDY_IE_W<CTRL_SPEC> {
+        CLKRDY_IE_W::new(self, 27)
     }
     #[doc = "Bit 28 - Clock Status."]
     #[inline(always)]
     #[must_use]
-    pub fn clkrdy(&mut self) -> CLKRDY_W<CTRL_SPEC, 28> {
-        CLKRDY_W::new(self)
+    pub fn clkrdy(&mut self) -> CLKRDY_W<CTRL_SPEC> {
+        CLKRDY_W::new(self, 28)
     }
     #[doc = "Bit 29 - Enables the Windowed Watchdog Function."]
     #[inline(always)]
     #[must_use]
-    pub fn win_en(&mut self) -> WIN_EN_W<CTRL_SPEC, 29> {
-        WIN_EN_W::new(self)
+    pub fn win_en(&mut self) -> WIN_EN_W<CTRL_SPEC> {
+        WIN_EN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Windowed Watchdog Timer Reset Flag Too Soon."]
     #[inline(always)]
     #[must_use]
-    pub fn rst_early(&mut self) -> RST_EARLY_W<CTRL_SPEC, 30> {
-        RST_EARLY_W::new(self)
+    pub fn rst_early(&mut self) -> RST_EARLY_W<CTRL_SPEC> {
+        RST_EARLY_W::new(self, 30)
     }
     #[doc = "Bit 31 - Windowed Watchdog Timer Reset Flag Too Late."]
     #[inline(always)]
     #[must_use]
-    pub fn rst_late(&mut self) -> RST_LATE_W<CTRL_SPEC, 31> {
-        RST_LATE_W::new(self)
+    pub fn rst_late(&mut self) -> RST_LATE_W<CTRL_SPEC> {
+        RST_LATE_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

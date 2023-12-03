@@ -21,7 +21,7 @@ impl From<STATUS_A> for bool {
 impl STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STATUS_A {
+    pub const fn variant(&self) -> STATUS_A {
         match self.bits {
             false => STATUS_A::DIS,
             true => STATUS_A::EN,
@@ -57,7 +57,7 @@ impl From<IPEND_A> for bool {
 impl IPEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IPEND_A {
+    pub const fn variant(&self) -> IPEND_A {
         match self.bits {
             false => IPEND_A::INACTIVE,
             true => IPEND_A::PENDING,
@@ -77,19 +77,19 @@ impl IPEND_R {
 #[doc = "Field `CTZ_IF` reader - Count-to-Zero (CTZ) Interrupt Flag"]
 pub type CTZ_IF_R = crate::BitReader;
 #[doc = "Field `CTZ_IF` writer - Count-to-Zero (CTZ) Interrupt Flag"]
-pub type CTZ_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type CTZ_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `RLD_IF` reader - Reload Event Interrupt Flag."]
 pub type RLD_IF_R = crate::BitReader;
 #[doc = "Field `RLD_IF` writer - Reload Event Interrupt Flag."]
-pub type RLD_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type RLD_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `BUS_ERR` reader - Bus Error. Indicates that an AHB abort was received and the channel has been disabled."]
 pub type BUS_ERR_R = crate::BitReader;
 #[doc = "Field `BUS_ERR` writer - Bus Error. Indicates that an AHB abort was received and the channel has been disabled."]
-pub type BUS_ERR_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type BUS_ERR_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `TO_IF` reader - Time-Out Event Interrupt Flag."]
 pub type TO_IF_R = crate::BitReader;
 #[doc = "Field `TO_IF` writer - Time-Out Event Interrupt Flag."]
-pub type TO_IF_W<'a, REG, const O: u8> = crate::BitWriter1C<'a, REG, O>;
+pub type TO_IF_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Channel Status. This bit is used to indicate to the programmer when it is safe to change the configuration, address, and count registers for the channel. Whenever this bit is cleared by hardware, the DMA_CFG.CHEN bit is also cleared (if not cleared already)."]
     #[inline(always)]
@@ -126,28 +126,32 @@ impl W {
     #[doc = "Bit 2 - Count-to-Zero (CTZ) Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctz_if(&mut self) -> CTZ_IF_W<STATUS_SPEC, 2> {
-        CTZ_IF_W::new(self)
+    pub fn ctz_if(&mut self) -> CTZ_IF_W<STATUS_SPEC> {
+        CTZ_IF_W::new(self, 2)
     }
     #[doc = "Bit 3 - Reload Event Interrupt Flag."]
     #[inline(always)]
     #[must_use]
-    pub fn rld_if(&mut self) -> RLD_IF_W<STATUS_SPEC, 3> {
-        RLD_IF_W::new(self)
+    pub fn rld_if(&mut self) -> RLD_IF_W<STATUS_SPEC> {
+        RLD_IF_W::new(self, 3)
     }
     #[doc = "Bit 4 - Bus Error. Indicates that an AHB abort was received and the channel has been disabled."]
     #[inline(always)]
     #[must_use]
-    pub fn bus_err(&mut self) -> BUS_ERR_W<STATUS_SPEC, 4> {
-        BUS_ERR_W::new(self)
+    pub fn bus_err(&mut self) -> BUS_ERR_W<STATUS_SPEC> {
+        BUS_ERR_W::new(self, 4)
     }
     #[doc = "Bit 6 - Time-Out Event Interrupt Flag."]
     #[inline(always)]
     #[must_use]
-    pub fn to_if(&mut self) -> TO_IF_W<STATUS_SPEC, 6> {
-        TO_IF_W::new(self)
+    pub fn to_if(&mut self) -> TO_IF_W<STATUS_SPEC> {
+        TO_IF_W::new(self, 6)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

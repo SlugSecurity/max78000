@@ -21,7 +21,7 @@ impl From<CLKPHA_A> for bool {
 impl CLKPHA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKPHA_A {
+    pub const fn variant(&self) -> CLKPHA_A {
         match self.bits {
             false => CLKPHA_A::RISING_EDGE,
             true => CLKPHA_A::FALLING_EDGE,
@@ -39,8 +39,8 @@ impl CLKPHA_R {
     }
 }
 #[doc = "Field `CLKPHA` writer - Clock Phase."]
-pub type CLKPHA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLKPHA_A>;
-impl<'a, REG, const O: u8> CLKPHA_W<'a, REG, O>
+pub type CLKPHA_W<'a, REG> = crate::BitWriter<'a, REG, CLKPHA_A>;
+impl<'a, REG> CLKPHA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<CLKPOL_A> for bool {
 impl CLKPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKPOL_A {
+    pub const fn variant(&self) -> CLKPOL_A {
         match self.bits {
             false => CLKPOL_A::NORMAL,
             true => CLKPOL_A::INVERTED,
@@ -92,8 +92,8 @@ impl CLKPOL_R {
     }
 }
 #[doc = "Field `CLKPOL` writer - Clock Polarity."]
-pub type CLKPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLKPOL_A>;
-impl<'a, REG, const O: u8> CLKPOL_W<'a, REG, O>
+pub type CLKPOL_W<'a, REG> = crate::BitWriter<'a, REG, CLKPOL_A>;
+impl<'a, REG> CLKPOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -159,7 +159,7 @@ impl crate::FieldSpec for NUMBITS_A {
 impl NUMBITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NUMBITS_A {
+    pub const fn variant(&self) -> NUMBITS_A {
         match self.bits {
             0 => NUMBITS_A::_16,
             1 => NUMBITS_A::_1,
@@ -262,8 +262,8 @@ impl NUMBITS_R {
     }
 }
 #[doc = "Field `NUMBITS` writer - Number of Bits per character."]
-pub type NUMBITS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, NUMBITS_A>;
-impl<'a, REG, const O: u8> NUMBITS_W<'a, REG, O>
+pub type NUMBITS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, NUMBITS_A>;
+impl<'a, REG> NUMBITS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -374,7 +374,7 @@ impl crate::FieldSpec for DATA_WIDTH_A {
 impl DATA_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DATA_WIDTH_A> {
+    pub const fn variant(&self) -> Option<DATA_WIDTH_A> {
         match self.bits {
             0 => Some(DATA_WIDTH_A::MONO),
             1 => Some(DATA_WIDTH_A::DUAL),
@@ -399,8 +399,8 @@ impl DATA_WIDTH_R {
     }
 }
 #[doc = "Field `DATA_WIDTH` writer - SPI Data width."]
-pub type DATA_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DATA_WIDTH_A>;
-impl<'a, REG, const O: u8> DATA_WIDTH_W<'a, REG, O>
+pub type DATA_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DATA_WIDTH_A>;
+impl<'a, REG> DATA_WIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -440,7 +440,7 @@ impl From<THREE_WIRE_A> for bool {
 impl THREE_WIRE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> THREE_WIRE_A {
+    pub const fn variant(&self) -> THREE_WIRE_A {
         match self.bits {
             false => THREE_WIRE_A::DIS,
             true => THREE_WIRE_A::EN,
@@ -458,8 +458,8 @@ impl THREE_WIRE_R {
     }
 }
 #[doc = "Field `THREE_WIRE` writer - Three Wire mode. MOSI/MISO pin (s) shared. Only Mono mode suports Four-Wire."]
-pub type THREE_WIRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, THREE_WIRE_A>;
-impl<'a, REG, const O: u8> THREE_WIRE_W<'a, REG, O>
+pub type THREE_WIRE_W<'a, REG> = crate::BitWriter<'a, REG, THREE_WIRE_A>;
+impl<'a, REG> THREE_WIRE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -501,7 +501,7 @@ impl crate::FieldSpec for SS_POL_A {
 impl SS_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SS_POL_A> {
+    pub const fn variant(&self) -> Option<SS_POL_A> {
         match self.bits {
             1 => Some(SS_POL_A::SS0_HIGH),
             2 => Some(SS_POL_A::SS1_HIGH),
@@ -532,8 +532,8 @@ impl SS_POL_R {
     }
 }
 #[doc = "Field `SS_POL` writer - Slave Select Polarity, each Slave Select can have unique polarity."]
-pub type SS_POL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, SS_POL_A>;
-impl<'a, REG, const O: u8> SS_POL_W<'a, REG, O>
+pub type SS_POL_W<'a, REG> = crate::FieldWriter<'a, REG, 8, SS_POL_A>;
+impl<'a, REG> SS_POL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -595,40 +595,44 @@ impl W {
     #[doc = "Bit 0 - Clock Phase."]
     #[inline(always)]
     #[must_use]
-    pub fn clkpha(&mut self) -> CLKPHA_W<CTRL2_SPEC, 0> {
-        CLKPHA_W::new(self)
+    pub fn clkpha(&mut self) -> CLKPHA_W<CTRL2_SPEC> {
+        CLKPHA_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clock Polarity."]
     #[inline(always)]
     #[must_use]
-    pub fn clkpol(&mut self) -> CLKPOL_W<CTRL2_SPEC, 1> {
-        CLKPOL_W::new(self)
+    pub fn clkpol(&mut self) -> CLKPOL_W<CTRL2_SPEC> {
+        CLKPOL_W::new(self, 1)
     }
     #[doc = "Bits 8:11 - Number of Bits per character."]
     #[inline(always)]
     #[must_use]
-    pub fn numbits(&mut self) -> NUMBITS_W<CTRL2_SPEC, 8> {
-        NUMBITS_W::new(self)
+    pub fn numbits(&mut self) -> NUMBITS_W<CTRL2_SPEC> {
+        NUMBITS_W::new(self, 8)
     }
     #[doc = "Bits 12:13 - SPI Data width."]
     #[inline(always)]
     #[must_use]
-    pub fn data_width(&mut self) -> DATA_WIDTH_W<CTRL2_SPEC, 12> {
-        DATA_WIDTH_W::new(self)
+    pub fn data_width(&mut self) -> DATA_WIDTH_W<CTRL2_SPEC> {
+        DATA_WIDTH_W::new(self, 12)
     }
     #[doc = "Bit 15 - Three Wire mode. MOSI/MISO pin (s) shared. Only Mono mode suports Four-Wire."]
     #[inline(always)]
     #[must_use]
-    pub fn three_wire(&mut self) -> THREE_WIRE_W<CTRL2_SPEC, 15> {
-        THREE_WIRE_W::new(self)
+    pub fn three_wire(&mut self) -> THREE_WIRE_W<CTRL2_SPEC> {
+        THREE_WIRE_W::new(self, 15)
     }
     #[doc = "Bits 16:23 - Slave Select Polarity, each Slave Select can have unique polarity."]
     #[inline(always)]
     #[must_use]
-    pub fn ss_pol(&mut self) -> SS_POL_W<CTRL2_SPEC, 16> {
-        SS_POL_W::new(self)
+    pub fn ss_pol(&mut self) -> SS_POL_W<CTRL2_SPEC> {
+        SS_POL_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

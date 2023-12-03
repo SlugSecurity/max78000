@@ -5,11 +5,11 @@ pub type W = crate::W<URVCTRL_SPEC>;
 #[doc = "Field `MEMSEL` reader - RAM2, RAM3 exclusive ownership."]
 pub type MEMSEL_R = crate::BitReader;
 #[doc = "Field `MEMSEL` writer - RAM2, RAM3 exclusive ownership."]
-pub type MEMSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MEMSEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IFLUSHEN` reader - URV instruction flush enable."]
 pub type IFLUSHEN_R = crate::BitReader;
 #[doc = "Field `IFLUSHEN` writer - URV instruction flush enable."]
-pub type IFLUSHEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IFLUSHEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - RAM2, RAM3 exclusive ownership."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bit 0 - RAM2, RAM3 exclusive ownership."]
     #[inline(always)]
     #[must_use]
-    pub fn memsel(&mut self) -> MEMSEL_W<URVCTRL_SPEC, 0> {
-        MEMSEL_W::new(self)
+    pub fn memsel(&mut self) -> MEMSEL_W<URVCTRL_SPEC> {
+        MEMSEL_W::new(self, 0)
     }
     #[doc = "Bit 1 - URV instruction flush enable."]
     #[inline(always)]
     #[must_use]
-    pub fn iflushen(&mut self) -> IFLUSHEN_W<URVCTRL_SPEC, 1> {
-        IFLUSHEN_W::new(self)
+    pub fn iflushen(&mut self) -> IFLUSHEN_W<URVCTRL_SPEC> {
+        IFLUSHEN_W::new(self, 1)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

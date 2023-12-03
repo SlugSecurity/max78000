@@ -5,27 +5,27 @@ pub type W = crate::W<OSCCTRL_SPEC>;
 #[doc = "Field `FILTER_EN` reader - Enables analog deglitch filter."]
 pub type FILTER_EN_R = crate::BitReader;
 #[doc = "Field `FILTER_EN` writer - Enables analog deglitch filter."]
-pub type FILTER_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FILTER_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IBIAS_SEL` reader - If IBIAS_EN is 1, selects 4x,2x mode."]
 pub type IBIAS_SEL_R = crate::BitReader;
 #[doc = "Field `IBIAS_SEL` writer - If IBIAS_EN is 1, selects 4x,2x mode."]
-pub type IBIAS_SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IBIAS_SEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HYST_EN` reader - Enables high current hysteresis buffer."]
 pub type HYST_EN_R = crate::BitReader;
 #[doc = "Field `HYST_EN` writer - Enables high current hysteresis buffer."]
-pub type HYST_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HYST_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IBIAS_EN` reader - Enables higher 4x,2x current modes."]
 pub type IBIAS_EN_R = crate::BitReader;
 #[doc = "Field `IBIAS_EN` writer - Enables higher 4x,2x current modes."]
-pub type IBIAS_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type IBIAS_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BYPASS` reader - RTC Crystal Bypass"]
 pub type BYPASS_R = crate::BitReader;
 #[doc = "Field `BYPASS` writer - RTC Crystal Bypass"]
-pub type BYPASS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BYPASS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SQW_32K` reader - RTC 32kHz Square Wave Output"]
 pub type SQW_32K_R = crate::BitReader;
 #[doc = "Field `SQW_32K` writer - RTC 32kHz Square Wave Output"]
-pub type SQW_32K_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SQW_32K_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Enables analog deglitch filter."]
     #[inline(always)]
@@ -62,40 +62,44 @@ impl W {
     #[doc = "Bit 0 - Enables analog deglitch filter."]
     #[inline(always)]
     #[must_use]
-    pub fn filter_en(&mut self) -> FILTER_EN_W<OSCCTRL_SPEC, 0> {
-        FILTER_EN_W::new(self)
+    pub fn filter_en(&mut self) -> FILTER_EN_W<OSCCTRL_SPEC> {
+        FILTER_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - If IBIAS_EN is 1, selects 4x,2x mode."]
     #[inline(always)]
     #[must_use]
-    pub fn ibias_sel(&mut self) -> IBIAS_SEL_W<OSCCTRL_SPEC, 1> {
-        IBIAS_SEL_W::new(self)
+    pub fn ibias_sel(&mut self) -> IBIAS_SEL_W<OSCCTRL_SPEC> {
+        IBIAS_SEL_W::new(self, 1)
     }
     #[doc = "Bit 2 - Enables high current hysteresis buffer."]
     #[inline(always)]
     #[must_use]
-    pub fn hyst_en(&mut self) -> HYST_EN_W<OSCCTRL_SPEC, 2> {
-        HYST_EN_W::new(self)
+    pub fn hyst_en(&mut self) -> HYST_EN_W<OSCCTRL_SPEC> {
+        HYST_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enables higher 4x,2x current modes."]
     #[inline(always)]
     #[must_use]
-    pub fn ibias_en(&mut self) -> IBIAS_EN_W<OSCCTRL_SPEC, 3> {
-        IBIAS_EN_W::new(self)
+    pub fn ibias_en(&mut self) -> IBIAS_EN_W<OSCCTRL_SPEC> {
+        IBIAS_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - RTC Crystal Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn bypass(&mut self) -> BYPASS_W<OSCCTRL_SPEC, 4> {
-        BYPASS_W::new(self)
+    pub fn bypass(&mut self) -> BYPASS_W<OSCCTRL_SPEC> {
+        BYPASS_W::new(self, 4)
     }
     #[doc = "Bit 5 - RTC 32kHz Square Wave Output"]
     #[inline(always)]
     #[must_use]
-    pub fn sqw_32k(&mut self) -> SQW_32K_W<OSCCTRL_SPEC, 5> {
-        SQW_32K_W::new(self)
+    pub fn sqw_32k(&mut self) -> SQW_32K_W<OSCCTRL_SPEC> {
+        SQW_32K_W::new(self, 5)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
