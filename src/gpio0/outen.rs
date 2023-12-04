@@ -3,64 +3,9 @@ pub type R = crate::R<OUTEN_SPEC>;
 #[doc = "Register `OUTEN` writer"]
 pub type W = crate::W<OUTEN_SPEC>;
 #[doc = "Field `EN` reader - Mask of all of the pins on the port."]
-pub type EN_R = crate::FieldReader<EN_A>;
-#[doc = "Mask of all of the pins on the port.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum EN_A {
-    #[doc = "0: GPIO Output Disable"]
-    DIS = 0,
-    #[doc = "1: GPIO Output Enable"]
-    EN = 1,
-}
-impl From<EN_A> for u32 {
-    #[inline(always)]
-    fn from(variant: EN_A) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for EN_A {
-    type Ux = u32;
-}
-impl EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<EN_A> {
-        match self.bits {
-            0 => Some(EN_A::DIS),
-            1 => Some(EN_A::EN),
-            _ => None,
-        }
-    }
-    #[doc = "GPIO Output Disable"]
-    #[inline(always)]
-    pub fn is_dis(&self) -> bool {
-        *self == EN_A::DIS
-    }
-    #[doc = "GPIO Output Enable"]
-    #[inline(always)]
-    pub fn is_en(&self) -> bool {
-        *self == EN_A::EN
-    }
-}
+pub type EN_R = crate::FieldReader<u32>;
 #[doc = "Field `EN` writer - Mask of all of the pins on the port."]
-pub type EN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, EN_A>;
-impl<'a, REG, const O: u8> EN_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
-    #[doc = "GPIO Output Disable"]
-    #[inline(always)]
-    pub fn dis(self) -> &'a mut crate::W<REG> {
-        self.variant(EN_A::DIS)
-    }
-    #[doc = "GPIO Output Enable"]
-    #[inline(always)]
-    pub fn en(self) -> &'a mut crate::W<REG> {
-        self.variant(EN_A::EN)
-    }
-}
+pub type EN_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
@@ -72,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<OUTEN_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<OUTEN_SPEC> {
+        EN_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

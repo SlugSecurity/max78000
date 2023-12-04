@@ -5,19 +5,19 @@ pub type W = crate::W<DMA_SPEC>;
 #[doc = "Field `TX_THD_VAL` reader - TX FIFO Level DMA Trigger If the TX FIFO level is less than this value, then the TX FIFO DMA interface will send a signal to system DMA to notify that TX FIFO is ready to receive data from memory."]
 pub type TX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `TX_THD_VAL` writer - TX FIFO Level DMA Trigger If the TX FIFO level is less than this value, then the TX FIFO DMA interface will send a signal to system DMA to notify that TX FIFO is ready to receive data from memory."]
-pub type TX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TX_EN` reader - TX DMA channel enable"]
 pub type TX_EN_R = crate::BitReader;
 #[doc = "Field `TX_EN` writer - TX DMA channel enable"]
-pub type TX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_THD_VAL` reader - Rx FIFO Level DMA Trigger If the RX FIFO level is greater than this value, then the RX FIFO DMA interface will send a signal to the system DMA to notify that RX FIFO has characters to transfer to memory."]
 pub type RX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `RX_THD_VAL` writer - Rx FIFO Level DMA Trigger If the RX FIFO level is greater than this value, then the RX FIFO DMA interface will send a signal to the system DMA to notify that RX FIFO has characters to transfer to memory."]
-pub type RX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `RX_EN` reader - RX DMA channel enable"]
 pub type RX_EN_R = crate::BitReader;
 #[doc = "Field `RX_EN` writer - RX DMA channel enable"]
-pub type RX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - TX FIFO Level DMA Trigger If the TX FIFO level is less than this value, then the TX FIFO DMA interface will send a signal to system DMA to notify that TX FIFO is ready to receive data from memory."]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bits 0:3 - TX FIFO Level DMA Trigger If the TX FIFO level is less than this value, then the TX FIFO DMA interface will send a signal to system DMA to notify that TX FIFO is ready to receive data from memory."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_thd_val(&mut self) -> TX_THD_VAL_W<DMA_SPEC, 0> {
-        TX_THD_VAL_W::new(self)
+    pub fn tx_thd_val(&mut self) -> TX_THD_VAL_W<DMA_SPEC> {
+        TX_THD_VAL_W::new(self, 0)
     }
     #[doc = "Bit 4 - TX DMA channel enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_en(&mut self) -> TX_EN_W<DMA_SPEC, 4> {
-        TX_EN_W::new(self)
+    pub fn tx_en(&mut self) -> TX_EN_W<DMA_SPEC> {
+        TX_EN_W::new(self, 4)
     }
     #[doc = "Bits 5:8 - Rx FIFO Level DMA Trigger If the RX FIFO level is greater than this value, then the RX FIFO DMA interface will send a signal to the system DMA to notify that RX FIFO has characters to transfer to memory."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<DMA_SPEC, 5> {
-        RX_THD_VAL_W::new(self)
+    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<DMA_SPEC> {
+        RX_THD_VAL_W::new(self, 5)
     }
     #[doc = "Bit 9 - RX DMA channel enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_en(&mut self) -> RX_EN_W<DMA_SPEC, 9> {
-        RX_EN_W::new(self)
+    pub fn rx_en(&mut self) -> RX_EN_W<DMA_SPEC> {
+        RX_EN_W::new(self, 9)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

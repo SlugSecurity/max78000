@@ -5,7 +5,7 @@ pub type W = crate::W<CLKSEL_SPEC>;
 #[doc = "Field `SOURCE` reader - WWDT Clock Selection Register."]
 pub type SOURCE_R = crate::FieldReader;
 #[doc = "Field `SOURCE` writer - WWDT Clock Selection Register."]
-pub type SOURCE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type SOURCE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - WWDT Clock Selection Register."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:2 - WWDT Clock Selection Register."]
     #[inline(always)]
     #[must_use]
-    pub fn source(&mut self) -> SOURCE_W<CLKSEL_SPEC, 0> {
-        SOURCE_W::new(self)
+    pub fn source(&mut self) -> SOURCE_W<CLKSEL_SPEC> {
+        SOURCE_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

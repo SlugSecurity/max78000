@@ -5,7 +5,7 @@ pub type W = crate::W<TXCTRL1_SPEC>;
 #[doc = "Field `PRELOAD_RDY` reader - Transmit FIFO Preload Ready."]
 pub type PRELOAD_RDY_R = crate::BitReader;
 #[doc = "Field `PRELOAD_RDY` writer - Transmit FIFO Preload Ready."]
-pub type PRELOAD_RDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRELOAD_RDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LVL` reader - Transmit FIFO Count. These bits reflect the number of bytes in the TX_FIFO."]
 pub type LVL_R = crate::FieldReader;
 impl R {
@@ -24,10 +24,14 @@ impl W {
     #[doc = "Bit 0 - Transmit FIFO Preload Ready."]
     #[inline(always)]
     #[must_use]
-    pub fn preload_rdy(&mut self) -> PRELOAD_RDY_W<TXCTRL1_SPEC, 0> {
-        PRELOAD_RDY_W::new(self)
+    pub fn preload_rdy(&mut self) -> PRELOAD_RDY_W<TXCTRL1_SPEC> {
+        PRELOAD_RDY_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -23,7 +23,7 @@ impl crate::FieldSpec for PRE_A {
 impl PRE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRE_A> {
+    pub const fn variant(&self) -> Option<PRE_A> {
         match self.bits {
             0 => Some(PRE_A::_256),
             _ => None,
@@ -36,8 +36,8 @@ impl PRE_R {
     }
 }
 #[doc = "Field `PRE` writer - Slave Select Pre delay 1."]
-pub type PRE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, PRE_A>;
-impl<'a, REG, const O: u8> PRE_W<'a, REG, O>
+pub type PRE_W<'a, REG> = crate::FieldWriter<'a, REG, 8, PRE_A>;
+impl<'a, REG> PRE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -69,7 +69,7 @@ impl crate::FieldSpec for POST_A {
 impl POST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<POST_A> {
+    pub const fn variant(&self) -> Option<POST_A> {
         match self.bits {
             0 => Some(POST_A::_256),
             _ => None,
@@ -82,8 +82,8 @@ impl POST_R {
     }
 }
 #[doc = "Field `POST` writer - Slave Select Post delay 2."]
-pub type POST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, POST_A>;
-impl<'a, REG, const O: u8> POST_W<'a, REG, O>
+pub type POST_W<'a, REG> = crate::FieldWriter<'a, REG, 8, POST_A>;
+impl<'a, REG> POST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -115,7 +115,7 @@ impl crate::FieldSpec for INACT_A {
 impl INACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<INACT_A> {
+    pub const fn variant(&self) -> Option<INACT_A> {
         match self.bits {
             0 => Some(INACT_A::_256),
             _ => None,
@@ -128,8 +128,8 @@ impl INACT_R {
     }
 }
 #[doc = "Field `INACT` writer - Slave Select Inactive delay."]
-pub type INACT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, INACT_A>;
-impl<'a, REG, const O: u8> INACT_W<'a, REG, O>
+pub type INACT_W<'a, REG> = crate::FieldWriter<'a, REG, 8, INACT_A>;
+impl<'a, REG> INACT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -161,22 +161,26 @@ impl W {
     #[doc = "Bits 0:7 - Slave Select Pre delay 1."]
     #[inline(always)]
     #[must_use]
-    pub fn pre(&mut self) -> PRE_W<SSTIME_SPEC, 0> {
-        PRE_W::new(self)
+    pub fn pre(&mut self) -> PRE_W<SSTIME_SPEC> {
+        PRE_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Slave Select Post delay 2."]
     #[inline(always)]
     #[must_use]
-    pub fn post(&mut self) -> POST_W<SSTIME_SPEC, 8> {
-        POST_W::new(self)
+    pub fn post(&mut self) -> POST_W<SSTIME_SPEC> {
+        POST_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Slave Select Inactive delay."]
     #[inline(always)]
     #[must_use]
-    pub fn inact(&mut self) -> INACT_W<SSTIME_SPEC, 16> {
-        INACT_W::new(self)
+    pub fn inact(&mut self) -> INACT_W<SSTIME_SPEC> {
+        INACT_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,23 +5,23 @@ pub type W = crate::W<INTFL_SPEC>;
 #[doc = "Field `ow_reset_done` reader - OW Reset Sequence Completed."]
 pub type OW_RESET_DONE_R = crate::BitReader;
 #[doc = "Field `ow_reset_done` writer - OW Reset Sequence Completed."]
-pub type OW_RESET_DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OW_RESET_DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `tx_data_empty` reader - TX Data Empty Interrupt Flag."]
 pub type TX_DATA_EMPTY_R = crate::BitReader;
 #[doc = "Field `tx_data_empty` writer - TX Data Empty Interrupt Flag."]
-pub type TX_DATA_EMPTY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_DATA_EMPTY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `rx_data_ready` reader - RX Data Ready Interrupt Flag"]
 pub type RX_DATA_READY_R = crate::BitReader;
 #[doc = "Field `rx_data_ready` writer - RX Data Ready Interrupt Flag"]
-pub type RX_DATA_READY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_DATA_READY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `line_short` reader - OW Line Short Detected Interrupt Flag."]
 pub type LINE_SHORT_R = crate::BitReader;
 #[doc = "Field `line_short` writer - OW Line Short Detected Interrupt Flag."]
-pub type LINE_SHORT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINE_SHORT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `line_low` reader - OW Line Low Detected Interrupt Flag."]
 pub type LINE_LOW_R = crate::BitReader;
 #[doc = "Field `line_low` writer - OW Line Low Detected Interrupt Flag."]
-pub type LINE_LOW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LINE_LOW_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - OW Reset Sequence Completed."]
     #[inline(always)]
@@ -53,34 +53,38 @@ impl W {
     #[doc = "Bit 0 - OW Reset Sequence Completed."]
     #[inline(always)]
     #[must_use]
-    pub fn ow_reset_done(&mut self) -> OW_RESET_DONE_W<INTFL_SPEC, 0> {
-        OW_RESET_DONE_W::new(self)
+    pub fn ow_reset_done(&mut self) -> OW_RESET_DONE_W<INTFL_SPEC> {
+        OW_RESET_DONE_W::new(self, 0)
     }
     #[doc = "Bit 1 - TX Data Empty Interrupt Flag."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_data_empty(&mut self) -> TX_DATA_EMPTY_W<INTFL_SPEC, 1> {
-        TX_DATA_EMPTY_W::new(self)
+    pub fn tx_data_empty(&mut self) -> TX_DATA_EMPTY_W<INTFL_SPEC> {
+        TX_DATA_EMPTY_W::new(self, 1)
     }
     #[doc = "Bit 2 - RX Data Ready Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_data_ready(&mut self) -> RX_DATA_READY_W<INTFL_SPEC, 2> {
-        RX_DATA_READY_W::new(self)
+    pub fn rx_data_ready(&mut self) -> RX_DATA_READY_W<INTFL_SPEC> {
+        RX_DATA_READY_W::new(self, 2)
     }
     #[doc = "Bit 3 - OW Line Short Detected Interrupt Flag."]
     #[inline(always)]
     #[must_use]
-    pub fn line_short(&mut self) -> LINE_SHORT_W<INTFL_SPEC, 3> {
-        LINE_SHORT_W::new(self)
+    pub fn line_short(&mut self) -> LINE_SHORT_W<INTFL_SPEC> {
+        LINE_SHORT_W::new(self, 3)
     }
     #[doc = "Bit 4 - OW Line Low Detected Interrupt Flag."]
     #[inline(always)]
     #[must_use]
-    pub fn line_low(&mut self) -> LINE_LOW_W<INTFL_SPEC, 4> {
-        LINE_LOW_W::new(self)
+    pub fn line_low(&mut self) -> LINE_LOW_W<INTFL_SPEC> {
+        LINE_LOW_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

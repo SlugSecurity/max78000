@@ -5,31 +5,31 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `start` reader - Start ADC Conversion"]
 pub type START_R = crate::BitReader;
 #[doc = "Field `start` writer - Start ADC Conversion"]
-pub type START_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pwr` reader - ADC Power Up"]
 pub type PWR_R = crate::BitReader;
 #[doc = "Field `pwr` writer - ADC Power Up"]
-pub type PWR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PWR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `refbuf_pwr` reader - ADC Reference Buffer Power Up"]
 pub type REFBUF_PWR_R = crate::BitReader;
 #[doc = "Field `refbuf_pwr` writer - ADC Reference Buffer Power Up"]
-pub type REFBUF_PWR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type REFBUF_PWR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ref_sel` reader - ADC Reference Select"]
 pub type REF_SEL_R = crate::BitReader;
 #[doc = "Field `ref_sel` writer - ADC Reference Select"]
-pub type REF_SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type REF_SEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ref_scale` reader - ADC Reference Scale"]
 pub type REF_SCALE_R = crate::BitReader;
 #[doc = "Field `ref_scale` writer - ADC Reference Scale"]
-pub type REF_SCALE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type REF_SCALE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `scale` reader - ADC Scale"]
 pub type SCALE_R = crate::BitReader;
 #[doc = "Field `scale` writer - ADC Scale"]
-pub type SCALE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCALE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `clk_en` reader - ADC Clock Enable"]
 pub type CLK_EN_R = crate::BitReader;
 #[doc = "Field `clk_en` writer - ADC Clock Enable"]
-pub type CLK_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLK_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ch_sel` reader - ADC Channel Select"]
 pub type CH_SEL_R = crate::FieldReader<CH_SEL_A>;
 #[doc = "ADC Channel Select\n\nValue on reset: 0"]
@@ -83,7 +83,7 @@ impl crate::FieldSpec for CH_SEL_A {
 impl CH_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CH_SEL_A> {
+    pub const fn variant(&self) -> Option<CH_SEL_A> {
         match self.bits {
             0 => Some(CH_SEL_A::AIN0),
             1 => Some(CH_SEL_A::AIN1),
@@ -192,8 +192,8 @@ impl CH_SEL_R {
     }
 }
 #[doc = "Field `ch_sel` writer - ADC Channel Select"]
-pub type CH_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O, CH_SEL_A>;
-impl<'a, REG, const O: u8> CH_SEL_W<'a, REG, O>
+pub type CH_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 5, CH_SEL_A>;
+impl<'a, REG> CH_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -311,7 +311,7 @@ impl crate::FieldSpec for ADC_DIVSEL_A {
 impl ADC_DIVSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADC_DIVSEL_A {
+    pub const fn variant(&self) -> ADC_DIVSEL_A {
         match self.bits {
             0 => ADC_DIVSEL_A::DIV1,
             1 => ADC_DIVSEL_A::DIV2,
@@ -342,8 +342,8 @@ impl ADC_DIVSEL_R {
     }
 }
 #[doc = "Field `adc_divsel` writer - Scales the external inputs, all inputs are scaled the same"]
-pub type ADC_DIVSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ADC_DIVSEL_A>;
-impl<'a, REG, const O: u8> ADC_DIVSEL_W<'a, REG, O>
+pub type ADC_DIVSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ADC_DIVSEL_A>;
+impl<'a, REG> ADC_DIVSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -372,7 +372,7 @@ where
 #[doc = "Field `data_align` reader - ADC Data Alignment Select"]
 pub type DATA_ALIGN_R = crate::BitReader;
 #[doc = "Field `data_align` writer - ADC Data Alignment Select"]
-pub type DATA_ALIGN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DATA_ALIGN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Start ADC Conversion"]
     #[inline(always)]
@@ -429,64 +429,68 @@ impl W {
     #[doc = "Bit 0 - Start ADC Conversion"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<CTRL_SPEC, 0> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<CTRL_SPEC> {
+        START_W::new(self, 0)
     }
     #[doc = "Bit 1 - ADC Power Up"]
     #[inline(always)]
     #[must_use]
-    pub fn pwr(&mut self) -> PWR_W<CTRL_SPEC, 1> {
-        PWR_W::new(self)
+    pub fn pwr(&mut self) -> PWR_W<CTRL_SPEC> {
+        PWR_W::new(self, 1)
     }
     #[doc = "Bit 3 - ADC Reference Buffer Power Up"]
     #[inline(always)]
     #[must_use]
-    pub fn refbuf_pwr(&mut self) -> REFBUF_PWR_W<CTRL_SPEC, 3> {
-        REFBUF_PWR_W::new(self)
+    pub fn refbuf_pwr(&mut self) -> REFBUF_PWR_W<CTRL_SPEC> {
+        REFBUF_PWR_W::new(self, 3)
     }
     #[doc = "Bit 4 - ADC Reference Select"]
     #[inline(always)]
     #[must_use]
-    pub fn ref_sel(&mut self) -> REF_SEL_W<CTRL_SPEC, 4> {
-        REF_SEL_W::new(self)
+    pub fn ref_sel(&mut self) -> REF_SEL_W<CTRL_SPEC> {
+        REF_SEL_W::new(self, 4)
     }
     #[doc = "Bit 8 - ADC Reference Scale"]
     #[inline(always)]
     #[must_use]
-    pub fn ref_scale(&mut self) -> REF_SCALE_W<CTRL_SPEC, 8> {
-        REF_SCALE_W::new(self)
+    pub fn ref_scale(&mut self) -> REF_SCALE_W<CTRL_SPEC> {
+        REF_SCALE_W::new(self, 8)
     }
     #[doc = "Bit 9 - ADC Scale"]
     #[inline(always)]
     #[must_use]
-    pub fn scale(&mut self) -> SCALE_W<CTRL_SPEC, 9> {
-        SCALE_W::new(self)
+    pub fn scale(&mut self) -> SCALE_W<CTRL_SPEC> {
+        SCALE_W::new(self, 9)
     }
     #[doc = "Bit 11 - ADC Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_en(&mut self) -> CLK_EN_W<CTRL_SPEC, 11> {
-        CLK_EN_W::new(self)
+    pub fn clk_en(&mut self) -> CLK_EN_W<CTRL_SPEC> {
+        CLK_EN_W::new(self, 11)
     }
     #[doc = "Bits 12:16 - ADC Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_sel(&mut self) -> CH_SEL_W<CTRL_SPEC, 12> {
-        CH_SEL_W::new(self)
+    pub fn ch_sel(&mut self) -> CH_SEL_W<CTRL_SPEC> {
+        CH_SEL_W::new(self, 12)
     }
     #[doc = "Bits 17:18 - Scales the external inputs, all inputs are scaled the same"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_divsel(&mut self) -> ADC_DIVSEL_W<CTRL_SPEC, 17> {
-        ADC_DIVSEL_W::new(self)
+    pub fn adc_divsel(&mut self) -> ADC_DIVSEL_W<CTRL_SPEC> {
+        ADC_DIVSEL_W::new(self, 17)
     }
     #[doc = "Bit 20 - ADC Data Alignment Select"]
     #[inline(always)]
     #[must_use]
-    pub fn data_align(&mut self) -> DATA_ALIGN_W<CTRL_SPEC, 20> {
-        DATA_ALIGN_W::new(self)
+    pub fn data_align(&mut self) -> DATA_ALIGN_W<CTRL_SPEC> {
+        DATA_ALIGN_W::new(self, 20)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

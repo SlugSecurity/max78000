@@ -5,7 +5,7 @@ pub type W = crate::W<LPWKEN0_SPEC>;
 #[doc = "Field `WAKEEN` reader - Enable wakeup. These bits allow wakeup from the corresponding GPIO pin (s) on transition (s) from low to high or high to low when PM.GPIOWKEN is set. Wakeup status is indicated in PPWKST register."]
 pub type WAKEEN_R = crate::FieldReader<u32>;
 #[doc = "Field `WAKEEN` writer - Enable wakeup. These bits allow wakeup from the corresponding GPIO pin (s) on transition (s) from low to high or high to low when PM.GPIOWKEN is set. Wakeup status is indicated in PPWKST register."]
-pub type WAKEEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 31, O, u32>;
+pub type WAKEEN_W<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 impl R {
     #[doc = "Bits 0:30 - Enable wakeup. These bits allow wakeup from the corresponding GPIO pin (s) on transition (s) from low to high or high to low when PM.GPIOWKEN is set. Wakeup status is indicated in PPWKST register."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:30 - Enable wakeup. These bits allow wakeup from the corresponding GPIO pin (s) on transition (s) from low to high or high to low when PM.GPIOWKEN is set. Wakeup status is indicated in PPWKST register."]
     #[inline(always)]
     #[must_use]
-    pub fn wakeen(&mut self) -> WAKEEN_W<LPWKEN0_SPEC, 0> {
-        WAKEEN_W::new(self)
+    pub fn wakeen(&mut self) -> WAKEEN_W<LPWKEN0_SPEC> {
+        WAKEEN_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -3,65 +3,9 @@ pub type R = crate::R<INTEN_CLR_SPEC>;
 #[doc = "Register `INTEN_CLR` writer"]
 pub type W = crate::W<INTEN_CLR_SPEC>;
 #[doc = "Field `GPIO_INTEN_CLR` reader - Mask of all of the pins on the port."]
-pub type GPIO_INTEN_CLR_R = crate::FieldReader<GPIO_INTEN_CLR_A>;
-#[doc = "Mask of all of the pins on the port.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum GPIO_INTEN_CLR_A {
-    #[doc = "0: No Effect."]
-    NO = 0,
-    #[doc = "1: Clear GPIO_INT_EN bit in this position to '0'"]
-    CLEAR = 1,
-}
-impl From<GPIO_INTEN_CLR_A> for u32 {
-    #[inline(always)]
-    fn from(variant: GPIO_INTEN_CLR_A) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for GPIO_INTEN_CLR_A {
-    type Ux = u32;
-}
-impl GPIO_INTEN_CLR_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<GPIO_INTEN_CLR_A> {
-        match self.bits {
-            0 => Some(GPIO_INTEN_CLR_A::NO),
-            1 => Some(GPIO_INTEN_CLR_A::CLEAR),
-            _ => None,
-        }
-    }
-    #[doc = "No Effect."]
-    #[inline(always)]
-    pub fn is_no(&self) -> bool {
-        *self == GPIO_INTEN_CLR_A::NO
-    }
-    #[doc = "Clear GPIO_INT_EN bit in this position to '0'"]
-    #[inline(always)]
-    pub fn is_clear(&self) -> bool {
-        *self == GPIO_INTEN_CLR_A::CLEAR
-    }
-}
+pub type GPIO_INTEN_CLR_R = crate::FieldReader<u32>;
 #[doc = "Field `GPIO_INTEN_CLR` writer - Mask of all of the pins on the port."]
-pub type GPIO_INTEN_CLR_W<'a, REG, const O: u8> =
-    crate::FieldWriter<'a, REG, 32, O, GPIO_INTEN_CLR_A>;
-impl<'a, REG, const O: u8> GPIO_INTEN_CLR_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
-    #[doc = "No Effect."]
-    #[inline(always)]
-    pub fn no(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_INTEN_CLR_A::NO)
-    }
-    #[doc = "Clear GPIO_INT_EN bit in this position to '0'"]
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_INTEN_CLR_A::CLEAR)
-    }
-}
+pub type GPIO_INTEN_CLR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
@@ -73,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_inten_clr(&mut self) -> GPIO_INTEN_CLR_W<INTEN_CLR_SPEC, 0> {
-        GPIO_INTEN_CLR_W::new(self)
+    pub fn gpio_inten_clr(&mut self) -> GPIO_INTEN_CLR_W<INTEN_CLR_SPEC> {
+        GPIO_INTEN_CLR_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

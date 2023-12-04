@@ -5,7 +5,7 @@ pub type W = crate::W<TXCTRL0_SPEC>;
 #[doc = "Field `PRELOAD_MODE` reader - Transmit FIFO Preaload Mode. Setting this bit will allow for high speed application to preload the transmit FIFO prior to Slave Address Match."]
 pub type PRELOAD_MODE_R = crate::BitReader;
 #[doc = "Field `PRELOAD_MODE` writer - Transmit FIFO Preaload Mode. Setting this bit will allow for high speed application to preload the transmit FIFO prior to Slave Address Match."]
-pub type PRELOAD_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRELOAD_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX_READY_MODE` reader - Transmit FIFO Ready Manual Mode."]
 pub type TX_READY_MODE_R = crate::BitReader<TX_READY_MODE_A>;
 #[doc = "Transmit FIFO Ready Manual Mode.\n\nValue on reset: 0"]
@@ -25,7 +25,7 @@ impl From<TX_READY_MODE_A> for bool {
 impl TX_READY_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_READY_MODE_A {
+    pub const fn variant(&self) -> TX_READY_MODE_A {
         match self.bits {
             false => TX_READY_MODE_A::EN,
             true => TX_READY_MODE_A::DIS,
@@ -43,8 +43,8 @@ impl TX_READY_MODE_R {
     }
 }
 #[doc = "Field `TX_READY_MODE` writer - Transmit FIFO Ready Manual Mode."]
-pub type TX_READY_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_READY_MODE_A>;
-impl<'a, REG, const O: u8> TX_READY_MODE_W<'a, REG, O>
+pub type TX_READY_MODE_W<'a, REG> = crate::BitWriter<'a, REG, TX_READY_MODE_A>;
+impl<'a, REG> TX_READY_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -78,7 +78,7 @@ impl From<GC_ADDR_FLUSH_DIS_A> for bool {
 impl GC_ADDR_FLUSH_DIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GC_ADDR_FLUSH_DIS_A {
+    pub const fn variant(&self) -> GC_ADDR_FLUSH_DIS_A {
         match self.bits {
             false => GC_ADDR_FLUSH_DIS_A::EN,
             true => GC_ADDR_FLUSH_DIS_A::DIS,
@@ -96,9 +96,8 @@ impl GC_ADDR_FLUSH_DIS_R {
     }
 }
 #[doc = "Field `GC_ADDR_FLUSH_DIS` writer - TX FIFO General Call Address Match Auto Flush Disable."]
-pub type GC_ADDR_FLUSH_DIS_W<'a, REG, const O: u8> =
-    crate::BitWriter<'a, REG, O, GC_ADDR_FLUSH_DIS_A>;
-impl<'a, REG, const O: u8> GC_ADDR_FLUSH_DIS_W<'a, REG, O>
+pub type GC_ADDR_FLUSH_DIS_W<'a, REG> = crate::BitWriter<'a, REG, GC_ADDR_FLUSH_DIS_A>;
+impl<'a, REG> GC_ADDR_FLUSH_DIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -132,7 +131,7 @@ impl From<WR_ADDR_FLUSH_DIS_A> for bool {
 impl WR_ADDR_FLUSH_DIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WR_ADDR_FLUSH_DIS_A {
+    pub const fn variant(&self) -> WR_ADDR_FLUSH_DIS_A {
         match self.bits {
             false => WR_ADDR_FLUSH_DIS_A::EN,
             true => WR_ADDR_FLUSH_DIS_A::DIS,
@@ -150,9 +149,8 @@ impl WR_ADDR_FLUSH_DIS_R {
     }
 }
 #[doc = "Field `WR_ADDR_FLUSH_DIS` writer - TX FIFO Slave Address Match Write Auto Flush Disable."]
-pub type WR_ADDR_FLUSH_DIS_W<'a, REG, const O: u8> =
-    crate::BitWriter<'a, REG, O, WR_ADDR_FLUSH_DIS_A>;
-impl<'a, REG, const O: u8> WR_ADDR_FLUSH_DIS_W<'a, REG, O>
+pub type WR_ADDR_FLUSH_DIS_W<'a, REG> = crate::BitWriter<'a, REG, WR_ADDR_FLUSH_DIS_A>;
+impl<'a, REG> WR_ADDR_FLUSH_DIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -186,7 +184,7 @@ impl From<RD_ADDR_FLUSH_DIS_A> for bool {
 impl RD_ADDR_FLUSH_DIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RD_ADDR_FLUSH_DIS_A {
+    pub const fn variant(&self) -> RD_ADDR_FLUSH_DIS_A {
         match self.bits {
             false => RD_ADDR_FLUSH_DIS_A::EN,
             true => RD_ADDR_FLUSH_DIS_A::DIS,
@@ -204,9 +202,8 @@ impl RD_ADDR_FLUSH_DIS_R {
     }
 }
 #[doc = "Field `RD_ADDR_FLUSH_DIS` writer - TX FIFO Slave Address Match Read Auto Flush Disable."]
-pub type RD_ADDR_FLUSH_DIS_W<'a, REG, const O: u8> =
-    crate::BitWriter<'a, REG, O, RD_ADDR_FLUSH_DIS_A>;
-impl<'a, REG, const O: u8> RD_ADDR_FLUSH_DIS_W<'a, REG, O>
+pub type RD_ADDR_FLUSH_DIS_W<'a, REG> = crate::BitWriter<'a, REG, RD_ADDR_FLUSH_DIS_A>;
+impl<'a, REG> RD_ADDR_FLUSH_DIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -240,7 +237,7 @@ impl From<NACK_FLUSH_DIS_A> for bool {
 impl NACK_FLUSH_DIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NACK_FLUSH_DIS_A {
+    pub const fn variant(&self) -> NACK_FLUSH_DIS_A {
         match self.bits {
             false => NACK_FLUSH_DIS_A::EN,
             true => NACK_FLUSH_DIS_A::DIS,
@@ -258,8 +255,8 @@ impl NACK_FLUSH_DIS_R {
     }
 }
 #[doc = "Field `NACK_FLUSH_DIS` writer - TX FIFO received NACK Auto Flush Disable."]
-pub type NACK_FLUSH_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NACK_FLUSH_DIS_A>;
-impl<'a, REG, const O: u8> NACK_FLUSH_DIS_W<'a, REG, O>
+pub type NACK_FLUSH_DIS_W<'a, REG> = crate::BitWriter<'a, REG, NACK_FLUSH_DIS_A>;
+impl<'a, REG> NACK_FLUSH_DIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -293,7 +290,7 @@ impl From<FLUSH_A> for bool {
 impl FLUSH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLUSH_A {
+    pub const fn variant(&self) -> FLUSH_A {
         match self.bits {
             false => FLUSH_A::NOT_FLUSHED,
             true => FLUSH_A::FLUSH,
@@ -311,8 +308,8 @@ impl FLUSH_R {
     }
 }
 #[doc = "Field `FLUSH` writer - Transmit FIFO Flush. This bit is automatically cleared to 0 after the operation."]
-pub type FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLUSH_A>;
-impl<'a, REG, const O: u8> FLUSH_W<'a, REG, O>
+pub type FLUSH_W<'a, REG> = crate::BitWriter<'a, REG, FLUSH_A>;
+impl<'a, REG> FLUSH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -330,7 +327,7 @@ where
 #[doc = "Field `THD_VAL` reader - Transmit FIFO Threshold. These bits define the TX_FIFO interrupt threshold."]
 pub type THD_VAL_R = crate::FieldReader;
 #[doc = "Field `THD_VAL` writer - Transmit FIFO Threshold. These bits define the TX_FIFO interrupt threshold."]
-pub type THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Transmit FIFO Preaload Mode. Setting this bit will allow for high speed application to preload the transmit FIFO prior to Slave Address Match."]
     #[inline(always)]
@@ -377,52 +374,56 @@ impl W {
     #[doc = "Bit 0 - Transmit FIFO Preaload Mode. Setting this bit will allow for high speed application to preload the transmit FIFO prior to Slave Address Match."]
     #[inline(always)]
     #[must_use]
-    pub fn preload_mode(&mut self) -> PRELOAD_MODE_W<TXCTRL0_SPEC, 0> {
-        PRELOAD_MODE_W::new(self)
+    pub fn preload_mode(&mut self) -> PRELOAD_MODE_W<TXCTRL0_SPEC> {
+        PRELOAD_MODE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit FIFO Ready Manual Mode."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_ready_mode(&mut self) -> TX_READY_MODE_W<TXCTRL0_SPEC, 1> {
-        TX_READY_MODE_W::new(self)
+    pub fn tx_ready_mode(&mut self) -> TX_READY_MODE_W<TXCTRL0_SPEC> {
+        TX_READY_MODE_W::new(self, 1)
     }
     #[doc = "Bit 2 - TX FIFO General Call Address Match Auto Flush Disable."]
     #[inline(always)]
     #[must_use]
-    pub fn gc_addr_flush_dis(&mut self) -> GC_ADDR_FLUSH_DIS_W<TXCTRL0_SPEC, 2> {
-        GC_ADDR_FLUSH_DIS_W::new(self)
+    pub fn gc_addr_flush_dis(&mut self) -> GC_ADDR_FLUSH_DIS_W<TXCTRL0_SPEC> {
+        GC_ADDR_FLUSH_DIS_W::new(self, 2)
     }
     #[doc = "Bit 3 - TX FIFO Slave Address Match Write Auto Flush Disable."]
     #[inline(always)]
     #[must_use]
-    pub fn wr_addr_flush_dis(&mut self) -> WR_ADDR_FLUSH_DIS_W<TXCTRL0_SPEC, 3> {
-        WR_ADDR_FLUSH_DIS_W::new(self)
+    pub fn wr_addr_flush_dis(&mut self) -> WR_ADDR_FLUSH_DIS_W<TXCTRL0_SPEC> {
+        WR_ADDR_FLUSH_DIS_W::new(self, 3)
     }
     #[doc = "Bit 4 - TX FIFO Slave Address Match Read Auto Flush Disable."]
     #[inline(always)]
     #[must_use]
-    pub fn rd_addr_flush_dis(&mut self) -> RD_ADDR_FLUSH_DIS_W<TXCTRL0_SPEC, 4> {
-        RD_ADDR_FLUSH_DIS_W::new(self)
+    pub fn rd_addr_flush_dis(&mut self) -> RD_ADDR_FLUSH_DIS_W<TXCTRL0_SPEC> {
+        RD_ADDR_FLUSH_DIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - TX FIFO received NACK Auto Flush Disable."]
     #[inline(always)]
     #[must_use]
-    pub fn nack_flush_dis(&mut self) -> NACK_FLUSH_DIS_W<TXCTRL0_SPEC, 5> {
-        NACK_FLUSH_DIS_W::new(self)
+    pub fn nack_flush_dis(&mut self) -> NACK_FLUSH_DIS_W<TXCTRL0_SPEC> {
+        NACK_FLUSH_DIS_W::new(self, 5)
     }
     #[doc = "Bit 7 - Transmit FIFO Flush. This bit is automatically cleared to 0 after the operation."]
     #[inline(always)]
     #[must_use]
-    pub fn flush(&mut self) -> FLUSH_W<TXCTRL0_SPEC, 7> {
-        FLUSH_W::new(self)
+    pub fn flush(&mut self) -> FLUSH_W<TXCTRL0_SPEC> {
+        FLUSH_W::new(self, 7)
     }
     #[doc = "Bits 8:11 - Transmit FIFO Threshold. These bits define the TX_FIFO interrupt threshold."]
     #[inline(always)]
     #[must_use]
-    pub fn thd_val(&mut self) -> THD_VAL_W<TXCTRL0_SPEC, 8> {
-        THD_VAL_W::new(self)
+    pub fn thd_val(&mut self) -> THD_VAL_W<TXCTRL0_SPEC> {
+        THD_VAL_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

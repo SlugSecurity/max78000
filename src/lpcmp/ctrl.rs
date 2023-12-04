@@ -5,23 +5,23 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `EN` reader - Comparator Enable."]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Comparator Enable."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `POL` reader - Polarity Select"]
 pub type POL_R = crate::BitReader;
 #[doc = "Field `POL` writer - Polarity Select"]
-pub type POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type POL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INT_EN` reader - IRQ Enable."]
 pub type INT_EN_R = crate::BitReader;
 #[doc = "Field `INT_EN` writer - IRQ Enable."]
-pub type INT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INT_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OUT` reader - Raw Compartor Input."]
 pub type OUT_R = crate::BitReader;
 #[doc = "Field `OUT` writer - Raw Compartor Input."]
-pub type OUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OUT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INT_FL` reader - IRQ Flag"]
 pub type INT_FL_R = crate::BitReader;
 #[doc = "Field `INT_FL` writer - IRQ Flag"]
-pub type INT_FL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INT_FL_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Comparator Enable."]
     #[inline(always)]
@@ -53,34 +53,38 @@ impl W {
     #[doc = "Bit 0 - Comparator Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 5 - Polarity Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pol(&mut self) -> POL_W<CTRL_SPEC, 5> {
-        POL_W::new(self)
+    pub fn pol(&mut self) -> POL_W<CTRL_SPEC> {
+        POL_W::new(self, 5)
     }
     #[doc = "Bit 6 - IRQ Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn int_en(&mut self) -> INT_EN_W<CTRL_SPEC, 6> {
-        INT_EN_W::new(self)
+    pub fn int_en(&mut self) -> INT_EN_W<CTRL_SPEC> {
+        INT_EN_W::new(self, 6)
     }
     #[doc = "Bit 14 - Raw Compartor Input."]
     #[inline(always)]
     #[must_use]
-    pub fn out(&mut self) -> OUT_W<CTRL_SPEC, 14> {
-        OUT_W::new(self)
+    pub fn out(&mut self) -> OUT_W<CTRL_SPEC> {
+        OUT_W::new(self, 14)
     }
     #[doc = "Bit 15 - IRQ Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn int_fl(&mut self) -> INT_FL_W<CTRL_SPEC, 15> {
-        INT_FL_W::new(self)
+    pub fn int_fl(&mut self) -> INT_FL_W<CTRL_SPEC> {
+        INT_FL_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

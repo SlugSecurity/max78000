@@ -5,7 +5,7 @@ pub type W = crate::W<CLK_DIV_1US_SPEC>;
 #[doc = "Field `divisor` reader - Clock Divisor for 1Mhz."]
 pub type DIVISOR_R = crate::FieldReader;
 #[doc = "Field `divisor` writer - Clock Divisor for 1Mhz."]
-pub type DIVISOR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DIVISOR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Clock Divisor for 1Mhz."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:7 - Clock Divisor for 1Mhz."]
     #[inline(always)]
     #[must_use]
-    pub fn divisor(&mut self) -> DIVISOR_W<CLK_DIV_1US_SPEC, 0> {
-        DIVISOR_W::new(self)
+    pub fn divisor(&mut self) -> DIVISOR_W<CLK_DIV_1US_SPEC> {
+        DIVISOR_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

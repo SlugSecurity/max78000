@@ -5,11 +5,11 @@ pub type W = crate::W<AUTOCAL2_SPEC>;
 #[doc = "Field `DONECNT` reader - Auto-callibration Done Counter Setting."]
 pub type DONECNT_R = crate::FieldReader;
 #[doc = "Field `DONECNT` writer - Auto-callibration Done Counter Setting."]
-pub type DONECNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DONECNT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `ACDIV` reader - Auto-callibration Div Setting."]
 pub type ACDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `ACDIV` writer - Auto-callibration Div Setting."]
-pub type ACDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 13, O, u16>;
+pub type ACDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
     #[doc = "Bits 0:7 - Auto-callibration Done Counter Setting."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:7 - Auto-callibration Done Counter Setting."]
     #[inline(always)]
     #[must_use]
-    pub fn donecnt(&mut self) -> DONECNT_W<AUTOCAL2_SPEC, 0> {
-        DONECNT_W::new(self)
+    pub fn donecnt(&mut self) -> DONECNT_W<AUTOCAL2_SPEC> {
+        DONECNT_W::new(self, 0)
     }
     #[doc = "Bits 8:20 - Auto-callibration Div Setting."]
     #[inline(always)]
     #[must_use]
-    pub fn acdiv(&mut self) -> ACDIV_W<AUTOCAL2_SPEC, 8> {
-        ACDIV_W::new(self)
+    pub fn acdiv(&mut self) -> ACDIV_W<AUTOCAL2_SPEC> {
+        ACDIV_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

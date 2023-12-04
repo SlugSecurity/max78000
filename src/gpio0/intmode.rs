@@ -3,64 +3,9 @@ pub type R = crate::R<INTMODE_SPEC>;
 #[doc = "Register `INTMODE` writer"]
 pub type W = crate::W<INTMODE_SPEC>;
 #[doc = "Field `GPIO_INTMODE` reader - Mask of all of the pins on the port."]
-pub type GPIO_INTMODE_R = crate::FieldReader<GPIO_INTMODE_A>;
-#[doc = "Mask of all of the pins on the port.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum GPIO_INTMODE_A {
-    #[doc = "0: Interrupts for this pin are level triggered."]
-    LEVEL = 0,
-    #[doc = "1: Interrupts for this pin are edge triggered."]
-    EDGE = 1,
-}
-impl From<GPIO_INTMODE_A> for u32 {
-    #[inline(always)]
-    fn from(variant: GPIO_INTMODE_A) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for GPIO_INTMODE_A {
-    type Ux = u32;
-}
-impl GPIO_INTMODE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<GPIO_INTMODE_A> {
-        match self.bits {
-            0 => Some(GPIO_INTMODE_A::LEVEL),
-            1 => Some(GPIO_INTMODE_A::EDGE),
-            _ => None,
-        }
-    }
-    #[doc = "Interrupts for this pin are level triggered."]
-    #[inline(always)]
-    pub fn is_level(&self) -> bool {
-        *self == GPIO_INTMODE_A::LEVEL
-    }
-    #[doc = "Interrupts for this pin are edge triggered."]
-    #[inline(always)]
-    pub fn is_edge(&self) -> bool {
-        *self == GPIO_INTMODE_A::EDGE
-    }
-}
+pub type GPIO_INTMODE_R = crate::FieldReader<u32>;
 #[doc = "Field `GPIO_INTMODE` writer - Mask of all of the pins on the port."]
-pub type GPIO_INTMODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, GPIO_INTMODE_A>;
-impl<'a, REG, const O: u8> GPIO_INTMODE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
-    #[doc = "Interrupts for this pin are level triggered."]
-    #[inline(always)]
-    pub fn level(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_INTMODE_A::LEVEL)
-    }
-    #[doc = "Interrupts for this pin are edge triggered."]
-    #[inline(always)]
-    pub fn edge(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_INTMODE_A::EDGE)
-    }
-}
+pub type GPIO_INTMODE_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
@@ -72,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_intmode(&mut self) -> GPIO_INTMODE_W<INTMODE_SPEC, 0> {
-        GPIO_INTMODE_W::new(self)
+    pub fn gpio_intmode(&mut self) -> GPIO_INTMODE_W<INTMODE_SPEC> {
+        GPIO_INTMODE_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

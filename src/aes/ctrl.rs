@@ -5,27 +5,27 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `EN` reader - AES Enable"]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - AES Enable"]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DMA_RX_EN` reader - DMA Request To Read Data Output FIFO"]
 pub type DMA_RX_EN_R = crate::BitReader;
 #[doc = "Field `DMA_RX_EN` writer - DMA Request To Read Data Output FIFO"]
-pub type DMA_RX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMA_RX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DMA_TX_EN` reader - DMA Request To Write Data Input FIFO"]
 pub type DMA_TX_EN_R = crate::BitReader;
 #[doc = "Field `DMA_TX_EN` writer - DMA Request To Write Data Input FIFO"]
-pub type DMA_TX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMA_TX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `START` reader - Start AES Calculation"]
 pub type START_R = crate::BitReader;
 #[doc = "Field `START` writer - Start AES Calculation"]
-pub type START_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INPUT_FLUSH` reader - Flush the data input FIFO"]
 pub type INPUT_FLUSH_R = crate::BitReader;
 #[doc = "Field `INPUT_FLUSH` writer - Flush the data input FIFO"]
-pub type INPUT_FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INPUT_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OUTPUT_FLUSH` reader - Flush the data output FIFO"]
 pub type OUTPUT_FLUSH_R = crate::BitReader;
 #[doc = "Field `OUTPUT_FLUSH` writer - Flush the data output FIFO"]
-pub type OUTPUT_FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OUTPUT_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `KEY_SIZE` reader - Encryption Key Size"]
 pub type KEY_SIZE_R = crate::FieldReader<KEY_SIZE_A>;
 #[doc = "Encryption Key Size\n\nValue on reset: 0"]
@@ -51,7 +51,7 @@ impl crate::FieldSpec for KEY_SIZE_A {
 impl KEY_SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<KEY_SIZE_A> {
+    pub const fn variant(&self) -> Option<KEY_SIZE_A> {
         match self.bits {
             0 => Some(KEY_SIZE_A::AES128),
             1 => Some(KEY_SIZE_A::AES192),
@@ -76,8 +76,8 @@ impl KEY_SIZE_R {
     }
 }
 #[doc = "Field `KEY_SIZE` writer - Encryption Key Size"]
-pub type KEY_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, KEY_SIZE_A>;
-impl<'a, REG, const O: u8> KEY_SIZE_W<'a, REG, O>
+pub type KEY_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, KEY_SIZE_A>;
+impl<'a, REG> KEY_SIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -101,7 +101,7 @@ where
 #[doc = "Field `TYPE` reader - Encryption Type Selection"]
 pub type TYPE_R = crate::FieldReader;
 #[doc = "Field `TYPE` writer - Encryption Type Selection"]
-pub type TYPE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type TYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bit 0 - AES Enable"]
     #[inline(always)]
@@ -148,52 +148,56 @@ impl W {
     #[doc = "Bit 0 - AES Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - DMA Request To Read Data Output FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<CTRL_SPEC, 1> {
-        DMA_RX_EN_W::new(self)
+    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<CTRL_SPEC> {
+        DMA_RX_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - DMA Request To Write Data Input FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<CTRL_SPEC, 2> {
-        DMA_TX_EN_W::new(self)
+    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<CTRL_SPEC> {
+        DMA_TX_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Start AES Calculation"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<CTRL_SPEC, 3> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<CTRL_SPEC> {
+        START_W::new(self, 3)
     }
     #[doc = "Bit 4 - Flush the data input FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn input_flush(&mut self) -> INPUT_FLUSH_W<CTRL_SPEC, 4> {
-        INPUT_FLUSH_W::new(self)
+    pub fn input_flush(&mut self) -> INPUT_FLUSH_W<CTRL_SPEC> {
+        INPUT_FLUSH_W::new(self, 4)
     }
     #[doc = "Bit 5 - Flush the data output FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn output_flush(&mut self) -> OUTPUT_FLUSH_W<CTRL_SPEC, 5> {
-        OUTPUT_FLUSH_W::new(self)
+    pub fn output_flush(&mut self) -> OUTPUT_FLUSH_W<CTRL_SPEC> {
+        OUTPUT_FLUSH_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Encryption Key Size"]
     #[inline(always)]
     #[must_use]
-    pub fn key_size(&mut self) -> KEY_SIZE_W<CTRL_SPEC, 6> {
-        KEY_SIZE_W::new(self)
+    pub fn key_size(&mut self) -> KEY_SIZE_W<CTRL_SPEC> {
+        KEY_SIZE_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Encryption Type Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn type_(&mut self) -> TYPE_W<CTRL_SPEC, 8> {
-        TYPE_W::new(self)
+    pub fn type_(&mut self) -> TYPE_W<CTRL_SPEC> {
+        TYPE_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

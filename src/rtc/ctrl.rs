@@ -21,7 +21,7 @@ impl From<EN_A> for bool {
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> EN_A {
         match self.bits {
             false => EN_A::DIS,
             true => EN_A::EN,
@@ -39,8 +39,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `EN` writer - Real Time Clock Enable. This bit enables the Real Time Clock. This bit can only be written when WE=1 and BUSY =0. Change to this bit is effective only after BUSY is cleared from 1 to 0."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_A>;
-impl<'a, REG, const O: u8> EN_W<'a, REG, O>
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG, EN_A>;
+impl<'a, REG> EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<TOD_ALARM_IE_A> for bool {
 impl TOD_ALARM_IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TOD_ALARM_IE_A {
+    pub const fn variant(&self) -> TOD_ALARM_IE_A {
         match self.bits {
             false => TOD_ALARM_IE_A::DIS,
             true => TOD_ALARM_IE_A::EN,
@@ -92,8 +92,8 @@ impl TOD_ALARM_IE_R {
     }
 }
 #[doc = "Field `TOD_ALARM_IE` writer - Alarm Time-of-Day Interrupt Enable. Change to this bit is effective only after BUSY is cleared from 1 to 0."]
-pub type TOD_ALARM_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TOD_ALARM_IE_A>;
-impl<'a, REG, const O: u8> TOD_ALARM_IE_W<'a, REG, O>
+pub type TOD_ALARM_IE_W<'a, REG> = crate::BitWriter<'a, REG, TOD_ALARM_IE_A>;
+impl<'a, REG> TOD_ALARM_IE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<SSEC_ALARM_IE_A> for bool {
 impl SSEC_ALARM_IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SSEC_ALARM_IE_A {
+    pub const fn variant(&self) -> SSEC_ALARM_IE_A {
         match self.bits {
             false => SSEC_ALARM_IE_A::DIS,
             true => SSEC_ALARM_IE_A::EN,
@@ -145,8 +145,8 @@ impl SSEC_ALARM_IE_R {
     }
 }
 #[doc = "Field `SSEC_ALARM_IE` writer - Alarm Sub-second Interrupt Enable. Change to this bit is effective only after BUSY is cleared from 1 to 0."]
-pub type SSEC_ALARM_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SSEC_ALARM_IE_A>;
-impl<'a, REG, const O: u8> SSEC_ALARM_IE_W<'a, REG, O>
+pub type SSEC_ALARM_IE_W<'a, REG> = crate::BitWriter<'a, REG, SSEC_ALARM_IE_A>;
+impl<'a, REG> SSEC_ALARM_IE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -180,7 +180,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::IDLE,
             true => BUSY_A::BUSY,
@@ -216,7 +216,7 @@ impl From<RDY_A> for bool {
 impl RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RDY_A {
+    pub const fn variant(&self) -> RDY_A {
         match self.bits {
             false => RDY_A::BUSY,
             true => RDY_A::READY,
@@ -234,8 +234,8 @@ impl RDY_R {
     }
 }
 #[doc = "Field `RDY` writer - RTC Ready. This bit is set to 1 by hardware when the RTC count registers update. It can be cleared to 0 by software at any time. It will also be cleared to 0 by hardware just prior to an update of the RTC count register."]
-pub type RDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RDY_A>;
-impl<'a, REG, const O: u8> RDY_W<'a, REG, O>
+pub type RDY_W<'a, REG> = crate::BitWriter<'a, REG, RDY_A>;
+impl<'a, REG> RDY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -269,7 +269,7 @@ impl From<RDY_IE_A> for bool {
 impl RDY_IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RDY_IE_A {
+    pub const fn variant(&self) -> RDY_IE_A {
         match self.bits {
             false => RDY_IE_A::DIS,
             true => RDY_IE_A::EN,
@@ -287,8 +287,8 @@ impl RDY_IE_R {
     }
 }
 #[doc = "Field `RDY_IE` writer - RTC Ready Interrupt Enable."]
-pub type RDY_IE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RDY_IE_A>;
-impl<'a, REG, const O: u8> RDY_IE_W<'a, REG, O>
+pub type RDY_IE_W<'a, REG> = crate::BitWriter<'a, REG, RDY_IE_A>;
+impl<'a, REG> RDY_IE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -322,7 +322,7 @@ impl From<TOD_ALARM_A> for bool {
 impl TOD_ALARM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TOD_ALARM_A {
+    pub const fn variant(&self) -> TOD_ALARM_A {
         match self.bits {
             false => TOD_ALARM_A::INACTIVE,
             true => TOD_ALARM_A::PENDING,
@@ -358,7 +358,7 @@ impl From<SSEC_ALARM_A> for bool {
 impl SSEC_ALARM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SSEC_ALARM_A {
+    pub const fn variant(&self) -> SSEC_ALARM_A {
         match self.bits {
             false => SSEC_ALARM_A::INACTIVE,
             true => SSEC_ALARM_A::PENDING,
@@ -394,7 +394,7 @@ impl From<SQW_EN_A> for bool {
 impl SQW_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SQW_EN_A {
+    pub const fn variant(&self) -> SQW_EN_A {
         match self.bits {
             false => SQW_EN_A::INACTIVE,
             true => SQW_EN_A::PENDING,
@@ -412,8 +412,8 @@ impl SQW_EN_R {
     }
 }
 #[doc = "Field `SQW_EN` writer - Square Wave Output Enable."]
-pub type SQW_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SQW_EN_A>;
-impl<'a, REG, const O: u8> SQW_EN_W<'a, REG, O>
+pub type SQW_EN_W<'a, REG> = crate::BitWriter<'a, REG, SQW_EN_A>;
+impl<'a, REG> SQW_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -455,7 +455,7 @@ impl crate::FieldSpec for SQW_SEL_A {
 impl SQW_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SQW_SEL_A {
+    pub const fn variant(&self) -> SQW_SEL_A {
         match self.bits {
             0 => SQW_SEL_A::FREQ1HZ,
             1 => SQW_SEL_A::FREQ512HZ,
@@ -486,8 +486,8 @@ impl SQW_SEL_R {
     }
 }
 #[doc = "Field `SQW_SEL` writer - Frequency Output Selection. When SQE=1, these bits specify the output frequency on the SQW pin."]
-pub type SQW_SEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SQW_SEL_A>;
-impl<'a, REG, const O: u8> SQW_SEL_W<'a, REG, O>
+pub type SQW_SEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SQW_SEL_A>;
+impl<'a, REG> SQW_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -516,7 +516,7 @@ where
 #[doc = "Field `RD_EN` reader - Asynchronous Counter Read Enable."]
 pub type RD_EN_R = crate::BitReader;
 #[doc = "Field `RD_EN` writer - Asynchronous Counter Read Enable."]
-pub type RD_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RD_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WR_EN` reader - Write Enable. This register bit serves as a protection mechanism against unintentional writes to critical RTC bits."]
 pub type WR_EN_R = crate::BitReader<WR_EN_A>;
 #[doc = "Write Enable. This register bit serves as a protection mechanism against unintentional writes to critical RTC bits.\n\nValue on reset: 0"]
@@ -536,7 +536,7 @@ impl From<WR_EN_A> for bool {
 impl WR_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WR_EN_A {
+    pub const fn variant(&self) -> WR_EN_A {
         match self.bits {
             false => WR_EN_A::INACTIVE,
             true => WR_EN_A::PENDING,
@@ -554,8 +554,8 @@ impl WR_EN_R {
     }
 }
 #[doc = "Field `WR_EN` writer - Write Enable. This register bit serves as a protection mechanism against unintentional writes to critical RTC bits."]
-pub type WR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WR_EN_A>;
-impl<'a, REG, const O: u8> WR_EN_W<'a, REG, O>
+pub type WR_EN_W<'a, REG> = crate::BitWriter<'a, REG, WR_EN_A>;
+impl<'a, REG> WR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -636,58 +636,62 @@ impl W {
     #[doc = "Bit 0 - Real Time Clock Enable. This bit enables the Real Time Clock. This bit can only be written when WE=1 and BUSY =0. Change to this bit is effective only after BUSY is cleared from 1 to 0."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Alarm Time-of-Day Interrupt Enable. Change to this bit is effective only after BUSY is cleared from 1 to 0."]
     #[inline(always)]
     #[must_use]
-    pub fn tod_alarm_ie(&mut self) -> TOD_ALARM_IE_W<CTRL_SPEC, 1> {
-        TOD_ALARM_IE_W::new(self)
+    pub fn tod_alarm_ie(&mut self) -> TOD_ALARM_IE_W<CTRL_SPEC> {
+        TOD_ALARM_IE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Alarm Sub-second Interrupt Enable. Change to this bit is effective only after BUSY is cleared from 1 to 0."]
     #[inline(always)]
     #[must_use]
-    pub fn ssec_alarm_ie(&mut self) -> SSEC_ALARM_IE_W<CTRL_SPEC, 2> {
-        SSEC_ALARM_IE_W::new(self)
+    pub fn ssec_alarm_ie(&mut self) -> SSEC_ALARM_IE_W<CTRL_SPEC> {
+        SSEC_ALARM_IE_W::new(self, 2)
     }
     #[doc = "Bit 4 - RTC Ready. This bit is set to 1 by hardware when the RTC count registers update. It can be cleared to 0 by software at any time. It will also be cleared to 0 by hardware just prior to an update of the RTC count register."]
     #[inline(always)]
     #[must_use]
-    pub fn rdy(&mut self) -> RDY_W<CTRL_SPEC, 4> {
-        RDY_W::new(self)
+    pub fn rdy(&mut self) -> RDY_W<CTRL_SPEC> {
+        RDY_W::new(self, 4)
     }
     #[doc = "Bit 5 - RTC Ready Interrupt Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rdy_ie(&mut self) -> RDY_IE_W<CTRL_SPEC, 5> {
-        RDY_IE_W::new(self)
+    pub fn rdy_ie(&mut self) -> RDY_IE_W<CTRL_SPEC> {
+        RDY_IE_W::new(self, 5)
     }
     #[doc = "Bit 8 - Square Wave Output Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn sqw_en(&mut self) -> SQW_EN_W<CTRL_SPEC, 8> {
-        SQW_EN_W::new(self)
+    pub fn sqw_en(&mut self) -> SQW_EN_W<CTRL_SPEC> {
+        SQW_EN_W::new(self, 8)
     }
     #[doc = "Bits 9:10 - Frequency Output Selection. When SQE=1, these bits specify the output frequency on the SQW pin."]
     #[inline(always)]
     #[must_use]
-    pub fn sqw_sel(&mut self) -> SQW_SEL_W<CTRL_SPEC, 9> {
-        SQW_SEL_W::new(self)
+    pub fn sqw_sel(&mut self) -> SQW_SEL_W<CTRL_SPEC> {
+        SQW_SEL_W::new(self, 9)
     }
     #[doc = "Bit 14 - Asynchronous Counter Read Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rd_en(&mut self) -> RD_EN_W<CTRL_SPEC, 14> {
-        RD_EN_W::new(self)
+    pub fn rd_en(&mut self) -> RD_EN_W<CTRL_SPEC> {
+        RD_EN_W::new(self, 14)
     }
     #[doc = "Bit 15 - Write Enable. This register bit serves as a protection mechanism against unintentional writes to critical RTC bits."]
     #[inline(always)]
     #[must_use]
-    pub fn wr_en(&mut self) -> WR_EN_W<CTRL_SPEC, 15> {
-        WR_EN_W::new(self)
+    pub fn wr_en(&mut self) -> WR_EN_W<CTRL_SPEC> {
+        WR_EN_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

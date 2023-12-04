@@ -5,19 +5,19 @@ pub type W = crate::W<REG2_SPEC>;
 #[doc = "Field `cnnx16_0_iso` reader - CNNx16_0 Power Domain Isolation"]
 pub type CNNX16_0_ISO_R = crate::BitReader;
 #[doc = "Field `cnnx16_0_iso` writer - CNNx16_0 Power Domain Isolation"]
-pub type CNNX16_0_ISO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_0_ISO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `cnnx16_1_iso` reader - CNNx16_1 Power Domain Isolation"]
 pub type CNNX16_1_ISO_R = crate::BitReader;
 #[doc = "Field `cnnx16_1_iso` writer - CNNx16_1 Power Domain Isolation"]
-pub type CNNX16_1_ISO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_1_ISO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `cnnx16_2_iso` reader - CNNx16_2 Power Domain Isolation"]
 pub type CNNX16_2_ISO_R = crate::BitReader;
 #[doc = "Field `cnnx16_2_iso` writer - CNNx16_2 Power Domain Isolation"]
-pub type CNNX16_2_ISO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_2_ISO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `cnnx16_3_iso` reader - CNNx16_3 Power Domain Isolation"]
 pub type CNNX16_3_ISO_R = crate::BitReader;
 #[doc = "Field `cnnx16_3_iso` writer - CNNx16_3 Power Domain Isolation"]
-pub type CNNX16_3_ISO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_3_ISO_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - CNNx16_0 Power Domain Isolation"]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bit 0 - CNNx16_0 Power Domain Isolation"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_0_iso(&mut self) -> CNNX16_0_ISO_W<REG2_SPEC, 0> {
-        CNNX16_0_ISO_W::new(self)
+    pub fn cnnx16_0_iso(&mut self) -> CNNX16_0_ISO_W<REG2_SPEC> {
+        CNNX16_0_ISO_W::new(self, 0)
     }
     #[doc = "Bit 1 - CNNx16_1 Power Domain Isolation"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_1_iso(&mut self) -> CNNX16_1_ISO_W<REG2_SPEC, 1> {
-        CNNX16_1_ISO_W::new(self)
+    pub fn cnnx16_1_iso(&mut self) -> CNNX16_1_ISO_W<REG2_SPEC> {
+        CNNX16_1_ISO_W::new(self, 1)
     }
     #[doc = "Bit 2 - CNNx16_2 Power Domain Isolation"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_2_iso(&mut self) -> CNNX16_2_ISO_W<REG2_SPEC, 2> {
-        CNNX16_2_ISO_W::new(self)
+    pub fn cnnx16_2_iso(&mut self) -> CNNX16_2_ISO_W<REG2_SPEC> {
+        CNNX16_2_ISO_W::new(self, 2)
     }
     #[doc = "Bit 3 - CNNx16_3 Power Domain Isolation"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_3_iso(&mut self) -> CNNX16_3_ISO_W<REG2_SPEC, 3> {
-        CNNX16_3_ISO_W::new(self)
+    pub fn cnnx16_3_iso(&mut self) -> CNNX16_3_ISO_W<REG2_SPEC> {
+        CNNX16_3_ISO_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

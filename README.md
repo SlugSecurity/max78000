@@ -12,7 +12,7 @@ A peripheral access crate for the Analog Devices MAX78000. Auto-generated with `
 
 ## How to re-generate the peripherals API (requires `svd2rust` and `form`)
 
-`svd2rust -i max78000.svd.patched && rm -rf src && form -i lib.rs -o src && rm lib.rs && cargo fmt`
+`svd2rust --reexport-core-peripherals -i max78000.svd.patched && rm -rf src && form -i lib.rs -o src && rm lib.rs && cargo fmt`
 
 ## `svd2rust` license
 

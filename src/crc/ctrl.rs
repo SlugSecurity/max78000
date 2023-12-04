@@ -5,27 +5,27 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `EN` reader - CRC Enable"]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - CRC Enable"]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DMA_EN` reader - DMA Request Enable"]
 pub type DMA_EN_R = crate::BitReader;
 #[doc = "Field `DMA_EN` writer - DMA Request Enable"]
-pub type DMA_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DMA_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MSB` reader - MSB Select"]
 pub type MSB_R = crate::BitReader;
 #[doc = "Field `MSB` writer - MSB Select"]
-pub type MSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MSB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BYTE_SWAP_IN` reader - Byte Swap CRC Data Input"]
 pub type BYTE_SWAP_IN_R = crate::BitReader;
 #[doc = "Field `BYTE_SWAP_IN` writer - Byte Swap CRC Data Input"]
-pub type BYTE_SWAP_IN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BYTE_SWAP_IN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BYTE_SWAP_OUT` reader - Byte Swap CRC Value Output"]
 pub type BYTE_SWAP_OUT_R = crate::BitReader;
 #[doc = "Field `BYTE_SWAP_OUT` writer - Byte Swap CRC Value Output"]
-pub type BYTE_SWAP_OUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BYTE_SWAP_OUT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BUSY` reader - CRC Busy"]
 pub type BUSY_R = crate::BitReader;
 #[doc = "Field `BUSY` writer - CRC Busy"]
-pub type BUSY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BUSY_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - CRC Enable"]
     #[inline(always)]
@@ -62,40 +62,44 @@ impl W {
     #[doc = "Bit 0 - CRC Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - DMA Request Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dma_en(&mut self) -> DMA_EN_W<CTRL_SPEC, 1> {
-        DMA_EN_W::new(self)
+    pub fn dma_en(&mut self) -> DMA_EN_W<CTRL_SPEC> {
+        DMA_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - MSB Select"]
     #[inline(always)]
     #[must_use]
-    pub fn msb(&mut self) -> MSB_W<CTRL_SPEC, 2> {
-        MSB_W::new(self)
+    pub fn msb(&mut self) -> MSB_W<CTRL_SPEC> {
+        MSB_W::new(self, 2)
     }
     #[doc = "Bit 3 - Byte Swap CRC Data Input"]
     #[inline(always)]
     #[must_use]
-    pub fn byte_swap_in(&mut self) -> BYTE_SWAP_IN_W<CTRL_SPEC, 3> {
-        BYTE_SWAP_IN_W::new(self)
+    pub fn byte_swap_in(&mut self) -> BYTE_SWAP_IN_W<CTRL_SPEC> {
+        BYTE_SWAP_IN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Byte Swap CRC Value Output"]
     #[inline(always)]
     #[must_use]
-    pub fn byte_swap_out(&mut self) -> BYTE_SWAP_OUT_W<CTRL_SPEC, 4> {
-        BYTE_SWAP_OUT_W::new(self)
+    pub fn byte_swap_out(&mut self) -> BYTE_SWAP_OUT_W<CTRL_SPEC> {
+        BYTE_SWAP_OUT_W::new(self, 4)
     }
     #[doc = "Bit 16 - CRC Busy"]
     #[inline(always)]
     #[must_use]
-    pub fn busy(&mut self) -> BUSY_W<CTRL_SPEC, 16> {
-        BUSY_W::new(self)
+    pub fn busy(&mut self) -> BUSY_W<CTRL_SPEC> {
+        BUSY_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,11 +5,11 @@ pub type W = crate::W<IPKB_SPEC>;
 #[doc = "Field `IPKSETC` reader - Voltage Regulator Peak Current Setting"]
 pub type IPKSETC_R = crate::FieldReader;
 #[doc = "Field `IPKSETC` writer - Voltage Regulator Peak Current Setting"]
-pub type IPKSETC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type IPKSETC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `IPKSETD` reader - Voltage Regulator Peak Current Setting"]
 pub type IPKSETD_R = crate::FieldReader;
 #[doc = "Field `IPKSETD` writer - Voltage Regulator Peak Current Setting"]
-pub type IPKSETD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type IPKSETD_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Voltage Regulator Peak Current Setting"]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:3 - Voltage Regulator Peak Current Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn ipksetc(&mut self) -> IPKSETC_W<IPKB_SPEC, 0> {
-        IPKSETC_W::new(self)
+    pub fn ipksetc(&mut self) -> IPKSETC_W<IPKB_SPEC> {
+        IPKSETC_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Voltage Regulator Peak Current Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn ipksetd(&mut self) -> IPKSETD_W<IPKB_SPEC, 4> {
-        IPKSETD_W::new(self)
+    pub fn ipksetd(&mut self) -> IPKSETD_W<IPKB_SPEC> {
+        IPKSETD_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

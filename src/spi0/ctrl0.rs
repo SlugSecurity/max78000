@@ -21,7 +21,7 @@ impl From<EN_A> for bool {
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> EN_A {
         match self.bits {
             false => EN_A::DIS,
             true => EN_A::EN,
@@ -39,8 +39,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `EN` writer - SPI Enable."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_A>;
-impl<'a, REG, const O: u8> EN_W<'a, REG, O>
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG, EN_A>;
+impl<'a, REG> EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<MST_MODE_A> for bool {
 impl MST_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MST_MODE_A {
+    pub const fn variant(&self) -> MST_MODE_A {
         match self.bits {
             false => MST_MODE_A::DIS,
             true => MST_MODE_A::EN,
@@ -92,8 +92,8 @@ impl MST_MODE_R {
     }
 }
 #[doc = "Field `MST_MODE` writer - Master Mode Enable."]
-pub type MST_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MST_MODE_A>;
-impl<'a, REG, const O: u8> MST_MODE_W<'a, REG, O>
+pub type MST_MODE_W<'a, REG> = crate::BitWriter<'a, REG, MST_MODE_A>;
+impl<'a, REG> MST_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<SS_IO_A> for bool {
 impl SS_IO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_IO_A {
+    pub const fn variant(&self) -> SS_IO_A {
         match self.bits {
             false => SS_IO_A::OUTPUT,
             true => SS_IO_A::INPUT,
@@ -145,8 +145,8 @@ impl SS_IO_R {
     }
 }
 #[doc = "Field `SS_IO` writer - Slave Select 0, IO direction, to support Multi-Master mode,Slave Select 0 can be input in Master mode. This bit has no effect in slave mode."]
-pub type SS_IO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SS_IO_A>;
-impl<'a, REG, const O: u8> SS_IO_W<'a, REG, O>
+pub type SS_IO_W<'a, REG> = crate::BitWriter<'a, REG, SS_IO_A>;
+impl<'a, REG> SS_IO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -178,7 +178,7 @@ impl From<START_A> for bool {
 impl START_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<START_A> {
+    pub const fn variant(&self) -> Option<START_A> {
         match self.bits {
             true => Some(START_A::START),
             _ => None,
@@ -191,8 +191,8 @@ impl START_R {
     }
 }
 #[doc = "Field `START` writer - Start Transmit."]
-pub type START_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, START_A>;
-impl<'a, REG, const O: u8> START_W<'a, REG, O>
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG, START_A>;
+impl<'a, REG> START_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -221,7 +221,7 @@ impl From<SS_CTRL_A> for bool {
 impl SS_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_CTRL_A {
+    pub const fn variant(&self) -> SS_CTRL_A {
         match self.bits {
             false => SS_CTRL_A::DEASSERT,
             true => SS_CTRL_A::ASSERT,
@@ -239,8 +239,8 @@ impl SS_CTRL_R {
     }
 }
 #[doc = "Field `SS_CTRL` writer - Start Select Control. Used in Master mode to control the behavior of the Slave Select signal at the end of a transaction."]
-pub type SS_CTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SS_CTRL_A>;
-impl<'a, REG, const O: u8> SS_CTRL_W<'a, REG, O>
+pub type SS_CTRL_W<'a, REG> = crate::BitWriter<'a, REG, SS_CTRL_A>;
+impl<'a, REG> SS_CTRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -282,7 +282,7 @@ impl crate::FieldSpec for SS_ACTIVE_A {
 impl SS_ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SS_ACTIVE_A> {
+    pub const fn variant(&self) -> Option<SS_ACTIVE_A> {
         match self.bits {
             1 => Some(SS_ACTIVE_A::SS0),
             2 => Some(SS_ACTIVE_A::SS1),
@@ -313,8 +313,8 @@ impl SS_ACTIVE_R {
     }
 }
 #[doc = "Field `SS_ACTIVE` writer - Slave Select, when in Master mode selects which Slave devices are selected. More than one Slave device can be selected."]
-pub type SS_ACTIVE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, SS_ACTIVE_A>;
-impl<'a, REG, const O: u8> SS_ACTIVE_W<'a, REG, O>
+pub type SS_ACTIVE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SS_ACTIVE_A>;
+impl<'a, REG> SS_ACTIVE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -376,40 +376,44 @@ impl W {
     #[doc = "Bit 0 - SPI Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL0_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL0_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Master Mode Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn mst_mode(&mut self) -> MST_MODE_W<CTRL0_SPEC, 1> {
-        MST_MODE_W::new(self)
+    pub fn mst_mode(&mut self) -> MST_MODE_W<CTRL0_SPEC> {
+        MST_MODE_W::new(self, 1)
     }
     #[doc = "Bit 4 - Slave Select 0, IO direction, to support Multi-Master mode,Slave Select 0 can be input in Master mode. This bit has no effect in slave mode."]
     #[inline(always)]
     #[must_use]
-    pub fn ss_io(&mut self) -> SS_IO_W<CTRL0_SPEC, 4> {
-        SS_IO_W::new(self)
+    pub fn ss_io(&mut self) -> SS_IO_W<CTRL0_SPEC> {
+        SS_IO_W::new(self, 4)
     }
     #[doc = "Bit 5 - Start Transmit."]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<CTRL0_SPEC, 5> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<CTRL0_SPEC> {
+        START_W::new(self, 5)
     }
     #[doc = "Bit 8 - Start Select Control. Used in Master mode to control the behavior of the Slave Select signal at the end of a transaction."]
     #[inline(always)]
     #[must_use]
-    pub fn ss_ctrl(&mut self) -> SS_CTRL_W<CTRL0_SPEC, 8> {
-        SS_CTRL_W::new(self)
+    pub fn ss_ctrl(&mut self) -> SS_CTRL_W<CTRL0_SPEC> {
+        SS_CTRL_W::new(self, 8)
     }
     #[doc = "Bits 16:19 - Slave Select, when in Master mode selects which Slave devices are selected. More than one Slave device can be selected."]
     #[inline(always)]
     #[must_use]
-    pub fn ss_active(&mut self) -> SS_ACTIVE_W<CTRL0_SPEC, 16> {
-        SS_ACTIVE_W::new(self)
+    pub fn ss_active(&mut self) -> SS_ACTIVE_W<CTRL0_SPEC> {
+        SS_ACTIVE_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,19 +5,19 @@ pub type W = crate::W<NOLCMP_SPEC>;
 #[doc = "Field `LO_A` reader - Non-Overlapping Low Compare value for Timer A controls the time between the falling edge of PWM Phase A and the next rising edge of PWM Phase A-Prime."]
 pub type LO_A_R = crate::FieldReader;
 #[doc = "Field `LO_A` writer - Non-Overlapping Low Compare value for Timer A controls the time between the falling edge of PWM Phase A and the next rising edge of PWM Phase A-Prime."]
-pub type LO_A_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LO_A_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `HI_A` reader - Non-Overlapping High Compare value for Timer A controls the time between the falling edge of PWM Phase A-Prime and the next rising edge of PWM Phase A."]
 pub type HI_A_R = crate::FieldReader;
 #[doc = "Field `HI_A` writer - Non-Overlapping High Compare value for Timer A controls the time between the falling edge of PWM Phase A-Prime and the next rising edge of PWM Phase A."]
-pub type HI_A_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type HI_A_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `LO_B` reader - Non-Overlapping Low Compare value for Timer B controls the time between the falling edge of PWM Phase A and the next rising edge of PWM Phase A-Prime."]
 pub type LO_B_R = crate::FieldReader;
 #[doc = "Field `LO_B` writer - Non-Overlapping Low Compare value for Timer B controls the time between the falling edge of PWM Phase A and the next rising edge of PWM Phase A-Prime."]
-pub type LO_B_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LO_B_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `HI_B` reader - Non-Overlapping High Compare value for Timer B controls the time between the falling edge of PWM Phase A-Prime and the next rising edge of PWM Phase A."]
 pub type HI_B_R = crate::FieldReader;
 #[doc = "Field `HI_B` writer - Non-Overlapping High Compare value for Timer B controls the time between the falling edge of PWM Phase A-Prime and the next rising edge of PWM Phase A."]
-pub type HI_B_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type HI_B_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Non-Overlapping Low Compare value for Timer A controls the time between the falling edge of PWM Phase A and the next rising edge of PWM Phase A-Prime."]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bits 0:7 - Non-Overlapping Low Compare value for Timer A controls the time between the falling edge of PWM Phase A and the next rising edge of PWM Phase A-Prime."]
     #[inline(always)]
     #[must_use]
-    pub fn lo_a(&mut self) -> LO_A_W<NOLCMP_SPEC, 0> {
-        LO_A_W::new(self)
+    pub fn lo_a(&mut self) -> LO_A_W<NOLCMP_SPEC> {
+        LO_A_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Non-Overlapping High Compare value for Timer A controls the time between the falling edge of PWM Phase A-Prime and the next rising edge of PWM Phase A."]
     #[inline(always)]
     #[must_use]
-    pub fn hi_a(&mut self) -> HI_A_W<NOLCMP_SPEC, 8> {
-        HI_A_W::new(self)
+    pub fn hi_a(&mut self) -> HI_A_W<NOLCMP_SPEC> {
+        HI_A_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Non-Overlapping Low Compare value for Timer B controls the time between the falling edge of PWM Phase A and the next rising edge of PWM Phase A-Prime."]
     #[inline(always)]
     #[must_use]
-    pub fn lo_b(&mut self) -> LO_B_W<NOLCMP_SPEC, 16> {
-        LO_B_W::new(self)
+    pub fn lo_b(&mut self) -> LO_B_W<NOLCMP_SPEC> {
+        LO_B_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Non-Overlapping High Compare value for Timer B controls the time between the falling edge of PWM Phase A-Prime and the next rising edge of PWM Phase A."]
     #[inline(always)]
     #[must_use]
-    pub fn hi_b(&mut self) -> HI_B_W<NOLCMP_SPEC, 24> {
-        HI_B_W::new(self)
+    pub fn hi_b(&mut self) -> HI_B_W<NOLCMP_SPEC> {
+        HI_B_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,11 +5,11 @@ pub type W = crate::W<MEMCTRL_SPEC>;
 #[doc = "Field `FWS` reader - Flash Wait State. These bits define the number of wait-state cycles per Flash data read access. Minimum wait state is 2."]
 pub type FWS_R = crate::FieldReader;
 #[doc = "Field `FWS` writer - Flash Wait State. These bits define the number of wait-state cycles per Flash data read access. Minimum wait state is 2."]
-pub type FWS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type FWS_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `SYSRAM0ECC` reader - SYSRAM0 ECC Select."]
 pub type SYSRAM0ECC_R = crate::BitReader;
 #[doc = "Field `SYSRAM0ECC` writer - SYSRAM0 ECC Select."]
-pub type SYSRAM0ECC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSRAM0ECC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - Flash Wait State. These bits define the number of wait-state cycles per Flash data read access. Minimum wait state is 2."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:2 - Flash Wait State. These bits define the number of wait-state cycles per Flash data read access. Minimum wait state is 2."]
     #[inline(always)]
     #[must_use]
-    pub fn fws(&mut self) -> FWS_W<MEMCTRL_SPEC, 0> {
-        FWS_W::new(self)
+    pub fn fws(&mut self) -> FWS_W<MEMCTRL_SPEC> {
+        FWS_W::new(self, 0)
     }
     #[doc = "Bit 16 - SYSRAM0 ECC Select."]
     #[inline(always)]
     #[must_use]
-    pub fn sysram0ecc(&mut self) -> SYSRAM0ECC_W<MEMCTRL_SPEC, 16> {
-        SYSRAM0ECC_W::new(self)
+    pub fn sysram0ecc(&mut self) -> SYSRAM0ECC_W<MEMCTRL_SPEC> {
+        SYSRAM0ECC_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

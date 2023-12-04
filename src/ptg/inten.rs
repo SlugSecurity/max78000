@@ -5,19 +5,19 @@ pub type W = crate::W<INTEN_SPEC>;
 #[doc = "Field `pt0` reader - Pulse Train 0 Stopped Interrupt Enable/Disable"]
 pub type PT0_R = crate::BitReader;
 #[doc = "Field `pt0` writer - Pulse Train 0 Stopped Interrupt Enable/Disable"]
-pub type PT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pt1` reader - Pulse Train 1 Stopped Interrupt Enable/Disable"]
 pub type PT1_R = crate::BitReader;
 #[doc = "Field `pt1` writer - Pulse Train 1 Stopped Interrupt Enable/Disable"]
-pub type PT1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pt2` reader - Pulse Train 2 Stopped Interrupt Enable/Disable"]
 pub type PT2_R = crate::BitReader;
 #[doc = "Field `pt2` writer - Pulse Train 2 Stopped Interrupt Enable/Disable"]
-pub type PT2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pt3` reader - Pulse Train 3 Stopped Interrupt Enable/Disable"]
 pub type PT3_R = crate::BitReader;
 #[doc = "Field `pt3` writer - Pulse Train 3 Stopped Interrupt Enable/Disable"]
-pub type PT3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Pulse Train 0 Stopped Interrupt Enable/Disable"]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bit 0 - Pulse Train 0 Stopped Interrupt Enable/Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pt0(&mut self) -> PT0_W<INTEN_SPEC, 0> {
-        PT0_W::new(self)
+    pub fn pt0(&mut self) -> PT0_W<INTEN_SPEC> {
+        PT0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Pulse Train 1 Stopped Interrupt Enable/Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pt1(&mut self) -> PT1_W<INTEN_SPEC, 1> {
-        PT1_W::new(self)
+    pub fn pt1(&mut self) -> PT1_W<INTEN_SPEC> {
+        PT1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Pulse Train 2 Stopped Interrupt Enable/Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pt2(&mut self) -> PT2_W<INTEN_SPEC, 2> {
-        PT2_W::new(self)
+    pub fn pt2(&mut self) -> PT2_W<INTEN_SPEC> {
+        PT2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Pulse Train 3 Stopped Interrupt Enable/Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pt3(&mut self) -> PT3_W<INTEN_SPEC, 3> {
-        PT3_W::new(self)
+    pub fn pt3(&mut self) -> PT3_W<INTEN_SPEC> {
+        PT3_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

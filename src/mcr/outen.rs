@@ -5,11 +5,11 @@ pub type W = crate::W<OUTEN_SPEC>;
 #[doc = "Field `SQWOUT_EN` reader - Square Wave Output Enable."]
 pub type SQWOUT_EN_R = crate::BitReader;
 #[doc = "Field `SQWOUT_EN` writer - Square Wave Output Enable."]
-pub type SQWOUT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SQWOUT_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PDOWN_OUT_EN` reader - Power Down Output Enable."]
 pub type PDOWN_OUT_EN_R = crate::BitReader;
 #[doc = "Field `PDOWN_OUT_EN` writer - Power Down Output Enable."]
-pub type PDOWN_OUT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PDOWN_OUT_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Square Wave Output Enable."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bit 0 - Square Wave Output Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn sqwout_en(&mut self) -> SQWOUT_EN_W<OUTEN_SPEC, 0> {
-        SQWOUT_EN_W::new(self)
+    pub fn sqwout_en(&mut self) -> SQWOUT_EN_W<OUTEN_SPEC> {
+        SQWOUT_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Power Down Output Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn pdown_out_en(&mut self) -> PDOWN_OUT_EN_W<OUTEN_SPEC, 1> {
-        PDOWN_OUT_EN_W::new(self)
+    pub fn pdown_out_en(&mut self) -> PDOWN_OUT_EN_W<OUTEN_SPEC> {
+        PDOWN_OUT_EN_W::new(self, 1)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

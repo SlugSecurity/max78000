@@ -29,7 +29,7 @@ impl crate::FieldSpec for CLKDIV_A {
 impl CLKDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLKDIV_A> {
+    pub const fn variant(&self) -> Option<CLKDIV_A> {
         match self.bits {
             0 => Some(CLKDIV_A::DIV1),
             1 => Some(CLKDIV_A::DIV16),

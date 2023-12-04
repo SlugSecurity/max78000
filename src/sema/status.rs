@@ -5,35 +5,35 @@ pub type W = crate::W<STATUS_SPEC>;
 #[doc = "Field `status0` reader - "]
 pub type STATUS0_R = crate::BitReader;
 #[doc = "Field `status0` writer - "]
-pub type STATUS0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `status1` reader - "]
 pub type STATUS1_R = crate::BitReader;
 #[doc = "Field `status1` writer - "]
-pub type STATUS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `status2` reader - "]
 pub type STATUS2_R = crate::BitReader;
 #[doc = "Field `status2` writer - "]
-pub type STATUS2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `status3` reader - "]
 pub type STATUS3_R = crate::BitReader;
 #[doc = "Field `status3` writer - "]
-pub type STATUS3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `status4` reader - "]
 pub type STATUS4_R = crate::BitReader;
 #[doc = "Field `status4` writer - "]
-pub type STATUS4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `status5` reader - "]
 pub type STATUS5_R = crate::BitReader;
 #[doc = "Field `status5` writer - "]
-pub type STATUS5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `status6` reader - "]
 pub type STATUS6_R = crate::BitReader;
 #[doc = "Field `status6` writer - "]
-pub type STATUS6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `status7` reader - "]
 pub type STATUS7_R = crate::BitReader;
 #[doc = "Field `status7` writer - "]
-pub type STATUS7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STATUS7_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -80,52 +80,56 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn status0(&mut self) -> STATUS0_W<STATUS_SPEC, 0> {
-        STATUS0_W::new(self)
+    pub fn status0(&mut self) -> STATUS0_W<STATUS_SPEC> {
+        STATUS0_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn status1(&mut self) -> STATUS1_W<STATUS_SPEC, 1> {
-        STATUS1_W::new(self)
+    pub fn status1(&mut self) -> STATUS1_W<STATUS_SPEC> {
+        STATUS1_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn status2(&mut self) -> STATUS2_W<STATUS_SPEC, 2> {
-        STATUS2_W::new(self)
+    pub fn status2(&mut self) -> STATUS2_W<STATUS_SPEC> {
+        STATUS2_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn status3(&mut self) -> STATUS3_W<STATUS_SPEC, 3> {
-        STATUS3_W::new(self)
+    pub fn status3(&mut self) -> STATUS3_W<STATUS_SPEC> {
+        STATUS3_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn status4(&mut self) -> STATUS4_W<STATUS_SPEC, 4> {
-        STATUS4_W::new(self)
+    pub fn status4(&mut self) -> STATUS4_W<STATUS_SPEC> {
+        STATUS4_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn status5(&mut self) -> STATUS5_W<STATUS_SPEC, 5> {
-        STATUS5_W::new(self)
+    pub fn status5(&mut self) -> STATUS5_W<STATUS_SPEC> {
+        STATUS5_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn status6(&mut self) -> STATUS6_W<STATUS_SPEC, 6> {
-        STATUS6_W::new(self)
+    pub fn status6(&mut self) -> STATUS6_W<STATUS_SPEC> {
+        STATUS6_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn status7(&mut self) -> STATUS7_W<STATUS_SPEC, 7> {
-        STATUS7_W::new(self)
+    pub fn status7(&mut self) -> STATUS7_W<STATUS_SPEC> {
+        STATUS7_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

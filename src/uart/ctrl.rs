@@ -5,31 +5,31 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `RX_THD_VAL` reader - This field specifies the depth of receive FIFO for interrupt generation (value 0 and > 16 are ignored)"]
 pub type RX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `RX_THD_VAL` writer - This field specifies the depth of receive FIFO for interrupt generation (value 0 and > 16 are ignored)"]
-pub type RX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `PAR_EN` reader - Parity Enable"]
 pub type PAR_EN_R = crate::BitReader;
 #[doc = "Field `PAR_EN` writer - Parity Enable"]
-pub type PAR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PAR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PAR_EO` reader - when PAREN=1 selects odd or even parity odd is 1 even is 0"]
 pub type PAR_EO_R = crate::BitReader;
 #[doc = "Field `PAR_EO` writer - when PAREN=1 selects odd or even parity odd is 1 even is 0"]
-pub type PAR_EO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PAR_EO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PAR_MD` reader - Selects parity based on 1s or 0s count (when PAREN=1)"]
 pub type PAR_MD_R = crate::BitReader;
 #[doc = "Field `PAR_MD` writer - Selects parity based on 1s or 0s count (when PAREN=1)"]
-pub type PAR_MD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PAR_MD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTS_DIS` reader - CTS Sampling Disable"]
 pub type CTS_DIS_R = crate::BitReader;
 #[doc = "Field `CTS_DIS` writer - CTS Sampling Disable"]
-pub type CTS_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CTS_DIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX_FLUSH` reader - Flushes the TX FIFO buffer. This bit is automatically cleared by hardware when flush is completed."]
 pub type TX_FLUSH_R = crate::BitReader;
 #[doc = "Field `TX_FLUSH` writer - Flushes the TX FIFO buffer. This bit is automatically cleared by hardware when flush is completed."]
-pub type TX_FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_FLUSH` reader - Flushes the RX FIFO buffer. This bit is automatically cleared by hardware when flush is completed."]
 pub type RX_FLUSH_R = crate::BitReader;
 #[doc = "Field `RX_FLUSH` writer - Flushes the RX FIFO buffer. This bit is automatically cleared by hardware when flush is completed."]
-pub type RX_FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CHAR_SIZE` reader - Selects UART character size"]
 pub type CHAR_SIZE_R = crate::FieldReader<CHAR_SIZE_A>;
 #[doc = "Selects UART character size\n\nValue on reset: 0"]
@@ -57,7 +57,7 @@ impl crate::FieldSpec for CHAR_SIZE_A {
 impl CHAR_SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHAR_SIZE_A {
+    pub const fn variant(&self) -> CHAR_SIZE_A {
         match self.bits {
             0 => CHAR_SIZE_A::_5BITS,
             1 => CHAR_SIZE_A::_6BITS,
@@ -88,8 +88,8 @@ impl CHAR_SIZE_R {
     }
 }
 #[doc = "Field `CHAR_SIZE` writer - Selects UART character size"]
-pub type CHAR_SIZE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHAR_SIZE_A>;
-impl<'a, REG, const O: u8> CHAR_SIZE_W<'a, REG, O>
+pub type CHAR_SIZE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CHAR_SIZE_A>;
+impl<'a, REG> CHAR_SIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -118,19 +118,19 @@ where
 #[doc = "Field `STOPBITS` reader - Selects the number of stop bits that will be generated"]
 pub type STOPBITS_R = crate::BitReader;
 #[doc = "Field `STOPBITS` writer - Selects the number of stop bits that will be generated"]
-pub type STOPBITS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STOPBITS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HFC_EN` reader - Enables/disables hardware flow control"]
 pub type HFC_EN_R = crate::BitReader;
 #[doc = "Field `HFC_EN` writer - Enables/disables hardware flow control"]
-pub type HFC_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HFC_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RTSDC` reader - Hardware Flow Control RTS Mode"]
 pub type RTSDC_R = crate::BitReader;
 #[doc = "Field `RTSDC` writer - Hardware Flow Control RTS Mode"]
-pub type RTSDC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RTSDC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BCLKEN` reader - Baud clock enable"]
 pub type BCLKEN_R = crate::BitReader;
 #[doc = "Field `BCLKEN` writer - Baud clock enable"]
-pub type BCLKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BCLKEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BCLKSRC` reader - To select the UART clock source for the UART engine (except APB registers). Secondary clock (used for baud rate generator) can be asynchronous from APB clock."]
 pub type BCLKSRC_R = crate::FieldReader<BCLKSRC_A>;
 #[doc = "To select the UART clock source for the UART engine (except APB registers). Secondary clock (used for baud rate generator) can be asynchronous from APB clock.\n\nValue on reset: 0"]
@@ -158,7 +158,7 @@ impl crate::FieldSpec for BCLKSRC_A {
 impl BCLKSRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BCLKSRC_A {
+    pub const fn variant(&self) -> BCLKSRC_A {
         match self.bits {
             0 => BCLKSRC_A::PERIPHERAL_CLOCK,
             1 => BCLKSRC_A::EXTERNAL_CLOCK,
@@ -189,8 +189,8 @@ impl BCLKSRC_R {
     }
 }
 #[doc = "Field `BCLKSRC` writer - To select the UART clock source for the UART engine (except APB registers). Secondary clock (used for baud rate generator) can be asynchronous from APB clock."]
-pub type BCLKSRC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BCLKSRC_A>;
-impl<'a, REG, const O: u8> BCLKSRC_W<'a, REG, O>
+pub type BCLKSRC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BCLKSRC_A>;
+impl<'a, REG> BCLKSRC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -219,23 +219,23 @@ where
 #[doc = "Field `DPFE_EN` reader - Data/Parity bit frame error detection enable"]
 pub type DPFE_EN_R = crate::BitReader;
 #[doc = "Field `DPFE_EN` writer - Data/Parity bit frame error detection enable"]
-pub type DPFE_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DPFE_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BCLKRDY` reader - Baud clock Ready read only bit"]
 pub type BCLKRDY_R = crate::BitReader;
 #[doc = "Field `BCLKRDY` writer - Baud clock Ready read only bit"]
-pub type BCLKRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BCLKRDY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UCAGM` reader - UART Clock Auto Gating mode"]
 pub type UCAGM_R = crate::BitReader;
 #[doc = "Field `UCAGM` writer - UART Clock Auto Gating mode"]
-pub type UCAGM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UCAGM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FDM` reader - Fractional Division Mode"]
 pub type FDM_R = crate::BitReader;
 #[doc = "Field `FDM` writer - Fractional Division Mode"]
-pub type FDM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FDM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DESM` reader - RX Dual Edge Sampling Mode"]
 pub type DESM_R = crate::BitReader;
 #[doc = "Field `DESM` writer - RX Dual Edge Sampling Mode"]
-pub type DESM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DESM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - This field specifies the depth of receive FIFO for interrupt generation (value 0 and > 16 are ignored)"]
     #[inline(always)]
@@ -332,112 +332,116 @@ impl W {
     #[doc = "Bits 0:3 - This field specifies the depth of receive FIFO for interrupt generation (value 0 and > 16 are ignored)"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<CTRL_SPEC, 0> {
-        RX_THD_VAL_W::new(self)
+    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<CTRL_SPEC> {
+        RX_THD_VAL_W::new(self, 0)
     }
     #[doc = "Bit 4 - Parity Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn par_en(&mut self) -> PAR_EN_W<CTRL_SPEC, 4> {
-        PAR_EN_W::new(self)
+    pub fn par_en(&mut self) -> PAR_EN_W<CTRL_SPEC> {
+        PAR_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - when PAREN=1 selects odd or even parity odd is 1 even is 0"]
     #[inline(always)]
     #[must_use]
-    pub fn par_eo(&mut self) -> PAR_EO_W<CTRL_SPEC, 5> {
-        PAR_EO_W::new(self)
+    pub fn par_eo(&mut self) -> PAR_EO_W<CTRL_SPEC> {
+        PAR_EO_W::new(self, 5)
     }
     #[doc = "Bit 6 - Selects parity based on 1s or 0s count (when PAREN=1)"]
     #[inline(always)]
     #[must_use]
-    pub fn par_md(&mut self) -> PAR_MD_W<CTRL_SPEC, 6> {
-        PAR_MD_W::new(self)
+    pub fn par_md(&mut self) -> PAR_MD_W<CTRL_SPEC> {
+        PAR_MD_W::new(self, 6)
     }
     #[doc = "Bit 7 - CTS Sampling Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn cts_dis(&mut self) -> CTS_DIS_W<CTRL_SPEC, 7> {
-        CTS_DIS_W::new(self)
+    pub fn cts_dis(&mut self) -> CTS_DIS_W<CTRL_SPEC> {
+        CTS_DIS_W::new(self, 7)
     }
     #[doc = "Bit 8 - Flushes the TX FIFO buffer. This bit is automatically cleared by hardware when flush is completed."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_flush(&mut self) -> TX_FLUSH_W<CTRL_SPEC, 8> {
-        TX_FLUSH_W::new(self)
+    pub fn tx_flush(&mut self) -> TX_FLUSH_W<CTRL_SPEC> {
+        TX_FLUSH_W::new(self, 8)
     }
     #[doc = "Bit 9 - Flushes the RX FIFO buffer. This bit is automatically cleared by hardware when flush is completed."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_flush(&mut self) -> RX_FLUSH_W<CTRL_SPEC, 9> {
-        RX_FLUSH_W::new(self)
+    pub fn rx_flush(&mut self) -> RX_FLUSH_W<CTRL_SPEC> {
+        RX_FLUSH_W::new(self, 9)
     }
     #[doc = "Bits 10:11 - Selects UART character size"]
     #[inline(always)]
     #[must_use]
-    pub fn char_size(&mut self) -> CHAR_SIZE_W<CTRL_SPEC, 10> {
-        CHAR_SIZE_W::new(self)
+    pub fn char_size(&mut self) -> CHAR_SIZE_W<CTRL_SPEC> {
+        CHAR_SIZE_W::new(self, 10)
     }
     #[doc = "Bit 12 - Selects the number of stop bits that will be generated"]
     #[inline(always)]
     #[must_use]
-    pub fn stopbits(&mut self) -> STOPBITS_W<CTRL_SPEC, 12> {
-        STOPBITS_W::new(self)
+    pub fn stopbits(&mut self) -> STOPBITS_W<CTRL_SPEC> {
+        STOPBITS_W::new(self, 12)
     }
     #[doc = "Bit 13 - Enables/disables hardware flow control"]
     #[inline(always)]
     #[must_use]
-    pub fn hfc_en(&mut self) -> HFC_EN_W<CTRL_SPEC, 13> {
-        HFC_EN_W::new(self)
+    pub fn hfc_en(&mut self) -> HFC_EN_W<CTRL_SPEC> {
+        HFC_EN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Hardware Flow Control RTS Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn rtsdc(&mut self) -> RTSDC_W<CTRL_SPEC, 14> {
-        RTSDC_W::new(self)
+    pub fn rtsdc(&mut self) -> RTSDC_W<CTRL_SPEC> {
+        RTSDC_W::new(self, 14)
     }
     #[doc = "Bit 15 - Baud clock enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bclken(&mut self) -> BCLKEN_W<CTRL_SPEC, 15> {
-        BCLKEN_W::new(self)
+    pub fn bclken(&mut self) -> BCLKEN_W<CTRL_SPEC> {
+        BCLKEN_W::new(self, 15)
     }
     #[doc = "Bits 16:17 - To select the UART clock source for the UART engine (except APB registers). Secondary clock (used for baud rate generator) can be asynchronous from APB clock."]
     #[inline(always)]
     #[must_use]
-    pub fn bclksrc(&mut self) -> BCLKSRC_W<CTRL_SPEC, 16> {
-        BCLKSRC_W::new(self)
+    pub fn bclksrc(&mut self) -> BCLKSRC_W<CTRL_SPEC> {
+        BCLKSRC_W::new(self, 16)
     }
     #[doc = "Bit 18 - Data/Parity bit frame error detection enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dpfe_en(&mut self) -> DPFE_EN_W<CTRL_SPEC, 18> {
-        DPFE_EN_W::new(self)
+    pub fn dpfe_en(&mut self) -> DPFE_EN_W<CTRL_SPEC> {
+        DPFE_EN_W::new(self, 18)
     }
     #[doc = "Bit 19 - Baud clock Ready read only bit"]
     #[inline(always)]
     #[must_use]
-    pub fn bclkrdy(&mut self) -> BCLKRDY_W<CTRL_SPEC, 19> {
-        BCLKRDY_W::new(self)
+    pub fn bclkrdy(&mut self) -> BCLKRDY_W<CTRL_SPEC> {
+        BCLKRDY_W::new(self, 19)
     }
     #[doc = "Bit 20 - UART Clock Auto Gating mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ucagm(&mut self) -> UCAGM_W<CTRL_SPEC, 20> {
-        UCAGM_W::new(self)
+    pub fn ucagm(&mut self) -> UCAGM_W<CTRL_SPEC> {
+        UCAGM_W::new(self, 20)
     }
     #[doc = "Bit 21 - Fractional Division Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn fdm(&mut self) -> FDM_W<CTRL_SPEC, 21> {
-        FDM_W::new(self)
+    pub fn fdm(&mut self) -> FDM_W<CTRL_SPEC> {
+        FDM_W::new(self, 21)
     }
     #[doc = "Bit 22 - RX Dual Edge Sampling Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn desm(&mut self) -> DESM_W<CTRL_SPEC, 22> {
-        DESM_W::new(self)
+    pub fn desm(&mut self) -> DESM_W<CTRL_SPEC> {
+        DESM_W::new(self, 22)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

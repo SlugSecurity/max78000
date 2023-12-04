@@ -5,11 +5,11 @@ pub type W = crate::W<WKFL_SPEC>;
 #[doc = "Field `A` reader - Wake-Up Flag for Timer A"]
 pub type A_R = crate::BitReader;
 #[doc = "Field `A` writer - Wake-Up Flag for Timer A"]
-pub type A_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type A_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `B` reader - Wake-Up Flag for Timer B"]
 pub type B_R = crate::BitReader;
 #[doc = "Field `B` writer - Wake-Up Flag for Timer B"]
-pub type B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type B_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Wake-Up Flag for Timer A"]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bit 0 - Wake-Up Flag for Timer A"]
     #[inline(always)]
     #[must_use]
-    pub fn a(&mut self) -> A_W<WKFL_SPEC, 0> {
-        A_W::new(self)
+    pub fn a(&mut self) -> A_W<WKFL_SPEC> {
+        A_W::new(self, 0)
     }
     #[doc = "Bit 16 - Wake-Up Flag for Timer B"]
     #[inline(always)]
     #[must_use]
-    pub fn b(&mut self) -> B_W<WKFL_SPEC, 16> {
-        B_W::new(self)
+    pub fn b(&mut self) -> B_W<WKFL_SPEC> {
+        B_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

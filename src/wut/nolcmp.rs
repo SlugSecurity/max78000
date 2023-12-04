@@ -5,11 +5,11 @@ pub type W = crate::W<NOLCMP_SPEC>;
 #[doc = "Field `NOLLCMP` reader - Non-overlapping Low Compare. The 8-bit timer count value of non-overlapping time between falling edge of PWM output 0A and next rising edge of PWM output 0A'."]
 pub type NOLLCMP_R = crate::FieldReader;
 #[doc = "Field `NOLLCMP` writer - Non-overlapping Low Compare. The 8-bit timer count value of non-overlapping time between falling edge of PWM output 0A and next rising edge of PWM output 0A'."]
-pub type NOLLCMP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type NOLLCMP_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `NOLHCMP` reader - Non-overlapping High Compare. The 8-bit timer count value of non-overlapping time between falling edge of PWM output 0A' and next rising edge of PWM output 0A."]
 pub type NOLHCMP_R = crate::FieldReader;
 #[doc = "Field `NOLHCMP` writer - Non-overlapping High Compare. The 8-bit timer count value of non-overlapping time between falling edge of PWM output 0A' and next rising edge of PWM output 0A."]
-pub type NOLHCMP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type NOLHCMP_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Non-overlapping Low Compare. The 8-bit timer count value of non-overlapping time between falling edge of PWM output 0A and next rising edge of PWM output 0A'."]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:7 - Non-overlapping Low Compare. The 8-bit timer count value of non-overlapping time between falling edge of PWM output 0A and next rising edge of PWM output 0A'."]
     #[inline(always)]
     #[must_use]
-    pub fn nollcmp(&mut self) -> NOLLCMP_W<NOLCMP_SPEC, 0> {
-        NOLLCMP_W::new(self)
+    pub fn nollcmp(&mut self) -> NOLLCMP_W<NOLCMP_SPEC> {
+        NOLLCMP_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Non-overlapping High Compare. The 8-bit timer count value of non-overlapping time between falling edge of PWM output 0A' and next rising edge of PWM output 0A."]
     #[inline(always)]
     #[must_use]
-    pub fn nolhcmp(&mut self) -> NOLHCMP_W<NOLCMP_SPEC, 8> {
-        NOLHCMP_W::new(self)
+    pub fn nolhcmp(&mut self) -> NOLHCMP_W<NOLCMP_SPEC> {
+        NOLHCMP_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

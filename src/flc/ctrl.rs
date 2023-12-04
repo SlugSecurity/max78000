@@ -21,7 +21,7 @@ impl From<WR_A> for bool {
 impl WR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WR_A {
+    pub const fn variant(&self) -> WR_A {
         match self.bits {
             false => WR_A::COMPLETE,
             true => WR_A::START,
@@ -39,8 +39,8 @@ impl WR_R {
     }
 }
 #[doc = "Field `WR` writer - Write. This bit is automatically cleared after the operation."]
-pub type WR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WR_A>;
-impl<'a, REG, const O: u8> WR_W<'a, REG, O>
+pub type WR_W<'a, REG> = crate::BitWriter<'a, REG, WR_A>;
+impl<'a, REG> WR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -56,111 +56,13 @@ where
     }
 }
 #[doc = "Field `ME` reader - Mass Erase. This bit is automatically cleared after the operation."]
-pub type ME_R = crate::BitReader<ME_A>;
-#[doc = "Mass Erase. This bit is automatically cleared after the operation.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ME_A {
-    #[doc = "0: No operation/complete."]
-    COMPLETE = 0,
-    #[doc = "1: Start operation."]
-    START = 1,
-}
-impl From<ME_A> for bool {
-    #[inline(always)]
-    fn from(variant: ME_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ME_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ME_A {
-        match self.bits {
-            false => ME_A::COMPLETE,
-            true => ME_A::START,
-        }
-    }
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn is_complete(&self) -> bool {
-        *self == ME_A::COMPLETE
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == ME_A::START
-    }
-}
-#[doc = "Field `ME` writer - Mass Erase. This bit is automatically cleared after the operation."]
-pub type ME_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ME_A>;
-impl<'a, REG, const O: u8> ME_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn complete(self) -> &'a mut crate::W<REG> {
-        self.variant(ME_A::COMPLETE)
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn start(self) -> &'a mut crate::W<REG> {
-        self.variant(ME_A::START)
-    }
-}
+pub use WR_R as ME_R;
 #[doc = "Field `PGE` reader - Page Erase. This bit is automatically cleared after the operation."]
-pub type PGE_R = crate::BitReader<PGE_A>;
-#[doc = "Page Erase. This bit is automatically cleared after the operation.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PGE_A {
-    #[doc = "0: No operation/complete."]
-    COMPLETE = 0,
-    #[doc = "1: Start operation."]
-    START = 1,
-}
-impl From<PGE_A> for bool {
-    #[inline(always)]
-    fn from(variant: PGE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PGE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PGE_A {
-        match self.bits {
-            false => PGE_A::COMPLETE,
-            true => PGE_A::START,
-        }
-    }
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn is_complete(&self) -> bool {
-        *self == PGE_A::COMPLETE
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == PGE_A::START
-    }
-}
+pub use WR_R as PGE_R;
+#[doc = "Field `ME` writer - Mass Erase. This bit is automatically cleared after the operation."]
+pub use WR_W as ME_W;
 #[doc = "Field `PGE` writer - Page Erase. This bit is automatically cleared after the operation."]
-pub type PGE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PGE_A>;
-impl<'a, REG, const O: u8> PGE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "No operation/complete."]
-    #[inline(always)]
-    pub fn complete(self) -> &'a mut crate::W<REG> {
-        self.variant(PGE_A::COMPLETE)
-    }
-    #[doc = "Start operation."]
-    #[inline(always)]
-    pub fn start(self) -> &'a mut crate::W<REG> {
-        self.variant(PGE_A::START)
-    }
-}
+pub use WR_W as PGE_W;
 #[doc = "Field `ERASE_CODE` reader - Erase Code. The ERASE_CODE must be set up property before erase operation can be initiated. These bits are automatically cleared after the operation is complete."]
 pub type ERASE_CODE_R = crate::FieldReader<ERASE_CODE_A>;
 #[doc = "Erase Code. The ERASE_CODE must be set up property before erase operation can be initiated. These bits are automatically cleared after the operation is complete.\n\nValue on reset: 0"]
@@ -186,7 +88,7 @@ impl crate::FieldSpec for ERASE_CODE_A {
 impl ERASE_CODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ERASE_CODE_A> {
+    pub const fn variant(&self) -> Option<ERASE_CODE_A> {
         match self.bits {
             0 => Some(ERASE_CODE_A::NOP),
             85 => Some(ERASE_CODE_A::ERASE_PAGE),
@@ -211,8 +113,8 @@ impl ERASE_CODE_R {
     }
 }
 #[doc = "Field `ERASE_CODE` writer - Erase Code. The ERASE_CODE must be set up property before erase operation can be initiated. These bits are automatically cleared after the operation is complete."]
-pub type ERASE_CODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, ERASE_CODE_A>;
-impl<'a, REG, const O: u8> ERASE_CODE_W<'a, REG, O>
+pub type ERASE_CODE_W<'a, REG> = crate::FieldWriter<'a, REG, 8, ERASE_CODE_A>;
+impl<'a, REG> ERASE_CODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -252,7 +154,7 @@ impl From<PEND_A> for bool {
 impl PEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEND_A {
+    pub const fn variant(&self) -> PEND_A {
         match self.bits {
             false => PEND_A::IDLE,
             true => PEND_A::BUSY,
@@ -272,7 +174,7 @@ impl PEND_R {
 #[doc = "Field `LVE` reader - Low Voltage enable."]
 pub type LVE_R = crate::BitReader;
 #[doc = "Field `LVE` writer - Low Voltage enable."]
-pub type LVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LVE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UNLOCK` reader - Flash Unlock. The correct unlock code must be written to these four bits before any Flash write or erase operation is allowed."]
 pub type UNLOCK_R = crate::FieldReader<UNLOCK_A>;
 #[doc = "Flash Unlock. The correct unlock code must be written to these four bits before any Flash write or erase operation is allowed.\n\nValue on reset: 0"]
@@ -296,7 +198,7 @@ impl crate::FieldSpec for UNLOCK_A {
 impl UNLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<UNLOCK_A> {
+    pub const fn variant(&self) -> Option<UNLOCK_A> {
         match self.bits {
             2 => Some(UNLOCK_A::UNLOCKED),
             3 => Some(UNLOCK_A::LOCKED),
@@ -315,8 +217,8 @@ impl UNLOCK_R {
     }
 }
 #[doc = "Field `UNLOCK` writer - Flash Unlock. The correct unlock code must be written to these four bits before any Flash write or erase operation is allowed."]
-pub type UNLOCK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, UNLOCK_A>;
-impl<'a, REG, const O: u8> UNLOCK_W<'a, REG, O>
+pub type UNLOCK_W<'a, REG> = crate::FieldWriter<'a, REG, 4, UNLOCK_A>;
+impl<'a, REG> UNLOCK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -373,40 +275,44 @@ impl W {
     #[doc = "Bit 0 - Write. This bit is automatically cleared after the operation."]
     #[inline(always)]
     #[must_use]
-    pub fn wr(&mut self) -> WR_W<CTRL_SPEC, 0> {
-        WR_W::new(self)
+    pub fn wr(&mut self) -> WR_W<CTRL_SPEC> {
+        WR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Mass Erase. This bit is automatically cleared after the operation."]
     #[inline(always)]
     #[must_use]
-    pub fn me(&mut self) -> ME_W<CTRL_SPEC, 1> {
-        ME_W::new(self)
+    pub fn me(&mut self) -> ME_W<CTRL_SPEC> {
+        ME_W::new(self, 1)
     }
     #[doc = "Bit 2 - Page Erase. This bit is automatically cleared after the operation."]
     #[inline(always)]
     #[must_use]
-    pub fn pge(&mut self) -> PGE_W<CTRL_SPEC, 2> {
-        PGE_W::new(self)
+    pub fn pge(&mut self) -> PGE_W<CTRL_SPEC> {
+        PGE_W::new(self, 2)
     }
     #[doc = "Bits 8:15 - Erase Code. The ERASE_CODE must be set up property before erase operation can be initiated. These bits are automatically cleared after the operation is complete."]
     #[inline(always)]
     #[must_use]
-    pub fn erase_code(&mut self) -> ERASE_CODE_W<CTRL_SPEC, 8> {
-        ERASE_CODE_W::new(self)
+    pub fn erase_code(&mut self) -> ERASE_CODE_W<CTRL_SPEC> {
+        ERASE_CODE_W::new(self, 8)
     }
     #[doc = "Bit 25 - Low Voltage enable."]
     #[inline(always)]
     #[must_use]
-    pub fn lve(&mut self) -> LVE_W<CTRL_SPEC, 25> {
-        LVE_W::new(self)
+    pub fn lve(&mut self) -> LVE_W<CTRL_SPEC> {
+        LVE_W::new(self, 25)
     }
     #[doc = "Bits 28:31 - Flash Unlock. The correct unlock code must be written to these four bits before any Flash write or erase operation is allowed."]
     #[inline(always)]
     #[must_use]
-    pub fn unlock(&mut self) -> UNLOCK_W<CTRL_SPEC, 28> {
-        UNLOCK_W::new(self)
+    pub fn unlock(&mut self) -> UNLOCK_W<CTRL_SPEC> {
+        UNLOCK_W::new(self, 28)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

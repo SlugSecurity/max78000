@@ -1,15 +1,19 @@
 #[doc = "Register `OUT_CLR` writer"]
 pub type W = crate::W<OUT_CLR_SPEC>;
 #[doc = "Field `GPIO_OUT_CLR` writer - Mask of all of the pins on the port."]
-pub type GPIO_OUT_CLR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type GPIO_OUT_CLR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_out_clr(&mut self) -> GPIO_OUT_CLR_W<OUT_CLR_SPEC, 0> {
-        GPIO_OUT_CLR_W::new(self)
+    pub fn gpio_out_clr(&mut self) -> GPIO_OUT_CLR_W<OUT_CLR_SPEC> {
+        GPIO_OUT_CLR_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

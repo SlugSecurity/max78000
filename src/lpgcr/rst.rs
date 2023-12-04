@@ -17,8 +17,8 @@ impl From<RESET_WRITE_AW> for bool {
     }
 }
 #[doc = "Field `GPIO2` writer - Low Power GPIO 2 Reset."]
-pub type GPIO2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESET_WRITE_AW>;
-impl<'a, REG, const O: u8> GPIO2_W<'a, REG, O>
+pub type GPIO2_W<'a, REG> = crate::BitWriter<'a, REG, RESET_WRITE_AW>;
+impl<'a, REG> GPIO2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -47,40 +47,44 @@ impl W {
     #[doc = "Bit 0 - Low Power GPIO 2 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio2(&mut self) -> GPIO2_W<RST_SPEC, 0> {
-        GPIO2_W::new(self)
+    pub fn gpio2(&mut self) -> GPIO2_W<RST_SPEC> {
+        GPIO2_W::new(self, 0)
     }
     #[doc = "Bit 1 - Low Power Watchdog Timer 1 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn wdt1(&mut self) -> WDT1_W<RST_SPEC, 1> {
-        WDT1_W::new(self)
+    pub fn wdt1(&mut self) -> WDT1_W<RST_SPEC> {
+        WDT1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Low Power Timer 4 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn tmr4(&mut self) -> TMR4_W<RST_SPEC, 2> {
-        TMR4_W::new(self)
+    pub fn tmr4(&mut self) -> TMR4_W<RST_SPEC> {
+        TMR4_W::new(self, 2)
     }
     #[doc = "Bit 3 - Low Power Timer 5 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn tmr5(&mut self) -> TMR5_W<RST_SPEC, 3> {
-        TMR5_W::new(self)
+    pub fn tmr5(&mut self) -> TMR5_W<RST_SPEC> {
+        TMR5_W::new(self, 3)
     }
     #[doc = "Bit 4 - Low Power UART 3 Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn uart3(&mut self) -> UART3_W<RST_SPEC, 4> {
-        UART3_W::new(self)
+    pub fn uart3(&mut self) -> UART3_W<RST_SPEC> {
+        UART3_W::new(self, 4)
     }
     #[doc = "Bit 6 - Low Power Comparator Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn lpcomp(&mut self) -> LPCOMP_W<RST_SPEC, 6> {
-        LPCOMP_W::new(self)
+    pub fn lpcomp(&mut self) -> LPCOMP_W<RST_SPEC> {
+        LPCOMP_W::new(self, 6)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

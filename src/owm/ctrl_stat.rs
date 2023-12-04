@@ -5,15 +5,15 @@ pub type W = crate::W<CTRL_STAT_SPEC>;
 #[doc = "Field `start_ow_reset` reader - Start OW Reset."]
 pub type START_OW_RESET_R = crate::BitReader;
 #[doc = "Field `start_ow_reset` writer - Start OW Reset."]
-pub type START_OW_RESET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type START_OW_RESET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `sra_mode` reader - SRA Mode."]
 pub type SRA_MODE_R = crate::BitReader;
 #[doc = "Field `sra_mode` writer - SRA Mode."]
-pub type SRA_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SRA_MODE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `bit_bang_oe` reader - Bit Bang Output Enable."]
 pub type BIT_BANG_OE_R = crate::BitReader;
 #[doc = "Field `bit_bang_oe` writer - Bit Bang Output Enable."]
-pub type BIT_BANG_OE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BIT_BANG_OE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ow_input` reader - OW Input State."]
 pub type OW_INPUT_R = crate::BitReader;
 #[doc = "Field `od_spec_mode` reader - Overdrive Spec Mode."]
@@ -46,32 +46,36 @@ impl R {
     pub fn od_spec_mode(&self) -> OD_SPEC_MODE_R {
         OD_SPEC_MODE_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Presence Pulse Detected."]
+    #[doc = "Bit 7 - Presence Pulse Detected."]
     #[inline(always)]
     pub fn presence_detect(&self) -> PRESENCE_DETECT_R {
-        PRESENCE_DETECT_R::new(((self.bits >> 5) & 1) != 0)
+        PRESENCE_DETECT_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Start OW Reset."]
     #[inline(always)]
     #[must_use]
-    pub fn start_ow_reset(&mut self) -> START_OW_RESET_W<CTRL_STAT_SPEC, 0> {
-        START_OW_RESET_W::new(self)
+    pub fn start_ow_reset(&mut self) -> START_OW_RESET_W<CTRL_STAT_SPEC> {
+        START_OW_RESET_W::new(self, 0)
     }
     #[doc = "Bit 1 - SRA Mode."]
     #[inline(always)]
     #[must_use]
-    pub fn sra_mode(&mut self) -> SRA_MODE_W<CTRL_STAT_SPEC, 1> {
-        SRA_MODE_W::new(self)
+    pub fn sra_mode(&mut self) -> SRA_MODE_W<CTRL_STAT_SPEC> {
+        SRA_MODE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Bit Bang Output Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn bit_bang_oe(&mut self) -> BIT_BANG_OE_W<CTRL_STAT_SPEC, 2> {
-        BIT_BANG_OE_W::new(self)
+    pub fn bit_bang_oe(&mut self) -> BIT_BANG_OE_W<CTRL_STAT_SPEC> {
+        BIT_BANG_OE_W::new(self, 2)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

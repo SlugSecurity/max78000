@@ -5,11 +5,11 @@ pub type W = crate::W<MON_SPEC>;
 #[doc = "Field `DLY` reader - Number of prescaled clocks between delay line samples"]
 pub type DLY_R = crate::FieldReader<u32>;
 #[doc = "Field `DLY` writer - Number of prescaled clocks between delay line samples"]
-pub type DLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "Field `PRE` reader - Number of clocks before DVS_MON_DLY is decremented"]
 pub type PRE_R = crate::FieldReader;
 #[doc = "Field `PRE` writer - Number of clocks before DVS_MON_DLY is decremented"]
-pub type PRE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:23 - Number of prescaled clocks between delay line samples"]
     #[inline(always)]
@@ -26,16 +26,20 @@ impl W {
     #[doc = "Bits 0:23 - Number of prescaled clocks between delay line samples"]
     #[inline(always)]
     #[must_use]
-    pub fn dly(&mut self) -> DLY_W<MON_SPEC, 0> {
-        DLY_W::new(self)
+    pub fn dly(&mut self) -> DLY_W<MON_SPEC> {
+        DLY_W::new(self, 0)
     }
     #[doc = "Bits 24:31 - Number of clocks before DVS_MON_DLY is decremented"]
     #[inline(always)]
     #[must_use]
-    pub fn pre(&mut self) -> PRE_W<MON_SPEC, 24> {
-        PRE_W::new(self)
+    pub fn pre(&mut self) -> PRE_W<MON_SPEC> {
+        PRE_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

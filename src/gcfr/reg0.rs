@@ -5,19 +5,19 @@ pub type W = crate::W<REG0_SPEC>;
 #[doc = "Field `cnnx16_0_pwr_en` reader - CNNx16_0 Power Domain Enable"]
 pub type CNNX16_0_PWR_EN_R = crate::BitReader;
 #[doc = "Field `cnnx16_0_pwr_en` writer - CNNx16_0 Power Domain Enable"]
-pub type CNNX16_0_PWR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_0_PWR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `cnnx16_1_pwr_en` reader - CNNx16_1 Power Domain Enable"]
 pub type CNNX16_1_PWR_EN_R = crate::BitReader;
 #[doc = "Field `cnnx16_1_pwr_en` writer - CNNx16_1 Power Domain Enable"]
-pub type CNNX16_1_PWR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_1_PWR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `cnnx16_2_pwr_en` reader - CNNx16_2 Power Domain Enable"]
 pub type CNNX16_2_PWR_EN_R = crate::BitReader;
 #[doc = "Field `cnnx16_2_pwr_en` writer - CNNx16_2 Power Domain Enable"]
-pub type CNNX16_2_PWR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_2_PWR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `cnnx16_3_pwr_en` reader - CNNx16_3 Power Domain Enable"]
 pub type CNNX16_3_PWR_EN_R = crate::BitReader;
 #[doc = "Field `cnnx16_3_pwr_en` writer - CNNx16_3 Power Domain Enable"]
-pub type CNNX16_3_PWR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNNX16_3_PWR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - CNNx16_0 Power Domain Enable"]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bit 0 - CNNx16_0 Power Domain Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_0_pwr_en(&mut self) -> CNNX16_0_PWR_EN_W<REG0_SPEC, 0> {
-        CNNX16_0_PWR_EN_W::new(self)
+    pub fn cnnx16_0_pwr_en(&mut self) -> CNNX16_0_PWR_EN_W<REG0_SPEC> {
+        CNNX16_0_PWR_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - CNNx16_1 Power Domain Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_1_pwr_en(&mut self) -> CNNX16_1_PWR_EN_W<REG0_SPEC, 1> {
-        CNNX16_1_PWR_EN_W::new(self)
+    pub fn cnnx16_1_pwr_en(&mut self) -> CNNX16_1_PWR_EN_W<REG0_SPEC> {
+        CNNX16_1_PWR_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - CNNx16_2 Power Domain Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_2_pwr_en(&mut self) -> CNNX16_2_PWR_EN_W<REG0_SPEC, 2> {
-        CNNX16_2_PWR_EN_W::new(self)
+    pub fn cnnx16_2_pwr_en(&mut self) -> CNNX16_2_PWR_EN_W<REG0_SPEC> {
+        CNNX16_2_PWR_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - CNNx16_3 Power Domain Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cnnx16_3_pwr_en(&mut self) -> CNNX16_3_PWR_EN_W<REG0_SPEC, 3> {
-        CNNX16_3_PWR_EN_W::new(self)
+    pub fn cnnx16_3_pwr_en(&mut self) -> CNNX16_3_PWR_EN_W<REG0_SPEC> {
+        CNNX16_3_PWR_EN_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

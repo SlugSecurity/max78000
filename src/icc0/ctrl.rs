@@ -21,7 +21,7 @@ impl From<EN_A> for bool {
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> EN_A {
         match self.bits {
             false => EN_A::DIS,
             true => EN_A::EN,
@@ -39,8 +39,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `EN` writer - Cache Enable. Controls whether the cache is bypassed or is in use. Changing the state of this bit will cause the instruction cache to be flushed and its contents invalidated."]
-pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_A>;
-impl<'a, REG, const O: u8> EN_W<'a, REG, O>
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG, EN_A>;
+impl<'a, REG> EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<RDY_A> for bool {
 impl RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RDY_A {
+    pub const fn variant(&self) -> RDY_A {
         match self.bits {
             false => RDY_A::NOT_READY,
             true => RDY_A::READY,
@@ -107,10 +107,14 @@ impl W {
     #[doc = "Bit 0 - Cache Enable. Controls whether the cache is bypassed or is in use. Changing the state of this bit will cause the instruction cache to be flushed and its contents invalidated."]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
+        EN_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

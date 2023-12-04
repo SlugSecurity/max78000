@@ -21,7 +21,7 @@ impl From<RAM0_A> for bool {
 impl RAM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAM0_A {
+    pub const fn variant(&self) -> RAM0_A {
         match self.bits {
             false => RAM0_A::DIS,
             true => RAM0_A::EN,
@@ -39,8 +39,8 @@ impl RAM0_R {
     }
 }
 #[doc = "Field `RAM0` writer - ECC System RAM0 Enable."]
-pub type RAM0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RAM0_A>;
-impl<'a, REG, const O: u8> RAM0_W<'a, REG, O>
+pub type RAM0_W<'a, REG> = crate::BitWriter<'a, REG, RAM0_A>;
+impl<'a, REG> RAM0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,10 +66,14 @@ impl W {
     #[doc = "Bit 0 - ECC System RAM0 Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ram0(&mut self) -> RAM0_W<ECCEN_SPEC, 0> {
-        RAM0_W::new(self)
+    pub fn ram0(&mut self) -> RAM0_W<ECCEN_SPEC> {
+        RAM0_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

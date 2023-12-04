@@ -2,94 +2,29 @@
 pub type R = crate::R<PADCTRL1_SPEC>;
 #[doc = "Register `PADCTRL1` writer"]
 pub type W = crate::W<PADCTRL1_SPEC>;
-#[doc = "Field `GPIO_PADCTRL1` reader - The two bits in GPIO_PAD_CFG1 and GPIO_PAD_CFG2 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
-pub type GPIO_PADCTRL1_R = crate::FieldReader<GPIO_PADCTRL1_A>;
-#[doc = "The two bits in GPIO_PAD_CFG1 and GPIO_PAD_CFG2 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum GPIO_PADCTRL1_A {
-    #[doc = "0: High Impedance."]
-    IMPEDANCE = 0,
-    #[doc = "1: Weak pull-up mode."]
-    PU = 1,
-    #[doc = "2: weak pull-down mode."]
-    PD = 2,
-}
-impl From<GPIO_PADCTRL1_A> for u32 {
-    #[inline(always)]
-    fn from(variant: GPIO_PADCTRL1_A) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for GPIO_PADCTRL1_A {
-    type Ux = u32;
-}
-impl GPIO_PADCTRL1_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<GPIO_PADCTRL1_A> {
-        match self.bits {
-            0 => Some(GPIO_PADCTRL1_A::IMPEDANCE),
-            1 => Some(GPIO_PADCTRL1_A::PU),
-            2 => Some(GPIO_PADCTRL1_A::PD),
-            _ => None,
-        }
-    }
-    #[doc = "High Impedance."]
-    #[inline(always)]
-    pub fn is_impedance(&self) -> bool {
-        *self == GPIO_PADCTRL1_A::IMPEDANCE
-    }
-    #[doc = "Weak pull-up mode."]
-    #[inline(always)]
-    pub fn is_pu(&self) -> bool {
-        *self == GPIO_PADCTRL1_A::PU
-    }
-    #[doc = "weak pull-down mode."]
-    #[inline(always)]
-    pub fn is_pd(&self) -> bool {
-        *self == GPIO_PADCTRL1_A::PD
-    }
-}
-#[doc = "Field `GPIO_PADCTRL1` writer - The two bits in GPIO_PAD_CFG1 and GPIO_PAD_CFG2 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
-pub type GPIO_PADCTRL1_W<'a, REG, const O: u8> =
-    crate::FieldWriter<'a, REG, 32, O, GPIO_PADCTRL1_A>;
-impl<'a, REG, const O: u8> GPIO_PADCTRL1_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-    REG::Ux: From<u32>,
-{
-    #[doc = "High Impedance."]
-    #[inline(always)]
-    pub fn impedance(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_PADCTRL1_A::IMPEDANCE)
-    }
-    #[doc = "Weak pull-up mode."]
-    #[inline(always)]
-    pub fn pu(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_PADCTRL1_A::PU)
-    }
-    #[doc = "weak pull-down mode."]
-    #[inline(always)]
-    pub fn pd(self) -> &'a mut crate::W<REG> {
-        self.variant(GPIO_PADCTRL1_A::PD)
-    }
-}
+#[doc = "Field `GPIO_PADCTRL1` reader - The two bits in GPIO_PADCTRL0 and GPIO_PADCTRL1 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
+pub type GPIO_PADCTRL1_R = crate::FieldReader<u32>;
+#[doc = "Field `GPIO_PADCTRL1` writer - The two bits in GPIO_PADCTRL0 and GPIO_PADCTRL1 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
+pub type GPIO_PADCTRL1_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - The two bits in GPIO_PAD_CFG1 and GPIO_PAD_CFG2 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
+    #[doc = "Bits 0:31 - The two bits in GPIO_PADCTRL0 and GPIO_PADCTRL1 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
     #[inline(always)]
     pub fn gpio_padctrl1(&self) -> GPIO_PADCTRL1_R {
         GPIO_PADCTRL1_R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - The two bits in GPIO_PAD_CFG1 and GPIO_PAD_CFG2 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
+    #[doc = "Bits 0:31 - The two bits in GPIO_PADCTRL0 and GPIO_PADCTRL1 for each GPIO pin work together to determine the pad mode when the GPIO is set to input mode."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_padctrl1(&mut self) -> GPIO_PADCTRL1_W<PADCTRL1_SPEC, 0> {
-        GPIO_PADCTRL1_W::new(self)
+    pub fn gpio_padctrl1(&mut self) -> GPIO_PADCTRL1_W<PADCTRL1_SPEC> {
+        GPIO_PADCTRL1_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

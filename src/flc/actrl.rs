@@ -1,15 +1,19 @@
 #[doc = "Register `ACTRL` writer"]
 pub type W = crate::W<ACTRL_SPEC>;
 #[doc = "Field `ACTRL` writer - Access control."]
-pub type ACTRL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type ACTRL_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Access control."]
     #[inline(always)]
     #[must_use]
-    pub fn actrl(&mut self) -> ACTRL_W<ACTRL_SPEC, 0> {
-        ACTRL_W::new(self)
+    pub fn actrl(&mut self) -> ACTRL_W<ACTRL_SPEC> {
+        ACTRL_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

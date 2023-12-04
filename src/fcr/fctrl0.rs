@@ -21,7 +21,7 @@ impl From<I2C0DGEN0_A> for bool {
 impl I2C0DGEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> I2C0DGEN0_A {
+    pub const fn variant(&self) -> I2C0DGEN0_A {
         match self.bits {
             false => I2C0DGEN0_A::DIS,
             true => I2C0DGEN0_A::EN,
@@ -39,8 +39,8 @@ impl I2C0DGEN0_R {
     }
 }
 #[doc = "Field `I2C0DGEN0` writer - I2C0 SDA Pad Deglitcher enable."]
-pub type I2C0DGEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, I2C0DGEN0_A>;
-impl<'a, REG, const O: u8> I2C0DGEN0_W<'a, REG, O>
+pub type I2C0DGEN0_W<'a, REG> = crate::BitWriter<'a, REG, I2C0DGEN0_A>;
+impl<'a, REG> I2C0DGEN0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<I2C0DGEN1_A> for bool {
 impl I2C0DGEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> I2C0DGEN1_A {
+    pub const fn variant(&self) -> I2C0DGEN1_A {
         match self.bits {
             false => I2C0DGEN1_A::DIS,
             true => I2C0DGEN1_A::EN,
@@ -92,8 +92,8 @@ impl I2C0DGEN1_R {
     }
 }
 #[doc = "Field `I2C0DGEN1` writer - I2C0 SCL Pad Deglitcher enable."]
-pub type I2C0DGEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, I2C0DGEN1_A>;
-impl<'a, REG, const O: u8> I2C0DGEN1_W<'a, REG, O>
+pub type I2C0DGEN1_W<'a, REG> = crate::BitWriter<'a, REG, I2C0DGEN1_A>;
+impl<'a, REG> I2C0DGEN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<I2C1DGEN0_A> for bool {
 impl I2C1DGEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> I2C1DGEN0_A {
+    pub const fn variant(&self) -> I2C1DGEN0_A {
         match self.bits {
             false => I2C1DGEN0_A::DIS,
             true => I2C1DGEN0_A::EN,
@@ -145,8 +145,8 @@ impl I2C1DGEN0_R {
     }
 }
 #[doc = "Field `I2C1DGEN0` writer - I2C1 SDA Pad Deglitcher enable."]
-pub type I2C1DGEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, I2C1DGEN0_A>;
-impl<'a, REG, const O: u8> I2C1DGEN0_W<'a, REG, O>
+pub type I2C1DGEN0_W<'a, REG> = crate::BitWriter<'a, REG, I2C1DGEN0_A>;
+impl<'a, REG> I2C1DGEN0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -180,7 +180,7 @@ impl From<I2C1DGEN1_A> for bool {
 impl I2C1DGEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> I2C1DGEN1_A {
+    pub const fn variant(&self) -> I2C1DGEN1_A {
         match self.bits {
             false => I2C1DGEN1_A::DIS,
             true => I2C1DGEN1_A::EN,
@@ -198,8 +198,8 @@ impl I2C1DGEN1_R {
     }
 }
 #[doc = "Field `I2C1DGEN1` writer - I2C1 SCL Pad Deglitcher enable."]
-pub type I2C1DGEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, I2C1DGEN1_A>;
-impl<'a, REG, const O: u8> I2C1DGEN1_W<'a, REG, O>
+pub type I2C1DGEN1_W<'a, REG> = crate::BitWriter<'a, REG, I2C1DGEN1_A>;
+impl<'a, REG> I2C1DGEN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -233,7 +233,7 @@ impl From<I2C2DGEN0_A> for bool {
 impl I2C2DGEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> I2C2DGEN0_A {
+    pub const fn variant(&self) -> I2C2DGEN0_A {
         match self.bits {
             false => I2C2DGEN0_A::DIS,
             true => I2C2DGEN0_A::EN,
@@ -251,8 +251,8 @@ impl I2C2DGEN0_R {
     }
 }
 #[doc = "Field `I2C2DGEN0` writer - I2C2 SDA Pad Deglitcher enable."]
-pub type I2C2DGEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, I2C2DGEN0_A>;
-impl<'a, REG, const O: u8> I2C2DGEN0_W<'a, REG, O>
+pub type I2C2DGEN0_W<'a, REG> = crate::BitWriter<'a, REG, I2C2DGEN0_A>;
+impl<'a, REG> I2C2DGEN0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -286,7 +286,7 @@ impl From<I2C2DGEN1_A> for bool {
 impl I2C2DGEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> I2C2DGEN1_A {
+    pub const fn variant(&self) -> I2C2DGEN1_A {
         match self.bits {
             false => I2C2DGEN1_A::DIS,
             true => I2C2DGEN1_A::EN,
@@ -304,8 +304,8 @@ impl I2C2DGEN1_R {
     }
 }
 #[doc = "Field `I2C2DGEN1` writer - I2C2 SCL Pad Deglitcher enable."]
-pub type I2C2DGEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, I2C2DGEN1_A>;
-impl<'a, REG, const O: u8> I2C2DGEN1_W<'a, REG, O>
+pub type I2C2DGEN1_W<'a, REG> = crate::BitWriter<'a, REG, I2C2DGEN1_A>;
+impl<'a, REG> I2C2DGEN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -356,40 +356,44 @@ impl W {
     #[doc = "Bit 20 - I2C0 SDA Pad Deglitcher enable."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c0dgen0(&mut self) -> I2C0DGEN0_W<FCTRL0_SPEC, 20> {
-        I2C0DGEN0_W::new(self)
+    pub fn i2c0dgen0(&mut self) -> I2C0DGEN0_W<FCTRL0_SPEC> {
+        I2C0DGEN0_W::new(self, 20)
     }
     #[doc = "Bit 21 - I2C0 SCL Pad Deglitcher enable."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c0dgen1(&mut self) -> I2C0DGEN1_W<FCTRL0_SPEC, 21> {
-        I2C0DGEN1_W::new(self)
+    pub fn i2c0dgen1(&mut self) -> I2C0DGEN1_W<FCTRL0_SPEC> {
+        I2C0DGEN1_W::new(self, 21)
     }
     #[doc = "Bit 22 - I2C1 SDA Pad Deglitcher enable."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c1dgen0(&mut self) -> I2C1DGEN0_W<FCTRL0_SPEC, 22> {
-        I2C1DGEN0_W::new(self)
+    pub fn i2c1dgen0(&mut self) -> I2C1DGEN0_W<FCTRL0_SPEC> {
+        I2C1DGEN0_W::new(self, 22)
     }
     #[doc = "Bit 23 - I2C1 SCL Pad Deglitcher enable."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c1dgen1(&mut self) -> I2C1DGEN1_W<FCTRL0_SPEC, 23> {
-        I2C1DGEN1_W::new(self)
+    pub fn i2c1dgen1(&mut self) -> I2C1DGEN1_W<FCTRL0_SPEC> {
+        I2C1DGEN1_W::new(self, 23)
     }
     #[doc = "Bit 24 - I2C2 SDA Pad Deglitcher enable."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c2dgen0(&mut self) -> I2C2DGEN0_W<FCTRL0_SPEC, 24> {
-        I2C2DGEN0_W::new(self)
+    pub fn i2c2dgen0(&mut self) -> I2C2DGEN0_W<FCTRL0_SPEC> {
+        I2C2DGEN0_W::new(self, 24)
     }
     #[doc = "Bit 25 - I2C2 SCL Pad Deglitcher enable."]
     #[inline(always)]
     #[must_use]
-    pub fn i2c2dgen1(&mut self) -> I2C2DGEN1_W<FCTRL0_SPEC, 25> {
-        I2C2DGEN1_W::new(self)
+    pub fn i2c2dgen1(&mut self) -> I2C2DGEN1_W<FCTRL0_SPEC> {
+        I2C2DGEN1_W::new(self, 25)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

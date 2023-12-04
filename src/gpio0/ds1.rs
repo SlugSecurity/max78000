@@ -5,7 +5,7 @@ pub type W = crate::W<DS1_SPEC>;
 #[doc = "Field `GPIO_DS1` reader - Mask of all of the pins on the port."]
 pub type GPIO_DS1_R = crate::FieldReader<u32>;
 #[doc = "Field `GPIO_DS1` writer - Mask of all of the pins on the port."]
-pub type GPIO_DS1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type GPIO_DS1_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Mask of all of the pins on the port."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_ds1(&mut self) -> GPIO_DS1_W<DS1_SPEC, 0> {
-        GPIO_DS1_W::new(self)
+    pub fn gpio_ds1(&mut self) -> GPIO_DS1_W<DS1_SPEC> {
+        GPIO_DS1_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

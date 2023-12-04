@@ -21,7 +21,7 @@ impl From<DNR_A> for bool {
 impl DNR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DNR_A {
+    pub const fn variant(&self) -> DNR_A {
         match self.bits {
             false => DNR_A::RESPOND,
             true => DNR_A::NOT_RESPOND_RX_FIFO_EMPTY,
@@ -39,8 +39,8 @@ impl DNR_R {
     }
 }
 #[doc = "Field `DNR` writer - Do Not Respond."]
-pub type DNR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DNR_A>;
-impl<'a, REG, const O: u8> DNR_W<'a, REG, O>
+pub type DNR_W<'a, REG> = crate::BitWriter<'a, REG, DNR_A>;
+impl<'a, REG> DNR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<FLUSH_A> for bool {
 impl FLUSH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLUSH_A {
+    pub const fn variant(&self) -> FLUSH_A {
         match self.bits {
             false => FLUSH_A::NOT_FLUSHED,
             true => FLUSH_A::FLUSH,
@@ -92,8 +92,8 @@ impl FLUSH_R {
     }
 }
 #[doc = "Field `FLUSH` writer - Receive FIFO Flush. This bit is automatically cleared to 0 after the operation. Setting this bit to 1 will affect RX_FIFO status."]
-pub type FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLUSH_A>;
-impl<'a, REG, const O: u8> FLUSH_W<'a, REG, O>
+pub type FLUSH_W<'a, REG> = crate::BitWriter<'a, REG, FLUSH_A>;
+impl<'a, REG> FLUSH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,7 +111,7 @@ where
 #[doc = "Field `THD_LVL` reader - Receive FIFO Threshold. These bits define the RX_FIFO interrupt threshold."]
 pub type THD_LVL_R = crate::FieldReader;
 #[doc = "Field `THD_LVL` writer - Receive FIFO Threshold. These bits define the RX_FIFO interrupt threshold."]
-pub type THD_LVL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type THD_LVL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Do Not Respond."]
     #[inline(always)]
@@ -133,22 +133,26 @@ impl W {
     #[doc = "Bit 0 - Do Not Respond."]
     #[inline(always)]
     #[must_use]
-    pub fn dnr(&mut self) -> DNR_W<RXCTRL0_SPEC, 0> {
-        DNR_W::new(self)
+    pub fn dnr(&mut self) -> DNR_W<RXCTRL0_SPEC> {
+        DNR_W::new(self, 0)
     }
     #[doc = "Bit 7 - Receive FIFO Flush. This bit is automatically cleared to 0 after the operation. Setting this bit to 1 will affect RX_FIFO status."]
     #[inline(always)]
     #[must_use]
-    pub fn flush(&mut self) -> FLUSH_W<RXCTRL0_SPEC, 7> {
-        FLUSH_W::new(self)
+    pub fn flush(&mut self) -> FLUSH_W<RXCTRL0_SPEC> {
+        FLUSH_W::new(self, 7)
     }
     #[doc = "Bits 8:11 - Receive FIFO Threshold. These bits define the RX_FIFO interrupt threshold."]
     #[inline(always)]
     #[must_use]
-    pub fn thd_lvl(&mut self) -> THD_LVL_W<RXCTRL0_SPEC, 8> {
-        THD_LVL_W::new(self)
+    pub fn thd_lvl(&mut self) -> THD_LVL_W<RXCTRL0_SPEC> {
+        THD_LVL_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

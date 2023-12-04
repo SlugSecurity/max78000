@@ -5,7 +5,7 @@ pub type W = crate::W<DATAIN8_SPEC>;
 #[doc = "Field `DATA` reader - CRC Data"]
 pub type DATA_R = crate::FieldReader;
 #[doc = "Field `DATA` writer - CRC Data"]
-pub type DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - CRC Data"]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:7 - CRC Data"]
     #[inline(always)]
     #[must_use]
-    pub fn data(&mut self) -> DATA_W<DATAIN8_SPEC, 0> {
-        DATA_W::new(self)
+    pub fn data(&mut self) -> DATA_W<DATAIN8_SPEC> {
+        DATA_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

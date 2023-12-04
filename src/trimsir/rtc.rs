@@ -5,15 +5,15 @@ pub type W = crate::W<RTC_SPEC>;
 #[doc = "Field `X1TRIM` reader - RTC X1 Trim."]
 pub type X1TRIM_R = crate::FieldReader;
 #[doc = "Field `X1TRIM` writer - RTC X1 Trim."]
-pub type X1TRIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type X1TRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `X2TRIM` reader - RTC X2 Trim."]
 pub type X2TRIM_R = crate::FieldReader;
 #[doc = "Field `X2TRIM` writer - RTC X2 Trim."]
-pub type X2TRIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type X2TRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `LOCK` reader - Lock."]
 pub type LOCK_R = crate::BitReader;
 #[doc = "Field `LOCK` writer - Lock."]
-pub type LOCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LOCK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 16:20 - RTC X1 Trim."]
     #[inline(always)]
@@ -35,22 +35,26 @@ impl W {
     #[doc = "Bits 16:20 - RTC X1 Trim."]
     #[inline(always)]
     #[must_use]
-    pub fn x1trim(&mut self) -> X1TRIM_W<RTC_SPEC, 16> {
-        X1TRIM_W::new(self)
+    pub fn x1trim(&mut self) -> X1TRIM_W<RTC_SPEC> {
+        X1TRIM_W::new(self, 16)
     }
     #[doc = "Bits 21:25 - RTC X2 Trim."]
     #[inline(always)]
     #[must_use]
-    pub fn x2trim(&mut self) -> X2TRIM_W<RTC_SPEC, 21> {
-        X2TRIM_W::new(self)
+    pub fn x2trim(&mut self) -> X2TRIM_W<RTC_SPEC> {
+        X2TRIM_W::new(self, 21)
     }
     #[doc = "Bit 31 - Lock."]
     #[inline(always)]
     #[must_use]
-    pub fn lock(&mut self) -> LOCK_W<RTC_SPEC, 31> {
-        LOCK_W::new(self)
+    pub fn lock(&mut self) -> LOCK_W<RTC_SPEC> {
+        LOCK_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

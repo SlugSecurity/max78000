@@ -5,7 +5,7 @@ pub type W = crate::W<TODA_SPEC>;
 #[doc = "Field `TOD_ALARM` reader - Time-of-day Alarm."]
 pub type TOD_ALARM_R = crate::FieldReader<u32>;
 #[doc = "Field `TOD_ALARM` writer - Time-of-day Alarm."]
-pub type TOD_ALARM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 20, O, u32>;
+pub type TOD_ALARM_W<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
     #[doc = "Bits 0:19 - Time-of-day Alarm."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:19 - Time-of-day Alarm."]
     #[inline(always)]
     #[must_use]
-    pub fn tod_alarm(&mut self) -> TOD_ALARM_W<TODA_SPEC, 0> {
-        TOD_ALARM_W::new(self)
+    pub fn tod_alarm(&mut self) -> TOD_ALARM_W<TODA_SPEC> {
+        TOD_ALARM_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,19 +5,19 @@ pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `INRO_EN` reader - INRO Enable."]
 pub type INRO_EN_R = crate::BitReader;
 #[doc = "Field `INRO_EN` writer - INRO Enable."]
-pub type INRO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INRO_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ERTCO_EN` reader - ERTCO Enable."]
 pub type ERTCO_EN_R = crate::BitReader;
 #[doc = "Field `ERTCO_EN` writer - ERTCO Enable."]
-pub type ERTCO_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ERTCO_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SIMO_CLKSCL_EN` reader - SIMO Clock Scaling Enable."]
 pub type SIMO_CLKSCL_EN_R = crate::BitReader;
 #[doc = "Field `SIMO_CLKSCL_EN` writer - SIMO Clock Scaling Enable."]
-pub type SIMO_CLKSCL_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SIMO_CLKSCL_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SIMO_RSTD` reader - SIMO System Reset Disable."]
 pub type SIMO_RSTD_R = crate::BitReader;
 #[doc = "Field `SIMO_RSTD` writer - SIMO System Reset Disable."]
-pub type SIMO_RSTD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SIMO_RSTD_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 2 - INRO Enable."]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bit 2 - INRO Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn inro_en(&mut self) -> INRO_EN_W<CTRL_SPEC, 2> {
-        INRO_EN_W::new(self)
+    pub fn inro_en(&mut self) -> INRO_EN_W<CTRL_SPEC> {
+        INRO_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - ERTCO Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ertco_en(&mut self) -> ERTCO_EN_W<CTRL_SPEC, 3> {
-        ERTCO_EN_W::new(self)
+    pub fn ertco_en(&mut self) -> ERTCO_EN_W<CTRL_SPEC> {
+        ERTCO_EN_W::new(self, 3)
     }
     #[doc = "Bit 8 - SIMO Clock Scaling Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn simo_clkscl_en(&mut self) -> SIMO_CLKSCL_EN_W<CTRL_SPEC, 8> {
-        SIMO_CLKSCL_EN_W::new(self)
+    pub fn simo_clkscl_en(&mut self) -> SIMO_CLKSCL_EN_W<CTRL_SPEC> {
+        SIMO_CLKSCL_EN_W::new(self, 8)
     }
     #[doc = "Bit 9 - SIMO System Reset Disable."]
     #[inline(always)]
     #[must_use]
-    pub fn simo_rstd(&mut self) -> SIMO_RSTD_W<CTRL_SPEC, 9> {
-        SIMO_RSTD_W::new(self)
+    pub fn simo_rstd(&mut self) -> SIMO_RSTD_W<CTRL_SPEC> {
+        SIMO_RSTD_W::new(self, 9)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

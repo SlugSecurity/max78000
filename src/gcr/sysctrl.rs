@@ -5,7 +5,7 @@ pub type W = crate::W<SYSCTRL_SPEC>;
 #[doc = "Field `BSTAPEN` reader - Boundary Scan TAP enable. When enabled, the JTAG port is conneted to the Boundary Scan TAP instead of the ARM ICE."]
 pub type BSTAPEN_R = crate::BitReader;
 #[doc = "Field `BSTAPEN` writer - Boundary Scan TAP enable. When enabled, the JTAG port is conneted to the Boundary Scan TAP instead of the ARM ICE."]
-pub type BSTAPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BSTAPEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FLASH_PAGE_FLIP` reader - Flips the Flash bottom and top halves. (Depending on the total flash size, each half is either 256K or 512K). Initiating a flash page flip will cause a flush of both the data buffer on the DCODE bus and the internal instruction buffer."]
 pub type FLASH_PAGE_FLIP_R = crate::BitReader<FLASH_PAGE_FLIP_A>;
 #[doc = "Flips the Flash bottom and top halves. (Depending on the total flash size, each half is either 256K or 512K). Initiating a flash page flip will cause a flush of both the data buffer on the DCODE bus and the internal instruction buffer.\n\nValue on reset: 0"]
@@ -25,7 +25,7 @@ impl From<FLASH_PAGE_FLIP_A> for bool {
 impl FLASH_PAGE_FLIP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLASH_PAGE_FLIP_A {
+    pub const fn variant(&self) -> FLASH_PAGE_FLIP_A {
         match self.bits {
             false => FLASH_PAGE_FLIP_A::NORMAL,
             true => FLASH_PAGE_FLIP_A::SWAPPED,
@@ -43,8 +43,8 @@ impl FLASH_PAGE_FLIP_R {
     }
 }
 #[doc = "Field `FLASH_PAGE_FLIP` writer - Flips the Flash bottom and top halves. (Depending on the total flash size, each half is either 256K or 512K). Initiating a flash page flip will cause a flush of both the data buffer on the DCODE bus and the internal instruction buffer."]
-pub type FLASH_PAGE_FLIP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLASH_PAGE_FLIP_A>;
-impl<'a, REG, const O: u8> FLASH_PAGE_FLIP_W<'a, REG, O>
+pub type FLASH_PAGE_FLIP_W<'a, REG> = crate::BitWriter<'a, REG, FLASH_PAGE_FLIP_A>;
+impl<'a, REG> FLASH_PAGE_FLIP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -78,7 +78,7 @@ impl From<ICC0_FLUSH_A> for bool {
 impl ICC0_FLUSH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ICC0_FLUSH_A {
+    pub const fn variant(&self) -> ICC0_FLUSH_A {
         match self.bits {
             false => ICC0_FLUSH_A::NORMAL,
             true => ICC0_FLUSH_A::FLUSH,
@@ -96,8 +96,8 @@ impl ICC0_FLUSH_R {
     }
 }
 #[doc = "Field `ICC0_FLUSH` writer - Code Cache Flush. This bit is used to flush the code caches and the instruction buffer of the Cortex-M4."]
-pub type ICC0_FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ICC0_FLUSH_A>;
-impl<'a, REG, const O: u8> ICC0_FLUSH_W<'a, REG, O>
+pub type ICC0_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG, ICC0_FLUSH_A>;
+impl<'a, REG> ICC0_FLUSH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -115,7 +115,7 @@ where
 #[doc = "Field `ROMDONE` reader - ROM_DONE status. Used to disable SWD interface during system initialization procedure"]
 pub type ROMDONE_R = crate::BitReader;
 #[doc = "Field `ROMDONE` writer - ROM_DONE status. Used to disable SWD interface during system initialization procedure"]
-pub type ROMDONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ROMDONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CCHK` reader - Compute ROM Checksum. This bit is self-cleared when calculation is completed. Once set, software clearing this bit is ignored and the bit will remain set until the operation is completed."]
 pub type CCHK_R = crate::BitReader<CCHK_A>;
 #[doc = "Compute ROM Checksum. This bit is self-cleared when calculation is completed. Once set, software clearing this bit is ignored and the bit will remain set until the operation is completed.\n\nValue on reset: 0"]
@@ -135,7 +135,7 @@ impl From<CCHK_A> for bool {
 impl CCHK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCHK_A {
+    pub const fn variant(&self) -> CCHK_A {
         match self.bits {
             false => CCHK_A::COMPLETE,
             true => CCHK_A::START,
@@ -153,8 +153,8 @@ impl CCHK_R {
     }
 }
 #[doc = "Field `CCHK` writer - Compute ROM Checksum. This bit is self-cleared when calculation is completed. Once set, software clearing this bit is ignored and the bit will remain set until the operation is completed."]
-pub type CCHK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCHK_A>;
-impl<'a, REG, const O: u8> CCHK_W<'a, REG, O>
+pub type CCHK_W<'a, REG> = crate::BitWriter<'a, REG, CCHK_A>;
+impl<'a, REG> CCHK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -172,7 +172,7 @@ where
 #[doc = "Field `SWD_DIS` reader - Serial Wire Debug Disable. This bit is used to disable the serial wire debug interface This bit is only writeable if (FMV lock word is not programmed) or if (ICE lock word is not programmed and the ROM_DONE bit is not set)."]
 pub type SWD_DIS_R = crate::BitReader;
 #[doc = "Field `SWD_DIS` writer - Serial Wire Debug Disable. This bit is used to disable the serial wire debug interface This bit is only writeable if (FMV lock word is not programmed) or if (ICE lock word is not programmed and the ROM_DONE bit is not set)."]
-pub type SWD_DIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWD_DIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CHKRES` reader - ROM Checksum Result. This bit is only valid when CHKRD=1."]
 pub type CHKRES_R = crate::BitReader<CHKRES_A>;
 #[doc = "ROM Checksum Result. This bit is only valid when CHKRD=1.\n\nValue on reset: 0"]
@@ -192,7 +192,7 @@ impl From<CHKRES_A> for bool {
 impl CHKRES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHKRES_A {
+    pub const fn variant(&self) -> CHKRES_A {
         match self.bits {
             false => CHKRES_A::PASS,
             true => CHKRES_A::FAIL,
@@ -210,8 +210,8 @@ impl CHKRES_R {
     }
 }
 #[doc = "Field `CHKRES` writer - ROM Checksum Result. This bit is only valid when CHKRD=1."]
-pub type CHKRES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHKRES_A>;
-impl<'a, REG, const O: u8> CHKRES_W<'a, REG, O>
+pub type CHKRES_W<'a, REG> = crate::BitWriter<'a, REG, CHKRES_A>;
+impl<'a, REG> CHKRES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -229,7 +229,7 @@ where
 #[doc = "Field `OVR` reader - Operating Voltage Range."]
 pub type OVR_R = crate::FieldReader;
 #[doc = "Field `OVR` writer - Operating Voltage Range."]
-pub type OVR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type OVR_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bit 1 - Boundary Scan TAP enable. When enabled, the JTAG port is conneted to the Boundary Scan TAP instead of the ARM ICE."]
     #[inline(always)]
@@ -276,52 +276,56 @@ impl W {
     #[doc = "Bit 1 - Boundary Scan TAP enable. When enabled, the JTAG port is conneted to the Boundary Scan TAP instead of the ARM ICE."]
     #[inline(always)]
     #[must_use]
-    pub fn bstapen(&mut self) -> BSTAPEN_W<SYSCTRL_SPEC, 1> {
-        BSTAPEN_W::new(self)
+    pub fn bstapen(&mut self) -> BSTAPEN_W<SYSCTRL_SPEC> {
+        BSTAPEN_W::new(self, 1)
     }
     #[doc = "Bit 4 - Flips the Flash bottom and top halves. (Depending on the total flash size, each half is either 256K or 512K). Initiating a flash page flip will cause a flush of both the data buffer on the DCODE bus and the internal instruction buffer."]
     #[inline(always)]
     #[must_use]
-    pub fn flash_page_flip(&mut self) -> FLASH_PAGE_FLIP_W<SYSCTRL_SPEC, 4> {
-        FLASH_PAGE_FLIP_W::new(self)
+    pub fn flash_page_flip(&mut self) -> FLASH_PAGE_FLIP_W<SYSCTRL_SPEC> {
+        FLASH_PAGE_FLIP_W::new(self, 4)
     }
     #[doc = "Bit 6 - Code Cache Flush. This bit is used to flush the code caches and the instruction buffer of the Cortex-M4."]
     #[inline(always)]
     #[must_use]
-    pub fn icc0_flush(&mut self) -> ICC0_FLUSH_W<SYSCTRL_SPEC, 6> {
-        ICC0_FLUSH_W::new(self)
+    pub fn icc0_flush(&mut self) -> ICC0_FLUSH_W<SYSCTRL_SPEC> {
+        ICC0_FLUSH_W::new(self, 6)
     }
     #[doc = "Bit 12 - ROM_DONE status. Used to disable SWD interface during system initialization procedure"]
     #[inline(always)]
     #[must_use]
-    pub fn romdone(&mut self) -> ROMDONE_W<SYSCTRL_SPEC, 12> {
-        ROMDONE_W::new(self)
+    pub fn romdone(&mut self) -> ROMDONE_W<SYSCTRL_SPEC> {
+        ROMDONE_W::new(self, 12)
     }
     #[doc = "Bit 13 - Compute ROM Checksum. This bit is self-cleared when calculation is completed. Once set, software clearing this bit is ignored and the bit will remain set until the operation is completed."]
     #[inline(always)]
     #[must_use]
-    pub fn cchk(&mut self) -> CCHK_W<SYSCTRL_SPEC, 13> {
-        CCHK_W::new(self)
+    pub fn cchk(&mut self) -> CCHK_W<SYSCTRL_SPEC> {
+        CCHK_W::new(self, 13)
     }
     #[doc = "Bit 14 - Serial Wire Debug Disable. This bit is used to disable the serial wire debug interface This bit is only writeable if (FMV lock word is not programmed) or if (ICE lock word is not programmed and the ROM_DONE bit is not set)."]
     #[inline(always)]
     #[must_use]
-    pub fn swd_dis(&mut self) -> SWD_DIS_W<SYSCTRL_SPEC, 14> {
-        SWD_DIS_W::new(self)
+    pub fn swd_dis(&mut self) -> SWD_DIS_W<SYSCTRL_SPEC> {
+        SWD_DIS_W::new(self, 14)
     }
     #[doc = "Bit 15 - ROM Checksum Result. This bit is only valid when CHKRD=1."]
     #[inline(always)]
     #[must_use]
-    pub fn chkres(&mut self) -> CHKRES_W<SYSCTRL_SPEC, 15> {
-        CHKRES_W::new(self)
+    pub fn chkres(&mut self) -> CHKRES_W<SYSCTRL_SPEC> {
+        CHKRES_W::new(self, 15)
     }
     #[doc = "Bits 16:17 - Operating Voltage Range."]
     #[inline(always)]
     #[must_use]
-    pub fn ovr(&mut self) -> OVR_W<SYSCTRL_SPEC, 16> {
-        OVR_W::new(self)
+    pub fn ovr(&mut self) -> OVR_W<SYSCTRL_SPEC> {
+        OVR_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

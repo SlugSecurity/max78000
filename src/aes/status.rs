@@ -5,23 +5,23 @@ pub type W = crate::W<STATUS_SPEC>;
 #[doc = "Field `BUSY` reader - AES Busy Status"]
 pub type BUSY_R = crate::BitReader;
 #[doc = "Field `BUSY` writer - AES Busy Status"]
-pub type BUSY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BUSY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INPUT_EM` reader - Data input FIFO empty status"]
 pub type INPUT_EM_R = crate::BitReader;
 #[doc = "Field `INPUT_EM` writer - Data input FIFO empty status"]
-pub type INPUT_EM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INPUT_EM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INPUT_FULL` reader - Data input FIFO full status"]
 pub type INPUT_FULL_R = crate::BitReader;
 #[doc = "Field `INPUT_FULL` writer - Data input FIFO full status"]
-pub type INPUT_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INPUT_FULL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OUTPUT_EM` reader - Data output FIFO empty status"]
 pub type OUTPUT_EM_R = crate::BitReader;
 #[doc = "Field `OUTPUT_EM` writer - Data output FIFO empty status"]
-pub type OUTPUT_EM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OUTPUT_EM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OUTPUT_FULL` reader - Data output FIFO full status"]
 pub type OUTPUT_FULL_R = crate::BitReader;
 #[doc = "Field `OUTPUT_FULL` writer - Data output FIFO full status"]
-pub type OUTPUT_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OUTPUT_FULL_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - AES Busy Status"]
     #[inline(always)]
@@ -53,34 +53,38 @@ impl W {
     #[doc = "Bit 0 - AES Busy Status"]
     #[inline(always)]
     #[must_use]
-    pub fn busy(&mut self) -> BUSY_W<STATUS_SPEC, 0> {
-        BUSY_W::new(self)
+    pub fn busy(&mut self) -> BUSY_W<STATUS_SPEC> {
+        BUSY_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data input FIFO empty status"]
     #[inline(always)]
     #[must_use]
-    pub fn input_em(&mut self) -> INPUT_EM_W<STATUS_SPEC, 1> {
-        INPUT_EM_W::new(self)
+    pub fn input_em(&mut self) -> INPUT_EM_W<STATUS_SPEC> {
+        INPUT_EM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Data input FIFO full status"]
     #[inline(always)]
     #[must_use]
-    pub fn input_full(&mut self) -> INPUT_FULL_W<STATUS_SPEC, 2> {
-        INPUT_FULL_W::new(self)
+    pub fn input_full(&mut self) -> INPUT_FULL_W<STATUS_SPEC> {
+        INPUT_FULL_W::new(self, 2)
     }
     #[doc = "Bit 3 - Data output FIFO empty status"]
     #[inline(always)]
     #[must_use]
-    pub fn output_em(&mut self) -> OUTPUT_EM_W<STATUS_SPEC, 3> {
-        OUTPUT_EM_W::new(self)
+    pub fn output_em(&mut self) -> OUTPUT_EM_W<STATUS_SPEC> {
+        OUTPUT_EM_W::new(self, 3)
     }
     #[doc = "Bit 4 - Data output FIFO full status"]
     #[inline(always)]
     #[must_use]
-    pub fn output_full(&mut self) -> OUTPUT_FULL_W<STATUS_SPEC, 4> {
-        OUTPUT_FULL_W::new(self)
+    pub fn output_full(&mut self) -> OUTPUT_FULL_W<STATUS_SPEC> {
+        OUTPUT_FULL_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

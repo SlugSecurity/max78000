@@ -5,7 +5,7 @@ pub type W = crate::W<VAL_SPEC>;
 #[doc = "Field `VALUE` reader - Current CRC Value"]
 pub type VALUE_R = crate::FieldReader<u32>;
 #[doc = "Field `VALUE` writer - Current CRC Value"]
-pub type VALUE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type VALUE_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current CRC Value"]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Current CRC Value"]
     #[inline(always)]
     #[must_use]
-    pub fn value(&mut self) -> VALUE_W<VAL_SPEC, 0> {
-        VALUE_W::new(self)
+    pub fn value(&mut self) -> VALUE_W<VAL_SPEC> {
+        VALUE_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

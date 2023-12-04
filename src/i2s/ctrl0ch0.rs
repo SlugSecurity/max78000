@@ -5,31 +5,31 @@ pub type W = crate::W<CTRL0CH0_SPEC>;
 #[doc = "Field `LSB_FIRST` reader - LSB Transmit Receive First."]
 pub type LSB_FIRST_R = crate::BitReader;
 #[doc = "Field `LSB_FIRST` writer - LSB Transmit Receive First."]
-pub type LSB_FIRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LSB_FIRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PDM_FILT` reader - PDM Filter."]
 pub type PDM_FILT_R = crate::BitReader;
 #[doc = "Field `PDM_FILT` writer - PDM Filter."]
-pub type PDM_FILT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PDM_FILT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PDM_EN` reader - PDM Enable."]
 pub type PDM_EN_R = crate::BitReader;
 #[doc = "Field `PDM_EN` writer - PDM Enable."]
-pub type PDM_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PDM_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USEDDR` reader - DDR."]
 pub type USEDDR_R = crate::BitReader;
 #[doc = "Field `USEDDR` writer - DDR."]
-pub type USEDDR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USEDDR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PDM_INV` reader - Invert PDM."]
 pub type PDM_INV_R = crate::BitReader;
 #[doc = "Field `PDM_INV` writer - Invert PDM."]
-pub type PDM_INV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PDM_INV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH_MODE` reader - SCK Select."]
 pub type CH_MODE_R = crate::FieldReader;
 #[doc = "Field `CH_MODE` writer - SCK Select."]
-pub type CH_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type CH_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `WS_POL` reader - WS polarity select."]
 pub type WS_POL_R = crate::BitReader;
 #[doc = "Field `WS_POL` writer - WS polarity select."]
-pub type WS_POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WS_POL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MSB_LOC` reader - MSB location."]
 pub type MSB_LOC_R = crate::BitReader;
 #[doc = "Field `ALIGN` reader - Align to MSB or LSB."]
@@ -37,37 +37,37 @@ pub type ALIGN_R = crate::BitReader;
 #[doc = "Field `EXT_SEL` reader - External SCK/WS selection."]
 pub type EXT_SEL_R = crate::BitReader;
 #[doc = "Field `EXT_SEL` writer - External SCK/WS selection."]
-pub type EXT_SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EXT_SEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STEREO` reader - Stereo mode of I2S."]
 pub type STEREO_R = crate::FieldReader;
 #[doc = "Field `WSIZE` reader - Data size when write to FIFO."]
 pub type WSIZE_R = crate::FieldReader;
 #[doc = "Field `WSIZE` writer - Data size when write to FIFO."]
-pub type WSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type WSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `TX_EN` reader - TX channel enable."]
 pub type TX_EN_R = crate::BitReader;
 #[doc = "Field `TX_EN` writer - TX channel enable."]
-pub type TX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_EN` reader - RX channel enable."]
 pub type RX_EN_R = crate::BitReader;
 #[doc = "Field `RX_EN` writer - RX channel enable."]
-pub type RX_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RX_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FLUSH` reader - Flushes the TX/RX FIFO buffer."]
 pub type FLUSH_R = crate::BitReader;
 #[doc = "Field `FLUSH` writer - Flushes the TX/RX FIFO buffer."]
-pub type FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FLUSH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RST` reader - Write 1 to reset channel."]
 pub type RST_R = crate::BitReader;
 #[doc = "Field `RST` writer - Write 1 to reset channel."]
-pub type RST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FIFO_LSB` reader - Bit Field Control."]
 pub type FIFO_LSB_R = crate::BitReader;
 #[doc = "Field `FIFO_LSB` writer - Bit Field Control."]
-pub type FIFO_LSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FIFO_LSB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RX_THD_VAL` reader - depth of receive FIFO for threshold interrupt generation."]
 pub type RX_THD_VAL_R = crate::FieldReader;
 #[doc = "Field `RX_THD_VAL` writer - depth of receive FIFO for threshold interrupt generation."]
-pub type RX_THD_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type RX_THD_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 1 - LSB Transmit Receive First."]
     #[inline(always)]
@@ -164,94 +164,98 @@ impl W {
     #[doc = "Bit 1 - LSB Transmit Receive First."]
     #[inline(always)]
     #[must_use]
-    pub fn lsb_first(&mut self) -> LSB_FIRST_W<CTRL0CH0_SPEC, 1> {
-        LSB_FIRST_W::new(self)
+    pub fn lsb_first(&mut self) -> LSB_FIRST_W<CTRL0CH0_SPEC> {
+        LSB_FIRST_W::new(self, 1)
     }
     #[doc = "Bit 2 - PDM Filter."]
     #[inline(always)]
     #[must_use]
-    pub fn pdm_filt(&mut self) -> PDM_FILT_W<CTRL0CH0_SPEC, 2> {
-        PDM_FILT_W::new(self)
+    pub fn pdm_filt(&mut self) -> PDM_FILT_W<CTRL0CH0_SPEC> {
+        PDM_FILT_W::new(self, 2)
     }
     #[doc = "Bit 3 - PDM Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn pdm_en(&mut self) -> PDM_EN_W<CTRL0CH0_SPEC, 3> {
-        PDM_EN_W::new(self)
+    pub fn pdm_en(&mut self) -> PDM_EN_W<CTRL0CH0_SPEC> {
+        PDM_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - DDR."]
     #[inline(always)]
     #[must_use]
-    pub fn useddr(&mut self) -> USEDDR_W<CTRL0CH0_SPEC, 4> {
-        USEDDR_W::new(self)
+    pub fn useddr(&mut self) -> USEDDR_W<CTRL0CH0_SPEC> {
+        USEDDR_W::new(self, 4)
     }
     #[doc = "Bit 5 - Invert PDM."]
     #[inline(always)]
     #[must_use]
-    pub fn pdm_inv(&mut self) -> PDM_INV_W<CTRL0CH0_SPEC, 5> {
-        PDM_INV_W::new(self)
+    pub fn pdm_inv(&mut self) -> PDM_INV_W<CTRL0CH0_SPEC> {
+        PDM_INV_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - SCK Select."]
     #[inline(always)]
     #[must_use]
-    pub fn ch_mode(&mut self) -> CH_MODE_W<CTRL0CH0_SPEC, 6> {
-        CH_MODE_W::new(self)
+    pub fn ch_mode(&mut self) -> CH_MODE_W<CTRL0CH0_SPEC> {
+        CH_MODE_W::new(self, 6)
     }
     #[doc = "Bit 8 - WS polarity select."]
     #[inline(always)]
     #[must_use]
-    pub fn ws_pol(&mut self) -> WS_POL_W<CTRL0CH0_SPEC, 8> {
-        WS_POL_W::new(self)
+    pub fn ws_pol(&mut self) -> WS_POL_W<CTRL0CH0_SPEC> {
+        WS_POL_W::new(self, 8)
     }
     #[doc = "Bit 11 - External SCK/WS selection."]
     #[inline(always)]
     #[must_use]
-    pub fn ext_sel(&mut self) -> EXT_SEL_W<CTRL0CH0_SPEC, 11> {
-        EXT_SEL_W::new(self)
+    pub fn ext_sel(&mut self) -> EXT_SEL_W<CTRL0CH0_SPEC> {
+        EXT_SEL_W::new(self, 11)
     }
     #[doc = "Bits 14:15 - Data size when write to FIFO."]
     #[inline(always)]
     #[must_use]
-    pub fn wsize(&mut self) -> WSIZE_W<CTRL0CH0_SPEC, 14> {
-        WSIZE_W::new(self)
+    pub fn wsize(&mut self) -> WSIZE_W<CTRL0CH0_SPEC> {
+        WSIZE_W::new(self, 14)
     }
     #[doc = "Bit 16 - TX channel enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_en(&mut self) -> TX_EN_W<CTRL0CH0_SPEC, 16> {
-        TX_EN_W::new(self)
+    pub fn tx_en(&mut self) -> TX_EN_W<CTRL0CH0_SPEC> {
+        TX_EN_W::new(self, 16)
     }
     #[doc = "Bit 17 - RX channel enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_en(&mut self) -> RX_EN_W<CTRL0CH0_SPEC, 17> {
-        RX_EN_W::new(self)
+    pub fn rx_en(&mut self) -> RX_EN_W<CTRL0CH0_SPEC> {
+        RX_EN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Flushes the TX/RX FIFO buffer."]
     #[inline(always)]
     #[must_use]
-    pub fn flush(&mut self) -> FLUSH_W<CTRL0CH0_SPEC, 18> {
-        FLUSH_W::new(self)
+    pub fn flush(&mut self) -> FLUSH_W<CTRL0CH0_SPEC> {
+        FLUSH_W::new(self, 18)
     }
     #[doc = "Bit 19 - Write 1 to reset channel."]
     #[inline(always)]
     #[must_use]
-    pub fn rst(&mut self) -> RST_W<CTRL0CH0_SPEC, 19> {
-        RST_W::new(self)
+    pub fn rst(&mut self) -> RST_W<CTRL0CH0_SPEC> {
+        RST_W::new(self, 19)
     }
     #[doc = "Bit 20 - Bit Field Control."]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_lsb(&mut self) -> FIFO_LSB_W<CTRL0CH0_SPEC, 20> {
-        FIFO_LSB_W::new(self)
+    pub fn fifo_lsb(&mut self) -> FIFO_LSB_W<CTRL0CH0_SPEC> {
+        FIFO_LSB_W::new(self, 20)
     }
     #[doc = "Bits 24:31 - depth of receive FIFO for threshold interrupt generation."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<CTRL0CH0_SPEC, 24> {
-        RX_THD_VAL_W::new(self)
+    pub fn rx_thd_val(&mut self) -> RX_THD_VAL_W<CTRL0CH0_SPEC> {
+        RX_THD_VAL_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -5,19 +5,19 @@ pub type W = crate::W<RESYNC_SPEC>;
 #[doc = "Field `pt0` reader - Resync control for PT0"]
 pub type PT0_R = crate::BitReader;
 #[doc = "Field `pt0` writer - Resync control for PT0"]
-pub type PT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pt1` reader - Resync control for PT1"]
 pub type PT1_R = crate::BitReader;
 #[doc = "Field `pt1` writer - Resync control for PT1"]
-pub type PT1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pt2` reader - Resync control for PT2"]
 pub type PT2_R = crate::BitReader;
 #[doc = "Field `pt2` writer - Resync control for PT2"]
-pub type PT2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pt3` reader - Resync control for PT3"]
 pub type PT3_R = crate::BitReader;
 #[doc = "Field `pt3` writer - Resync control for PT3"]
-pub type PT3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PT3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Resync control for PT0"]
     #[inline(always)]
@@ -44,28 +44,32 @@ impl W {
     #[doc = "Bit 0 - Resync control for PT0"]
     #[inline(always)]
     #[must_use]
-    pub fn pt0(&mut self) -> PT0_W<RESYNC_SPEC, 0> {
-        PT0_W::new(self)
+    pub fn pt0(&mut self) -> PT0_W<RESYNC_SPEC> {
+        PT0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Resync control for PT1"]
     #[inline(always)]
     #[must_use]
-    pub fn pt1(&mut self) -> PT1_W<RESYNC_SPEC, 1> {
-        PT1_W::new(self)
+    pub fn pt1(&mut self) -> PT1_W<RESYNC_SPEC> {
+        PT1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Resync control for PT2"]
     #[inline(always)]
     #[must_use]
-    pub fn pt2(&mut self) -> PT2_W<RESYNC_SPEC, 2> {
-        PT2_W::new(self)
+    pub fn pt2(&mut self) -> PT2_W<RESYNC_SPEC> {
+        PT2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Resync control for PT3"]
     #[inline(always)]
     #[must_use]
-    pub fn pt3(&mut self) -> PT3_W<RESYNC_SPEC, 3> {
-        PT3_W::new(self)
+    pub fn pt3(&mut self) -> PT3_W<RESYNC_SPEC> {
+        PT3_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

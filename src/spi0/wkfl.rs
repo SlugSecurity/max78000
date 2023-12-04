@@ -19,7 +19,7 @@ impl From<TX_THD_A> for bool {
 impl TX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_THD_A> {
+    pub const fn variant(&self) -> Option<TX_THD_A> {
         match self.bits {
             true => Some(TX_THD_A::CLEAR),
             _ => None,
@@ -32,8 +32,8 @@ impl TX_THD_R {
     }
 }
 #[doc = "Field `TX_THD` writer - Wake on TX FIFO Threshold Crossed."]
-pub type TX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_THD_A>;
-impl<'a, REG, const O: u8> TX_THD_W<'a, REG, O>
+pub type TX_THD_W<'a, REG> = crate::BitWriter<'a, REG, TX_THD_A>;
+impl<'a, REG> TX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -60,7 +60,7 @@ impl From<TX_EM_A> for bool {
 impl TX_EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_EM_A> {
+    pub const fn variant(&self) -> Option<TX_EM_A> {
         match self.bits {
             true => Some(TX_EM_A::CLEAR),
             _ => None,
@@ -73,8 +73,8 @@ impl TX_EM_R {
     }
 }
 #[doc = "Field `TX_EM` writer - Wake on TX FIFO Empty."]
-pub type TX_EM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_EM_A>;
-impl<'a, REG, const O: u8> TX_EM_W<'a, REG, O>
+pub type TX_EM_W<'a, REG> = crate::BitWriter<'a, REG, TX_EM_A>;
+impl<'a, REG> TX_EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -101,7 +101,7 @@ impl From<RX_THD_A> for bool {
 impl RX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RX_THD_A> {
+    pub const fn variant(&self) -> Option<RX_THD_A> {
         match self.bits {
             true => Some(RX_THD_A::CLEAR),
             _ => None,
@@ -114,8 +114,8 @@ impl RX_THD_R {
     }
 }
 #[doc = "Field `RX_THD` writer - Wake on RX FIFO Threshold Crossed."]
-pub type RX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_THD_A>;
-impl<'a, REG, const O: u8> RX_THD_W<'a, REG, O>
+pub type RX_THD_W<'a, REG> = crate::BitWriter<'a, REG, RX_THD_A>;
+impl<'a, REG> RX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -142,7 +142,7 @@ impl From<RX_FULL_A> for bool {
 impl RX_FULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RX_FULL_A> {
+    pub const fn variant(&self) -> Option<RX_FULL_A> {
         match self.bits {
             true => Some(RX_FULL_A::CLEAR),
             _ => None,
@@ -155,8 +155,8 @@ impl RX_FULL_R {
     }
 }
 #[doc = "Field `RX_FULL` writer - Wake on RX FIFO Full."]
-pub type RX_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_FULL_A>;
-impl<'a, REG, const O: u8> RX_FULL_W<'a, REG, O>
+pub type RX_FULL_W<'a, REG> = crate::BitWriter<'a, REG, RX_FULL_A>;
+impl<'a, REG> RX_FULL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -192,28 +192,32 @@ impl W {
     #[doc = "Bit 0 - Wake on TX FIFO Threshold Crossed."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_thd(&mut self) -> TX_THD_W<WKFL_SPEC, 0> {
-        TX_THD_W::new(self)
+    pub fn tx_thd(&mut self) -> TX_THD_W<WKFL_SPEC> {
+        TX_THD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake on TX FIFO Empty."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_em(&mut self) -> TX_EM_W<WKFL_SPEC, 1> {
-        TX_EM_W::new(self)
+    pub fn tx_em(&mut self) -> TX_EM_W<WKFL_SPEC> {
+        TX_EM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake on RX FIFO Threshold Crossed."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd(&mut self) -> RX_THD_W<WKFL_SPEC, 2> {
-        RX_THD_W::new(self)
+    pub fn rx_thd(&mut self) -> RX_THD_W<WKFL_SPEC> {
+        RX_THD_W::new(self, 2)
     }
     #[doc = "Bit 3 - Wake on RX FIFO Full."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_full(&mut self) -> RX_FULL_W<WKFL_SPEC, 3> {
-        RX_FULL_W::new(self)
+    pub fn rx_full(&mut self) -> RX_FULL_W<WKFL_SPEC> {
+        RX_FULL_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

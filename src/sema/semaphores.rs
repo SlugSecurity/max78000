@@ -5,7 +5,7 @@ pub type W = crate::W<SEMAPHORES_SPEC>;
 #[doc = "Field `sema` reader - "]
 pub type SEMA_R = crate::BitReader;
 #[doc = "Field `sema` writer - "]
-pub type SEMA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SEMA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn sema(&mut self) -> SEMA_W<SEMAPHORES_SPEC, 0> {
-        SEMA_W::new(self)
+    pub fn sema(&mut self) -> SEMA_W<SEMAPHORES_SPEC> {
+        SEMA_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

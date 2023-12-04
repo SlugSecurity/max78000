@@ -35,7 +35,7 @@ impl crate::FieldSpec for MODE_A {
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MODE_A> {
+    pub const fn variant(&self) -> Option<MODE_A> {
         match self.bits {
             0 => Some(MODE_A::ACTIVE),
             1 => Some(MODE_A::SLEEP),
@@ -84,8 +84,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Operating Mode. This two bit field selects the current operating mode for the device. Note that code execution only occurs during ACTIVE mode."]
-pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MODE_A>;
-impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+pub type MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,7 +145,7 @@ impl From<GPIO_WE_A> for bool {
 impl GPIO_WE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GPIO_WE_A {
+    pub const fn variant(&self) -> GPIO_WE_A {
         match self.bits {
             false => GPIO_WE_A::DIS,
             true => GPIO_WE_A::EN,
@@ -163,8 +163,8 @@ impl GPIO_WE_R {
     }
 }
 #[doc = "Field `GPIO_WE` writer - GPIO Wake Up Enable. This bit enables all GPIO pins as potential wakeup sources. Any GPIO configured for wakeup is capable of causing an exit from IDLE or STANDBY modes when this bit is set."]
-pub type GPIO_WE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GPIO_WE_A>;
-impl<'a, REG, const O: u8> GPIO_WE_W<'a, REG, O>
+pub type GPIO_WE_W<'a, REG> = crate::BitWriter<'a, REG, GPIO_WE_A>;
+impl<'a, REG> GPIO_WE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -180,164 +180,17 @@ where
     }
 }
 #[doc = "Field `RTC_WE` reader - RTC Alarm Wake Up Enable. This bit enables RTC alarm as wakeup source. If enabled, the desired RTC alarm must be configured via the RTC control registers."]
-pub type RTC_WE_R = crate::BitReader<RTC_WE_A>;
-#[doc = "RTC Alarm Wake Up Enable. This bit enables RTC alarm as wakeup source. If enabled, the desired RTC alarm must be configured via the RTC control registers.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RTC_WE_A {
-    #[doc = "0: Wake Up Disable."]
-    DIS = 0,
-    #[doc = "1: Wake Up Enable."]
-    EN = 1,
-}
-impl From<RTC_WE_A> for bool {
-    #[inline(always)]
-    fn from(variant: RTC_WE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl RTC_WE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RTC_WE_A {
-        match self.bits {
-            false => RTC_WE_A::DIS,
-            true => RTC_WE_A::EN,
-        }
-    }
-    #[doc = "Wake Up Disable."]
-    #[inline(always)]
-    pub fn is_dis(&self) -> bool {
-        *self == RTC_WE_A::DIS
-    }
-    #[doc = "Wake Up Enable."]
-    #[inline(always)]
-    pub fn is_en(&self) -> bool {
-        *self == RTC_WE_A::EN
-    }
-}
-#[doc = "Field `RTC_WE` writer - RTC Alarm Wake Up Enable. This bit enables RTC alarm as wakeup source. If enabled, the desired RTC alarm must be configured via the RTC control registers."]
-pub type RTC_WE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_WE_A>;
-impl<'a, REG, const O: u8> RTC_WE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Wake Up Disable."]
-    #[inline(always)]
-    pub fn dis(self) -> &'a mut crate::W<REG> {
-        self.variant(RTC_WE_A::DIS)
-    }
-    #[doc = "Wake Up Enable."]
-    #[inline(always)]
-    pub fn en(self) -> &'a mut crate::W<REG> {
-        self.variant(RTC_WE_A::EN)
-    }
-}
+pub use GPIO_WE_R as RTC_WE_R;
 #[doc = "Field `WUT_WE` reader - WUT Wake Up Enable. This bit enables the Wake-Up Timer as wakeup source."]
-pub type WUT_WE_R = crate::BitReader<WUT_WE_A>;
-#[doc = "WUT Wake Up Enable. This bit enables the Wake-Up Timer as wakeup source.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WUT_WE_A {
-    #[doc = "0: Wake Up Disable."]
-    DIS = 0,
-    #[doc = "1: Wake Up Enable."]
-    EN = 1,
-}
-impl From<WUT_WE_A> for bool {
-    #[inline(always)]
-    fn from(variant: WUT_WE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl WUT_WE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> WUT_WE_A {
-        match self.bits {
-            false => WUT_WE_A::DIS,
-            true => WUT_WE_A::EN,
-        }
-    }
-    #[doc = "Wake Up Disable."]
-    #[inline(always)]
-    pub fn is_dis(&self) -> bool {
-        *self == WUT_WE_A::DIS
-    }
-    #[doc = "Wake Up Enable."]
-    #[inline(always)]
-    pub fn is_en(&self) -> bool {
-        *self == WUT_WE_A::EN
-    }
-}
-#[doc = "Field `WUT_WE` writer - WUT Wake Up Enable. This bit enables the Wake-Up Timer as wakeup source."]
-pub type WUT_WE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WUT_WE_A>;
-impl<'a, REG, const O: u8> WUT_WE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Wake Up Disable."]
-    #[inline(always)]
-    pub fn dis(self) -> &'a mut crate::W<REG> {
-        self.variant(WUT_WE_A::DIS)
-    }
-    #[doc = "Wake Up Enable."]
-    #[inline(always)]
-    pub fn en(self) -> &'a mut crate::W<REG> {
-        self.variant(WUT_WE_A::EN)
-    }
-}
+pub use GPIO_WE_R as WUT_WE_R;
 #[doc = "Field `AINCOMP_WE` reader - AIN COMP Wake Up Enable. This bit enables AIN COMP as wakeup source."]
-pub type AINCOMP_WE_R = crate::BitReader<AINCOMP_WE_A>;
-#[doc = "AIN COMP Wake Up Enable. This bit enables AIN COMP as wakeup source.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AINCOMP_WE_A {
-    #[doc = "0: Wake Up Disable."]
-    DIS = 0,
-    #[doc = "1: Wake Up Enable."]
-    EN = 1,
-}
-impl From<AINCOMP_WE_A> for bool {
-    #[inline(always)]
-    fn from(variant: AINCOMP_WE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl AINCOMP_WE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> AINCOMP_WE_A {
-        match self.bits {
-            false => AINCOMP_WE_A::DIS,
-            true => AINCOMP_WE_A::EN,
-        }
-    }
-    #[doc = "Wake Up Disable."]
-    #[inline(always)]
-    pub fn is_dis(&self) -> bool {
-        *self == AINCOMP_WE_A::DIS
-    }
-    #[doc = "Wake Up Enable."]
-    #[inline(always)]
-    pub fn is_en(&self) -> bool {
-        *self == AINCOMP_WE_A::EN
-    }
-}
+pub use GPIO_WE_R as AINCOMP_WE_R;
+#[doc = "Field `RTC_WE` writer - RTC Alarm Wake Up Enable. This bit enables RTC alarm as wakeup source. If enabled, the desired RTC alarm must be configured via the RTC control registers."]
+pub use GPIO_WE_W as RTC_WE_W;
+#[doc = "Field `WUT_WE` writer - WUT Wake Up Enable. This bit enables the Wake-Up Timer as wakeup source."]
+pub use GPIO_WE_W as WUT_WE_W;
 #[doc = "Field `AINCOMP_WE` writer - AIN COMP Wake Up Enable. This bit enables AIN COMP as wakeup source."]
-pub type AINCOMP_WE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AINCOMP_WE_A>;
-impl<'a, REG, const O: u8> AINCOMP_WE_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Wake Up Disable."]
-    #[inline(always)]
-    pub fn dis(self) -> &'a mut crate::W<REG> {
-        self.variant(AINCOMP_WE_A::DIS)
-    }
-    #[doc = "Wake Up Enable."]
-    #[inline(always)]
-    pub fn en(self) -> &'a mut crate::W<REG> {
-        self.variant(AINCOMP_WE_A::EN)
-    }
-}
+pub use GPIO_WE_W as AINCOMP_WE_W;
 #[doc = "Field `ISO_PD` reader - 60 MHz power down. This bit selects the 60 MHz clock power state in DEEPSLEEP mode."]
 pub type ISO_PD_R = crate::BitReader<ISO_PD_A>;
 #[doc = "60 MHz power down. This bit selects the 60 MHz clock power state in DEEPSLEEP mode.\n\nValue on reset: 0"]
@@ -357,7 +210,7 @@ impl From<ISO_PD_A> for bool {
 impl ISO_PD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ISO_PD_A {
+    pub const fn variant(&self) -> ISO_PD_A {
         match self.bits {
             false => ISO_PD_A::ACTIVE,
             true => ISO_PD_A::DEEPSLEEP,
@@ -375,8 +228,8 @@ impl ISO_PD_R {
     }
 }
 #[doc = "Field `ISO_PD` writer - 60 MHz power down. This bit selects the 60 MHz clock power state in DEEPSLEEP mode."]
-pub type ISO_PD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ISO_PD_A>;
-impl<'a, REG, const O: u8> ISO_PD_W<'a, REG, O>
+pub type ISO_PD_W<'a, REG> = crate::BitWriter<'a, REG, ISO_PD_A>;
+impl<'a, REG> ISO_PD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -392,111 +245,13 @@ where
     }
 }
 #[doc = "Field `IPO_PD` reader - 100 MHz power down. This bit selects 100 MHz clock power state in DEEPSLEEP mode."]
-pub type IPO_PD_R = crate::BitReader<IPO_PD_A>;
-#[doc = "100 MHz power down. This bit selects 100 MHz clock power state in DEEPSLEEP mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IPO_PD_A {
-    #[doc = "0: Mode is Active."]
-    ACTIVE = 0,
-    #[doc = "1: Powered down in DEEPSLEEP."]
-    DEEPSLEEP = 1,
-}
-impl From<IPO_PD_A> for bool {
-    #[inline(always)]
-    fn from(variant: IPO_PD_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IPO_PD_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IPO_PD_A {
-        match self.bits {
-            false => IPO_PD_A::ACTIVE,
-            true => IPO_PD_A::DEEPSLEEP,
-        }
-    }
-    #[doc = "Mode is Active."]
-    #[inline(always)]
-    pub fn is_active(&self) -> bool {
-        *self == IPO_PD_A::ACTIVE
-    }
-    #[doc = "Powered down in DEEPSLEEP."]
-    #[inline(always)]
-    pub fn is_deepsleep(&self) -> bool {
-        *self == IPO_PD_A::DEEPSLEEP
-    }
-}
-#[doc = "Field `IPO_PD` writer - 100 MHz power down. This bit selects 100 MHz clock power state in DEEPSLEEP mode."]
-pub type IPO_PD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IPO_PD_A>;
-impl<'a, REG, const O: u8> IPO_PD_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Mode is Active."]
-    #[inline(always)]
-    pub fn active(self) -> &'a mut crate::W<REG> {
-        self.variant(IPO_PD_A::ACTIVE)
-    }
-    #[doc = "Powered down in DEEPSLEEP."]
-    #[inline(always)]
-    pub fn deepsleep(self) -> &'a mut crate::W<REG> {
-        self.variant(IPO_PD_A::DEEPSLEEP)
-    }
-}
+pub use ISO_PD_R as IPO_PD_R;
 #[doc = "Field `IBRO_PD` reader - 7.3725 MHz power down. This bit selects 7.3725 MHz clock power state in DEEPSLEEP mode."]
-pub type IBRO_PD_R = crate::BitReader<IBRO_PD_A>;
-#[doc = "7.3725 MHz power down. This bit selects 7.3725 MHz clock power state in DEEPSLEEP mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IBRO_PD_A {
-    #[doc = "0: Mode is Active."]
-    ACTIVE = 0,
-    #[doc = "1: Powered down in DEEPSLEEP."]
-    DEEPSLEEP = 1,
-}
-impl From<IBRO_PD_A> for bool {
-    #[inline(always)]
-    fn from(variant: IBRO_PD_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl IBRO_PD_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IBRO_PD_A {
-        match self.bits {
-            false => IBRO_PD_A::ACTIVE,
-            true => IBRO_PD_A::DEEPSLEEP,
-        }
-    }
-    #[doc = "Mode is Active."]
-    #[inline(always)]
-    pub fn is_active(&self) -> bool {
-        *self == IBRO_PD_A::ACTIVE
-    }
-    #[doc = "Powered down in DEEPSLEEP."]
-    #[inline(always)]
-    pub fn is_deepsleep(&self) -> bool {
-        *self == IBRO_PD_A::DEEPSLEEP
-    }
-}
+pub use ISO_PD_R as IBRO_PD_R;
+#[doc = "Field `IPO_PD` writer - 100 MHz power down. This bit selects 100 MHz clock power state in DEEPSLEEP mode."]
+pub use ISO_PD_W as IPO_PD_W;
 #[doc = "Field `IBRO_PD` writer - 7.3725 MHz power down. This bit selects 7.3725 MHz clock power state in DEEPSLEEP mode."]
-pub type IBRO_PD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IBRO_PD_A>;
-impl<'a, REG, const O: u8> IBRO_PD_W<'a, REG, O>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Mode is Active."]
-    #[inline(always)]
-    pub fn active(self) -> &'a mut crate::W<REG> {
-        self.variant(IBRO_PD_A::ACTIVE)
-    }
-    #[doc = "Powered down in DEEPSLEEP."]
-    #[inline(always)]
-    pub fn deepsleep(self) -> &'a mut crate::W<REG> {
-        self.variant(IBRO_PD_A::DEEPSLEEP)
-    }
-}
+pub use ISO_PD_W as IBRO_PD_W;
 impl R {
     #[doc = "Bits 0:3 - Operating Mode. This two bit field selects the current operating mode for the device. Note that code execution only occurs during ACTIVE mode."]
     #[inline(always)]
@@ -543,52 +298,56 @@ impl W {
     #[doc = "Bits 0:3 - Operating Mode. This two bit field selects the current operating mode for the device. Note that code execution only occurs during ACTIVE mode."]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<PM_SPEC, 0> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<PM_SPEC> {
+        MODE_W::new(self, 0)
     }
     #[doc = "Bit 4 - GPIO Wake Up Enable. This bit enables all GPIO pins as potential wakeup sources. Any GPIO configured for wakeup is capable of causing an exit from IDLE or STANDBY modes when this bit is set."]
     #[inline(always)]
     #[must_use]
-    pub fn gpio_we(&mut self) -> GPIO_WE_W<PM_SPEC, 4> {
-        GPIO_WE_W::new(self)
+    pub fn gpio_we(&mut self) -> GPIO_WE_W<PM_SPEC> {
+        GPIO_WE_W::new(self, 4)
     }
     #[doc = "Bit 5 - RTC Alarm Wake Up Enable. This bit enables RTC alarm as wakeup source. If enabled, the desired RTC alarm must be configured via the RTC control registers."]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_we(&mut self) -> RTC_WE_W<PM_SPEC, 5> {
-        RTC_WE_W::new(self)
+    pub fn rtc_we(&mut self) -> RTC_WE_W<PM_SPEC> {
+        RTC_WE_W::new(self, 5)
     }
     #[doc = "Bit 7 - WUT Wake Up Enable. This bit enables the Wake-Up Timer as wakeup source."]
     #[inline(always)]
     #[must_use]
-    pub fn wut_we(&mut self) -> WUT_WE_W<PM_SPEC, 7> {
-        WUT_WE_W::new(self)
+    pub fn wut_we(&mut self) -> WUT_WE_W<PM_SPEC> {
+        WUT_WE_W::new(self, 7)
     }
     #[doc = "Bit 9 - AIN COMP Wake Up Enable. This bit enables AIN COMP as wakeup source."]
     #[inline(always)]
     #[must_use]
-    pub fn aincomp_we(&mut self) -> AINCOMP_WE_W<PM_SPEC, 9> {
-        AINCOMP_WE_W::new(self)
+    pub fn aincomp_we(&mut self) -> AINCOMP_WE_W<PM_SPEC> {
+        AINCOMP_WE_W::new(self, 9)
     }
     #[doc = "Bit 15 - 60 MHz power down. This bit selects the 60 MHz clock power state in DEEPSLEEP mode."]
     #[inline(always)]
     #[must_use]
-    pub fn iso_pd(&mut self) -> ISO_PD_W<PM_SPEC, 15> {
-        ISO_PD_W::new(self)
+    pub fn iso_pd(&mut self) -> ISO_PD_W<PM_SPEC> {
+        ISO_PD_W::new(self, 15)
     }
     #[doc = "Bit 16 - 100 MHz power down. This bit selects 100 MHz clock power state in DEEPSLEEP mode."]
     #[inline(always)]
     #[must_use]
-    pub fn ipo_pd(&mut self) -> IPO_PD_W<PM_SPEC, 16> {
-        IPO_PD_W::new(self)
+    pub fn ipo_pd(&mut self) -> IPO_PD_W<PM_SPEC> {
+        IPO_PD_W::new(self, 16)
     }
     #[doc = "Bit 17 - 7.3725 MHz power down. This bit selects 7.3725 MHz clock power state in DEEPSLEEP mode."]
     #[inline(always)]
     #[must_use]
-    pub fn ibro_pd(&mut self) -> IBRO_PD_W<PM_SPEC, 17> {
-        IBRO_PD_W::new(self)
+    pub fn ibro_pd(&mut self) -> IBRO_PD_W<PM_SPEC> {
+        IBRO_PD_W::new(self, 17)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

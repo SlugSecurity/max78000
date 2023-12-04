@@ -27,7 +27,7 @@ impl crate::FieldSpec for READ_MODE_A {
 impl READ_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<READ_MODE_A> {
+    pub const fn variant(&self) -> Option<READ_MODE_A> {
         match self.bits {
             0 => Some(READ_MODE_A::DIS),
             1 => Some(READ_MODE_A::SINGLE_IMG),
@@ -52,8 +52,8 @@ impl READ_MODE_R {
     }
 }
 #[doc = "Field `READ_MODE` writer - Read Mode."]
-pub type READ_MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, READ_MODE_A>;
-impl<'a, REG, const O: u8> READ_MODE_W<'a, REG, O>
+pub type READ_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, READ_MODE_A>;
+impl<'a, REG> READ_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -99,7 +99,7 @@ impl crate::FieldSpec for DATA_WIDTH_A {
 impl DATA_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DATA_WIDTH_A> {
+    pub const fn variant(&self) -> Option<DATA_WIDTH_A> {
         match self.bits {
             0 => Some(DATA_WIDTH_A::_8BIT),
             1 => Some(DATA_WIDTH_A::_10BIT),
@@ -124,8 +124,8 @@ impl DATA_WIDTH_R {
     }
 }
 #[doc = "Field `DATA_WIDTH` writer - Data Width."]
-pub type DATA_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DATA_WIDTH_A>;
-impl<'a, REG, const O: u8> DATA_WIDTH_W<'a, REG, O>
+pub type DATA_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DATA_WIDTH_A>;
+impl<'a, REG> DATA_WIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -165,7 +165,7 @@ impl From<DS_TIMING_EN_A> for bool {
 impl DS_TIMING_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DS_TIMING_EN_A {
+    pub const fn variant(&self) -> DS_TIMING_EN_A {
         match self.bits {
             false => DS_TIMING_EN_A::DIS,
             true => DS_TIMING_EN_A::EN,
@@ -183,8 +183,8 @@ impl DS_TIMING_EN_R {
     }
 }
 #[doc = "Field `DS_TIMING_EN` writer - DS Timing Enable."]
-pub type DS_TIMING_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DS_TIMING_EN_A>;
-impl<'a, REG, const O: u8> DS_TIMING_EN_W<'a, REG, O>
+pub type DS_TIMING_EN_W<'a, REG> = crate::BitWriter<'a, REG, DS_TIMING_EN_A>;
+impl<'a, REG> DS_TIMING_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -202,7 +202,7 @@ where
 #[doc = "Field `FIFO_THRSH` reader - Data FIFO Threshold."]
 pub type FIFO_THRSH_R = crate::FieldReader;
 #[doc = "Field `FIFO_THRSH` writer - Data FIFO Threshold."]
-pub type FIFO_THRSH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type FIFO_THRSH_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `RX_DMA` reader - DMA Enable."]
 pub type RX_DMA_R = crate::BitReader<RX_DMA_A>;
 #[doc = "DMA Enable.\n\nValue on reset: 0"]
@@ -222,7 +222,7 @@ impl From<RX_DMA_A> for bool {
 impl RX_DMA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_DMA_A {
+    pub const fn variant(&self) -> RX_DMA_A {
         match self.bits {
             false => RX_DMA_A::DIS,
             true => RX_DMA_A::EN,
@@ -240,8 +240,8 @@ impl RX_DMA_R {
     }
 }
 #[doc = "Field `RX_DMA` writer - DMA Enable."]
-pub type RX_DMA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_DMA_A>;
-impl<'a, REG, const O: u8> RX_DMA_W<'a, REG, O>
+pub type RX_DMA_W<'a, REG> = crate::BitWriter<'a, REG, RX_DMA_A>;
+impl<'a, REG> RX_DMA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -259,11 +259,11 @@ where
 #[doc = "Field `RX_DMA_THRSH` reader - DMA Threshold."]
 pub type RX_DMA_THRSH_R = crate::FieldReader;
 #[doc = "Field `RX_DMA_THRSH` writer - DMA Threshold."]
-pub type RX_DMA_THRSH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RX_DMA_THRSH_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `THREE_CH_EN` reader - Three-channel mode enable."]
 pub type THREE_CH_EN_R = crate::BitReader;
 #[doc = "Field `THREE_CH_EN` writer - Three-channel mode enable."]
-pub type THREE_CH_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type THREE_CH_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCIF_SYS` reader - PCIF Control."]
 pub type PCIF_SYS_R = crate::BitReader<PCIF_SYS_A>;
 #[doc = "PCIF Control.\n\nValue on reset: 0"]
@@ -283,7 +283,7 @@ impl From<PCIF_SYS_A> for bool {
 impl PCIF_SYS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCIF_SYS_A {
+    pub const fn variant(&self) -> PCIF_SYS_A {
         match self.bits {
             false => PCIF_SYS_A::DIS,
             true => PCIF_SYS_A::EN,
@@ -301,8 +301,8 @@ impl PCIF_SYS_R {
     }
 }
 #[doc = "Field `PCIF_SYS` writer - PCIF Control."]
-pub type PCIF_SYS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PCIF_SYS_A>;
-impl<'a, REG, const O: u8> PCIF_SYS_W<'a, REG, O>
+pub type PCIF_SYS_W<'a, REG> = crate::BitWriter<'a, REG, PCIF_SYS_A>;
+impl<'a, REG> PCIF_SYS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -363,52 +363,56 @@ impl W {
     #[doc = "Bits 0:1 - Read Mode."]
     #[inline(always)]
     #[must_use]
-    pub fn read_mode(&mut self) -> READ_MODE_W<CTRL_SPEC, 0> {
-        READ_MODE_W::new(self)
+    pub fn read_mode(&mut self) -> READ_MODE_W<CTRL_SPEC> {
+        READ_MODE_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Data Width."]
     #[inline(always)]
     #[must_use]
-    pub fn data_width(&mut self) -> DATA_WIDTH_W<CTRL_SPEC, 2> {
-        DATA_WIDTH_W::new(self)
+    pub fn data_width(&mut self) -> DATA_WIDTH_W<CTRL_SPEC> {
+        DATA_WIDTH_W::new(self, 2)
     }
     #[doc = "Bit 4 - DS Timing Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ds_timing_en(&mut self) -> DS_TIMING_EN_W<CTRL_SPEC, 4> {
-        DS_TIMING_EN_W::new(self)
+    pub fn ds_timing_en(&mut self) -> DS_TIMING_EN_W<CTRL_SPEC> {
+        DS_TIMING_EN_W::new(self, 4)
     }
     #[doc = "Bits 5:9 - Data FIFO Threshold."]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_thrsh(&mut self) -> FIFO_THRSH_W<CTRL_SPEC, 5> {
-        FIFO_THRSH_W::new(self)
+    pub fn fifo_thrsh(&mut self) -> FIFO_THRSH_W<CTRL_SPEC> {
+        FIFO_THRSH_W::new(self, 5)
     }
     #[doc = "Bit 16 - DMA Enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_dma(&mut self) -> RX_DMA_W<CTRL_SPEC, 16> {
-        RX_DMA_W::new(self)
+    pub fn rx_dma(&mut self) -> RX_DMA_W<CTRL_SPEC> {
+        RX_DMA_W::new(self, 16)
     }
     #[doc = "Bits 17:20 - DMA Threshold."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_dma_thrsh(&mut self) -> RX_DMA_THRSH_W<CTRL_SPEC, 17> {
-        RX_DMA_THRSH_W::new(self)
+    pub fn rx_dma_thrsh(&mut self) -> RX_DMA_THRSH_W<CTRL_SPEC> {
+        RX_DMA_THRSH_W::new(self, 17)
     }
     #[doc = "Bit 30 - Three-channel mode enable."]
     #[inline(always)]
     #[must_use]
-    pub fn three_ch_en(&mut self) -> THREE_CH_EN_W<CTRL_SPEC, 30> {
-        THREE_CH_EN_W::new(self)
+    pub fn three_ch_en(&mut self) -> THREE_CH_EN_W<CTRL_SPEC> {
+        THREE_CH_EN_W::new(self, 30)
     }
     #[doc = "Bit 31 - PCIF Control."]
     #[inline(always)]
     #[must_use]
-    pub fn pcif_sys(&mut self) -> PCIF_SYS_W<CTRL_SPEC, 31> {
-        PCIF_SYS_W::new(self)
+    pub fn pcif_sys(&mut self) -> PCIF_SYS_W<CTRL_SPEC> {
+        PCIF_SYS_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

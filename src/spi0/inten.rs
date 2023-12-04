@@ -21,7 +21,7 @@ impl From<TX_THD_A> for bool {
 impl TX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_THD_A {
+    pub const fn variant(&self) -> TX_THD_A {
         match self.bits {
             false => TX_THD_A::DIS,
             true => TX_THD_A::EN,
@@ -39,8 +39,8 @@ impl TX_THD_R {
     }
 }
 #[doc = "Field `TX_THD` writer - TX FIFO Threshold interrupt enable."]
-pub type TX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_THD_A>;
-impl<'a, REG, const O: u8> TX_THD_W<'a, REG, O>
+pub type TX_THD_W<'a, REG> = crate::BitWriter<'a, REG, TX_THD_A>;
+impl<'a, REG> TX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -74,7 +74,7 @@ impl From<TX_EM_A> for bool {
 impl TX_EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_EM_A {
+    pub const fn variant(&self) -> TX_EM_A {
         match self.bits {
             false => TX_EM_A::DIS,
             true => TX_EM_A::EN,
@@ -92,8 +92,8 @@ impl TX_EM_R {
     }
 }
 #[doc = "Field `TX_EM` writer - TX FIFO Empty interrupt enable."]
-pub type TX_EM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_EM_A>;
-impl<'a, REG, const O: u8> TX_EM_W<'a, REG, O>
+pub type TX_EM_W<'a, REG> = crate::BitWriter<'a, REG, TX_EM_A>;
+impl<'a, REG> TX_EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -127,7 +127,7 @@ impl From<RX_THD_A> for bool {
 impl RX_THD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_THD_A {
+    pub const fn variant(&self) -> RX_THD_A {
         match self.bits {
             false => RX_THD_A::DIS,
             true => RX_THD_A::EN,
@@ -145,8 +145,8 @@ impl RX_THD_R {
     }
 }
 #[doc = "Field `RX_THD` writer - RX FIFO Threshold Crossed interrupt enable."]
-pub type RX_THD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_THD_A>;
-impl<'a, REG, const O: u8> RX_THD_W<'a, REG, O>
+pub type RX_THD_W<'a, REG> = crate::BitWriter<'a, REG, RX_THD_A>;
+impl<'a, REG> RX_THD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -180,7 +180,7 @@ impl From<RX_FULL_A> for bool {
 impl RX_FULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_FULL_A {
+    pub const fn variant(&self) -> RX_FULL_A {
         match self.bits {
             false => RX_FULL_A::DIS,
             true => RX_FULL_A::EN,
@@ -198,8 +198,8 @@ impl RX_FULL_R {
     }
 }
 #[doc = "Field `RX_FULL` writer - RX FIFO FULL interrupt enable."]
-pub type RX_FULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_FULL_A>;
-impl<'a, REG, const O: u8> RX_FULL_W<'a, REG, O>
+pub type RX_FULL_W<'a, REG> = crate::BitWriter<'a, REG, RX_FULL_A>;
+impl<'a, REG> RX_FULL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -233,7 +233,7 @@ impl From<SSA_A> for bool {
 impl SSA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SSA_A {
+    pub const fn variant(&self) -> SSA_A {
         match self.bits {
             false => SSA_A::DIS,
             true => SSA_A::EN,
@@ -251,8 +251,8 @@ impl SSA_R {
     }
 }
 #[doc = "Field `SSA` writer - Slave Select Asserted interrupt enable."]
-pub type SSA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SSA_A>;
-impl<'a, REG, const O: u8> SSA_W<'a, REG, O>
+pub type SSA_W<'a, REG> = crate::BitWriter<'a, REG, SSA_A>;
+impl<'a, REG> SSA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -286,7 +286,7 @@ impl From<SSD_A> for bool {
 impl SSD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SSD_A {
+    pub const fn variant(&self) -> SSD_A {
         match self.bits {
             false => SSD_A::DIS,
             true => SSD_A::EN,
@@ -304,8 +304,8 @@ impl SSD_R {
     }
 }
 #[doc = "Field `SSD` writer - Slave Select Deasserted interrupt enable."]
-pub type SSD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SSD_A>;
-impl<'a, REG, const O: u8> SSD_W<'a, REG, O>
+pub type SSD_W<'a, REG> = crate::BitWriter<'a, REG, SSD_A>;
+impl<'a, REG> SSD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -339,7 +339,7 @@ impl From<FAULT_A> for bool {
 impl FAULT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FAULT_A {
+    pub const fn variant(&self) -> FAULT_A {
         match self.bits {
             false => FAULT_A::DIS,
             true => FAULT_A::EN,
@@ -357,8 +357,8 @@ impl FAULT_R {
     }
 }
 #[doc = "Field `FAULT` writer - Multi-Master Mode Fault interrupt enable."]
-pub type FAULT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FAULT_A>;
-impl<'a, REG, const O: u8> FAULT_W<'a, REG, O>
+pub type FAULT_W<'a, REG> = crate::BitWriter<'a, REG, FAULT_A>;
+impl<'a, REG> FAULT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -392,7 +392,7 @@ impl From<ABORT_A> for bool {
 impl ABORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ABORT_A {
+    pub const fn variant(&self) -> ABORT_A {
         match self.bits {
             false => ABORT_A::DIS,
             true => ABORT_A::EN,
@@ -410,8 +410,8 @@ impl ABORT_R {
     }
 }
 #[doc = "Field `ABORT` writer - Slave Abort Detected interrupt enable."]
-pub type ABORT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ABORT_A>;
-impl<'a, REG, const O: u8> ABORT_W<'a, REG, O>
+pub type ABORT_W<'a, REG> = crate::BitWriter<'a, REG, ABORT_A>;
+impl<'a, REG> ABORT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -445,7 +445,7 @@ impl From<MST_DONE_A> for bool {
 impl MST_DONE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MST_DONE_A {
+    pub const fn variant(&self) -> MST_DONE_A {
         match self.bits {
             false => MST_DONE_A::DIS,
             true => MST_DONE_A::EN,
@@ -463,8 +463,8 @@ impl MST_DONE_R {
     }
 }
 #[doc = "Field `MST_DONE` writer - Master Done interrupt enable."]
-pub type MST_DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MST_DONE_A>;
-impl<'a, REG, const O: u8> MST_DONE_W<'a, REG, O>
+pub type MST_DONE_W<'a, REG> = crate::BitWriter<'a, REG, MST_DONE_A>;
+impl<'a, REG> MST_DONE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -498,7 +498,7 @@ impl From<TX_OV_A> for bool {
 impl TX_OV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_OV_A {
+    pub const fn variant(&self) -> TX_OV_A {
         match self.bits {
             false => TX_OV_A::DIS,
             true => TX_OV_A::EN,
@@ -516,8 +516,8 @@ impl TX_OV_R {
     }
 }
 #[doc = "Field `TX_OV` writer - Transmit FIFO Overrun interrupt enable."]
-pub type TX_OV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_OV_A>;
-impl<'a, REG, const O: u8> TX_OV_W<'a, REG, O>
+pub type TX_OV_W<'a, REG> = crate::BitWriter<'a, REG, TX_OV_A>;
+impl<'a, REG> TX_OV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -551,7 +551,7 @@ impl From<TX_UN_A> for bool {
 impl TX_UN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_UN_A {
+    pub const fn variant(&self) -> TX_UN_A {
         match self.bits {
             false => TX_UN_A::DIS,
             true => TX_UN_A::EN,
@@ -569,8 +569,8 @@ impl TX_UN_R {
     }
 }
 #[doc = "Field `TX_UN` writer - Transmit FIFO Underrun interrupt enable."]
-pub type TX_UN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_UN_A>;
-impl<'a, REG, const O: u8> TX_UN_W<'a, REG, O>
+pub type TX_UN_W<'a, REG> = crate::BitWriter<'a, REG, TX_UN_A>;
+impl<'a, REG> TX_UN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -604,7 +604,7 @@ impl From<RX_OV_A> for bool {
 impl RX_OV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_OV_A {
+    pub const fn variant(&self) -> RX_OV_A {
         match self.bits {
             false => RX_OV_A::DIS,
             true => RX_OV_A::EN,
@@ -622,8 +622,8 @@ impl RX_OV_R {
     }
 }
 #[doc = "Field `RX_OV` writer - Receive FIFO Overrun interrupt enable."]
-pub type RX_OV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_OV_A>;
-impl<'a, REG, const O: u8> RX_OV_W<'a, REG, O>
+pub type RX_OV_W<'a, REG> = crate::BitWriter<'a, REG, RX_OV_A>;
+impl<'a, REG> RX_OV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -657,7 +657,7 @@ impl From<RX_UN_A> for bool {
 impl RX_UN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_UN_A {
+    pub const fn variant(&self) -> RX_UN_A {
         match self.bits {
             false => RX_UN_A::DIS,
             true => RX_UN_A::EN,
@@ -675,8 +675,8 @@ impl RX_UN_R {
     }
 }
 #[doc = "Field `RX_UN` writer - Receive FIFO Underrun interrupt enable."]
-pub type RX_UN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RX_UN_A>;
-impl<'a, REG, const O: u8> RX_UN_W<'a, REG, O>
+pub type RX_UN_W<'a, REG> = crate::BitWriter<'a, REG, RX_UN_A>;
+impl<'a, REG> RX_UN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -762,82 +762,86 @@ impl W {
     #[doc = "Bit 0 - TX FIFO Threshold interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_thd(&mut self) -> TX_THD_W<INTEN_SPEC, 0> {
-        TX_THD_W::new(self)
+    pub fn tx_thd(&mut self) -> TX_THD_W<INTEN_SPEC> {
+        TX_THD_W::new(self, 0)
     }
     #[doc = "Bit 1 - TX FIFO Empty interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_em(&mut self) -> TX_EM_W<INTEN_SPEC, 1> {
-        TX_EM_W::new(self)
+    pub fn tx_em(&mut self) -> TX_EM_W<INTEN_SPEC> {
+        TX_EM_W::new(self, 1)
     }
     #[doc = "Bit 2 - RX FIFO Threshold Crossed interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_thd(&mut self) -> RX_THD_W<INTEN_SPEC, 2> {
-        RX_THD_W::new(self)
+    pub fn rx_thd(&mut self) -> RX_THD_W<INTEN_SPEC> {
+        RX_THD_W::new(self, 2)
     }
     #[doc = "Bit 3 - RX FIFO FULL interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_full(&mut self) -> RX_FULL_W<INTEN_SPEC, 3> {
-        RX_FULL_W::new(self)
+    pub fn rx_full(&mut self) -> RX_FULL_W<INTEN_SPEC> {
+        RX_FULL_W::new(self, 3)
     }
     #[doc = "Bit 4 - Slave Select Asserted interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ssa(&mut self) -> SSA_W<INTEN_SPEC, 4> {
-        SSA_W::new(self)
+    pub fn ssa(&mut self) -> SSA_W<INTEN_SPEC> {
+        SSA_W::new(self, 4)
     }
     #[doc = "Bit 5 - Slave Select Deasserted interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn ssd(&mut self) -> SSD_W<INTEN_SPEC, 5> {
-        SSD_W::new(self)
+    pub fn ssd(&mut self) -> SSD_W<INTEN_SPEC> {
+        SSD_W::new(self, 5)
     }
     #[doc = "Bit 8 - Multi-Master Mode Fault interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn fault(&mut self) -> FAULT_W<INTEN_SPEC, 8> {
-        FAULT_W::new(self)
+    pub fn fault(&mut self) -> FAULT_W<INTEN_SPEC> {
+        FAULT_W::new(self, 8)
     }
     #[doc = "Bit 9 - Slave Abort Detected interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn abort(&mut self) -> ABORT_W<INTEN_SPEC, 9> {
-        ABORT_W::new(self)
+    pub fn abort(&mut self) -> ABORT_W<INTEN_SPEC> {
+        ABORT_W::new(self, 9)
     }
     #[doc = "Bit 11 - Master Done interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn mst_done(&mut self) -> MST_DONE_W<INTEN_SPEC, 11> {
-        MST_DONE_W::new(self)
+    pub fn mst_done(&mut self) -> MST_DONE_W<INTEN_SPEC> {
+        MST_DONE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit FIFO Overrun interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_ov(&mut self) -> TX_OV_W<INTEN_SPEC, 12> {
-        TX_OV_W::new(self)
+    pub fn tx_ov(&mut self) -> TX_OV_W<INTEN_SPEC> {
+        TX_OV_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit FIFO Underrun interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_un(&mut self) -> TX_UN_W<INTEN_SPEC, 13> {
-        TX_UN_W::new(self)
+    pub fn tx_un(&mut self) -> TX_UN_W<INTEN_SPEC> {
+        TX_UN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive FIFO Overrun interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_ov(&mut self) -> RX_OV_W<INTEN_SPEC, 14> {
-        RX_OV_W::new(self)
+    pub fn rx_ov(&mut self) -> RX_OV_W<INTEN_SPEC> {
+        RX_OV_W::new(self, 14)
     }
     #[doc = "Bit 15 - Receive FIFO Underrun interrupt enable."]
     #[inline(always)]
     #[must_use]
-    pub fn rx_un(&mut self) -> RX_UN_W<INTEN_SPEC, 15> {
-        RX_UN_W::new(self)
+    pub fn rx_un(&mut self) -> RX_UN_W<INTEN_SPEC> {
+        RX_UN_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

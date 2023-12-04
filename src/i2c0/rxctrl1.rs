@@ -5,7 +5,7 @@ pub type W = crate::W<RXCTRL1_SPEC>;
 #[doc = "Field `CNT` reader - Receive Count Bits. These bits define the number of bytes to be received in a transaction, except for the case RXCNT = 0. RXCNT = 0 means 256 bytes to be received in a transaction."]
 pub type CNT_R = crate::FieldReader;
 #[doc = "Field `CNT` writer - Receive Count Bits. These bits define the number of bytes to be received in a transaction, except for the case RXCNT = 0. RXCNT = 0 means 256 bytes to be received in a transaction."]
-pub type CNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `LVL` reader - Receive FIFO Count. These bits reflect the number of byte in the RX_FIFO. These bits are flushed when I2CEN = 0."]
 pub type LVL_R = crate::FieldReader;
 impl R {
@@ -24,10 +24,14 @@ impl W {
     #[doc = "Bits 0:7 - Receive Count Bits. These bits define the number of bytes to be received in a transaction, except for the case RXCNT = 0. RXCNT = 0 means 256 bytes to be received in a transaction."]
     #[inline(always)]
     #[must_use]
-    pub fn cnt(&mut self) -> CNT_W<RXCTRL1_SPEC, 0> {
-        CNT_W::new(self)
+    pub fn cnt(&mut self) -> CNT_W<RXCTRL1_SPEC> {
+        CNT_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

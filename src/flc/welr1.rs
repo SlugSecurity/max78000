@@ -5,7 +5,7 @@ pub type W = crate::W<WELR1_SPEC>;
 #[doc = "Field `WELR1` reader - Access control."]
 pub type WELR1_R = crate::FieldReader<u32>;
 #[doc = "Field `WELR1` writer - Access control."]
-pub type WELR1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type WELR1_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Access control."]
     #[inline(always)]
@@ -17,10 +17,14 @@ impl W {
     #[doc = "Bits 0:31 - Access control."]
     #[inline(always)]
     #[must_use]
-    pub fn welr1(&mut self) -> WELR1_W<WELR1_SPEC, 0> {
-        WELR1_W::new(self)
+    pub fn welr1(&mut self) -> WELR1_W<WELR1_SPEC> {
+        WELR1_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

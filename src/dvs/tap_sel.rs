@@ -5,39 +5,39 @@ pub type W = crate::W<TAP_SEL_SPEC>;
 #[doc = "Field `LO` reader - Select delay line tap for lower bound of auto adjustment"]
 pub type LO_R = crate::FieldReader;
 #[doc = "Field `LO` writer - Select delay line tap for lower bound of auto adjustment"]
-pub type LO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type LO_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `LO_TAP_STAT` reader - Returns last delay line tap value"]
 pub type LO_TAP_STAT_R = crate::BitReader;
 #[doc = "Field `LO_TAP_STAT` writer - Returns last delay line tap value"]
-pub type LO_TAP_STAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LO_TAP_STAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CTR_TAP_STAT` reader - Returns last delay line tap value"]
 pub type CTR_TAP_STAT_R = crate::BitReader;
 #[doc = "Field `CTR_TAP_STAT` writer - Returns last delay line tap value"]
-pub type CTR_TAP_STAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CTR_TAP_STAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HI_TAP_STAT` reader - Returns last delay line tap value"]
 pub type HI_TAP_STAT_R = crate::BitReader;
 #[doc = "Field `HI_TAP_STAT` writer - Returns last delay line tap value"]
-pub type HI_TAP_STAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HI_TAP_STAT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HI` reader - Selects delay line tap for high point of auto adjustment"]
 pub type HI_R = crate::FieldReader;
 #[doc = "Field `HI` writer - Selects delay line tap for high point of auto adjustment"]
-pub type HI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type HI_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `CTR` reader - Selects delay line tap for center point of auto adjustment"]
 pub type CTR_R = crate::FieldReader;
 #[doc = "Field `CTR` writer - Selects delay line tap for center point of auto adjustment"]
-pub type CTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type CTR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `COARSE` reader - Selects delay line tap for coarse or fixed delay portion of the line"]
 pub type COARSE_R = crate::FieldReader;
 #[doc = "Field `COARSE` writer - Selects delay line tap for coarse or fixed delay portion of the line"]
-pub type COARSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type COARSE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DET_DLY` reader - Number of HCLK between delay line launch and sampling"]
 pub type DET_DLY_R = crate::FieldReader;
 #[doc = "Field `DET_DLY` writer - Number of HCLK between delay line launch and sampling"]
-pub type DET_DLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type DET_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DELAY_ACT` reader - Set if the delay is active"]
 pub type DELAY_ACT_R = crate::BitReader;
 #[doc = "Field `DELAY_ACT` writer - Set if the delay is active"]
-pub type DELAY_ACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DELAY_ACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:4 - Select delay line tap for lower bound of auto adjustment"]
     #[inline(always)]
@@ -89,58 +89,62 @@ impl W {
     #[doc = "Bits 0:4 - Select delay line tap for lower bound of auto adjustment"]
     #[inline(always)]
     #[must_use]
-    pub fn lo(&mut self) -> LO_W<TAP_SEL_SPEC, 0> {
-        LO_W::new(self)
+    pub fn lo(&mut self) -> LO_W<TAP_SEL_SPEC> {
+        LO_W::new(self, 0)
     }
     #[doc = "Bit 5 - Returns last delay line tap value"]
     #[inline(always)]
     #[must_use]
-    pub fn lo_tap_stat(&mut self) -> LO_TAP_STAT_W<TAP_SEL_SPEC, 5> {
-        LO_TAP_STAT_W::new(self)
+    pub fn lo_tap_stat(&mut self) -> LO_TAP_STAT_W<TAP_SEL_SPEC> {
+        LO_TAP_STAT_W::new(self, 5)
     }
     #[doc = "Bit 6 - Returns last delay line tap value"]
     #[inline(always)]
     #[must_use]
-    pub fn ctr_tap_stat(&mut self) -> CTR_TAP_STAT_W<TAP_SEL_SPEC, 6> {
-        CTR_TAP_STAT_W::new(self)
+    pub fn ctr_tap_stat(&mut self) -> CTR_TAP_STAT_W<TAP_SEL_SPEC> {
+        CTR_TAP_STAT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Returns last delay line tap value"]
     #[inline(always)]
     #[must_use]
-    pub fn hi_tap_stat(&mut self) -> HI_TAP_STAT_W<TAP_SEL_SPEC, 7> {
-        HI_TAP_STAT_W::new(self)
+    pub fn hi_tap_stat(&mut self) -> HI_TAP_STAT_W<TAP_SEL_SPEC> {
+        HI_TAP_STAT_W::new(self, 7)
     }
     #[doc = "Bits 8:12 - Selects delay line tap for high point of auto adjustment"]
     #[inline(always)]
     #[must_use]
-    pub fn hi(&mut self) -> HI_W<TAP_SEL_SPEC, 8> {
-        HI_W::new(self)
+    pub fn hi(&mut self) -> HI_W<TAP_SEL_SPEC> {
+        HI_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Selects delay line tap for center point of auto adjustment"]
     #[inline(always)]
     #[must_use]
-    pub fn ctr(&mut self) -> CTR_W<TAP_SEL_SPEC, 16> {
-        CTR_W::new(self)
+    pub fn ctr(&mut self) -> CTR_W<TAP_SEL_SPEC> {
+        CTR_W::new(self, 16)
     }
     #[doc = "Bits 24:26 - Selects delay line tap for coarse or fixed delay portion of the line"]
     #[inline(always)]
     #[must_use]
-    pub fn coarse(&mut self) -> COARSE_W<TAP_SEL_SPEC, 24> {
-        COARSE_W::new(self)
+    pub fn coarse(&mut self) -> COARSE_W<TAP_SEL_SPEC> {
+        COARSE_W::new(self, 24)
     }
     #[doc = "Bits 29:30 - Number of HCLK between delay line launch and sampling"]
     #[inline(always)]
     #[must_use]
-    pub fn det_dly(&mut self) -> DET_DLY_W<TAP_SEL_SPEC, 29> {
-        DET_DLY_W::new(self)
+    pub fn det_dly(&mut self) -> DET_DLY_W<TAP_SEL_SPEC> {
+        DET_DLY_W::new(self, 29)
     }
     #[doc = "Bit 31 - Set if the delay is active"]
     #[inline(always)]
     #[must_use]
-    pub fn delay_act(&mut self) -> DELAY_ACT_W<TAP_SEL_SPEC, 31> {
-        DELAY_ACT_W::new(self)
+    pub fn delay_act(&mut self) -> DELAY_ACT_W<TAP_SEL_SPEC> {
+        DELAY_ACT_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
