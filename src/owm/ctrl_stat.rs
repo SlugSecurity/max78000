@@ -46,10 +46,10 @@ impl R {
     pub fn od_spec_mode(&self) -> OD_SPEC_MODE_R {
         OD_SPEC_MODE_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Presence Pulse Detected."]
+    #[doc = "Bit 7 - Presence Pulse Detected."]
     #[inline(always)]
     pub fn presence_detect(&self) -> PRESENCE_DETECT_R {
-        PRESENCE_DETECT_R::new(((self.bits >> 5) & 1) != 0)
+        PRESENCE_DETECT_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
