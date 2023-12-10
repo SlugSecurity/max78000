@@ -1,5 +1,5 @@
---- max78000.svd.original	2023-12-03 17:06:04.710898519 -0800
-+++ max78000.svd.patched	2023-12-03 17:06:40.280912968 -0800
+--- max78000.svd.original	2023-12-03 17:49:46.140916643 -0800
++++ max78000.svd.patched	2023-12-09 18:35:43.335231711 -0800
 @@ -2950,125 +2950,165 @@
          </enumeratedValue>
         </enumeratedValues>
@@ -418,7 +418,22 @@
        </field>
       </fields>
      </register>
-@@ -4381,18 +4373,6 @@
+@@ -4370,6 +4362,14 @@
+      <name>INEN</name>
+      <description>GPIO Input Enable</description>
+      <addressOffset>0x30</addressOffset>
++     <fields>
++      <field>
++       <name>GPIO_INEN</name>
++       <description>Mask of all of the pins on the port.</description>
++       <bitOffset>0</bitOffset>
++       <bitWidth>32</bitWidth>
++      </field>
++     </fields>
+     </register>
+     <register>
+      <name>INTEN</name>
+@@ -4381,18 +4381,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -437,7 +452,7 @@
        </field>
       </fields>
      </register>
-@@ -4406,18 +4386,6 @@
+@@ -4406,18 +4394,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -456,7 +471,7 @@
        </field>
       </fields>
      </register>
-@@ -4431,18 +4399,6 @@
+@@ -4431,18 +4407,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -475,7 +490,7 @@
        </field>
       </fields>
      </register>
-@@ -4457,18 +4413,6 @@
+@@ -4457,18 +4421,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -494,7 +509,7 @@
        </field>
       </fields>
      </register>
-@@ -4495,18 +4439,6 @@
+@@ -4495,18 +4447,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -513,7 +528,7 @@
        </field>
       </fields>
      </register>
-@@ -4546,18 +4478,6 @@
+@@ -4546,18 +4486,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -532,7 +547,7 @@
        </field>
       </fields>
      </register>
-@@ -4568,26 +4488,9 @@
+@@ -4568,26 +4496,9 @@
       <fields>
        <field>
         <name>GPIO_PADCTRL0</name>
@@ -560,7 +575,7 @@
        </field>
       </fields>
      </register>
-@@ -4598,26 +4501,9 @@
+@@ -4598,26 +4509,9 @@
       <fields>
        <field>
         <name>GPIO_PADCTRL1</name>
@@ -588,7 +603,7 @@
        </field>
       </fields>
      </register>
-@@ -4631,18 +4517,6 @@
+@@ -4631,18 +4525,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -607,7 +622,7 @@
        </field>
       </fields>
      </register>
-@@ -4682,18 +4556,6 @@
+@@ -4682,18 +4564,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -626,7 +641,7 @@
        </field>
       </fields>
      </register>
-@@ -4746,18 +4608,6 @@
+@@ -4746,18 +4616,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -645,7 +660,7 @@
        </field>
       </fields>
      </register>
-@@ -4771,18 +4621,6 @@
+@@ -4771,18 +4629,6 @@
         <description>Mask of all of the pins on the port.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>32</bitWidth>
@@ -664,7 +679,7 @@
        </field>
       </fields>
      </register>
-@@ -6833,9 +6671,10 @@
+@@ -6833,9 +6679,10 @@
         <description>Low Power GPIO 2 Reset.</description>
         <bitOffset>0</bitOffset>
         <bitWidth>1</bitWidth>
@@ -677,7 +692,7 @@
          <enumeratedValue>
           <name>reset_done</name>
           <description>Reset complete.</description>
-@@ -6848,35 +6687,50 @@
+@@ -6848,35 +6695,50 @@
          </enumeratedValue>
         </enumeratedValues>
        </field>

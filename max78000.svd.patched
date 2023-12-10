@@ -4362,6 +4362,14 @@
      <name>INEN</name>
      <description>GPIO Input Enable</description>
      <addressOffset>0x30</addressOffset>
+     <fields>
+      <field>
+       <name>GPIO_INEN</name>
+       <description>Mask of all of the pins on the port.</description>
+       <bitOffset>0</bitOffset>
+       <bitWidth>32</bitWidth>
+      </field>
+     </fields>
     </register>
     <register>
      <name>INTEN</name>
