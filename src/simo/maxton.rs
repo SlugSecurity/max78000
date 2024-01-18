@@ -40,10 +40,10 @@ impl crate::RegisterSpec for MAXTON_SPEC {
 impl crate::Readable for MAXTON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`maxton::W`](W) writer structure"]
 impl crate::Writable for MAXTON_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MAXTON to value 0"]
 impl crate::Resettable for MAXTON_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

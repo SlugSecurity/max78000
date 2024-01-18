@@ -73,5 +73,5 @@ impl crate::RegisterSpec for BUCK_OUT_READY_SPEC {
 impl crate::Readable for BUCK_OUT_READY_SPEC {}
 #[doc = "`reset()` method sets BUCK_OUT_READY to value 0"]
 impl crate::Resettable for BUCK_OUT_READY_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

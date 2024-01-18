@@ -55,10 +55,10 @@ impl crate::RegisterSpec for TRIM_SPEC {
 impl crate::Readable for TRIM_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`trim::W`](W) writer structure"]
 impl crate::Writable for TRIM_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TRIM to value 0"]
 impl crate::Resettable for TRIM_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

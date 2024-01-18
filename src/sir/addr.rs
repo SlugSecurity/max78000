@@ -18,5 +18,5 @@ impl crate::RegisterSpec for ADDR_SPEC {
 impl crate::Readable for ADDR_SPEC {}
 #[doc = "`reset()` method sets ADDR to value 0"]
 impl crate::Resettable for ADDR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

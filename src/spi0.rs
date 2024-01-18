@@ -27,7 +27,8 @@ impl RegisterBlock {
     #[doc = "0x00 - Register for reading and writing the FIFO."]
     #[inline(always)]
     pub fn fifo8_iter(&self) -> impl Iterator<Item = &FIFO8> {
-        (0..4).map(|n| unsafe { &*(self as *const Self).cast::<u8>().add(0).add(1 * n).cast() })
+        (0..4)
+            .map(move |n| unsafe { &*(self as *const Self).cast::<u8>().add(0).add(1 * n).cast() })
     }
     #[doc = "0x00 - Register for reading and writing the FIFO."]
     #[inline(always)]
@@ -40,7 +41,8 @@ impl RegisterBlock {
     #[doc = "0x00 - Register for reading and writing the FIFO."]
     #[inline(always)]
     pub fn fifo16_iter(&self) -> impl Iterator<Item = &FIFO16> {
-        (0..2).map(|n| unsafe { &*(self as *const Self).cast::<u8>().add(0).add(2 * n).cast() })
+        (0..2)
+            .map(move |n| unsafe { &*(self as *const Self).cast::<u8>().add(0).add(2 * n).cast() })
     }
     #[doc = "0x00 - Register for reading and writing the FIFO."]
     #[inline(always)]

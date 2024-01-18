@@ -1,5 +1,5 @@
---- max78000.svd.original	2023-12-03 17:49:46.140916643 -0800
-+++ max78000.svd.patched	2023-12-09 18:35:43.335231711 -0800
+--- max78000.svd.original	2024-01-18 04:56:16.082733600 -0800
++++ max78000.svd.patched	2024-01-18 05:43:10.469660500 -0800
 @@ -2950,125 +2950,165 @@
          </enumeratedValue>
         </enumeratedValues>
@@ -748,3 +748,30 @@
        </field>
       </fields>
      </register>
+@@ -12577,6 +12439,26 @@
+          <description>The second value to be written to reset the WDT.</description>
+          <value>0x0000005A</value>
+         </enumeratedValue>
++        <enumeratedValue>
++         <name>seq2</name>
++         <description>WDT Enable: first rst value.</description>
++         <value>0x000000FE</value>
++        </enumeratedValue>
++        <enumeratedValue>
++         <name>seq3</name>
++         <description>WDT Enable: second rst value.</description>
++         <value>0x000000ED</value>
++        </enumeratedValue>
++        <enumeratedValue>
++         <name>seq4</name>
++         <description>WDT Disable: first rst value.</description>
++         <value>0x000000DE</value>
++        </enumeratedValue>
++        <enumeratedValue>
++         <name>seq5</name>
++         <description>WDT Disable: second rst value.</description>
++         <value>0x000000AD</value>
++        </enumeratedValue>
+        </enumeratedValues>
+       </field>
+      </fields>

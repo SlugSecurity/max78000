@@ -25,5 +25,5 @@ impl crate::RegisterSpec for SZ_SPEC {
 impl crate::Readable for SZ_SPEC {}
 #[doc = "`reset()` method sets SZ to value 0x0008_0008"]
 impl crate::Resettable for SZ_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0008_0008;
+    const RESET_VALUE: u32 = 0x0008_0008;
 }

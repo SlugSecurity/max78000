@@ -18,5 +18,5 @@ impl crate::RegisterSpec for ILOAD_C_SPEC {
 impl crate::Readable for ILOAD_C_SPEC {}
 #[doc = "`reset()` method sets ILOAD_C to value 0"]
 impl crate::Resettable for ILOAD_C_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

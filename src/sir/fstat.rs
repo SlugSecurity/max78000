@@ -134,5 +134,5 @@ impl crate::RegisterSpec for FSTAT_SPEC {
 impl crate::Readable for FSTAT_SPEC {}
 #[doc = "`reset()` method sets FSTAT to value 0"]
 impl crate::Resettable for FSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

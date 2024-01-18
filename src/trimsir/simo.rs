@@ -81,5 +81,5 @@ impl crate::RegisterSpec for SIMO_SPEC {
 impl crate::Readable for SIMO_SPEC {}
 #[doc = "`reset()` method sets SIMO to value 0"]
 impl crate::Resettable for SIMO_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

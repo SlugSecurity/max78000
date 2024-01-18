@@ -40,11 +40,11 @@ impl crate::RegisterSpec for DATAIN8_SPEC {
 impl crate::Readable for DATAIN8_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`datain8::W`](W) writer structure"]
 impl crate::Writable for DATAIN8_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets DATAIN8[%s]
 to value 0"]
 impl crate::Resettable for DATAIN8_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

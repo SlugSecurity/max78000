@@ -27,10 +27,10 @@ impl crate::RegisterSpec for ACTRL_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`actrl::W`](W) writer structure"]
 impl crate::Writable for ACTRL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ACTRL to value 0"]
 impl crate::Resettable for ACTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

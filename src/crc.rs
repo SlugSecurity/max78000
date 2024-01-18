@@ -23,7 +23,8 @@ impl RegisterBlock {
     #[doc = "0x04 - CRC Data Input"]
     #[inline(always)]
     pub fn datain8_iter(&self) -> impl Iterator<Item = &DATAIN8> {
-        (0..4).map(|n| unsafe { &*(self as *const Self).cast::<u8>().add(4).add(1 * n).cast() })
+        (0..4)
+            .map(move |n| unsafe { &*(self as *const Self).cast::<u8>().add(4).add(1 * n).cast() })
     }
     #[doc = "0x04 - CRC Data Input"]
     #[inline(always)]
@@ -36,7 +37,8 @@ impl RegisterBlock {
     #[doc = "0x04 - CRC Data Input"]
     #[inline(always)]
     pub fn datain16_iter(&self) -> impl Iterator<Item = &DATAIN16> {
-        (0..2).map(|n| unsafe { &*(self as *const Self).cast::<u8>().add(4).add(2 * n).cast() })
+        (0..2)
+            .map(move |n| unsafe { &*(self as *const Self).cast::<u8>().add(4).add(2 * n).cast() })
     }
     #[doc = "0x04 - CRC Data Input"]
     #[inline(always)]

@@ -40,10 +40,10 @@ impl crate::RegisterSpec for BUCK_ALERT_THR_C_SPEC {
 impl crate::Readable for BUCK_ALERT_THR_C_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`buck_alert_thr_c::W`](W) writer structure"]
 impl crate::Writable for BUCK_ALERT_THR_C_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUCK_ALERT_THR_C to value 0"]
 impl crate::Resettable for BUCK_ALERT_THR_C_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

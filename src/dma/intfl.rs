@@ -73,5 +73,5 @@ impl crate::RegisterSpec for INTFL_SPEC {
 impl crate::Readable for INTFL_SPEC {}
 #[doc = "`reset()` method sets INTFL to value 0"]
 impl crate::Resettable for INTFL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -18,5 +18,5 @@ impl crate::RegisterSpec for ZERO_CROSS_CAL_D_SPEC {
 impl crate::Readable for ZERO_CROSS_CAL_D_SPEC {}
 #[doc = "`reset()` method sets ZERO_CROSS_CAL_D to value 0"]
 impl crate::Resettable for ZERO_CROSS_CAL_D_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

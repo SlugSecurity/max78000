@@ -18,5 +18,5 @@ impl crate::RegisterSpec for IPOLO_SPEC {
 impl crate::Readable for IPOLO_SPEC {}
 #[doc = "`reset()` method sets IPOLO to value 0"]
 impl crate::Resettable for IPOLO_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

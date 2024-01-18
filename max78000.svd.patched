@@ -12439,6 +12439,26 @@
          <description>The second value to be written to reset the WDT.</description>
          <value>0x0000005A</value>
         </enumeratedValue>
+        <enumeratedValue>
+         <name>seq2</name>
+         <description>WDT Enable: first rst value.</description>
+         <value>0x000000FE</value>
+        </enumeratedValue>
+        <enumeratedValue>
+         <name>seq3</name>
+         <description>WDT Enable: second rst value.</description>
+         <value>0x000000ED</value>
+        </enumeratedValue>
+        <enumeratedValue>
+         <name>seq4</name>
+         <description>WDT Disable: first rst value.</description>
+         <value>0x000000DE</value>
+        </enumeratedValue>
+        <enumeratedValue>
+         <name>seq5</name>
+         <description>WDT Disable: second rst value.</description>
+         <value>0x000000AD</value>
+        </enumeratedValue>
        </enumeratedValues>
       </field>
      </fields>

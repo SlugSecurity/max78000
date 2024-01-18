@@ -254,10 +254,10 @@ impl crate::RegisterSpec for PCLKDIS1_SPEC {
 impl crate::Readable for PCLKDIS1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pclkdis1::W`](W) writer structure"]
 impl crate::Writable for PCLKDIS1_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PCLKDIS1 to value 0"]
 impl crate::Resettable for PCLKDIS1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

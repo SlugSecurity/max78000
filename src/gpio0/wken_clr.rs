@@ -40,10 +40,10 @@ impl crate::RegisterSpec for WKEN_CLR_SPEC {
 impl crate::Readable for WKEN_CLR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wken_clr::W`](W) writer structure"]
 impl crate::Writable for WKEN_CLR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets WKEN_CLR to value 0"]
 impl crate::Resettable for WKEN_CLR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

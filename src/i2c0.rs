@@ -129,7 +129,8 @@ impl RegisterBlock {
     #[doc = "0x4c..0x5c - Slave Address Register."]
     #[inline(always)]
     pub fn slave_multi_iter(&self) -> impl Iterator<Item = &SLAVE_MULTI> {
-        (0..4).map(|n| unsafe { &*(self as *const Self).cast::<u8>().add(76).add(4 * n).cast() })
+        (0..4)
+            .map(move |n| unsafe { &*(self as *const Self).cast::<u8>().add(76).add(4 * n).cast() })
     }
     #[doc = "0x50 - Slave Address Register."]
     #[inline(always)]
